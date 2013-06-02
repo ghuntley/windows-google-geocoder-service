@@ -6,7 +6,9 @@ using System.Linq;
 using System.Reflection;
 using System.ServiceProcess;
 using System.Threading.Tasks;
+
 using NLog;
+
 using ServiceStack.Text;
 
 namespace GoogleGeocoderService
@@ -36,8 +38,6 @@ namespace GoogleGeocoderService
             Log.Info("Main event loop will run every {0} minutes.", AppConfig.Interval);
         }
 
-        public Random Random { get; private set; }
-
         public string ApplicationDirectory
         {
             get; private set;
@@ -63,6 +63,11 @@ namespace GoogleGeocoderService
             get; private set;
         }
 
+        public Dictionary<int, string> GeocoderQueue
+        {
+            get; private set;
+        }
+
         public GoogleGeocoderStats GeocoderStats
         {
             get; private set;
@@ -73,7 +78,10 @@ namespace GoogleGeocoderService
             get; private set;
         }
 
-        public Dictionary<int, string> GeocoderQueue { get; private set; }
+        public Random Random
+        {
+            get; private set;
+        }
 
         [Conditional("DEBUG")]
         public void DebugBreak()
@@ -130,7 +138,7 @@ namespace GoogleGeocoderService
                         var primarykey = dictionary.Key;
                         var address = dictionary.Value;
 
-                        // add a element of jitter to the parrallelism to prevent 
+                        // add a element of jitter to the parrallelism to prevent
                         // a thundering herd of requests.
                         var jitter = Random.Next(AppConfig.JitterMinSleep,AppConfig.JitterMaxSleep);
 
@@ -141,10 +149,9 @@ namespace GoogleGeocoderService
 
                         if (response.Equals(null))
                         {
-                            Log.Error("Geocoder response was null for {0}", address);
-                            GeocoderStats.UnknownError++;
+                            Log.Error("SERVICE_ERROR: {0} response was null.", address);
+                            GeocoderStats.ServiceError++;
                         }
-
                         else
                         {
                             switch (response.status.ToUpperInvariant())
@@ -184,13 +191,12 @@ namespace GoogleGeocoderService
                             }
                         }
 
+                    });
 
-                    }); 
-                
                 Log.Info("Finished Geocoding Session: \n\n {0} \n {1} \n", GeocoderQueue.ToJson(), GeocoderStats);
 
                 ResetGeocoderStats();
-                
+
                 IsGeocoding = false;
             }
         }
