@@ -122,82 +122,92 @@ namespace GoogleGeocoderService
 
         private void MainTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            if (IsGeocoding)
+            try
             {
-                Log.Warn("An existing geocoding session was found, will try again in {0} minutes.", AppConfig.Interval);
-            }
-            else
-            {
-                Log.Info("Started geocoding session using {0} threads with {1} min / {2} max seconds of jitter.", AppConfig.Parallelism, AppConfig.JitterMinSleep, AppConfig.JitterMaxSleep);
-                IsGeocoding = true;
 
-                GeocoderQueue = DataAccessLayer.GetOutstanding();
+                if (IsGeocoding)
+                {
+                    Log.Warn("An existing geocoding session was found, will try again in {0} minutes.",
+                             AppConfig.Interval);
+                }
+                else
+                {
+                    Log.Info("Started geocoding session using {0} threads with {1} min / {2} max seconds of jitter.",
+                             AppConfig.Parallelism, AppConfig.JitterMinSleep, AppConfig.JitterMaxSleep);
+                    IsGeocoding = true;
 
-                GeocoderQueue.AsParallel().WithDegreeOfParallelism(AppConfig.Parallelism).ForAll(dictionary =>
-                    {
-                        var primarykey = dictionary.Key;
-                        var address = dictionary.Value;
+                    GeocoderQueue = DataAccessLayer.GetOutstanding();
 
-                        // add a element of jitter to the parrallelism to prevent
-                        // a thundering herd of requests.
-                        var jitter = Random.Next(AppConfig.JitterMinSleep,AppConfig.JitterMaxSleep);
-
-                        Log.Debug("Sleeping for {0} seconds, afterwards will retrieve {1}.", jitter, address);
-                        System.Threading.Thread.Sleep(jitter * 1000);
-
-                        var response = Geocoder.GeocodeAddress(address);
-
-                        if (response.Equals(null))
+                    GeocoderQueue.AsParallel().WithDegreeOfParallelism(AppConfig.Parallelism).ForAll(dictionary =>
                         {
-                            Log.Error("SERVICE_ERROR: {0} response was null.", address);
-                            GeocoderStats.ServiceError++;
-                        }
-                        else
-                        {
-                            switch (response.status.ToUpperInvariant())
+                            var primarykey = dictionary.Key;
+                            var address = dictionary.Value;
+
+                            // add a element of jitter to the parrallelism to prevent
+                            // a thundering herd of requests.
+                            var jitter = Random.Next(AppConfig.JitterMinSleep, AppConfig.JitterMaxSleep);
+
+                            Log.Debug("Sleeping for {0} seconds, afterwards will retrieve {1}.", jitter, address);
+                            System.Threading.Thread.Sleep(jitter * 1000);
+
+                            var response = Geocoder.GeocodeAddress(address);
+
+                            if (response.Equals(null))
                             {
-                                case "OK":
-                                    GeocoderStats.Ok++;
-                                    Log.Info("OK: {0}", address);
-                                    DataAccessLayer.SaveResponse(primarykey, response);
-                                    break;
-                                case "ZERO_RESULTS":
-                                    Log.Warn("ZERO_RESULTS: {0}", address);
-                                    GeocoderStats.ZeroResults++;
-                                    break;
-                                case "OVER_QUERY_LIMIT":
-                                    Log.Fatal("OVER_QUERY_LIMIT: {0}", address);
-                                    GeocoderStats.OverQueryLimit++;
-                                    break;
-                                case "REQUEST_DENIED":
-                                    Log.Fatal("REQUEST_DENIED: {0}", address);
-                                    GeocoderStats.RequestDenied++;
-                                    break;
-                                case "INVALID_REQUEST":
-                                    Log.Fatal("INVALID_REQUEST: {0}", address);
-                                    GeocoderStats.InvalidRequest++;
-                                    break;
-                                case "UNKNOWN_ERROR":
-                                    Log.Error("UNKNOWN_ERROR: {0}", address);
-                                    GeocoderStats.UnknownError++;
-                                    break;
-
-                                default:
-                                    // This would only happen if Google add new STATUS codes to their
-                                    // api or a typo exists in the above switch statement.
-                                    Log.Fatal("SERVICE_ERROR: {0}", address);
-                                    GeocoderStats.ServiceError++;
-                                    break;
+                                Log.Error("SERVICE_ERROR: {0} response was null.", address);
+                                GeocoderStats.ServiceError++;
                             }
-                        }
+                            else
+                            {
+                                switch (response.status.ToUpperInvariant())
+                                {
+                                    case "OK":
+                                        GeocoderStats.Ok++;
+                                        Log.Info("OK: {0}", address);
+                                        DataAccessLayer.SaveResponse(primarykey, response);
+                                        break;
+                                    case "ZERO_RESULTS":
+                                        Log.Warn("ZERO_RESULTS: {0}", address);
+                                        GeocoderStats.ZeroResults++;
+                                        break;
+                                    case "OVER_QUERY_LIMIT":
+                                        Log.Fatal("OVER_QUERY_LIMIT: {0}", address);
+                                        GeocoderStats.OverQueryLimit++;
+                                        break;
+                                    case "REQUEST_DENIED":
+                                        Log.Fatal("REQUEST_DENIED: {0}", address);
+                                        GeocoderStats.RequestDenied++;
+                                        break;
+                                    case "INVALID_REQUEST":
+                                        Log.Fatal("INVALID_REQUEST: {0}", address);
+                                        GeocoderStats.InvalidRequest++;
+                                        break;
+                                    case "UNKNOWN_ERROR":
+                                        Log.Error("UNKNOWN_ERROR: {0}", address);
+                                        GeocoderStats.UnknownError++;
+                                        break;
 
-                    });
+                                    default:
+                                        // This would only happen if Google add new STATUS codes to their
+                                        // api or a typo exists in the above switch statement.
+                                        Log.Fatal("SERVICE_ERROR: {0}", address);
+                                        GeocoderStats.ServiceError++;
+                                        break;
+                                }
+                            }
 
-                Log.Info("Finished Geocoding Session: \n\n {0} \n {1} \n", GeocoderQueue.ToJson(), GeocoderStats);
+                        });
 
-                ResetGeocoderStats();
+                    Log.Info("Finished Geocoding Session: \n\n {0} \n {1} \n", GeocoderQueue.ToJson(), GeocoderStats);
 
-                IsGeocoding = false;
+                    ResetGeocoderStats();
+
+                    IsGeocoding = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.FatalException("Abort, Abort.. Something went seriously wrong: ", ex);
             }
         }
     }
