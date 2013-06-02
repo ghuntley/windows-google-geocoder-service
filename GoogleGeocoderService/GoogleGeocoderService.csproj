@@ -119,6 +119,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="app.config" />
+    <Content Include="..\licenses\NLog.txt">
+      <Link>NLog.txt</Link>
+    </Content>
+    <Content Include="..\licenses\ServiceStack.txt">
+      <Link>ServiceStack.txt</Link>
+    </Content>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
