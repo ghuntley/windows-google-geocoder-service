@@ -22,7 +22,7 @@ namespace GoogleGeocoderService
             ApplicationDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             ApplicationName = AppConfig.ApplicationName;
             ApplicationVersion = AppConfig.ApplicationVersion;
-            DataAccessLayer = new MockDataAccessLayer();
+            DataAccessLayer = new SourceDataAccessLayer();
             Geocoder = new GoogleGeocoder();
             GeocoderStats = new GoogleGeocoderStats();
             GeocoderQueue = new List<GoogleGeocoderJob>();
