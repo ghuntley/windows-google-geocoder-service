@@ -52,7 +52,31 @@ namespace GoogleGeocoderService
         /// </summary>
         public void SaveResponse(GoogleGeocoderJob job, GoogleGeocodeResponse response)
         {
-            Log.Error("{0} has not been saved.", response.results[0].formatted_address);
+            using (var context = new SourceDbDataContext(AppConfig.ConnectionString))
+            {
+
+                var latitude = (decimal?) response.results[0].geometry.location.lat;
+                var longitude = (decimal?) response.results[0].geometry.location.lng;
+
+                var record = context.DEBTORS.Single(s => s.AccountID.Equals(job.AccountId));
+                    //(from debtors in context.DEBTORS
+                    //          where debtors.AccountID == job.AccountId
+                    //          select debtors).FirstOrDefault();
+
+                if (record == null)
+                {
+                    Log.Error("Unable to update AccountID: {0} ({1}) with Lat: {2} / Lng: {3}", job.AccountId,
+                              job.CompanyName, latitude, longitude);
+                    return;
+                }
+
+                //context.DEBTORS.InsertOnSubmit();
+                record.Latitude = latitude;
+                record.Longitude = longitude;
+                context.SubmitChanges();
+            }
+
+            //Log.Error("{0} has not been saved.", response.results[0].formatted_address);
         }
     }
 }
