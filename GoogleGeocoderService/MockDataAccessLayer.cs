@@ -43,7 +43,7 @@ namespace GoogleGeocoderService
             return _sampleData;
         }
 
-        public void SaveResponse(int primarykey, GoogleGeocodeResponse response)
+        public void SaveResponse(GoogleGeocoderJob job, GoogleGeocodeResponse response)
         {
             Log.Error("{0} has not been saved.", response.results[0].formatted_address);
         }
