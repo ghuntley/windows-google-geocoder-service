@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppConfig.cs" />
+    <Compile Include="GoogleGeocoderJob.cs" />
     <Compile Include="MockDataAccessLayer.cs" />
     <Compile Include="GoogleGeocoder.cs" />
     <Compile Include="GoogleGeocodeResponse.cs" />
