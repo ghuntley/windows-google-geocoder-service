@@ -34,7 +34,7 @@ namespace GoogleGeocoderService
         /// <summary>
         /// updates database record with response from identified by (dictionary key) with data from response.
         /// </summary>
-        public void SaveResponse(int accountid, GoogleGeocodeResponse response)
+        public void SaveResponse(GoogleGeocoderJob job, GoogleGeocodeResponse response)
         {
             throw new NotImplementedException();
         }
