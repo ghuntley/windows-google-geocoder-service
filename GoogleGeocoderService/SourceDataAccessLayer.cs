@@ -33,7 +33,12 @@ namespace GoogleGeocoderService
                                 CompanyName = debtors.Company
                             };
 
-                return query.ToList();
+                var filtered =
+                    query.Where(
+                        job => !job.Address.ToUpper().Contains("PO BOX")).Where(
+                        job => !job.Address.ToUpper().Contains("LOCKED BAG"));
+
+                return filtered.ToList();
             }
             catch (Exception ex)
             {
