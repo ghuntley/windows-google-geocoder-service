@@ -204,7 +204,7 @@ namespace GoogleGeocoderService
             }
             catch (Exception ex)
             {
-                Log.FatalException("Abort, Abort.. Something went seriously wrong: ", ex);
+                Log.Fatal("Abort, Abort.. Something went seriously wrong: {0} ", ex.Message);
 
                 IsGeocoding = false;
             }
