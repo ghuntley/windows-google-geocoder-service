@@ -24,7 +24,7 @@ namespace GoogleGeocoderService
                 _sourceDbDataContext = new SourceDbDataContext(AppConfig.ConnectionString);
 
                 var query = from debtors in _sourceDbDataContext.DEBTORS
-                            where (debtors.Longitude.Equals(null) || debtors.Latitude.Equals(null))
+                            where (debtors.Longitude.Equals(null) || debtors.Latitude.Equals(null) || debtors.Latitude == 0 || debtors.Longitude == 0)
 
                             select new GoogleGeocoderJob()
                             {
