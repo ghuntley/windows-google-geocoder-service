@@ -9,6 +9,8 @@ namespace GoogleGeocoderService
         public static string ApplicationName = Assembly.GetCallingAssembly().GetName().Name;
         public static string ApplicationVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString();
         public static string ConnectionString = ConfigurationManager.ConnectionStrings["DatabaseConnectionString"].ConnectionString;
+        public static string GoogleApiClientId = ConfigurationManager.AppSettings["GoogleApiClientId"];
+        public static string GoogleApiCryptoKey = ConfigurationManager.AppSettings["GoogleApiCryptoKey"];
         public static int Interval = Convert.ToInt32(ConfigurationManager.AppSettings["Interval"]);
         public static int JitterMaxSleep = Convert.ToInt32(ConfigurationManager.AppSettings["JitterMaxSleep"]);
         public static int JitterMinSleep = Convert.ToInt32(ConfigurationManager.AppSettings["JitterMinSleep"]);
