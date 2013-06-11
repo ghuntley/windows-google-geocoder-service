@@ -86,7 +86,6 @@ namespace GoogleGeocoderService
 
         /// <summary>
         /// Literally copied and pasted from Google SDK (https://developers.google.com/maps/documentation/business/webservices#CSharpSignatureExample)
-        /// one minor modification to UrlEncode the input request URI before signing.
         /// </summary>
         public string SignUrl(string url, string keyString)
         {
