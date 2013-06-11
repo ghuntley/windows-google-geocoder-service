@@ -147,52 +147,60 @@ namespace GoogleGeocoderService
                             Log.Debug("Sleeping for {0} seconds, afterwards will retrieve {1}.", jitter, job.Address);
                             System.Threading.Thread.Sleep(jitter * 1000);
 
-                            var response = Geocoder.GeocodeAddress(job.Address);
+                            GoogleGeocodeResponse response = null;
 
-                            if (response.Equals(null))
+                            try
+                            {
+                                response = Geocoder.GeocodeAddress(job.Address).Result;
+                            }
+                            catch (Exception ex)
+                            {
+                                Log.Error("SERVICE_ERROR: {0}", ex.Message);
+                                GeocoderStats.ServiceError++;
+                            }
+
+                            if (response == null)
                             {
                                 Log.Error("SERVICE_ERROR: {0} {1} response was null.", job.Address, job.CompanyName);
                                 GeocoderStats.ServiceError++;
+                                return;
                             }
-                            else
+
+                            switch (response.status.ToUpperInvariant())
                             {
-                                switch (response.status.ToUpperInvariant())
-                                {
-                                    case "OK":
-                                        GeocoderStats.Ok++;
-                                        Log.Info("OK: {0} ({1})", job.CompanyName, job.Address);
-                                        DataAccessLayer.SaveResponse(job, response);
-                                        break;
-                                    case "ZERO_RESULTS":
-                                        Log.Info("ZERO_RESULTS: {0} ({1})", job.CompanyName, job.Address);
-                                        GeocoderStats.ZeroResults++;
-                                        break;
-                                    case "OVER_QUERY_LIMIT":
-                                        Log.Fatal("OVER_QUERY_LIMIT: {0} ({1})", job.CompanyName, job.Address);
-                                        GeocoderStats.OverQueryLimit++;
-                                        break;
-                                    case "REQUEST_DENIED":
-                                        Log.Fatal("REQUEST_DENIED: {0} ({1})", job.CompanyName, job.Address);
-                                        GeocoderStats.RequestDenied++;
-                                        break;
-                                    case "INVALID_REQUEST":
-                                        Log.Fatal("INVALID_REQUEST: {0} ({1})", job.CompanyName, job.Address);
-                                        GeocoderStats.InvalidRequest++;
-                                        break;
-                                    case "UNKNOWN_ERROR":
-                                        Log.Error("UNKNOWN_ERROR: {0} ({1})", job.CompanyName, job.Address);
-                                        GeocoderStats.UnknownError++;
-                                        break;
+                                case "OK":
+                                    GeocoderStats.Ok++;
+                                    Log.Info("OK: {0} ({1})", job.CompanyName, job.Address);
+                                    DataAccessLayer.SaveResponse(job, response);
+                                    break;
+                                case "ZERO_RESULTS":
+                                    Log.Info("ZERO_RESULTS: {0} ({1})", job.CompanyName, job.Address);
+                                    GeocoderStats.ZeroResults++;
+                                    break;
+                                case "OVER_QUERY_LIMIT":
+                                    Log.Fatal("OVER_QUERY_LIMIT: {0} ({1})", job.CompanyName, job.Address);
+                                    GeocoderStats.OverQueryLimit++;
+                                    break;
+                                case "REQUEST_DENIED":
+                                    Log.Fatal("REQUEST_DENIED: {0} ({1})", job.CompanyName, job.Address);
+                                    GeocoderStats.RequestDenied++;
+                                    break;
+                                case "INVALID_REQUEST":
+                                    Log.Fatal("INVALID_REQUEST: {0} ({1})", job.CompanyName, job.Address);
+                                    GeocoderStats.InvalidRequest++;
+                                    break;
+                                case "UNKNOWN_ERROR":
+                                    Log.Error("UNKNOWN_ERROR: {0} ({1})", job.CompanyName, job.Address);
+                                    GeocoderStats.UnknownError++;
+                                    break;
 
-                                    default:
-                                        // This would only happen if Google add new STATUS codes to their
-                                        // api or a typo exists in the above switch statement.
-                                        Log.Fatal("SERVICE_ERROR: {0} ({1})", job.CompanyName, job.Address);
-                                        GeocoderStats.ServiceError++;
-                                        break;
-                                }
+                                default:
+                                    // This would only happen if Google add new STATUS codes to their
+                                    // api or a typo exists in the above switch statement.
+                                    Log.Fatal("SERVICE_ERROR: {0} ({1})", job.CompanyName, job.Address);
+                                    GeocoderStats.ServiceError++;
+                                    break;
                             }
-
                         });
 
                     Log.Info("Finished Geocoding Session: \n\n {0} \n {1} \n", GeocoderQueue.ToJson(), GeocoderStats);
