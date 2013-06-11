@@ -138,6 +138,8 @@ namespace GoogleGeocoderService
 
                     GeocoderQueue = DataAccessLayer.GetOutstanding();
 
+                    Log.Info("Geocoding queue contains {0} locations.", GeocoderQueue.Count());
+
                     GeocoderQueue.AsParallel().WithDegreeOfParallelism(AppConfig.Parallelism).ForAll(job =>
                         {
                             // add a element of jitter to the parrallelism to prevent
