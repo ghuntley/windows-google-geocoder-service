@@ -3548,6 +3548,3840 @@ namespace SourceDb
 				return this.GetTable<WHAT>();
 			}
 		}
+		
+		[Function(Name="dbo.aaPurchJNL")]
+		[return: Parameter(DbType="Int")]
+		public int AaPurchJNL()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AddDebtorsAudit")]
+		[return: Parameter(DbType="Int")]
+		public int AddDebtorsAudit([Parameter(Name="TransType", DbType="TinyInt")] System.Nullable<byte> transType, [Parameter(Name="TransID", DbType="Int")] System.Nullable<int> transID, [Parameter(Name="Amount", DbType="Money")] System.Nullable<decimal> amount, [Parameter(Name="Discount", DbType="Money")] System.Nullable<decimal> discount, [Parameter(Name="Period", DbType="TinyInt")] System.Nullable<byte> period, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), transType, transID, amount, discount, period, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AddNewBankdep")]
+		[return: Parameter(DbType="Int")]
+		public int AddNewBankdep([Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="AccountNum", DbType="VarChar(15)")] string accountNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, accountNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AddNewJournal")]
+		[return: Parameter(DbType="Int")]
+		public int AddNewJournal([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AddNewPurchOrd")]
+		[return: Parameter(DbType="Int")]
+		public int AddNewPurchOrd()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AddStockItem")]
+		[return: Parameter(DbType="Int")]
+		public int AddStockItem([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AdjustDebtorBalances")]
+		[return: Parameter(DbType="Int")]
+		public int AdjustDebtorBalances([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="InvTotal", DbType="Money")] System.Nullable<decimal> invTotal, [Parameter(Name="Period", DbType="TinyInt")] System.Nullable<byte> period)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, ordNum, invTotal, period);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AP_PayFlag")]
+		[return: Parameter(DbType="Int")]
+		public int AP_PayFlag([Parameter(Name="AccountID", DbType="VarChar(12)")] string accountID, [Parameter(Name="ChequeNum", DbType="Int")] System.Nullable<int> chequeNum, [Parameter(Name="Audit", DbType="Int")] System.Nullable<int> audit)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, chequeNum, audit);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AppendJournalDetails")]
+		[return: Parameter(DbType="Int")]
+		public int AppendJournalDetails([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="JournalCode", DbType="VarChar(16)")] string journalCode, [Parameter(Name="NewDate", DbType="DateTime")] System.Nullable<System.DateTime> newDate, [Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="CopyFrom", DbType="VarChar(30)")] string copyFrom)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, journalCode, newDate, month, year, copyFrom);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.ApplyDebtorPayment")]
+		[return: Parameter(DbType="Int")]
+		public int ApplyDebtorPayment([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Amount", DbType="Money")] System.Nullable<decimal> amount, [Parameter(Name="Period", DbType="TinyInt")] System.Nullable<byte> period)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, amount, period);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditDebtorBal")]
+		[ResultType(typeof(AuditDebtorBalResult1))]
+		[ResultType(typeof(AuditDebtorBalResult2))]
+		[ResultType(typeof(AuditDebtorBalResult3))]
+		public IMultipleResults AuditDebtorBal([Parameter(Name="FromAudit", DbType="Int")] System.Nullable<int> fromAudit, [Parameter(Name="ToAudit", DbType="Int")] System.Nullable<int> toAudit, [Parameter(Name="Company", DbType="TinyInt")] System.Nullable<byte> company)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromAudit, toAudit, company);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditDebtorBF")]
+		public ISingleResult<AuditDebtorBFResult> AuditDebtorBF([Parameter(Name="Company", DbType="TinyInt")] System.Nullable<byte> company, [Parameter(Name="Date", DbType="DateTime")] System.Nullable<System.DateTime> date)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), company, date);
+			return ((ISingleResult<AuditDebtorBFResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditDebtorInvoice")]
+		[return: Parameter(DbType="Int")]
+		public int AuditDebtorInvoice([Parameter(Name="InvNum", DbType="Int")] System.Nullable<int> invNum, [Parameter(Name="InvTotal", DbType="Money")] System.Nullable<decimal> invTotal, [Parameter(Name="Period", DbType="TinyInt")] System.Nullable<byte> period, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), invNum, invTotal, period, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditDebtorJnl")]
+		[return: Parameter(DbType="Int")]
+		public int AuditDebtorJnl([Parameter(Name="JnlNum", DbType="Int")] System.Nullable<int> jnlNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), jnlNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditDebtorReceipt")]
+		[return: Parameter(DbType="Int")]
+		public int AuditDebtorReceipt([Parameter(Name="RecNum", DbType="Int")] System.Nullable<int> recNum, [Parameter(Name="Amount", DbType="Money")] System.Nullable<decimal> amount, [Parameter(Name="Discount", DbType="Money")] System.Nullable<decimal> discount, [Parameter(Name="Period", DbType="TinyInt")] System.Nullable<byte> period, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), recNum, amount, discount, period, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditFirstFiscal")]
+		public ISingleResult<AuditFirstFiscalResult> AuditFirstFiscal([Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="Company", DbType="TinyInt")] System.Nullable<byte> company)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), month, year, company);
+			return ((ISingleResult<AuditFirstFiscalResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditFirstFiscal JUL TO JUN")]
+		public ISingleResult<AuditFirstFiscalJULTOJUNResult> AuditFirstFiscalJULTOJUN([Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="Company", DbType="TinyInt")] System.Nullable<byte> company)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), month, year, company);
+			return ((ISingleResult<AuditFirstFiscalJULTOJUNResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditFirstRec")]
+		public ISingleResult<AuditFirstRecResult> AuditFirstRec([Parameter(Name="Hdg", DbType="VarChar(16)")] string hdg, [Parameter(Name="Company", DbType="TinyInt")] System.Nullable<byte> company)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), hdg, company);
+			return ((ISingleResult<AuditFirstRecResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditInvTotals")]
+		[ResultType(typeof(AuditInvTotalsResult1))]
+		[ResultType(typeof(AuditInvTotalsResult2))]
+		public IMultipleResults AuditInvTotals([Parameter(Name="FromAudit", DbType="Int")] System.Nullable<int> fromAudit, [Parameter(Name="ToAudit", DbType="Int")] System.Nullable<int> toAudit)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromAudit, toAudit);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditInvTotalsExport")]
+		[ResultType(typeof(AuditInvTotalsExportResult1))]
+		[ResultType(typeof(AuditInvTotalsExportResult2))]
+		public IMultipleResults AuditInvTotalsExport([Parameter(Name="FromAudit", DbType="Int")] System.Nullable<int> fromAudit, [Parameter(Name="ToAudit", DbType="Int")] System.Nullable<int> toAudit, [Parameter(Name="CurrType", DbType="VarChar(5)")] string currType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromAudit, toAudit, currType);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditLastDebtor")]
+		public ISingleResult<AuditLastDebtorResult> AuditLastDebtor()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<AuditLastDebtorResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.AuditLastRec")]
+		public ISingleResult<AuditLastRecResult> AuditLastRec([Parameter(Name="Hdg", DbType="VarChar(16)")] string hdg, [Parameter(Name="Company", DbType="TinyInt")] System.Nullable<byte> company)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), hdg, company);
+			return ((ISingleResult<AuditLastRecResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Bank_Count_Cheques")]
+		public ISingleResult<Bank_Count_ChequesResult> Bank_Count_Cheques([Parameter(Name="DepositNum", DbType="Int")] System.Nullable<int> depositNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), depositNum);
+			return ((ISingleResult<Bank_Count_ChequesResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Bank_Count_Cheques2")]
+		public ISingleResult<Bank_Count_Cheques2Result> Bank_Count_Cheques2([Parameter(Name="DepositNum", DbType="Int")] System.Nullable<int> depositNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), depositNum);
+			return ((ISingleResult<Bank_Count_Cheques2Result>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.BANK_CreditorsTempDelete")]
+		[return: Parameter(DbType="Int")]
+		public int BANK_CreditorsTempDelete([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.BANK_CreditorsTempFill")]
+		[return: Parameter(DbType="Int")]
+		public int BANK_CreditorsTempFill([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="BankGL", DbType="VarChar(16)")] string bankGL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, bankGL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.BANK_DebtorDepositCards")]
+		public ISingleResult<BANK_DebtorDepositCardsResult> BANK_DebtorDepositCards([Parameter(Name="Deposit", DbType="Int")] System.Nullable<int> deposit, [Parameter(Name="COmpanyNum", DbType="Int")] System.Nullable<int> cOmpanyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), deposit, cOmpanyNum);
+			return ((ISingleResult<BANK_DebtorDepositCardsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.BANK_DebtorDepositCash")]
+		public ISingleResult<BANK_DebtorDepositCashResult> BANK_DebtorDepositCash([Parameter(Name="Deposit", DbType="Int")] System.Nullable<int> deposit, [Parameter(Name="COmpanyNum", DbType="Int")] System.Nullable<int> cOmpanyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), deposit, cOmpanyNum);
+			return ((ISingleResult<BANK_DebtorDepositCashResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.BANK_DebtorDepositCheques")]
+		public ISingleResult<BANK_DebtorDepositChequesResult> BANK_DebtorDepositCheques([Parameter(Name="Deposit", DbType="Int")] System.Nullable<int> deposit, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), deposit, companyNum);
+			return ((ISingleResult<BANK_DebtorDepositChequesResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.BANK_GLsetDebitCredit")]
+		[return: Parameter(DbType="Int")]
+		public int BANK_GLsetDebitCredit([Parameter(Name="Audit", DbType="Int")] System.Nullable<int> audit, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="BankRec", DbType="Int")] System.Nullable<int> bankRec)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), audit, companyNum, bankRec);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.BANK_RecSetBankDeposit")]
+		[return: Parameter(DbType="Int")]
+		public int BANK_RecSetBankDeposit([Parameter(Name="DepositNum", DbType="Int")] System.Nullable<int> depositNum, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="BankRec", DbType="Int")] System.Nullable<int> bankRec)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), depositNum, companyNum, bankRec);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.BANK_RecSetDebtorsReceipts")]
+		[return: Parameter(DbType="Int")]
+		public int BANK_RecSetDebtorsReceipts([Parameter(Name="Audit", DbType="Int")] System.Nullable<int> audit, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="BankRec", DbType="Int")] System.Nullable<int> bankRec)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), audit, companyNum, bankRec);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.BANK_RecSetPurchasesJnl")]
+		[return: Parameter(DbType="Int")]
+		public int BANK_RecSetPurchasesJnl([Parameter(Name="Audit", DbType="Int")] System.Nullable<int> audit, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="BankRec", DbType="Int")] System.Nullable<int> bankRec)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), audit, companyNum, bankRec);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Calc_Gl_AccountTotal")]
+		public ISingleResult<Calc_Gl_AccountTotalResult> Calc_Gl_AccountTotal([Parameter(Name="TempAccount", DbType="VarChar(12)")] string tempAccount, [Parameter(Name="TempMonth", DbType="Int")] System.Nullable<int> tempMonth, [Parameter(Name="JournalCode", DbType="VarChar(16)")] string journalCode, [Parameter(Name="CompNum", DbType="Int")] System.Nullable<int> compNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tempAccount, tempMonth, journalCode, compNum);
+			return ((ISingleResult<Calc_Gl_AccountTotalResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.ChequeAmtWriter")]
+		public ISingleResult<ChequeAmtWriterResult> ChequeAmtWriter([Parameter(Name="Val", DbType="Decimal(12,2)")] System.Nullable<decimal> val)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), val);
+			return ((ISingleResult<ChequeAmtWriterResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.ClearAllPrintFlags")]
+		[return: Parameter(DbType="Int")]
+		public int ClearAllPrintFlags()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.ClearHoldStatus")]
+		[return: Parameter(DbType="Int")]
+		public int ClearHoldStatus([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_CreateContract")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_CreateContract([Parameter(Name="OldAccountID", DbType="Int")] System.Nullable<int> oldAccountID, [Parameter(Name="NewAccountID", DbType="Int")] System.Nullable<int> newAccountID, [Parameter(Name="NewCompanyNum", DbType="TinyInt")] System.Nullable<byte> newCompanyNum, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), oldAccountID, newAccountID, newCompanyNum, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_CreateDebtor")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_CreateDebtor([Parameter(Name="OldParentAccountID", DbType="Int")] System.Nullable<int> oldParentAccountID, [Parameter(Name="NewCompanyNum", DbType="TinyInt")] System.Nullable<byte> newCompanyNum, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), oldParentAccountID, newCompanyNum, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_CreateMergeContractHeaders")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_CreateMergeContractHeaders([Parameter(Name="OldChildAccountID", DbType="Int")] System.Nullable<int> oldChildAccountID, [Parameter(Name="NewParentAccountID", DbType="Int")] System.Nullable<int> newParentAccountID, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), oldChildAccountID, newParentAccountID, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_DebtorIsMerged")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_DebtorIsMerged([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_GetNewAccountID")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_GetNewAccountID([Parameter(Name="OldAccountID", DbType="Int")] System.Nullable<int> oldAccountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), oldAccountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_GetOldAccountID")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_GetOldAccountID([Parameter(Name="NewAccountID", DbType="Int")] System.Nullable<int> newAccountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newAccountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_GetOldContractID")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_GetOldContractID([Parameter(Name="NewContractID", DbType="Int")] System.Nullable<int> newContractID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newContractID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_GetOldContractStartDate")]
+		public ISingleResult<CompanyMerge_GetOldContractStartDateResult> CompanyMerge_GetOldContractStartDate([Parameter(Name="NewContractID", DbType="Int")] System.Nullable<int> newContractID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newContractID);
+			return ((ISingleResult<CompanyMerge_GetOldContractStartDateResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_MergeContracts")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_MergeContracts([Parameter(Name="OldChildAccountID", DbType="Int")] System.Nullable<int> oldChildAccountID, [Parameter(Name="NewChildAccountID", DbType="Int")] System.Nullable<int> newChildAccountID, [Parameter(Name="NewParentAccountID", DbType="Int")] System.Nullable<int> newParentAccountID, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), oldChildAccountID, newChildAccountID, newParentAccountID, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_MergeDebtors")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_MergeDebtors([Parameter(Name="OldAccountID", DbType="Int")] System.Nullable<int> oldAccountID, [Parameter(Name="NewAccountID", DbType="Int")] System.Nullable<int> newAccountID, [Parameter(Name="NewCompanyNum", DbType="SmallInt")] System.Nullable<short> newCompanyNum, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), oldAccountID, newAccountID, newCompanyNum, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_MergeExecute")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_MergeExecute([Parameter(Name="OldAccountID", DbType="Int")] System.Nullable<int> oldAccountID, [Parameter(Name="NewAccountID", DbType="Int")] System.Nullable<int> newAccountID, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), oldAccountID, newAccountID, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_MoveExecute")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_MoveExecute([Parameter(Name="OldAccountID", DbType="Int")] System.Nullable<int> oldAccountID, [Parameter(Name="NewCompanyNum", DbType="TinyInt")] System.Nullable<byte> newCompanyNum, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), oldAccountID, newCompanyNum, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_TempMerge")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_TempMerge([Parameter(Name="AccountIDFrom", DbType="Int")] System.Nullable<int> accountIDFrom, [Parameter(Name="AccountIDTo", DbType="Int")] System.Nullable<int> accountIDTo, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountIDFrom, accountIDTo, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_TempMergeRemove")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_TempMergeRemove([Parameter(Name="AccountIDFrom", DbType="Int")] System.Nullable<int> accountIDFrom, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountIDFrom, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_TempMergeRemoveAll")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_TempMergeRemoveAll([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyMerge_TempMergeReset")]
+		[return: Parameter(DbType="Int")]
+		public int CompanyMerge_TempMergeReset([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CompanyRepPrep")]
+		public ISingleResult<CompanyRepPrepResult> CompanyRepPrep([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum);
+			return ((ISingleResult<CompanyRepPrepResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CourierNextConNote")]
+		[return: Parameter(DbType="Int")]
+		public int CourierNextConNote([Parameter(Name="CourierID", DbType="Int")] System.Nullable<int> courierID, [Parameter(Name="ConNote", DbType="VarChar(30)")] ref string conNote)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), courierID, conNote);
+			conNote = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CREDITOR_ABN_EXISTS")]
+		[return: Parameter(DbType="Int")]
+		public int CREDITOR_ABN_EXISTS([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="ABN", DbType="VarChar(15)")] string aBN, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, aBN, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditor_AuditLast")]
+		public ISingleResult<Creditor_AuditLastResult> Creditor_AuditLast()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Creditor_AuditLastResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorContactFromID")]
+		public ISingleResult<CreditorContactFromIDResult> CreditorContactFromID([Parameter(Name="ContactID", DbType="Int")] System.Nullable<int> contactID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), contactID);
+			return ((ISingleResult<CreditorContactFromIDResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorContacts")]
+		public ISingleResult<CreditorContactsResult> CreditorContacts([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((ISingleResult<CreditorContactsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorExists")]
+		[return: Parameter(DbType="Int")]
+		public int CreditorExists([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorInfo")]
+		public ISingleResult<CreditorInfoResult> CreditorInfo([Parameter(Name="SupplierCode", DbType="VarChar(12)")] string supplierCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), supplierCode);
+			return ((ISingleResult<CreditorInfoResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorJnl")]
+		[return: Parameter(DbType="Int")]
+		public int CreditorJnl([Parameter(Name="AccID", DbType="VarChar(12)")] string accID, [Parameter(Name="JnlCurrent", DbType="Money")] System.Nullable<decimal> jnlCurrent, [Parameter(Name="Jnl30Days", DbType="Money")] System.Nullable<decimal> jnl30Days, [Parameter(Name="Jnl60Days", DbType="Money")] System.Nullable<decimal> jnl60Days, [Parameter(Name="Jnl90Days", DbType="Money")] System.Nullable<decimal> jnl90Days, [Parameter(Name="Temp", DbType="Money")] System.Nullable<decimal> temp)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accID, jnlCurrent, jnl30Days, jnl60Days, jnl90Days, temp);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorJnl_Sundries")]
+		[return: Parameter(DbType="Int")]
+		public int CreditorJnl_Sundries([Parameter(Name="AccID", DbType="VarChar(12)")] string accID, [Parameter(Name="JnlCurrent", DbType="Money")] System.Nullable<decimal> jnlCurrent, [Parameter(Name="Jnl30Days", DbType="Money")] System.Nullable<decimal> jnl30Days, [Parameter(Name="Jnl60Days", DbType="Money")] System.Nullable<decimal> jnl60Days, [Parameter(Name="Jnl90Days", DbType="Money")] System.Nullable<decimal> jnl90Days)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accID, jnlCurrent, jnl30Days, jnl60Days, jnl90Days);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorJournal")]
+		public ISingleResult<CreditorJournalResult> CreditorJournal([Parameter(Name="Creditor", DbType="Int")] System.Nullable<int> creditor, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month, [Parameter(Name="Year", DbType="SmallInt")] System.Nullable<short> year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), creditor, month, year);
+			return ((ISingleResult<CreditorJournalResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorJournal_DUMMY")]
+		public ISingleResult<CreditorJournal_DUMMYResult> CreditorJournal_DUMMY()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<CreditorJournal_DUMMYResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorName")]
+		[return: Parameter(DbType="Int")]
+		public int CreditorName([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="NameOUT", DbType="VarChar(512)")] ref string nameOUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, nameOUT);
+			nameOUT = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorOfCompany")]
+		[return: Parameter(DbType="Int")]
+		public int CreditorOfCompany([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="CompanyNumOUT", DbType="TinyInt")] ref System.Nullable<byte> companyNumOUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, companyNumOUT);
+			companyNumOUT = ((System.Nullable<byte>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorPOCount")]
+		[return: Parameter(DbType="Int")]
+		public int CreditorPOCount([Parameter(Name="Supplier", DbType="Int")] System.Nullable<int> supplier, [Parameter(Name="SpecialOrders", DbType="Bit")] System.Nullable<bool> specialOrders)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), supplier, specialOrders);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorPurchases")]
+		public ISingleResult<CreditorPurchasesResult> CreditorPurchases([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, month, year);
+			return ((ISingleResult<CreditorPurchasesResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CREDITORS_BackupJnlDissection")]
+		[return: Parameter(DbType="Int")]
+		public int CREDITORS_BackupJnlDissection([Parameter(Name="Audit", DbType="Int")] System.Nullable<int> audit, [Parameter(Name="BKP_KEY", DbType="UniqueIdentifier")] ref System.Nullable<System.Guid> bKP_KEY)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), audit, bKP_KEY);
+			bKP_KEY = ((System.Nullable<System.Guid>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_Balances")]
+		public ISingleResult<Creditors_BalancesResult> Creditors_Balances([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month, [Parameter(Name="Year", DbType="SmallInt")] System.Nullable<short> year, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, month, year, companyNum);
+			return ((ISingleResult<Creditors_BalancesResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_CheckABN")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_CheckABN([Parameter(Name="ABN", DbType="VarChar(15)")] string aBN)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), aBN);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_CheckInvDupe")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_CheckInvDupe([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="InvNum", DbType="VarChar(16)")] string invNum, [Parameter(Name="Audit", DbType="Int")] System.Nullable<int> audit)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, invNum, audit);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_CheqNumberUnique")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_CheqNumberUnique([Parameter(Name="ChequeNum", DbType="Int")] System.Nullable<int> chequeNum, [Parameter(Name="BankAccGL", DbType="VarChar(16)")] string bankAccGL, [Parameter(Name="Co", DbType="Int")] System.Nullable<int> co)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), chequeNum, bankAccGL, co);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_ContactFromID")]
+		public ISingleResult<Creditors_ContactFromIDResult> Creditors_ContactFromID([Parameter(Name="ContactID", DbType="Int")] System.Nullable<int> contactID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), contactID);
+			return ((ISingleResult<Creditors_ContactFromIDResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_CurrentPeriod")]
+		public ISingleResult<Creditors_CurrentPeriodResult> Creditors_CurrentPeriod([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum);
+			return ((ISingleResult<Creditors_CurrentPeriodResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CREDITORS_DiscardJnlDissectionBKP")]
+		[return: Parameter(DbType="Int")]
+		public int CREDITORS_DiscardJnlDissectionBKP([Parameter(Name="BKP_KEY", DbType="UniqueIdentifier")] System.Nullable<System.Guid> bKP_KEY)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), bKP_KEY);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_EOMRec")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_EOMRec([Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="Co", DbType="TinyInt")] System.Nullable<byte> co)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year, month, co);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_EOMRollover")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_EOMRollover([Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="Co", DbType="Int")] System.Nullable<int> co)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year, month, co);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_GetBankDetails")]
+		public ISingleResult<Creditors_GetBankDetailsResult> Creditors_GetBankDetails([Parameter(Name="Creditor", DbType="Int")] System.Nullable<int> creditor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), creditor);
+			return ((ISingleResult<Creditors_GetBankDetailsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_GetLastAudit")]
+		public ISingleResult<Creditors_GetLastAuditResult> Creditors_GetLastAudit([Parameter(Name="JnlKey", DbType="Int")] System.Nullable<int> jnlKey)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), jnlKey);
+			return ((ISingleResult<Creditors_GetLastAuditResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_GetLastCreditor")]
+		public ISingleResult<Creditors_GetLastCreditorResult> Creditors_GetLastCreditor()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Creditors_GetLastCreditorResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_GetStats")]
+		public ISingleResult<Creditors_GetStatsResult> Creditors_GetStats([Parameter(Name="DueDate", DbType="DateTime")] System.Nullable<System.DateTime> dueDate, [Parameter(Name="Type", DbType="TinyInt")] System.Nullable<byte> type, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dueDate, type, companyNum);
+			return ((ISingleResult<Creditors_GetStatsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_HoldPayment")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_HoldPayment([Parameter(Name="Audit", DbType="Int")] System.Nullable<int> audit)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), audit);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_IsAccpacVendor")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_IsAccpacVendor([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="IsAccpacVendor", DbType="Bit")] ref System.Nullable<bool> isAccpacVendor)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, isAccpacVendor);
+			isAccpacVendor = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_IsInActive")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_IsInActive([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="IsInActive", DbType="Bit")] ref System.Nullable<bool> isInActive)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, isInActive);
+			isInActive = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_IsThirdParty")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_IsThirdParty([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="IsThirdParty", DbType="Bit")] ref System.Nullable<bool> isThirdParty)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, isThirdParty);
+			isThirdParty = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_MakeNewAccount")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_MakeNewAccount()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_PayFlag")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_PayFlag([Parameter(Name="AccountID", DbType="VarChar(12)")] string accountID, [Parameter(Name="ChequeNum", DbType="Int")] System.Nullable<int> chequeNum, [Parameter(Name="Audit", DbType="Int")] System.Nullable<int> audit)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, chequeNum, audit);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_PostCreditNotes")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_PostCreditNotes([Parameter(Name="JnlKey", DbType="Int")] System.Nullable<int> jnlKey, [Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="CreditNum", DbType="VarChar(16)")] string creditNum, [Parameter(Name="Credit", DbType="Decimal(11,2)")] System.Nullable<decimal> credit, [Parameter(Name="Invoices", DbType="VarChar(16)")] string invoices, [Parameter(Name="Allocate", DbType="Decimal(11,2)")] System.Nullable<decimal> allocate, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), jnlKey, accountID, creditNum, credit, invoices, allocate, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_PostEftPaymentsDetail")]
+		public ISingleResult<Creditors_PostEftPaymentsDetailResult> Creditors_PostEftPaymentsDetail([Parameter(Name="BatchNum", DbType="Int")] System.Nullable<int> batchNum, [Parameter(Name="BankGlNum", DbType="VarChar(16)")] string bankGlNum, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), batchNum, bankGlNum, companyNum);
+			return ((ISingleResult<Creditors_PostEftPaymentsDetailResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_PostEftPaymentsDetailFooter")]
+		public ISingleResult<Creditors_PostEftPaymentsDetailFooterResult> Creditors_PostEftPaymentsDetailFooter([Parameter(Name="BatchNum", DbType="Int")] System.Nullable<int> batchNum, [Parameter(Name="BankGlNum", DbType="VarChar(16)")] string bankGlNum, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), batchNum, bankGlNum, companyNum);
+			return ((ISingleResult<Creditors_PostEftPaymentsDetailFooterResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_PostEftPaymentsFooter")]
+		public ISingleResult<Creditors_PostEftPaymentsFooterResult> Creditors_PostEftPaymentsFooter([Parameter(Name="BatchNum", DbType="Int")] System.Nullable<int> batchNum, [Parameter(Name="BankGlNum", DbType="VarChar(15)")] string bankGlNum, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), batchNum, bankGlNum, companyNum);
+			return ((ISingleResult<Creditors_PostEftPaymentsFooterResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_PostEftPaymentsHeader")]
+		public ISingleResult<Creditors_PostEftPaymentsHeaderResult> Creditors_PostEftPaymentsHeader([Parameter(Name="BatchNum", DbType="Int")] System.Nullable<int> batchNum, [Parameter(Name="BankGlNum", DbType="VarChar(16)")] string bankGlNum, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), batchNum, bankGlNum, companyNum);
+			return ((ISingleResult<Creditors_PostEftPaymentsHeaderResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_PostInvoice")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_PostInvoice([Parameter(Name="JnlKey", DbType="Int")] System.Nullable<int> jnlKey, [Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="InvNum", DbType="VarChar(16)")] string invNum, [Parameter(Name="Amount", DbType="Decimal(11,2)")] System.Nullable<decimal> amount, [Parameter(Name="Desc", DbType="VarChar(32)")] string desc, [Parameter(Name="InvDate", DbType="DateTime")] System.Nullable<System.DateTime> invDate, [Parameter(Name="JnlDate", DbType="DateTime")] System.Nullable<System.DateTime> jnlDate, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="Audit_OUT", DbType="Int")] ref System.Nullable<int> audit_OUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), jnlKey, accountID, invNum, amount, desc, invDate, jnlDate, year, month, companyNum, audit_OUT);
+			audit_OUT = ((System.Nullable<int>)(result.GetParameterValue(10)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_PostPayment_Manual")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_PostPayment_Manual([Parameter(Name="CredID", DbType="VarChar(12)")] string credID, [Parameter(Name="ChequeNum", DbType="Int")] System.Nullable<int> chequeNum, [Parameter(Name="BankAccGL", DbType="VarChar(16)")] string bankAccGL, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), credID, chequeNum, bankAccGL, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_PostPayments")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_PostPayments([Parameter(Name="ChequeNum", DbType="Int")] System.Nullable<int> chequeNum, [Parameter(Name="Type", DbType="TinyInt")] System.Nullable<byte> type, [Parameter(Name="BankAccGL", DbType="VarChar(16)")] string bankAccGL, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="BatchNum", DbType="Int")] System.Nullable<int> batchNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), chequeNum, type, bankAccGL, companyNum, batchNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CREDITORS_RestoreJnlDissection")]
+		[return: Parameter(DbType="Int")]
+		public int CREDITORS_RestoreJnlDissection([Parameter(Name="Audit", DbType="Int")] System.Nullable<int> audit, [Parameter(Name="BKP_KEY", DbType="UniqueIdentifier")] System.Nullable<System.Guid> bKP_KEY)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), audit, bKP_KEY);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_SetPayments")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_SetPayments([Parameter(Name="DueDate", DbType="DateTime")] System.Nullable<System.DateTime> dueDate, [Parameter(Name="Type", DbType="TinyInt")] System.Nullable<byte> type, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dueDate, type, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Creditors_Upd_Balances")]
+		[return: Parameter(DbType="Int")]
+		public int Creditors_Upd_Balances([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Amount", DbType="Decimal(11,2)")] System.Nullable<decimal> amount, [Parameter(Name="Period", DbType="TinyInt")] System.Nullable<byte> period, [Parameter(DbType="TinyInt")] System.Nullable<byte> isPayment)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, amount, period, isPayment);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CreditorsTransBal")]
+		public ISingleResult<CreditorsTransBalResult> CreditorsTransBal([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((ISingleResult<CreditorsTransBalResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CTRAC_CheckBSGDeliveryStatus")]
+		public ISingleResult<CTRAC_CheckBSGDeliveryStatusResult> CTRAC_CheckBSGDeliveryStatus([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((ISingleResult<CTRAC_CheckBSGDeliveryStatusResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CTRAC_GetSalesRep")]
+		[return: Parameter(DbType="Int")]
+		public int CTRAC_GetSalesRep([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="ContractID", DbType="Int")] System.Nullable<int> contractID, [Parameter(Name="SalesRep", DbType="VarChar(25)")] ref string salesRep)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, contractID, salesRep);
+			salesRep = ((string)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CTRAC_ITEM_IMPORT_CreateImport")]
+		[return: Parameter(DbType="Int")]
+		public int CTRAC_ITEM_IMPORT_CreateImport([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID, [Parameter(Name="Import", DbType="Int")] ref System.Nullable<int> import)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID, import);
+			import = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CTRAC_ITEM_IMPORT_HasErrors")]
+		[return: Parameter(DbType="Int")]
+		public int CTRAC_ITEM_IMPORT_HasErrors([Parameter(Name="Import", DbType="Int")] System.Nullable<int> import, [Parameter(Name="HasErrors", DbType="Bit")] ref System.Nullable<bool> hasErrors)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), import, hasErrors);
+			hasErrors = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CTRAC_ITEM_IMPORT_HasWarnings")]
+		[return: Parameter(DbType="Int")]
+		public int CTRAC_ITEM_IMPORT_HasWarnings([Parameter(Name="Import", DbType="Int")] System.Nullable<int> import, [Parameter(Name="HasWarnings", DbType="Bit")] ref System.Nullable<bool> hasWarnings)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), import, hasWarnings);
+			hasWarnings = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CTRAC_ITEM_IMPORT_Insert")]
+		[return: Parameter(DbType="Int")]
+		public int CTRAC_ITEM_IMPORT_Insert(
+					[Parameter(Name="Import", DbType="Int")] System.Nullable<int> import, 
+					[Parameter(Name="LineNumber", DbType="Int")] System.Nullable<int> lineNumber, 
+					[Parameter(Name="LastChangeType", DbType="VarChar(80)")] string lastChangeType, 
+					[Parameter(Name="ContractID", DbType="Int")] System.Nullable<int> contractID, 
+					[Parameter(Name="BSGAligned", DbType="VarChar(5)")] string bSGAligned, 
+					[Parameter(Name="DisplayCode", DbType="VarChar(35)")] string displayCode, 
+					[Parameter(Name="SerialNo", DbType="VarChar(64)")] string serialNo, 
+					[Parameter(Name="DeviceName", DbType="VarChar(40)")] string deviceName, 
+					[Parameter(Name="Quantity", DbType="SmallInt")] System.Nullable<short> quantity, 
+					[Parameter(Name="StartDate", DbType="DateTime")] System.Nullable<System.DateTime> startDate, 
+					[Parameter(Name="EndDate", DbType="DateTime")] System.Nullable<System.DateTime> endDate, 
+					[Parameter(Name="ClaimableCommission", DbType="VarChar(5)")] string claimableCommission, 
+					[Parameter(Name="ServiceID", DbType="VarChar(32)")] string serviceID, 
+					[Parameter(Name="Price", DbType="Money")] System.Nullable<decimal> price, 
+					[Parameter(Name="OtherPrice", DbType="Money")] System.Nullable<decimal> otherPrice, 
+					[Parameter(Name="Engineer", DbType="VarChar(25)")] string engineer, 
+					[Parameter(Name="ServiceLevel", DbType="VarChar(12)")] string serviceLevel, 
+					[Parameter(Name="ResponseTime", DbType="VarChar(32)")] string responseTime, 
+					[Parameter(Name="3PSpecialConsiderations", DbType="VarChar(300)")] string _3PSpecialConsiderations, 
+					[Parameter(Name="CoverageLimits", DbType="VarChar(32)")] string coverageLimits, 
+					[Parameter(Name="LeadSalesRep", DbType="VarChar(25)")] string leadSalesRep, 
+					[Parameter(Name="SalesRep", DbType="VarChar(25)")] string salesRep, 
+					[Parameter(Name="TPPercent", DbType="Decimal(6,2)")] System.Nullable<decimal> tPPercent, 
+					[Parameter(Name="ExpiryDate", DbType="DateTime")] System.Nullable<System.DateTime> expiryDate, 
+					[Parameter(Name="CustCode", DbType="VarChar(50)")] string custCode, 
+					[Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, 
+					[Parameter(Name="ConsignmentStock", DbType="VarChar(5)")] string consignmentStock, 
+					[Parameter(Name="SpaID", DbType="Int")] System.Nullable<int> spaID, 
+					[Parameter(Name="LastBSGDeliveryStatus", DbType="VarChar(50)")] string lastBSGDeliveryStatus, 
+					[Parameter(Name="SarID", DbType="VarChar(20)")] string sarID, 
+					[Parameter(Name="PartsShareLocation", DbType="VarChar(50)")] string partsShareLocation)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), import, lineNumber, lastChangeType, contractID, bSGAligned, displayCode, serialNo, deviceName, quantity, startDate, endDate, claimableCommission, serviceID, price, otherPrice, engineer, serviceLevel, responseTime, _3PSpecialConsiderations, coverageLimits, leadSalesRep, salesRep, tPPercent, expiryDate, custCode, accountID, consignmentStock, spaID, lastBSGDeliveryStatus, sarID, partsShareLocation);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.CTRAC_ResetLastChangetype")]
+		[return: Parameter(DbType="Int")]
+		public int CTRAC_ResetLastChangetype([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DateNumbers")]
+		public ISingleResult<DateNumbersResult> DateNumbers([Parameter(Name="Period", DbType="VarChar(20)")] string period)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), period);
+			return ((ISingleResult<DateNumbersResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DB_AgeDebtorReceipts")]
+		[return: Parameter(DbType="Int")]
+		public int DB_AgeDebtorReceipts([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Amount", DbType="Decimal(11,2)")] System.Nullable<decimal> amount, [Parameter(Name="Discount", DbType="Decimal(9,2)")] System.Nullable<decimal> discount, [Parameter(Name="OverpayContribution", DbType="Decimal(9,2)")] System.Nullable<decimal> overpayContribution)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, amount, discount, overpayContribution);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DB_AuditFirstRec")]
+		public ISingleResult<DB_AuditFirstRecResult> DB_AuditFirstRec([Parameter(Name="Hdg", DbType="VarChar(16)")] string hdg, [Parameter(Name="Company", DbType="TinyInt")] System.Nullable<byte> company)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), hdg, company);
+			return ((ISingleResult<DB_AuditFirstRecResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DB_AuditLastRec")]
+		public ISingleResult<DB_AuditLastRecResult> DB_AuditLastRec([Parameter(Name="Hdg", DbType="VarChar(16)")] string hdg, [Parameter(Name="Company", DbType="TinyInt")] System.Nullable<byte> company, [Parameter(Name="Currency", DbType="VarChar(5)")] string currency)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), hdg, company, currency);
+			return ((ISingleResult<DB_AuditLastRecResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DB_EOM_GetTrialBalanceTotals")]
+		public ISingleResult<DB_EOM_GetTrialBalanceTotalsResult> DB_EOM_GetTrialBalanceTotals([Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="International", DbType="Bit")] System.Nullable<bool> international)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), month, year, international);
+			return ((ISingleResult<DB_EOM_GetTrialBalanceTotalsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DB_FlagInvoicePrinted")]
+		[return: Parameter(DbType="Int")]
+		public int DB_FlagInvoicePrinted([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DB_FlagUncosted")]
+		[return: Parameter(DbType="Int")]
+		public int DB_FlagUncosted()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DB_GetNextInvoice")]
+		public ISingleResult<DB_GetNextInvoiceResult> DB_GetNextInvoice()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<DB_GetNextInvoiceResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DB_SetConsignment")]
+		[return: Parameter(DbType="Int")]
+		public int DB_SetConsignment([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Courier", DbType="VarChar(25)")] string courier, [Parameter(Name="ConNum", DbType="VarChar(20)")] string conNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, courier, conNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Debtor_Contacts")]
+		public ISingleResult<Debtor_ContactsResult> Debtor_Contacts([Parameter(Name="AccountID", DbType="VarChar(9)")] string accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((ISingleResult<Debtor_ContactsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTOR_Info")]
+		public ISingleResult<DEBTOR_InfoResult> DEBTOR_Info([Parameter(Name="ACCOUNTID", DbType="Int")] System.Nullable<int> aCCOUNTID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), aCCOUNTID);
+			return ((ISingleResult<DEBTOR_InfoResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorAgreementCount")]
+		[return: Parameter(DbType="Int")]
+		public int DebtorAgreementCount([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorBalances")]
+		public ISingleResult<DebtorBalancesResult> DebtorBalances([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month, [Parameter(Name="Year", DbType="SmallInt")] System.Nullable<short> year, [Parameter(Name="TransFilter", DbType="TinyInt")] System.Nullable<byte> transFilter)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, month, year, transFilter);
+			return ((ISingleResult<DebtorBalancesResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorExists")]
+		[return: Parameter(DbType="Int")]
+		public int DebtorExists([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorFromSalesOrd")]
+		[return: Parameter(DbType="Int")]
+		public int DebtorFromSalesOrd([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Account_OUT", DbType="Int")] ref System.Nullable<int> account_OUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, account_OUT);
+			account_OUT = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorName")]
+		[return: Parameter(DbType="Int")]
+		public int DebtorName([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="CompanyNameOut", DbType="VarChar(50)")] ref string companyNameOut)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, companyNameOut);
+			companyNameOut = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorOfCompany")]
+		[return: Parameter(DbType="Int")]
+		public int DebtorOfCompany([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="CompanyNumOUT", DbType="TinyInt")] ref System.Nullable<byte> companyNumOUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, companyNumOUT);
+			companyNumOUT = ((System.Nullable<byte>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorParent")]
+		[return: Parameter(DbType="Int")]
+		public int DebtorParent([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="AccountOut", DbType="Int")] ref System.Nullable<int> accountOut)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, accountOut);
+			accountOut = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_3P_AGREEMENTS_CheckForDuplicateSarIDs")]
+		[ResultType(typeof(DEBTORS_3P_AGREEMENTS_CheckForDuplicateSarIDsResult1))]
+		[ResultType(typeof(DEBTORS_3P_AGREEMENTS_CheckForDuplicateSarIDsResult2))]
+		public IMultipleResults DEBTORS_3P_AGREEMENTS_CheckForDuplicateSarIDs([Parameter(Name="AgreementID", DbType="Int")] System.Nullable<int> agreementID, [Parameter(Name="SarID", DbType="VarChar(35)")] string sarID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agreementID, sarID);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_3P_AGREEMENTS_GetAgreementGLCodeTotal")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_3P_AGREEMENTS_GetAgreementGLCodeTotal([Parameter(Name="AgreementID", DbType="Int")] System.Nullable<int> agreementID, [Parameter(Name="ContractItemID", DbType="Int")] System.Nullable<int> contractItemID, [Parameter(Name="AgreementGLCodeTotal", DbType="Money")] ref System.Nullable<decimal> agreementGLCodeTotal)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agreementID, contractItemID, agreementGLCodeTotal);
+			agreementGLCodeTotal = ((System.Nullable<decimal>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_3P_AGREEMENTS_GetAgreementTotal")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_3P_AGREEMENTS_GetAgreementTotal([Parameter(Name="AgreementID", DbType="Int")] System.Nullable<int> agreementID, [Parameter(Name="AgreementTotal", DbType="Money")] ref System.Nullable<decimal> agreementTotal)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agreementID, agreementTotal);
+			agreementTotal = ((System.Nullable<decimal>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_3P_AGREEMENTS_GetBillingFrequency")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_3P_AGREEMENTS_GetBillingFrequency([Parameter(Name="AgreementID", DbType="Int")] System.Nullable<int> agreementID, [Parameter(Name="BillingFrequency", DbType="Int")] ref System.Nullable<int> billingFrequency)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agreementID, billingFrequency);
+			billingFrequency = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_3P_AGREEMENTS_GetDeviceGLCode")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_3P_AGREEMENTS_GetDeviceGLCode([Parameter(Name="ContractItemID", DbType="Int")] System.Nullable<int> contractItemID, [Parameter(Name="3PDeviceGLCode", DbType="VarChar(16)")] ref string _3PDeviceGLCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), contractItemID, _3PDeviceGLCode);
+			_3PDeviceGLCode = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_3P_AGREEMENTS_GetInvoiceEndDate")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_3P_AGREEMENTS_GetInvoiceEndDate([Parameter(Name="AgreementID", DbType="Int")] System.Nullable<int> agreementID, [Parameter(Name="InvoiceEndDate", DbType="DateTime")] ref System.Nullable<System.DateTime> invoiceEndDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agreementID, invoiceEndDate);
+			invoiceEndDate = ((System.Nullable<System.DateTime>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_3P_AGREEMENTS_GetInvoiceStartDate")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_3P_AGREEMENTS_GetInvoiceStartDate([Parameter(Name="AgreementID", DbType="Int")] System.Nullable<int> agreementID, [Parameter(Name="InvoiceStartDate", DbType="DateTime")] ref System.Nullable<System.DateTime> invoiceStartDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agreementID, invoiceStartDate);
+			invoiceStartDate = ((System.Nullable<System.DateTime>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_3P_AGREEMENTS_UpdateDevice3PInvoiceEndDate")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_3P_AGREEMENTS_UpdateDevice3PInvoiceEndDate([Parameter(Name="AgreementID", DbType="Int")] System.Nullable<int> agreementID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agreementID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_3P_AGREEMENTS_UpdateDevice3PInvoiceStartDate")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_3P_AGREEMENTS_UpdateDevice3PInvoiceStartDate([Parameter(Name="AgreementID", DbType="Int")] System.Nullable<int> agreementID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), agreementID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Debtors_BalanceAtAudit")]
+		[return: Parameter(DbType="Int")]
+		public int Debtors_BalanceAtAudit([Parameter(Name="AuditTo", DbType="Int")] System.Nullable<int> auditTo, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="Balance_OUT", DbType="Decimal(18,2)")] ref System.Nullable<decimal> balance_OUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), auditTo, companyNum, balance_OUT);
+			balance_OUT = ((System.Nullable<decimal>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_CancelAccountInsertion")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_CancelAccountInsertion([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Debtors_CurrentPeriod")]
+		public ISingleResult<Debtors_CurrentPeriodResult> Debtors_CurrentPeriod([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum);
+			return ((ISingleResult<Debtors_CurrentPeriodResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Debtors_EOMRec")]
+		[return: Parameter(DbType="Int")]
+		public int Debtors_EOMRec([Parameter(Name="FromAudit", DbType="Int")] System.Nullable<int> fromAudit, [Parameter(Name="ToAudit", DbType="Int")] System.Nullable<int> toAudit, [Parameter(Name="CoNum", DbType="TinyInt")] System.Nullable<byte> coNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromAudit, toAudit, coNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Debtors_GetNew")]
+		public ISingleResult<Debtors_GetNewResult> Debtors_GetNew([Parameter(Name="UserID", DbType="VarChar(25)")] string userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((ISingleResult<Debtors_GetNewResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_LOCATION_IMPORT_CreateImport")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_LOCATION_IMPORT_CreateImport([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID, [Parameter(Name="Import", DbType="Int")] ref System.Nullable<int> import)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID, import);
+			import = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_LOCATION_IMPORT_HasErrors")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_LOCATION_IMPORT_HasErrors([Parameter(Name="Import", DbType="Int")] System.Nullable<int> import, [Parameter(Name="HasErrors", DbType="Bit")] ref System.Nullable<bool> hasErrors)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), import, hasErrors);
+			hasErrors = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_LOCATION_IMPORT_HasWarnings")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_LOCATION_IMPORT_HasWarnings([Parameter(Name="Import", DbType="Int")] System.Nullable<int> import, [Parameter(Name="HasWarnings", DbType="Bit")] ref System.Nullable<bool> hasWarnings)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), import, hasWarnings);
+			hasWarnings = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_LOCATION_IMPORT_Insert")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_LOCATION_IMPORT_Insert([Parameter(Name="Import", DbType="Int")] System.Nullable<int> import, [Parameter(Name="LineNumber", DbType="Int")] System.Nullable<int> lineNumber, [Parameter(Name="BillingAccountID", DbType="Int")] System.Nullable<int> billingAccountID, [Parameter(Name="LocationName", DbType="VarChar(80)")] string locationName, [Parameter(Name="SiteEngineer", DbType="VarChar(25)")] string siteEngineer, [Parameter(Name="ContactName", DbType="VarChar(20)")] string contactName, [Parameter(Name="Phone", DbType="VarChar(15)")] string phone, [Parameter(Name="Fax", DbType="VarChar(15)")] string fax, [Parameter(Name="Address1", DbType="VarChar(50)")] string address1, [Parameter(Name="Address2", DbType="VarChar(50)")] string address2, [Parameter(Name="City", DbType="VarChar(25)")] string city, [Parameter(Name="State", DbType="VarChar(5)")] string state, [Parameter(Name="Postcode", DbType="VarChar(6)")] string postcode, [Parameter(Name="PMFrequency", DbType="TinyInt")] System.Nullable<byte> pMFrequency, [Parameter(Name="PMPeriod", DbType="VarChar(10)")] string pMPeriod)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), import, lineNumber, billingAccountID, locationName, siteEngineer, contactName, phone, fax, address1, address2, city, state, postcode, pMFrequency, pMPeriod);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_LOCATION_IMPORT_ParseLine")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_LOCATION_IMPORT_ParseLine([Parameter(Name="Import", DbType="Int")] System.Nullable<int> import, [Parameter(Name="LineNumber", DbType="Int")] System.Nullable<int> lineNumber, [Parameter(Name="LocationName", DbType="VarChar(80)")] string locationName, [Parameter(Name="SiteEngineer", DbType="VarChar(25)")] string siteEngineer, [Parameter(Name="ContactName", DbType="VarChar(20)")] string contactName, [Parameter(Name="Phone", DbType="VarChar(15)")] string phone, [Parameter(Name="Fax", DbType="VarChar(15)")] string fax, [Parameter(Name="Address1", DbType="VarChar(50)")] string address1, [Parameter(Name="Address2", DbType="VarChar(50)")] string address2, [Parameter(Name="City", DbType="VarChar(25)")] string city, [Parameter(Name="State", DbType="VarChar(5)")] string state, [Parameter(Name="Postcode", DbType="VarChar(6)")] string postcode, [Parameter(Name="PMFrequency", DbType="TinyInt")] System.Nullable<byte> pMFrequency, [Parameter(Name="PMPeriod", DbType="VarChar(10)")] string pMPeriod)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), import, lineNumber, locationName, siteEngineer, contactName, phone, fax, address1, address2, city, state, postcode, pMFrequency, pMPeriod);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Debtors_New")]
+		[return: Parameter(DbType="Int")]
+		public int Debtors_New([Parameter(Name="UserID", DbType="VarChar(25)")] string userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Debtors_NewTrans")]
+		[return: Parameter(DbType="Int")]
+		public int Debtors_NewTrans([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="TransCount", DbType="Int")] ref System.Nullable<int> transCount)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, transCount);
+			transCount = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueCredits")]
+		public ISingleResult<DEBTORS_StatRevenueCreditsResult> DEBTORS_StatRevenueCredits([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueCreditsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueCredits_InvoiceLevel")]
+		public ISingleResult<DEBTORS_StatRevenueCredits_InvoiceLevelResult> DEBTORS_StatRevenueCredits_InvoiceLevel([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueCredits_InvoiceLevelResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueCreditsManual")]
+		public ISingleResult<DEBTORS_StatRevenueCreditsManualResult> DEBTORS_StatRevenueCreditsManual([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueCreditsManualResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueInvoices")]
+		public ISingleResult<DEBTORS_StatRevenueInvoicesResult> DEBTORS_StatRevenueInvoices([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueInvoicesResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueInvoices_InvoiceLevel")]
+		public ISingleResult<DEBTORS_StatRevenueInvoices_InvoiceLevelResult> DEBTORS_StatRevenueInvoices_InvoiceLevel([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueInvoices_InvoiceLevelResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueInvoicesManual")]
+		public ISingleResult<DEBTORS_StatRevenueInvoicesManualResult> DEBTORS_StatRevenueInvoicesManual([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueInvoicesManualResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueInvoicesManual_InvoiceLevel")]
+		public ISingleResult<DEBTORS_StatRevenueInvoicesManual_InvoiceLevelResult> DEBTORS_StatRevenueInvoicesManual_InvoiceLevel([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueInvoicesManual_InvoiceLevelResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueSummaryAdvance")]
+		public ISingleResult<DEBTORS_StatRevenueSummaryAdvanceResult> DEBTORS_StatRevenueSummaryAdvance([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueSummaryAdvanceResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueSummaryAdvanceCredits")]
+		public ISingleResult<DEBTORS_StatRevenueSummaryAdvanceCreditsResult> DEBTORS_StatRevenueSummaryAdvanceCredits([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueSummaryAdvanceCreditsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueSummaryCreditsManual")]
+		public ISingleResult<DEBTORS_StatRevenueSummaryCreditsManualResult> DEBTORS_StatRevenueSummaryCreditsManual([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueSummaryCreditsManualResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueSummaryCurrent")]
+		public ISingleResult<DEBTORS_StatRevenueSummaryCurrentResult> DEBTORS_StatRevenueSummaryCurrent([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueSummaryCurrentResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueSummaryCurrentCredits")]
+		public ISingleResult<DEBTORS_StatRevenueSummaryCurrentCreditsResult> DEBTORS_StatRevenueSummaryCurrentCredits([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueSummaryCurrentCreditsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_StatRevenueSummaryInvoicesManual")]
+		public ISingleResult<DEBTORS_StatRevenueSummaryInvoicesManualResult> DEBTORS_StatRevenueSummaryInvoicesManual([Parameter(Name="PeriodMonth", DbType="Int")] System.Nullable<int> periodMonth, [Parameter(Name="PeriodYear", DbType="Int")] System.Nullable<int> periodYear, [Parameter(Name="StartMonth", DbType="Int")] System.Nullable<int> startMonth, [Parameter(Name="StartYear", DbType="Int")] System.Nullable<int> startYear, [Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), periodMonth, periodYear, startMonth, startYear, endMonth, endYear);
+			return ((ISingleResult<DEBTORS_StatRevenueSummaryInvoicesManualResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Debtors_Upd_Balances")]
+		[return: Parameter(DbType="Int")]
+		public int Debtors_Upd_Balances([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Amount", DbType="Money")] System.Nullable<decimal> amount, [Parameter(Name="Period", DbType="TinyInt")] System.Nullable<byte> period, [Parameter(DbType="TinyInt")] System.Nullable<byte> isPayment)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, amount, period, isPayment);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DEBTORS_Upd_InvItemQty")]
+		[return: Parameter(DbType="Int")]
+		public int DEBTORS_Upd_InvItemQty([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Qty", DbType="Int")] System.Nullable<int> qty, [Parameter(Name="Op", DbType="Int")] System.Nullable<int> op)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, qty, op);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Debtors_Upd_Phone_Nos")]
+		[return: Parameter(DbType="Int")]
+		public int Debtors_Upd_Phone_Nos([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Debtors_UpdateCRM")]
+		[return: Parameter(DbType="Int")]
+		public int Debtors_UpdateCRM([Parameter(Name="AccountID", DbType="VarChar(12)")] string accountID, [Parameter(Name="NextCall", DbType="DateTime")] System.Nullable<System.DateTime> nextCall, [Parameter(Name="Caller", DbType="VarChar(25)")] string caller)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, nextCall, caller);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorsEOM_Rollover")]
+		[return: Parameter(DbType="Int")]
+		public int DebtorsEOM_Rollover([Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year, month, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorsEOM_SaveBal")]
+		[return: Parameter(DbType="Int")]
+		public int DebtorsEOM_SaveBal([Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year, month, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorsSnapshotPeriods")]
+		public ISingleResult<DebtorsSnapshotPeriodsResult> DebtorsSnapshotPeriods()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<DebtorsSnapshotPeriodsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorsStartAtAudit")]
+		[return: Parameter(DbType="Int")]
+		public int DebtorsStartAtAudit([Parameter(Name="Date", DbType="DateTime")] System.Nullable<System.DateTime> date, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="Audit_OUT", DbType="Int")] ref System.Nullable<int> audit_OUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), date, companyNum, audit_OUT);
+			audit_OUT = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorStatement")]
+		[ResultType(typeof(DebtorStatementResult1))]
+		[ResultType(typeof(DebtorStatementResult2))]
+		public IMultipleResults DebtorStatement([Parameter(Name="FromAudit", DbType="Int")] System.Nullable<int> fromAudit, [Parameter(Name="ToAudit", DbType="Int")] System.Nullable<int> toAudit, [Parameter(Name="AccID", DbType="Int")] System.Nullable<int> accID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromAudit, toAudit, accID);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorStats")]
+		public ISingleResult<DebtorStatsResult> DebtorStats([Parameter(Name="FromAccountID", DbType="Int")] System.Nullable<int> fromAccountID, [Parameter(Name="ToAccountID", DbType="Int")] System.Nullable<int> toAccountID, [Parameter(Name="Year", DbType="SmallInt")] System.Nullable<short> year, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month, [Parameter(Name="CloseBalMin", DbType="Money")] System.Nullable<decimal> closeBalMin)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromAccountID, toAccountID, year, month, closeBalMin);
+			return ((ISingleResult<DebtorStatsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorTaxCode")]
+		public ISingleResult<DebtorTaxCodeResult> DebtorTaxCode([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((ISingleResult<DebtorTaxCodeResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorTransactions")]
+		[ResultType(typeof(DebtorTransactionsResult))]
+		public IMultipleResults DebtorTransactions([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month, [Parameter(Name="Year", DbType="SmallInt")] System.Nullable<short> year, [Parameter(Name="TransFilter", DbType="TinyInt")] System.Nullable<byte> transFilter)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, month, year, transFilter);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorTransactions_TEMP")]
+		[ResultType(typeof(DebtorTransactions_TEMPResult))]
+		public IMultipleResults DebtorTransactions_TEMP([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month, [Parameter(Name="Year", DbType="SmallInt")] System.Nullable<short> year, [Parameter(Name="TransFilter", DbType="TinyInt")] System.Nullable<byte> transFilter)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, month, year, transFilter);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorTransactionsDummy")]
+		public ISingleResult<DebtorTransactionsDummyResult> DebtorTransactionsDummy()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<DebtorTransactionsDummyResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorTrialBalanceTotals")]
+		public ISingleResult<DebtorTrialBalanceTotalsResult> DebtorTrialBalanceTotals([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="International", DbType="Bit")] System.Nullable<bool> international)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, international);
+			return ((ISingleResult<DebtorTrialBalanceTotalsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DebtorTrialBalanceTotals_DATE")]
+		public ISingleResult<DebtorTrialBalanceTotals_DATEResult> DebtorTrialBalanceTotals_DATE([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="International", DbType="Bit")] System.Nullable<bool> international)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, international);
+			return ((ISingleResult<DebtorTrialBalanceTotals_DATEResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DelDebtorJnl")]
+		[return: Parameter(DbType="Int")]
+		public int DelDebtorJnl([Parameter(Name="NKey", DbType="Int")] System.Nullable<int> nKey)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nKey);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DeleteContact")]
+		[return: Parameter(DbType="Int")]
+		public int DeleteContact([Parameter(Name="ContactID", DbType="Int")] System.Nullable<int> contactID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), contactID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.DeleteCreditorContact")]
+		[return: Parameter(DbType="Int")]
+		public int DeleteCreditorContact([Parameter(Name="ContactID", DbType="Int")] System.Nullable<int> contactID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), contactID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Employee_ResetPassword")]
+		[return: Parameter(DbType="Int")]
+		public int Employee_ResetPassword([Parameter(Name="Employee", DbType="VarChar(25)")] string employee, [Parameter(Name="NewPWord", DbType="VarChar(50)")] string newPWord, [Parameter(Name="GUID", DbType="UniqueIdentifier")] System.Nullable<System.Guid> gUID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employee, newPWord, gUID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Employee_ResetPassword_CurUser")]
+		[return: Parameter(DbType="Int")]
+		public int Employee_ResetPassword_CurUser([Parameter(Name="Employee", DbType="VarChar(25)")] string employee, [Parameter(Name="OldPWord", DbType="VarChar(50)")] string oldPWord, [Parameter(Name="NewPWord", DbType="VarChar(50)")] string newPWord)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employee, oldPWord, newPWord);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.EmployeeExists")]
+		[return: Parameter(DbType="Int")]
+		public int EmployeeExists([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.EmployeeName")]
+		[return: Parameter(DbType="Int")]
+		public int EmployeeName([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID, [Parameter(Name="FullName", DbType="VarChar(30)")] ref string fullName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID, fullName);
+			fullName = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.EMPLOYEES_AcceptBKP")]
+		[return: Parameter(DbType="Int")]
+		public int EMPLOYEES_AcceptBKP([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID, [Parameter(Name="GUID", DbType="UniqueIdentifier")] System.Nullable<System.Guid> gUID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID, gUID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Employees_CopyPermissions")]
+		[return: Parameter(DbType="Int")]
+		public int Employees_CopyPermissions([Parameter(Name="Employee", DbType="VarChar(25)")] string employee, [Parameter(Name="ID", DbType="VarChar(25)")] string iD, [Parameter(Name="GUID", DbType="UniqueIdentifier")] System.Nullable<System.Guid> gUID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employee, iD, gUID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.EMPLOYEES_DiscardBKP")]
+		[return: Parameter(DbType="Int")]
+		public int EMPLOYEES_DiscardBKP([Parameter(Name="GUID", DbType="UniqueIdentifier")] System.Nullable<System.Guid> gUID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), gUID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.EMPLOYEES_MAintainBKP_EDIT")]
+		[return: Parameter(DbType="Int")]
+		public int EMPLOYEES_MAintainBKP_EDIT()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.EMPLOYEES_MakeBKP")]
+		[return: Parameter(DbType="Int")]
+		public int EMPLOYEES_MakeBKP([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID, [Parameter(Name="GUID", DbType="UniqueIdentifier")] ref System.Nullable<System.Guid> gUID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID, gUID);
+			gUID = ((System.Nullable<System.Guid>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GenerateGUID")]
+		[return: Parameter(DbType="Int")]
+		public int GenerateGUID([Parameter(Name="GUID", DbType="UniqueIdentifier")] ref System.Nullable<System.Guid> gUID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), gUID);
+			gUID = ((System.Nullable<System.Guid>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GetAuditPeriods")]
+		public ISingleResult<GetAuditPeriodsResult> GetAuditPeriods()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GetAuditPeriodsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GetContactFromID")]
+		public ISingleResult<GetContactFromIDResult> GetContactFromID([Parameter(Name="ContactID", DbType="Int")] System.Nullable<int> contactID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), contactID);
+			return ((ISingleResult<GetContactFromIDResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GetServerDate")]
+		[return: Parameter(DbType="Int")]
+		public int GetServerDate([Parameter(Name="ServerDate", DbType="DateTime")] ref System.Nullable<System.DateTime> serverDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), serverDate);
+			serverDate = ((System.Nullable<System.DateTime>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_Accounts_OpenBal")]
+		[return: Parameter(DbType="Int")]
+		public int GL_Accounts_OpenBal([Parameter(Name="Account", DbType="VarChar(16)")] string account, [Parameter(Name="Year", DbType="SmallInt")] System.Nullable<short> year, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month, [Parameter(Name="OpenBal", DbType="Money")] ref System.Nullable<decimal> openBal, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), account, year, month, openBal, companyNum);
+			openBal = ((System.Nullable<decimal>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_ACCOUNTS_TMP_BKP")]
+		[return: Parameter(DbType="Int")]
+		public int GL_ACCOUNTS_TMP_BKP([Parameter(Name="GUID", DbType="UniqueIdentifier")] ref System.Nullable<System.Guid> gUID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), gUID);
+			gUID = ((System.Nullable<System.Guid>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_ACCOUNTS_TMP_BKP_APPLY")]
+		[return: Parameter(DbType="Int")]
+		public int GL_ACCOUNTS_TMP_BKP_APPLY([Parameter(Name="GUID", DbType="UniqueIdentifier")] System.Nullable<System.Guid> gUID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), gUID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_ACCOUNTS_TMP_BKP_DISCARD")]
+		[return: Parameter(DbType="Int")]
+		public int GL_ACCOUNTS_TMP_BKP_DISCARD([Parameter(Name="GUID", DbType="UniqueIdentifier")] System.Nullable<System.Guid> gUID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), gUID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Gl_AccountTotal")]
+		public ISingleResult<Gl_AccountTotalResult> Gl_AccountTotal([Parameter(Name="TempAccount", DbType="VarChar(16)")] string tempAccount, [Parameter(Name="TempMonth", DbType="Int")] System.Nullable<int> tempMonth, [Parameter(Name="JournalCode", DbType="VarChar(20)")] string journalCode, [Parameter(Name="CompNum", DbType="Int")] System.Nullable<int> compNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tempAccount, tempMonth, journalCode, compNum);
+			return ((ISingleResult<Gl_AccountTotalResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_AddNewJournal")]
+		[return: Parameter(DbType="Int")]
+		public int GL_AddNewJournal([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_AppendJournalDetails")]
+		[return: Parameter(DbType="Int")]
+		public int GL_AppendJournalDetails([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="JournalCode", DbType="VarChar(20)")] string journalCode, [Parameter(Name="NewDate", DbType="DateTime")] System.Nullable<System.DateTime> newDate, [Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="CopyFrom", DbType="VarChar(20)")] string copyFrom)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, journalCode, newDate, month, year, copyFrom);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_ConstructPartsGLCode")]
+		[return: Parameter(DbType="Int")]
+		public int GL_ConstructPartsGLCode([Parameter(Name="ItemNum", DbType="Int")] System.Nullable<int> itemNum, [Parameter(Name="PartsGLCode", DbType="VarChar(15)")] ref string partsGLCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), itemNum, partsGLCode);
+			partsGLCode = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_DeleteAccountOK")]
+		[return: Parameter(DbType="Int")]
+		public int GL_DeleteAccountOK([Parameter(Name="Account", DbType="VarChar(16)")] string account, [Parameter(Name="OK", DbType="Bit")] ref System.Nullable<bool> oK)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), account, oK);
+			oK = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_FirstBankSlip")]
+		[return: Parameter(DbType="Int")]
+		public int GL_FirstBankSlip([Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="Bank", DbType="VarChar(50)")] string bank, [Parameter(Name="Branch", DbType="VarChar(50)")] string branch, [Parameter(Name="AccountName", DbType="VarChar(50)")] string accountName, [Parameter(Name="BSB", DbType="VarChar(15)")] string bSB, [Parameter(Name="AccountNum", DbType="VarChar(15)")] string accountNum, [Parameter(Name="BankGL", DbType="VarChar(16)")] string bankGL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, bank, branch, accountName, bSB, accountNum, bankGL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_FirstBankSlip_Old")]
+		[return: Parameter(DbType="Int")]
+		public int GL_FirstBankSlip_Old([Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="Bank", DbType="VarChar(50)")] string bank, [Parameter(Name="Branch", DbType="VarChar(50)")] string branch, [Parameter(Name="AccountName", DbType="VarChar(50)")] string accountName, [Parameter(Name="BSB", DbType="VarChar(15)")] string bSB, [Parameter(Name="AccountNum", DbType="VarChar(15)")] string accountNum, [Parameter(Name="BankGL", DbType="VarChar(16)")] string bankGL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, bank, branch, accountName, bSB, accountNum, bankGL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_GetAccountDetails")]
+		public ISingleResult<GL_GetAccountDetailsResult> GL_GetAccountDetails([Parameter(Name="AccountNum", DbType="VarChar(16)")] string accountNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountNum);
+			return ((ISingleResult<GL_GetAccountDetailsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_GetExchangeRate")]
+		public ISingleResult<GL_GetExchangeRateResult> GL_GetExchangeRate([Parameter(Name="CurrencyType", DbType="VarChar(5)")] string currencyType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), currencyType);
+			return ((ISingleResult<GL_GetExchangeRateResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_GLAccountExists")]
+		[return: Parameter(DbType="Int")]
+		public int GL_GLAccountExists([Parameter(Name="GLAccNum", DbType="VarChar(16)")] string gLAccNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), gLAccNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_MaxJnlAudit")]
+		[return: Parameter(DbType="Int")]
+		public int GL_MaxJnlAudit([Parameter(Name="Audit_OUT", DbType="Int")] ref System.Nullable<int> audit_OUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), audit_OUT);
+			audit_OUT = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_MiscTools")]
+		public ISingleResult<GL_MiscToolsResult> GL_MiscTools()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GL_MiscToolsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_OpenBal")]
+		[return: Parameter(DbType="Int")]
+		public int GL_OpenBal([Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="OpenBal_OUT", DbType="Decimal(9,2)")] ref System.Nullable<decimal> openBal_OUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, openBal_OUT);
+			openBal_OUT = ((System.Nullable<decimal>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_ProfitLoss")]
+		[return: Parameter(DbType="Int")]
+		public int GL_ProfitLoss([Parameter(Name="Mnth", DbType="Int")] System.Nullable<int> mnth, [Parameter(Name="Yr", DbType="Int")] System.Nullable<int> yr, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mnth, yr, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_Reset_Debtors")]
+		[return: Parameter(DbType="Int")]
+		public int GL_Reset_Debtors([Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_Revcat_State_HasGL")]
+		[return: Parameter(DbType="Int")]
+		public int GL_Revcat_State_HasGL([Parameter(Name="RevenueCategory", DbType="Int")] System.Nullable<int> revenueCategory, [Parameter(Name="ContractLocation", DbType="VarChar(5)")] string contractLocation)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), revenueCategory, contractLocation);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_SetActiveCompany")]
+		[return: Parameter(DbType="Int")]
+		public int GL_SetActiveCompany([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_Setup_CSV")]
+		[return: Parameter(DbType="Int")]
+		public int GL_Setup_CSV([Parameter(Name="Yr", DbType="Int")] System.Nullable<int> yr, [Parameter(Name="Mnth", DbType="Int")] System.Nullable<int> mnth)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), yr, mnth);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_TrialBalance")]
+		[return: Parameter(DbType="Int")]
+		public int GL_TrialBalance([Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_TrialBalance old int")]
+		[return: Parameter(DbType="Int")]
+		public int GL_TrialBalanceOldInt([Parameter(Name="Mnth", DbType="Int")] System.Nullable<int> mnth, [Parameter(Name="Yr", DbType="Int")] System.Nullable<int> yr, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mnth, yr, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_TrialBalance_GetData")]
+		[return: Parameter(DbType="Int")]
+		public int GL_TrialBalance_GetData([Parameter(Name="Mnth", DbType="Int")] System.Nullable<int> mnth, [Parameter(Name="Yr", DbType="Int")] System.Nullable<int> yr, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mnth, yr, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_TrialBalance1")]
+		[return: Parameter(DbType="Int")]
+		public int GL_TrialBalance1([Parameter(Name="Mnth", DbType="Int")] System.Nullable<int> mnth, [Parameter(Name="Yr", DbType="Int")] System.Nullable<int> yr)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mnth, yr);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_UpdateCharts")]
+		[return: Parameter(DbType="Int")]
+		public int GL_UpdateCharts()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_UpdateNewJournal")]
+		[return: Parameter(DbType="Int")]
+		public int GL_UpdateNewJournal([Parameter(Name="JCode", DbType="VarChar(20)")] string jCode, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), jCode, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL_ValidateJournalCode")]
+		[return: Parameter(DbType="Int")]
+		public int GL_ValidateJournalCode([Parameter(Name="JCode", DbType="VarChar(16)")] string jCode, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), jCode, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL1")]
+		[ResultType(typeof(GL1Result1))]
+		[ResultType(typeof(GL1Result2))]
+		[ResultType(typeof(GL1Result3))]
+		[ResultType(typeof(GL1Result4))]
+		public IMultipleResults GL1([Parameter(Name="PNum", DbType="Int")] System.Nullable<int> pNum, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="JournalCode", DbType="VarChar(16)")] string journalCode, [Parameter(Name="NewDate", DbType="DateTime")] System.Nullable<System.DateTime> newDate, [Parameter(Name="Month", DbType="Int")] System.Nullable<int> month, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="CopyFrom", DbType="VarChar(30)")] string copyFrom, [Parameter(Name="Param", DbType="VarChar(20)")] string param)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pNum, companyNum, journalCode, newDate, month, year, copyFrom, param);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL2_DEBTORS")]
+		[return: Parameter(DbType="Int")]
+		public int GL2_DEBTORS([Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year, [Parameter(Name="BalCheck", DbType="Int")] System.Nullable<int> balCheck)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, month, year, balCheck);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL2_DEBTORS old int")]
+		[return: Parameter(DbType="Int")]
+		public int GL2_DEBTORSOldInt([Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, month, year);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL3_CREDITORS")]
+		[return: Parameter(DbType="Int")]
+		public int GL3_CREDITORS([Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, month, year);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL3_UPD_ExchangeRate")]
+		[return: Parameter(DbType="Int")]
+		public int GL3_UPD_ExchangeRate([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="Month", DbType="Decimal(9,2)")] System.Nullable<decimal> month, [Parameter(Name="Year", DbType="Decimal(9,2)")] System.Nullable<decimal> year, [Parameter(Name="ToMonth", DbType="Decimal(9,2)")] System.Nullable<decimal> toMonth, [Parameter(Name="ToYear", DbType="Decimal(9,2)")] System.Nullable<decimal> toYear, [Parameter(Name="FromFiscal", DbType="Int")] System.Nullable<int> fromFiscal, [Parameter(Name="FromAudit", DbType="Int")] System.Nullable<int> fromAudit, [Parameter(Name="ToAudit", DbType="Int")] System.Nullable<int> toAudit, [Parameter(Name="USD", DbType="Decimal(3,2)")] System.Nullable<decimal> uSD)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, month, year, toMonth, toYear, fromFiscal, fromAudit, toAudit, uSD);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.GL4_PURCHASES")]
+		[return: Parameter(DbType="Int")]
+		public int GL4_PURCHASES([Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month, [Parameter(Name="Year", DbType="Int")] System.Nullable<int> year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, month, year);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_AddCompatibleProd")]
+		[return: Parameter(DbType="Int")]
+		public int INT_AddCompatibleProd([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="CompatProdCode", DbType="VarChar(35)")] string compatProdCode, [Parameter(Name="Note", DbType="VarChar(256)")] string note)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, compatProdCode, note);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_AddStockAlias")]
+		[return: Parameter(DbType="Int")]
+		public int INT_AddStockAlias([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="Alias", DbType="VarChar(35)")] string alias, [Parameter(Name="Note", DbType="VarChar(256)")] string note)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, alias, note);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ArchiveActualInvoices")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ArchiveActualInvoices([Parameter(Name="BatchID", DbType="Int")] System.Nullable<int> batchID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), batchID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ArchiveExpectedInvoices")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ArchiveExpectedInvoices([Parameter(DbType="DateTime")] System.Nullable<System.DateTime> dtInvBatchDate, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="ContractLocation", DbType="VarChar(5)")] string contractLocation)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dtInvBatchDate, companyNum, contractLocation);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_BUSINESSUNIT_SnapshotComparisonReport")]
+		public ISingleResult<INT_BUSINESSUNIT_SnapshotComparisonReportResult> INT_BUSINESSUNIT_SnapshotComparisonReport([Parameter(Name="SnapShotId", DbType="Int")] System.Nullable<int> snapShotId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), snapShotId);
+			return ((ISingleResult<INT_BUSINESSUNIT_SnapshotComparisonReportResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUP")]
+		public ISingleResult<INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUPResult> INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUP([Parameter(Name="SnapShotId", DbType="Int")] System.Nullable<int> snapShotId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), snapShotId);
+			return ((ISingleResult<INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUPResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUP_OLD")]
+		public ISingleResult<INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUP_OLDResult> INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUP_OLD([Parameter(Name="SnapShotId", DbType="Int")] System.Nullable<int> snapShotId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), snapShotId);
+			return ((ISingleResult<INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUP_OLDResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_BUSINESSUNIT_SnapshotComparisonReport_ByDeviceLocation")]
+		public ISingleResult<INT_BUSINESSUNIT_SnapshotComparisonReport_ByDeviceLocationResult> INT_BUSINESSUNIT_SnapshotComparisonReport_ByDeviceLocation([Parameter(Name="SnapShotId", DbType="Int")] System.Nullable<int> snapShotId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), snapShotId);
+			return ((ISingleResult<INT_BUSINESSUNIT_SnapshotComparisonReport_ByDeviceLocationResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_BUSINESSUNIT_SnapshotComparisonReport_ByRptGrp")]
+		public ISingleResult<INT_BUSINESSUNIT_SnapshotComparisonReport_ByRptGrpResult> INT_BUSINESSUNIT_SnapshotComparisonReport_ByRptGrp([Parameter(Name="SnapShotId", DbType="Int")] System.Nullable<int> snapShotId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), snapShotId);
+			return ((ISingleResult<INT_BUSINESSUNIT_SnapshotComparisonReport_ByRptGrpResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_BusinessUnit_Targets_Create")]
+		[return: Parameter(DbType="Int")]
+		public int INT_BusinessUnit_Targets_Create([Parameter(Name="Year", DbType="Int")] System.Nullable<int> year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_CE_COMMISSION_REVCAT")]
+		public ISingleResult<INT_CE_COMMISSION_REVCATResult> INT_CE_COMMISSION_REVCAT([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum, [Parameter(Name="InvYear", DbType="Int")] System.Nullable<int> invYear, [Parameter(Name="InvMonth", DbType="Int")] System.Nullable<int> invMonth)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, invYear, invMonth);
+			return ((ISingleResult<INT_CE_COMMISSION_REVCATResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_CeSetPaid")]
+		[return: Parameter(DbType="Int")]
+		public int INT_CeSetPaid([Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_CheckCtracForDuplicates")]
+		[ResultType(typeof(INT_CheckCtracForDuplicatesResult1))]
+		[ResultType(typeof(INT_CheckCtracForDuplicatesResult2))]
+		public IMultipleResults INT_CheckCtracForDuplicates([Parameter(Name="ContractItemID", DbType="Int")] System.Nullable<int> contractItemID, [Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="SerialNo", DbType="VarChar(64)")] string serialNo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), contractItemID, prodCode, serialNo);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_CheckCtracForDuplicates_BACKUP")]
+		[ResultType(typeof(INT_CheckCtracForDuplicates_BACKUPResult1))]
+		[ResultType(typeof(INT_CheckCtracForDuplicates_BACKUPResult2))]
+		public IMultipleResults INT_CheckCtracForDuplicates_BACKUP([Parameter(Name="AccountId", DbType="Int")] System.Nullable<int> accountId, [Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="SerialNo", DbType="VarChar(64)")] string serialNo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountId, prodCode, serialNo);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_CreateIntTransferSTKORD")]
+		[return: Parameter(DbType="Int")]
+		public int INT_CreateIntTransferSTKORD([Parameter(Name="CompanyFrom", DbType="TinyInt")] System.Nullable<byte> companyFrom, [Parameter(Name="CompanyTo", DbType="TinyInt")] System.Nullable<byte> companyTo, [Parameter(Name="OrdNum", DbType="Int")] ref System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyFrom, companyTo, ordNum);
+			ordNum = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_CreateIntTransferSTKORD_OLD")]
+		[return: Parameter(DbType="Int")]
+		public int INT_CreateIntTransferSTKORD_OLD([Parameter(Name="CompanyFrom", DbType="TinyInt")] System.Nullable<byte> companyFrom, [Parameter(Name="CompanyTo", DbType="TinyInt")] System.Nullable<byte> companyTo, [Parameter(Name="OrdNum", DbType="Int")] ref System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyFrom, companyTo, ordNum);
+			ordNum = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_CreateIntTransferSTKORD_OLDOLD")]
+		[return: Parameter(DbType="Int")]
+		public int INT_CreateIntTransferSTKORD_OLDOLD([Parameter(Name="CompanyFrom", DbType="TinyInt")] System.Nullable<byte> companyFrom, [Parameter(Name="CompanyTo", DbType="TinyInt")] System.Nullable<byte> companyTo, [Parameter(Name="OrdNum", DbType="Int")] ref System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyFrom, companyTo, ordNum);
+			ordNum = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_CreateTransferBatch")]
+		[return: Parameter(DbType="Int")]
+		public int INT_CreateTransferBatch([Parameter(Name="LocFrom", DbType="Int")] System.Nullable<int> locFrom, [Parameter(Name="LocTo", DbType="Int")] System.Nullable<int> locTo, [Parameter(Name="User", DbType="VarChar(25)")] string user, [Parameter(Name="Comment", DbType="VarChar(1028)")] string comment, [Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), locFrom, locTo, user, comment, ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_CreditNoteNumber")]
+		[return: Parameter(DbType="Int")]
+		public int INT_CreditNoteNumber([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DailyAudit_YearToDateRevenue_Credits")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DailyAudit_YearToDateRevenue_Credits([Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), endMonth, endYear, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DailyAudit_YearToDateRevenue_InvFromOtherPeriods")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DailyAudit_YearToDateRevenue_InvFromOtherPeriods([Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), endMonth, endYear, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DailyAudit_YearToDateRevenue_Invoices")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DailyAudit_YearToDateRevenue_Invoices([Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), endMonth, endYear, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DailyAudit_YearToDateRevenue_Report")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DailyAudit_YearToDateRevenue_Report([Parameter(Name="EndMonth", DbType="Int")] System.Nullable<int> endMonth, [Parameter(Name="EndYear", DbType="Int")] System.Nullable<int> endYear, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), endMonth, endYear, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DebtorDefaultInvStyle")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DebtorDefaultInvStyle([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DebtorDelete")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DebtorDelete([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DebtorLocationPDFInvoice")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DebtorLocationPDFInvoice([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DebtorMixedInternational")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DebtorMixedInternational([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DebtorPDFInvoice")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DebtorPDFInvoice([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DebtorSoftInvoice")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DebtorSoftInvoice([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DebtorsParentBillingMethod")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DebtorsParentBillingMethod([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DebtorsParentDefaultInvStyle")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DebtorsParentDefaultInvStyle([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DebtorTransactions_DUMMY")]
+		public ISingleResult<INT_DebtorTransactions_DUMMYResult> INT_DebtorTransactions_DUMMY()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<INT_DebtorTransactions_DUMMYResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DeleteAliasProd")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DeleteAliasProd([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="Alias", DbType="VarChar(35)")] string alias)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, alias);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DeleteCancelledUsage")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DeleteCancelledUsage([Parameter(Name="UsageID", DbType="Int")] System.Nullable<int> usageID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usageID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DeleteCompatibleProd")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DeleteCompatibleProd([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="CompatProdCode", DbType="VarChar(35)")] string compatProdCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, compatProdCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_DeleteTMInvoice")]
+		[return: Parameter(DbType="Int")]
+		public int INT_DeleteTMInvoice([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_EditCompatibleProd")]
+		[return: Parameter(DbType="Int")]
+		public int INT_EditCompatibleProd([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="CompatProdCode", DbType="VarChar(35)")] string compatProdCode, [Parameter(Name="Note", DbType="VarChar(256)")] string note)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, compatProdCode, note);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_EditStockAlias")]
+		[return: Parameter(DbType="Int")]
+		public int INT_EditStockAlias([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="OriginalAlias", DbType="VarChar(35)")] string originalAlias, [Parameter(Name="Alias", DbType="VarChar(35)")] string alias, [Parameter(Name="Note", DbType="VarChar(256)")] string note)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, originalAlias, alias, note);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ExpandCtracItem")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ExpandCtracItem([Parameter(Name="ItemId", DbType="Int")] System.Nullable<int> itemId, [Parameter(Name="ContractID", DbType="Int")] System.Nullable<int> contractID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), itemId, contractID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_Expected_Invoices_Cancel")]
+		[return: Parameter(DbType="Int")]
+		public int INT_Expected_Invoices_Cancel([Parameter(Name="ItemID", DbType="Int")] System.Nullable<int> itemID, [Parameter(Name="Success", DbType="Int")] ref System.Nullable<int> success)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), itemID, success);
+			success = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_FillBusinessUnitSnapShotReport")]
+		[return: Parameter(DbType="Int")]
+		public int INT_FillBusinessUnitSnapShotReport([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID, [Parameter(Name="FirstSnapShotId", DbType="Int")] System.Nullable<int> firstSnapShotId, [Parameter(Name="ComparisonSnapShotId", DbType="Int")] System.Nullable<int> comparisonSnapShotId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID, firstSnapShotId, comparisonSnapShotId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_FillEngineersCommissionReport")]
+		[return: Parameter(DbType="Int")]
+		public int INT_FillEngineersCommissionReport([Parameter(Name="SnapShotId", DbType="Int")] System.Nullable<int> snapShotId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), snapShotId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_FillSnapShotReport")]
+		[return: Parameter(DbType="Int")]
+		public int INT_FillSnapShotReport([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID, [Parameter(Name="FirstSnapShotId", DbType="Int")] System.Nullable<int> firstSnapShotId, [Parameter(Name="ComparisonSnapShotId", DbType="Int")] System.Nullable<int> comparisonSnapShotId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID, firstSnapShotId, comparisonSnapShotId);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_FillStockTransferItems")]
+		[return: Parameter(DbType="Int")]
+		public int INT_FillStockTransferItems([Parameter(Name="BatchID", DbType="Int")] System.Nullable<int> batchID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), batchID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_FindCtracItemPrice")]
+		[return: Parameter(DbType="Int")]
+		public int INT_FindCtracItemPrice([Parameter(Name="ItemID", DbType="Int")] System.Nullable<int> itemID, [Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="Account", DbType="Int")] System.Nullable<int> account, [Parameter(Name="ServiceID", DbType="TinyInt")] System.Nullable<byte> serviceID, [Parameter(Name="PriceOUT", DbType="Decimal(9,2)")] ref System.Nullable<decimal> priceOUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), itemID, prodCode, account, serviceID, priceOUT);
+			priceOUT = ((System.Nullable<decimal>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_GetCentralIntCompany")]
+		[return: Parameter(DbType="Int")]
+		public int INT_GetCentralIntCompany([Parameter(Name="CompanyNum", DbType="Int")] ref System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum);
+			companyNum = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_GetLocationNames")]
+		public ISingleResult<INT_GetLocationNamesResult> INT_GetLocationNames([Parameter(Name="FromLoc", DbType="Int")] System.Nullable<int> fromLoc, [Parameter(Name="ToLoc", DbType="Int")] System.Nullable<int> toLoc)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromLoc, toLoc);
+			return ((ISingleResult<INT_GetLocationNamesResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_GetLocCompanyNum")]
+		[return: Parameter(DbType="Int")]
+		public int INT_GetLocCompanyNum([Parameter(Name="LocationID", DbType="Int")] System.Nullable<int> locationID, [Parameter(Name="CompanyNum", DbType="Int")] ref System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), locationID, companyNum);
+			companyNum = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_GetLocDespatch")]
+		[return: Parameter(DbType="Int")]
+		public int INT_GetLocDespatch([Parameter(Name="LocationID", DbType="Int")] System.Nullable<int> locationID, [Parameter(Name="ShelfLocationID", DbType="Int")] ref System.Nullable<int> shelfLocationID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), locationID, shelfLocationID);
+			shelfLocationID = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_GetLocInwardsTarget")]
+		[return: Parameter(DbType="Int")]
+		public int INT_GetLocInwardsTarget([Parameter(Name="LocationID", DbType="Int")] System.Nullable<int> locationID, [Parameter(Name="ShelfLocationID", DbType="Int")] ref System.Nullable<int> shelfLocationID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), locationID, shelfLocationID);
+			shelfLocationID = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_GetLocRetBadTarget")]
+		[return: Parameter(DbType="Int")]
+		public int INT_GetLocRetBadTarget([Parameter(Name="LocationID", DbType="Int")] System.Nullable<int> locationID, [Parameter(Name="ShelfLocationID", DbType="Int")] ref System.Nullable<int> shelfLocationID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), locationID, shelfLocationID);
+			shelfLocationID = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_GetRevenueCategory")]
+		[return: Parameter(DbType="Int")]
+		public int INT_GetRevenueCategory([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="RevCat", DbType="Int")] ref System.Nullable<int> revCat)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, revCat);
+			revCat = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_GetRevenueCategoryDescription")]
+		[return: Parameter(DbType="Int")]
+		public int INT_GetRevenueCategoryDescription([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="RevCatDescription", DbType="VarChar(32)")] ref string revCatDescription)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, revCatDescription);
+			revCatDescription = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_GetShelfLocationNames")]
+		public ISingleResult<INT_GetShelfLocationNamesResult> INT_GetShelfLocationNames([Parameter(Name="FromShelf", DbType="Int")] System.Nullable<int> fromShelf, [Parameter(Name="ToShelf", DbType="Int")] System.Nullable<int> toShelf)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromShelf, toShelf);
+			return ((ISingleResult<INT_GetShelfLocationNamesResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_GetStockRecCreditorDetails")]
+		[return: Parameter(DbType="Int")]
+		public int INT_GetStockRecCreditorDetails([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="AccountID", DbType="VarChar(12)")] ref string accountID, [Parameter(Name="Company", DbType="VarChar(50)")] ref string company, [Parameter(Name="LocationID", DbType="Int")] ref System.Nullable<int> locationID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, accountID, company, locationID);
+			accountID = ((string)(result.GetParameterValue(1)));
+			company = ((string)(result.GetParameterValue(2)));
+			locationID = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_GetStockTransferRecDetails")]
+		[return: Parameter(DbType="Int")]
+		public int INT_GetStockTransferRecDetails([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="CompanyFrom", DbType="VarChar(5)")] ref string companyFrom, [Parameter(Name="LocationFrom", DbType="VarChar(50)")] ref string locationFrom, [Parameter(Name="LocationTo", DbType="Int")] ref System.Nullable<int> locationTo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, companyFrom, locationFrom, locationTo);
+			companyFrom = ((string)(result.GetParameterValue(1)));
+			locationFrom = ((string)(result.GetParameterValue(2)));
+			locationTo = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_InvHasNonProRata")]
+		[return: Parameter(DbType="Int")]
+		public int INT_InvHasNonProRata([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_InvHasNonProRataDraft")]
+		[return: Parameter(DbType="Int")]
+		public int INT_InvHasNonProRataDraft([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_InvHasProRata")]
+		[return: Parameter(DbType="Int")]
+		public int INT_InvHasProRata([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_Invoice_Exceptions_CheckInvoiceNumber")]
+		[return: Parameter(DbType="Int")]
+		public int INT_Invoice_Exceptions_CheckInvoiceNumber([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="ErrorCode", DbType="Int")] ref System.Nullable<int> errorCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, accountID, errorCode);
+			errorCode = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_Invoice_Exceptions_MarkOff")]
+		[return: Parameter(DbType="Int")]
+		public int INT_Invoice_Exceptions_MarkOff([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="BatchID", DbType="Int")] System.Nullable<int> batchID, [Parameter(Name="Success", DbType="Int")] ref System.Nullable<int> success)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, batchID, success);
+			success = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_InvoiceDefaultInvStyle")]
+		[return: Parameter(DbType="Int")]
+		public int INT_InvoiceDefaultInvStyle([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_IsStockDiscontinued")]
+		[return: Parameter(DbType="Int")]
+		public int INT_IsStockDiscontinued([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_LastStockItem")]
+		[return: Parameter(DbType="Int")]
+		public int INT_LastStockItem([Parameter(Name="Set", DbType="Bit")] System.Nullable<bool> set, [Parameter(Name="ProdCode", DbType="VarChar(35)")] ref string prodCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), set, prodCode);
+			prodCode = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_MAINTAIN_DEFAULT_SHELVES")]
+		[return: Parameter(DbType="Int")]
+		public int INT_MAINTAIN_DEFAULT_SHELVES()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_MonthlyFigures")]
+		public ISingleResult<INT_MonthlyFiguresResult> INT_MonthlyFigures([Parameter(Name="StartDate", DbType="DateTime")] System.Nullable<System.DateTime> startDate, [Parameter(Name="EndDate", DbType="DateTime")] System.Nullable<System.DateTime> endDate, [Parameter(Name="CompanyIDList", DbType="VarChar(255)")] string companyIDList)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), startDate, endDate, companyIDList);
+			return ((ISingleResult<INT_MonthlyFiguresResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_MonthlyFigures_CUST")]
+		public ISingleResult<INT_MonthlyFigures_CUSTResult> INT_MonthlyFigures_CUST([Parameter(Name="StartDate", DbType="DateTime")] System.Nullable<System.DateTime> startDate, [Parameter(Name="EndDate", DbType="DateTime")] System.Nullable<System.DateTime> endDate, [Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), startDate, endDate, accountID);
+			return ((ISingleResult<INT_MonthlyFigures_CUSTResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_NEW_TMINV")]
+		[return: Parameter(DbType="Int")]
+		public int INT_NEW_TMINV()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_NewDebtorCheck")]
+		[return: Parameter(DbType="Int")]
+		public int INT_NewDebtorCheck([Parameter(Name="NewID", DbType="Int")] System.Nullable<int> newID, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="NewName", DbType="VarChar(50)")] string newName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), newID, companyNum, newName);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_NewDebtorContact")]
+		[return: Parameter(DbType="Int")]
+		public int INT_NewDebtorContact([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="FName", DbType="VarChar(50)")] string fName, [Parameter(Name="LName", DbType="VarChar(50)")] string lName, [Parameter(Name="Phone", DbType="VarChar(50)")] string phone)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, fName, lName, phone);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_PDFInvoices")]
+		public ISingleResult<INT_PDFInvoicesResult> INT_PDFInvoices([Parameter(Name="Batch", DbType="Int")] System.Nullable<int> batch)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), batch);
+			return ((ISingleResult<INT_PDFInvoicesResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_PDFSingleInvoice")]
+		[ResultType(typeof(INT_PDFSingleInvoiceResult1))]
+		[ResultType(typeof(INT_PDFSingleInvoiceResult2))]
+		public IMultipleResults INT_PDFSingleInvoice([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_PO_LastPrice")]
+		[return: Parameter(DbType="Int")]
+		public int INT_PO_LastPrice([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="CreditorID", DbType="Int")] System.Nullable<int> creditorID, [Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Price", DbType="Money")] ref System.Nullable<decimal> price)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, creditorID, ordNum, price);
+			price = ((System.Nullable<decimal>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_PrintInvoice_TM")]
+		[return: Parameter(DbType="Int")]
+		public int INT_PrintInvoice_TM([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Co", DbType="Int")] System.Nullable<int> co)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, co);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ProcessInvoiceAccount")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ProcessInvoiceAccount([Parameter(DbType="DateTime")] System.Nullable<System.DateTime> dtInvBatchDate, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="BatchType", DbType="VarChar(20)")] string batchType, [Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="ContractID", DbType="Int")] System.Nullable<int> contractID, [Parameter(Name="Batch", DbType="Int")] ref System.Nullable<int> batch)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dtInvBatchDate, companyNum, batchType, accountID, contractID, batch);
+			batch = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ProcessInvoiceAccount_DRAFT")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ProcessInvoiceAccount_DRAFT([Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="BatchType", DbType="VarChar(20)")] string batchType, [Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Batch", DbType="Int")] ref System.Nullable<int> batch)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), companyNum, batchType, accountID, batch);
+			batch = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ProcessInvoiceBatch")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ProcessInvoiceBatch([Parameter(DbType="DateTime")] System.Nullable<System.DateTime> dtInvBatchDate, [Parameter(Name="CompanyNum", DbType="TinyInt")] System.Nullable<byte> companyNum, [Parameter(Name="BatchType", DbType="VarChar(20)")] string batchType, [Parameter(Name="ContractLocation", DbType="VarChar(5)")] string contractLocation, [Parameter(Name="Batch", DbType="Int")] ref System.Nullable<int> batch)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dtInvBatchDate, companyNum, batchType, contractLocation, batch);
+			batch = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_Purch_Rpt_Prep")]
+		[return: Parameter(DbType="Int")]
+		public int INT_Purch_Rpt_Prep([Parameter(Name="DateFrom", DbType="DateTime")] System.Nullable<System.DateTime> dateFrom, [Parameter(Name="DateTo", DbType="DateTime")] System.Nullable<System.DateTime> dateTo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), dateFrom, dateTo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ResetInvoice")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ResetInvoice([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="UserID", DbType="VarChar(50)")] string userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, userID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ResetInvoice_BACKUP")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ResetInvoice_BACKUP([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="UserID", DbType="VarChar(50)")] string userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, userID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ResetInvoice_BACKUP100204")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ResetInvoice_BACKUP100204([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="UserID", DbType="VarChar(50)")] string userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, userID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ResetInvoice_BACKUP121213")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ResetInvoice_BACKUP121213([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="UserID", DbType="VarChar(50)")] string userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, userID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ResetInvoice_OldBACKUP")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ResetInvoice_OldBACKUP([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="UserID", DbType="VarChar(50)")] string userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, userID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SalesordGSTFree")]
+		[return: Parameter(DbType="Int")]
+		public int INT_SalesordGSTFree([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SearchIncLocSetting")]
+		[return: Parameter(DbType="Int")]
+		public int INT_SearchIncLocSetting([Parameter(Name="SET", DbType="Bit")] System.Nullable<bool> sET)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sET);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SearchIncMergedSetting")]
+		[return: Parameter(DbType="Int")]
+		public int INT_SearchIncMergedSetting([Parameter(Name="SET", DbType="Bit")] System.Nullable<bool> sET)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sET);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SearchIncNotInUseSetting")]
+		[return: Parameter(DbType="Int")]
+		public int INT_SearchIncNotInUseSetting([Parameter(Name="SET", DbType="Bit")] System.Nullable<bool> sET)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sET);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ServiceID_DevicesExist")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ServiceID_DevicesExist([Parameter(Name="ServiceID", DbType="Int")] System.Nullable<int> serviceID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), serviceID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ServiceID_NotInUse")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ServiceID_NotInUse([Parameter(Name="ServiceID", DbType="Int")] System.Nullable<int> serviceID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), serviceID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SetInvLineText")]
+		[return: Parameter(DbType="Int")]
+		public int INT_SetInvLineText([Parameter(Name="BatchID", DbType="Int")] System.Nullable<int> batchID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), batchID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SetInvLineText_DRAFT")]
+		[return: Parameter(DbType="Int")]
+		public int INT_SetInvLineText_DRAFT([Parameter(Name="BatchID", DbType="Int")] System.Nullable<int> batchID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), batchID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ShelfLabelReportGet")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ShelfLabelReportGet([Parameter(Name="RET", DbType="VarChar(100)")] ref string rET)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), rET);
+			rET = ((string)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ShelfLabelReportSet")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ShelfLabelReportSet([Parameter(Name="SET", DbType="VarChar(100)")] string sET)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sET);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_Snapshot_Create")]
+		[return: Parameter(DbType="Int")]
+		public int INT_Snapshot_Create([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_Snapshot_Delete")]
+		[return: Parameter(DbType="Int")]
+		public int INT_Snapshot_Delete([Parameter(Name="SnapShotID", DbType="Int")] System.Nullable<int> snapShotID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), snapShotID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_Snapshot_HasOrigForecast")]
+		[return: Parameter(DbType="Int")]
+		public int INT_Snapshot_HasOrigForecast([Parameter(Name="SnapShotID", DbType="Int")] System.Nullable<int> snapShotID, [Parameter(Name="HasOrigForecast", DbType="Bit")] ref System.Nullable<bool> hasOrigForecast)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), snapShotID, hasOrigForecast);
+			hasOrigForecast = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_Snapshot_Import")]
+		[return: Parameter(DbType="Int")]
+		public int INT_Snapshot_Import()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_Snapshot_RevenueGrowthReportUsingSnapshot")]
+		public ISingleResult<INT_Snapshot_RevenueGrowthReportUsingSnapshotResult> INT_Snapshot_RevenueGrowthReportUsingSnapshot([Parameter(Name="Snapshot", DbType="Int")] System.Nullable<int> snapshot)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), snapshot);
+			return ((ISingleResult<INT_Snapshot_RevenueGrowthReportUsingSnapshotResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SnapshotComparisonReport")]
+		public ISingleResult<INT_SnapshotComparisonReportResult> INT_SnapshotComparisonReport([Parameter(Name="SnapShotId", DbType="Int")] System.Nullable<int> snapShotId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), snapShotId);
+			return ((ISingleResult<INT_SnapshotComparisonReportResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SoftInvoiceDetail")]
+		public ISingleResult<INT_SoftInvoiceDetailResult> INT_SoftInvoiceDetail([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((ISingleResult<INT_SoftInvoiceDetailResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SoftInvoiceFooter")]
+		public ISingleResult<INT_SoftInvoiceFooterResult> INT_SoftInvoiceFooter([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((ISingleResult<INT_SoftInvoiceFooterResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SoftInvoiceHeader")]
+		public ISingleResult<INT_SoftInvoiceHeaderResult> INT_SoftInvoiceHeader([Parameter(Name="Batch", DbType="Int")] System.Nullable<int> batch)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), batch);
+			return ((ISingleResult<INT_SoftInvoiceHeaderResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SoftTMInvoiceDetail")]
+		public ISingleResult<INT_SoftTMInvoiceDetailResult> INT_SoftTMInvoiceDetail([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((ISingleResult<INT_SoftTMInvoiceDetailResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SoftTMInvoiceFooter")]
+		public ISingleResult<INT_SoftTMInvoiceFooterResult> INT_SoftTMInvoiceFooter([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((ISingleResult<INT_SoftTMInvoiceFooterResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_SoftTMInvoiceHeader")]
+		public ISingleResult<INT_SoftTMInvoiceHeaderResult> INT_SoftTMInvoiceHeader([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((ISingleResult<INT_SoftTMInvoiceHeaderResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_STOCK_DUMP")]
+		public ISingleResult<INT_STOCK_DUMPResult> INT_STOCK_DUMP([Parameter(Name="LocID", DbType="Int")] System.Nullable<int> locID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), locID);
+			return ((ISingleResult<INT_STOCK_DUMPResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_StockMoveExternal")]
+		[return: Parameter(DbType="Int")]
+		public int INT_StockMoveExternal([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="FromLoc", DbType="Int")] System.Nullable<int> fromLoc, [Parameter(Name="ToLoc", DbType="Int")] System.Nullable<int> toLoc, [Parameter(Name="QTY", DbType="Decimal(9,2)")] System.Nullable<decimal> qTY, [Parameter(Name="Comment", DbType="VarChar(256)")] string comment, [Parameter(Name="User", DbType="VarChar(25)")] string user, [Parameter(Name="BatchID", DbType="Int")] System.Nullable<int> batchID, [Parameter(Name="UseTrans", DbType="Bit")] System.Nullable<bool> useTrans, [Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Despatch", DbType="Int")] System.Nullable<int> despatch, [Parameter(Name="NoReturn", DbType="Bit")] System.Nullable<bool> noReturn)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, fromLoc, toLoc, qTY, comment, user, batchID, useTrans, ordNum, despatch, noReturn);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_StockMoveInternal")]
+		[return: Parameter(DbType="Int")]
+		public int INT_StockMoveInternal([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="FromShelfLoc", DbType="Int")] System.Nullable<int> fromShelfLoc, [Parameter(Name="ToShelfLoc", DbType="Int")] System.Nullable<int> toShelfLoc, [Parameter(Name="ToLoc", DbType="Int")] System.Nullable<int> toLoc, [Parameter(Name="QTY", DbType="Decimal(9,2)")] System.Nullable<decimal> qTY, [Parameter(Name="Comment", DbType="VarChar(256)")] string comment, [Parameter(Name="User", DbType="VarChar(25)")] string user, [Parameter(Name="BatchID", DbType="Int")] System.Nullable<int> batchID, [Parameter(Name="UseTrans", DbType="Bit")] System.Nullable<bool> useTrans)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, fromShelfLoc, toShelfLoc, toLoc, qTY, comment, user, batchID, useTrans);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_StockTotals")]
+		[return: Parameter(DbType="Int")]
+		public int INT_StockTotals([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="Total", DbType="Int")] ref System.Nullable<int> total, [Parameter(Name="Alloc", DbType="Int")] ref System.Nullable<int> alloc, [Parameter(Name="QOH", DbType="Int")] ref System.Nullable<int> qOH, [Parameter(Name="QOO", DbType="Int")] ref System.Nullable<int> qOO, [Parameter(Name="QBO", DbType="Int")] ref System.Nullable<int> qBO, [Parameter(Name="Contracted", DbType="Int")] ref System.Nullable<int> contracted, [Parameter(Name="CompatQOH", DbType="Int")] ref System.Nullable<int> compatQOH, [Parameter(Name="Testing", DbType="Int")] ref System.Nullable<int> testing, [Parameter(Name="Repair", DbType="Int")] ref System.Nullable<int> repair, [Parameter(Name="RetBad", DbType="Int")] ref System.Nullable<int> retBad, [Parameter(Name="MaintMin", DbType="Decimal(9,2)")] ref System.Nullable<decimal> maintMin, [Parameter(Name="MaintMax", DbType="Decimal(9,2)")] ref System.Nullable<decimal> maintMax, [Parameter(Name="MaintAVG", DbType="Decimal(9,2)")] ref System.Nullable<decimal> maintAVG)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, total, alloc, qOH, qOO, qBO, contracted, compatQOH, testing, repair, retBad, maintMin, maintMax, maintAVG);
+			total = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			alloc = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			qOH = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			qOO = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			qBO = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			contracted = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			compatQOH = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			testing = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			repair = ((System.Nullable<int>)(result.GetParameterValue(9)));
+			retBad = ((System.Nullable<int>)(result.GetParameterValue(10)));
+			maintMin = ((System.Nullable<decimal>)(result.GetParameterValue(11)));
+			maintMax = ((System.Nullable<decimal>)(result.GetParameterValue(12)));
+			maintAVG = ((System.Nullable<decimal>)(result.GetParameterValue(13)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_StockTotalsLoc")]
+		[return: Parameter(DbType="Int")]
+		public int INT_StockTotalsLoc([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="Loc", DbType="Int")] System.Nullable<int> loc, [Parameter(Name="Total", DbType="Int")] ref System.Nullable<int> total, [Parameter(Name="Alloc", DbType="Int")] ref System.Nullable<int> alloc, [Parameter(Name="QOH", DbType="Int")] ref System.Nullable<int> qOH, [Parameter(Name="QOO", DbType="Int")] ref System.Nullable<int> qOO, [Parameter(Name="QBO", DbType="Int")] ref System.Nullable<int> qBO, [Parameter(Name="Contracted", DbType="Int")] ref System.Nullable<int> contracted, [Parameter(Name="CompatQOH", DbType="Int")] ref System.Nullable<int> compatQOH, [Parameter(Name="Testing", DbType="Int")] ref System.Nullable<int> testing, [Parameter(Name="Repair", DbType="Int")] ref System.Nullable<int> repair, [Parameter(Name="RetBad", DbType="Int")] ref System.Nullable<int> retBad)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, loc, total, alloc, qOH, qOO, qBO, contracted, compatQOH, testing, repair, retBad);
+			total = ((System.Nullable<int>)(result.GetParameterValue(2)));
+			alloc = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			qOH = ((System.Nullable<int>)(result.GetParameterValue(4)));
+			qOO = ((System.Nullable<int>)(result.GetParameterValue(5)));
+			qBO = ((System.Nullable<int>)(result.GetParameterValue(6)));
+			contracted = ((System.Nullable<int>)(result.GetParameterValue(7)));
+			compatQOH = ((System.Nullable<int>)(result.GetParameterValue(8)));
+			testing = ((System.Nullable<int>)(result.GetParameterValue(9)));
+			repair = ((System.Nullable<int>)(result.GetParameterValue(10)));
+			retBad = ((System.Nullable<int>)(result.GetParameterValue(11)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_STOCKTREE_LOCATIONS")]
+		public ISingleResult<INT_STOCKTREE_LOCATIONSResult> INT_STOCKTREE_LOCATIONS([Parameter(Name="PRODCODE", DbType="VarChar(35)")] string pRODCODE)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pRODCODE);
+			return ((ISingleResult<INT_STOCKTREE_LOCATIONSResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_Targets_Create")]
+		[return: Parameter(DbType="Int")]
+		public int INT_Targets_Create([Parameter(Name="Year", DbType="Int")] System.Nullable<int> year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_TM_INV_CALC_TOTALS")]
+		[return: Parameter(DbType="Int")]
+		public int INT_TM_INV_CALC_TOTALS([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="InvTotal", DbType="Decimal(9,2)")] ref System.Nullable<decimal> invTotal, [Parameter(Name="ExpenseTotal", DbType="Decimal(9,2)")] ref System.Nullable<decimal> expenseTotal, [Parameter(Name="CommissionTotal", DbType="Decimal(9,2)")] ref System.Nullable<decimal> commissionTotal, [Parameter(Name="GST_Total", DbType="Decimal(9,2)")] ref System.Nullable<decimal> gST_Total)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, invTotal, expenseTotal, commissionTotal, gST_Total);
+			invTotal = ((System.Nullable<decimal>)(result.GetParameterValue(1)));
+			expenseTotal = ((System.Nullable<decimal>)(result.GetParameterValue(2)));
+			commissionTotal = ((System.Nullable<decimal>)(result.GetParameterValue(3)));
+			gST_Total = ((System.Nullable<decimal>)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_UPDATE_STOCK_LOCK_SPECIFIC")]
+		[return: Parameter(DbType="Int")]
+		public int INT_UPDATE_STOCK_LOCK_SPECIFIC()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_UpdateCeCommissionStatus")]
+		[return: Parameter(DbType="Int")]
+		public int INT_UpdateCeCommissionStatus()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ValidateCtracItemPrice")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ValidateCtracItemPrice([Parameter(Name="ItemID", DbType="Int")] System.Nullable<int> itemID, [Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="Account", DbType="Int")] System.Nullable<int> account, [Parameter(Name="Price", DbType="Decimal(9,2)")] System.Nullable<decimal> price, [Parameter(Name="ServiceID", DbType="Int")] System.Nullable<int> serviceID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), itemID, prodCode, account, price, serviceID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.INT_ValidateCtracItemSerial")]
+		[return: Parameter(DbType="Int")]
+		public int INT_ValidateCtracItemSerial([Parameter(Name="ItemID", DbType="Int")] System.Nullable<int> itemID, [Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="SerialNo", DbType="VarChar(64)")] string serialNo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), itemID, prodCode, serialNo);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.InvoicePrintOptions")]
+		public ISingleResult<InvoicePrintOptionsResult> InvoicePrintOptions([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID);
+			return ((ISingleResult<InvoicePrintOptionsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.InvoiceSaleItems")]
+		[ResultType(typeof(InvoiceSaleItemsResult))]
+		public IMultipleResults InvoiceSaleItems([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="ProRata", DbType="Bit")] System.Nullable<bool> proRata)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, proRata);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.InvoiceTotal")]
+		[return: Parameter(DbType="Int")]
+		public int InvoiceTotal([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="InvTotal_OUT", DbType="Decimal(9,2)")] ref System.Nullable<decimal> invTotal_OUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, invTotal_OUT);
+			invTotal_OUT = ((System.Nullable<decimal>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Lockout_Check")]
+		[return: Parameter(DbType="Int")]
+		public int Lockout_Check()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.OnCreditHold")]
+		[return: Parameter(DbType="Int")]
+		public int OnCreditHold([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PartsMerge_Insert")]
+		[return: Parameter(DbType="Int")]
+		public int PartsMerge_Insert([Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PartsMerge_MergeAlias")]
+		[return: Parameter(DbType="Int")]
+		public int PartsMerge_MergeAlias([Parameter(Name="PartsMergeID", DbType="Int")] System.Nullable<int> partsMergeID, [Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), partsMergeID, prodCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PartsMerge_MergeCompatibility")]
+		[return: Parameter(DbType="Int")]
+		public int PartsMerge_MergeCompatibility([Parameter(Name="PartsMergeID", DbType="Int")] System.Nullable<int> partsMergeID, [Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), partsMergeID, prodCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PartsMerge_Rollback")]
+		[return: Parameter(DbType="Int")]
+		public int PartsMerge_Rollback([Parameter(Name="PartsMergeID", DbType="Int")] System.Nullable<int> partsMergeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), partsMergeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PartsMerge_ValidateAlias")]
+		[return: Parameter(DbType="Int")]
+		public int PartsMerge_ValidateAlias([Parameter(Name="PartsMergeID", DbType="Int")] System.Nullable<int> partsMergeID, [Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), partsMergeID, prodCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_ClearExportFlags")]
+		[return: Parameter(DbType="Int")]
+		public int PO_ClearExportFlags([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_DifferentReasonType")]
+		[return: Parameter(DbType="Int")]
+		public int PO_DifferentReasonType([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="ReasonType", DbType="Int")] System.Nullable<int> reasonType, [Parameter(Name="Different", DbType="Bit")] ref System.Nullable<bool> different)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, reasonType, different);
+			different = ((System.Nullable<bool>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_ExportToAccpac_OrderItems")]
+		public ISingleResult<PO_ExportToAccpac_OrderItemsResult> PO_ExportToAccpac_OrderItems([Parameter(Name="ItemNum", DbType="Int")] System.Nullable<int> itemNum, [Parameter(Name="POCounter", DbType="Int")] System.Nullable<int> pOCounter, [Parameter(Name="ItemCounter", DbType="Int")] System.Nullable<int> itemCounter)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), itemNum, pOCounter, itemCounter);
+			return ((ISingleResult<PO_ExportToAccpac_OrderItemsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_GetBusinessUnitFilterPOCutoff")]
+		[return: Parameter(DbType="Int")]
+		public int PO_GetBusinessUnitFilterPOCutoff([Parameter(Name="CutoffOrdNum", DbType="Int")] ref System.Nullable<int> cutoffOrdNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cutoffOrdNum);
+			cutoffOrdNum = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_GetCountryAbbrev")]
+		[return: Parameter(DbType="Int")]
+		public int PO_GetCountryAbbrev([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="POAbbrev", DbType="VarChar(20)")] ref string pOAbbrev)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, pOAbbrev);
+			pOAbbrev = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_GetExpenditureType")]
+		[return: Parameter(DbType="Int")]
+		public int PO_GetExpenditureType([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="ExpenditureType", DbType="Int")] ref System.Nullable<int> expenditureType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, expenditureType);
+			expenditureType = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_GetGSTRate")]
+		[return: Parameter(DbType="Int")]
+		public int PO_GetGSTRate([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="GSTRate", DbType="Decimal(9,4)")] ref System.Nullable<decimal> gSTRate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, gSTRate);
+			gSTRate = ((System.Nullable<decimal>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_GetOrderTypeBusinessUnit")]
+		[return: Parameter(DbType="Int")]
+		public int PO_GetOrderTypeBusinessUnit([Parameter(Name="OrderExpenditureType", DbType="Int")] System.Nullable<int> orderExpenditureType, [Parameter(Name="BusinessUnit", DbType="Int")] ref System.Nullable<int> businessUnit)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), orderExpenditureType, businessUnit);
+			businessUnit = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_HasGLCodes")]
+		[return: Parameter(DbType="Int")]
+		public int PO_HasGLCodes([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Complete", DbType="Bit")] ref System.Nullable<bool> complete)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, complete);
+			complete = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_IsComplete")]
+		[return: Parameter(DbType="Int")]
+		public int PO_IsComplete([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Complete", DbType="Bit")] ref System.Nullable<bool> complete)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, complete);
+			complete = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_IsPartiallyReceived")]
+		[return: Parameter(DbType="Int")]
+		public int PO_IsPartiallyReceived([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Received", DbType="Bit")] ref System.Nullable<bool> received)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, received);
+			received = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_MissingCostCategories")]
+		[return: Parameter(DbType="Int")]
+		public int PO_MissingCostCategories([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Missing", DbType="Bit")] ref System.Nullable<bool> missing)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, missing);
+			missing = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_OrderTypeHasOneBusinessUnit")]
+		[return: Parameter(DbType="Int")]
+		public int PO_OrderTypeHasOneBusinessUnit([Parameter(Name="OrderExpenditureType", DbType="Int")] System.Nullable<int> orderExpenditureType, [Parameter(Name="OneBusinessUnit", DbType="Bit")] ref System.Nullable<bool> oneBusinessUnit)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), orderExpenditureType, oneBusinessUnit);
+			oneBusinessUnit = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_RemoveGLCodes")]
+		[return: Parameter(DbType="Int")]
+		public int PO_RemoveGLCodes([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_SetItemCustomer")]
+		[return: Parameter(DbType="Int")]
+		public int PO_SetItemCustomer([Parameter(Name="Customer", DbType="Int")] System.Nullable<int> customer, [Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customer, ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PO_UpdateStockShelfValues")]
+		[return: Parameter(DbType="Int")]
+		public int PO_UpdateStockShelfValues([Parameter(Name="ItemNum", DbType="Int")] System.Nullable<int> itemNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), itemNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.POReceived")]
+		[return: Parameter(DbType="Int")]
+		public int POReceived([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="ItemNum", DbType="Int")] System.Nullable<int> itemNum, [Parameter(Name="QTY_OUT", DbType="Decimal(9,2)")] ref System.Nullable<decimal> qTY_OUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, itemNum, qTY_OUT);
+			qTY_OUT = ((System.Nullable<decimal>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.POTax")]
+		[return: Parameter(DbType="Int")]
+		public int POTax([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Tax", DbType="Decimal(10,2)")] ref System.Nullable<decimal> tax)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, tax);
+			tax = ((System.Nullable<decimal>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.POTotal")]
+		[return: Parameter(DbType="Int")]
+		public int POTotal([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Total", DbType="Decimal(10,2)")] ref System.Nullable<decimal> total)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, total);
+			total = ((System.Nullable<decimal>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PrintInvoice")]
+		[return: Parameter(DbType="Int")]
+		public int PrintInvoice([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Co", DbType="Int")] System.Nullable<int> co)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, co);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PrintInvoice_DRAFT")]
+		[return: Parameter(DbType="Int")]
+		public int PrintInvoice_DRAFT([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="Co", DbType="Int")] System.Nullable<int> co)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, co);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.ProdCodeExists")]
+		[return: Parameter(DbType="Int")]
+		public int ProdCodeExists([Parameter(Name="DisplayCode", DbType="VarChar(35)")] string displayCode, [Parameter(Name="ProdCode", DbType="VarChar(35)")] ref string prodCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), displayCode, prodCode);
+			prodCode = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_AddTimesheet")]
+		[return: Parameter(DbType="Int")]
+		public int Project_AddTimesheet([Parameter(Name="EngineerID", DbType="VarChar(25)")] string engineerID, [Parameter(Name="StartDate", DbType="DateTime")] System.Nullable<System.DateTime> startDate, [Parameter(Name="EditMode", DbType="Bit")] System.Nullable<bool> editMode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), engineerID, startDate, editMode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_CopyTasks")]
+		[return: Parameter(DbType="Int")]
+		public int Project_CopyTasks([Parameter(Name="EngineerID", DbType="VarChar(25)")] string engineerID, [Parameter(Name="FromDate", DbType="DateTime")] System.Nullable<System.DateTime> fromDate, [Parameter(Name="ToDate", DbType="DateTime")] System.Nullable<System.DateTime> toDate, [Parameter(Name="Tasks", DbType="Int")] ref System.Nullable<int> tasks, [Parameter(Name="Message", DbType="VarChar(100)")] ref string message)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), engineerID, fromDate, toDate, tasks, message);
+			tasks = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			message = ((string)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_FieldHasMultipleAccessDetails")]
+		[return: Parameter(DbType="Int")]
+		public int Project_FieldHasMultipleAccessDetails([Parameter(Name="FieldName", DbType="VarChar(50)")] string fieldName, [Parameter(Name="ProjectType", DbType="VarChar(20)")] string projectType, [Parameter(Name="Status", DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fieldName, projectType, status);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_GetFieldAccessDetails")]
+		public ISingleResult<Project_GetFieldAccessDetailsResult> Project_GetFieldAccessDetails([Parameter(Name="ProjectType", DbType="VarChar(20)")] string projectType, [Parameter(Name="FieldName", DbType="VarChar(50)")] string fieldName, [Parameter(Name="Status", DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), projectType, fieldName, status);
+			return ((ISingleResult<Project_GetFieldAccessDetailsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_GetGUIFieldName")]
+		[return: Parameter(DbType="Int")]
+		public int Project_GetGUIFieldName([Parameter(Name="FieldName", DbType="VarChar(50)")] string fieldName, [Parameter(Name="GUIFieldName", DbType="VarChar(50)")] ref string gUIFieldName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fieldName, gUIFieldName);
+			gUIFieldName = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_GetMandatoryFields")]
+		[ResultType(typeof(Project_GetMandatoryFieldsResult))]
+		public IMultipleResults Project_GetMandatoryFields([Parameter(Name="ProjectType", DbType="VarChar(20)")] string projectType, [Parameter(Name="Status", DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), projectType, status);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_GetNextPCRNumber")]
+		[return: Parameter(DbType="Int")]
+		public int Project_GetNextPCRNumber([Parameter(Name="ProjectID", DbType="Int")] System.Nullable<int> projectID, [Parameter(Name="NumberOfNewPCRsInGrids", DbType="Int")] System.Nullable<int> numberOfNewPCRsInGrids)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), projectID, numberOfNewPCRsInGrids);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_GetProjectName")]
+		[return: Parameter(DbType="Int")]
+		public int Project_GetProjectName([Parameter(Name="ProjectID", DbType="Int")] System.Nullable<int> projectID, [Parameter(Name="ProjectNameOut", DbType="VarChar(100)")] ref string projectNameOut)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), projectID, projectNameOut);
+			projectNameOut = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_GetProjectType")]
+		public ISingleResult<Project_GetProjectTypeResult> Project_GetProjectType([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="ProjectType", DbType="VarChar(20)")] ref string projectType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, projectType);
+			projectType = ((string)(result.GetParameterValue(1)));
+			return ((ISingleResult<Project_GetProjectTypeResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_GetSavedProjectStatus")]
+		[return: Parameter(DbType="Int")]
+		public int Project_GetSavedProjectStatus([Parameter(Name="ProjectID", DbType="Int")] System.Nullable<int> projectID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), projectID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_GetStatusID")]
+		[return: Parameter(DbType="Int")]
+		public int Project_GetStatusID([Parameter(Name="StatusDescription", DbType="VarChar(50)")] string statusDescription)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), statusDescription);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_GetTimesheetStartDate")]
+		[return: Parameter(DbType="Int")]
+		public int Project_GetTimesheetStartDate([Parameter(Name="TimesheetID", DbType="Int")] System.Nullable<int> timesheetID, [Parameter(Name="StartDate", DbType="VarChar(25)")] ref string startDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), timesheetID, startDate);
+			startDate = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_PasteTasks")]
+		[return: Parameter(DbType="Int")]
+		public int Project_PasteTasks([Parameter(Name="EngineerID", DbType="VarChar(25)")] string engineerID, [Parameter(Name="FromTimesheetID", DbType="Int")] System.Nullable<int> fromTimesheetID, [Parameter(Name="ToTimesheetID", DbType="Int")] System.Nullable<int> toTimesheetID, [Parameter(Name="Tasks", DbType="Int")] ref System.Nullable<int> tasks, [Parameter(Name="Message", DbType="VarChar(100)")] ref string message)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), engineerID, fromTimesheetID, toTimesheetID, tasks, message);
+			tasks = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			message = ((string)(result.GetParameterValue(4)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_PCR_FieldHasMultipleAccessDetails")]
+		[return: Parameter(DbType="Int")]
+		public int Project_PCR_FieldHasMultipleAccessDetails([Parameter(Name="FieldName", DbType="VarChar(50)")] string fieldName, [Parameter(Name="ProjectType", DbType="VarChar(20)")] string projectType, [Parameter(Name="Status", DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fieldName, projectType, status);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_PCR_GetFieldAccessDetails")]
+		public ISingleResult<Project_PCR_GetFieldAccessDetailsResult> Project_PCR_GetFieldAccessDetails([Parameter(Name="ProjectType", DbType="VarChar(20)")] string projectType, [Parameter(Name="FieldName", DbType="VarChar(50)")] string fieldName, [Parameter(Name="Status", DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), projectType, fieldName, status);
+			return ((ISingleResult<Project_PCR_GetFieldAccessDetailsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_PCR_GetGUIFieldName")]
+		[return: Parameter(DbType="Int")]
+		public int Project_PCR_GetGUIFieldName([Parameter(Name="FieldName", DbType="VarChar(50)")] string fieldName, [Parameter(Name="GUIFieldName", DbType="VarChar(50)")] ref string gUIFieldName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fieldName, gUIFieldName);
+			gUIFieldName = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_PCR_GetMandatoryFields")]
+		[ResultType(typeof(Project_PCR_GetMandatoryFieldsResult))]
+		public IMultipleResults Project_PCR_GetMandatoryFields([Parameter(Name="ProjectType", DbType="VarChar(20)")] string projectType, [Parameter(Name="Status", DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), projectType, status);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_SecurityLevel")]
+		[return: Parameter(DbType="Int")]
+		public int Project_SecurityLevel([Parameter(Name="User", DbType="VarChar(25)")] string user)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_SecurityValidateLogin")]
+		[return: Parameter(DbType="Int")]
+		public int Project_SecurityValidateLogin([Parameter(Name="ID", DbType="VarChar(25)")] string iD)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_UpdateTimesheet")]
+		[return: Parameter(DbType="Int")]
+		public int Project_UpdateTimesheet([Parameter(Name="TimesheetID", DbType="Int")] System.Nullable<int> timesheetID, [Parameter(Name="Status", DbType="Int")] System.Nullable<int> status)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), timesheetID, status);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Project_UserHasSecurityApproval")]
+		[return: Parameter(DbType="Int")]
+		public int Project_UserHasSecurityApproval([Parameter(Name="User", DbType="VarChar(25)")] string user, [Parameter(Name="Approval", DbType="VarChar(50)")] string approval)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user, approval);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PurchOrdExists")]
+		[return: Parameter(DbType="Int")]
+		public int PurchOrdExists([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="IgnoreTransfers", DbType="Bit")] System.Nullable<bool> ignoreTransfers)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, ignoreTransfers);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.PurchOrdIsStockTransfer")]
+		[return: Parameter(DbType="Int")]
+		public int PurchOrdIsStockTransfer([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.RemoveContractItem")]
+		[return: Parameter(DbType="Int")]
+		public int RemoveContractItem([Parameter(Name="ContractItemID", DbType="Int")] System.Nullable<int> contractItemID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), contractItemID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.RemoveLocation")]
+		[return: Parameter(DbType="Int")]
+		public int RemoveLocation([Parameter(Name="LocationID", DbType="Int")] System.Nullable<int> locationID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), locationID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.RemoveStockItem")]
+		[return: Parameter(DbType="Int")]
+		public int RemoveStockItem([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.ReplicateStockItem")]
+		[return: Parameter(DbType="Int")]
+		public int ReplicateStockItem([Parameter(Name="StockItem", DbType="VarChar(35)")] string stockItem, [Parameter(Name="StartItem", DbType="VarChar(35)")] string startItem, [Parameter(Name="Amount", DbType="Int")] System.Nullable<int> amount)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), stockItem, startItem, amount);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.RollOpeningBalances")]
+		[return: Parameter(DbType="Int")]
+		public int RollOpeningBalances([Parameter(Name="Year", DbType="SmallInt")] System.Nullable<short> year, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year, month);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SALES_TEAMS_GROWTH_TARGETS_Create")]
+		[return: Parameter(DbType="Int")]
+		public int SALES_TEAMS_GROWTH_TARGETS_Create([Parameter(Name="Year", DbType="Int")] System.Nullable<int> year)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SALESORD_DRAFT_RemoveOldRecords")]
+		[return: Parameter(DbType="Int")]
+		public int SALESORD_DRAFT_RemoveOldRecords()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SALESORD_EXTERNAL_LOG_AddLog")]
+		[return: Parameter(DbType="Int")]
+		public int SALESORD_EXTERNAL_LOG_AddLog([Parameter(Name="LogDate", DbType="DateTime")] System.Nullable<System.DateTime> logDate, [Parameter(Name="BatchID", DbType="Int")] System.Nullable<int> batchID, [Parameter(Name="StoredProcedureName", DbType="VarChar(250)")] string storedProcedureName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), logDate, batchID, storedProcedureName);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SALESORD_GetGSTRate")]
+		[return: Parameter(DbType="Int")]
+		public int SALESORD_GetGSTRate([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="GSTRate", DbType="Decimal(9,4)")] ref System.Nullable<decimal> gSTRate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, gSTRate);
+			gSTRate = ((System.Nullable<decimal>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SALESORD_PDFCreated")]
+		[return: Parameter(DbType="Int")]
+		public int SALESORD_PDFCreated([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SALESORD_PDFSent")]
+		[return: Parameter(DbType="Int")]
+		public int SALESORD_PDFSent([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SalesOrdCalcTotal")]
+		[return: Parameter(DbType="Int")]
+		public int SalesOrdCalcTotal([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="OrdTot_OUT", DbType="Decimal(9,2)")] ref System.Nullable<decimal> ordTot_OUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, ordTot_OUT);
+			ordTot_OUT = ((System.Nullable<decimal>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SalesOrdFirstOrdNum")]
+		[return: Parameter(DbType="Int")]
+		public int SalesOrdFirstOrdNum([Parameter(Name="OrdNum_OUT", DbType="Int")] ref System.Nullable<int> ordNum_OUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum_OUT);
+			ordNum_OUT = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SECURITY_GetCurrentUser")]
+		[return: Parameter(DbType="Int")]
+		public int SECURITY_GetCurrentUser([Parameter(Name="User", DbType="VarChar(25)")] ref string user)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user);
+			user = ((string)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SecurityApproval")]
+		[return: Parameter(DbType="Int")]
+		public int SecurityApproval([Parameter(Name="User", DbType="VarChar(25)")] string user, [Parameter(Name="App", DbType="VarChar(50)")] string app, [Parameter(Name="CompanyNum", DbType="Int")] System.Nullable<int> companyNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), user, app, companyNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SecurityValidateLogin")]
+		[return: Parameter(DbType="Int")]
+		public int SecurityValidateLogin([Parameter(Name="ID", DbType="VarChar(25)")] string iD, [Parameter(Name="Password", DbType="VarChar(15)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), iD, password);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SetCurrentPeriodToday")]
+		[return: Parameter(DbType="Int")]
+		public int SetCurrentPeriodToday()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SetDebtorPayment")]
+		[return: Parameter(DbType="Int")]
+		public int SetDebtorPayment([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Bank", DbType="VarChar(10)")] string bank, [Parameter(Name="BSB", DbType="VarChar(10)")] string bSB, [Parameter(Name="GLAccNum", DbType="VarChar(16)")] string gLAccNum, [Parameter(Name="ChequeNum", DbType="VarChar(16)")] string chequeNum, [Parameter(Name="Amount", DbType="Money")] System.Nullable<decimal> amount, [Parameter(Name="Discount", DbType="Money")] System.Nullable<decimal> discount, [Parameter(Name="DepositDate", DbType="DateTime")] System.Nullable<System.DateTime> depositDate, [Parameter(Name="CompanyNum", DbType="VarChar(12)")] string companyNum, [Parameter(Name="BankAccGL", DbType="VarChar(16)")] string bankAccGL, [Parameter(Name="Company", DbType="VarChar(50)")] string company, [Parameter(Name="CurrencyType", DbType="VarChar(5)")] string currencyType, [Parameter(Name="ExchRate", DbType="Decimal(5,3)")] System.Nullable<decimal> exchRate, [Parameter(Name="GLAccAdjust", DbType="VarChar(16)")] string gLAccAdjust, [Parameter(Name="RecNum", DbType="Int")] ref System.Nullable<int> recNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, bank, bSB, gLAccNum, chequeNum, amount, discount, depositDate, companyNum, bankAccGL, company, currencyType, exchRate, gLAccAdjust, recNum);
+			recNum = ((System.Nullable<int>)(result.GetParameterValue(14)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SetFastPay")]
+		[return: Parameter(DbType="Int")]
+		public int SetFastPay([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SetGlJournalActive")]
+		[return: Parameter(DbType="Int")]
+		public int SetGlJournalActive([Parameter(Name="JournalCode", DbType="VarChar(16)")] string journalCode, [Parameter(Name="Active", DbType="Bit")] System.Nullable<bool> active, [Parameter(Name="Month", DbType="Int")] System.Nullable<int> month)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), journalCode, active, month);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SetGlJournalInactive")]
+		[return: Parameter(DbType="Int")]
+		public int SetGlJournalInactive([Parameter(Name="JournalCode", DbType="VarChar(16)")] string journalCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), journalCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SetGlJournalViewable")]
+		[return: Parameter(DbType="Int")]
+		public int SetGlJournalViewable([Parameter(Name="JournalCode", DbType="VarChar(16)")] string journalCode, [Parameter(Name="Viewable", DbType="Bit")] System.Nullable<bool> viewable)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), journalCode, viewable);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SetHoldStatus")]
+		[return: Parameter(DbType="Int")]
+		public int SetHoldStatus([Parameter(Name="CustomerCode", DbType="VarChar(12)")] string customerCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customerCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SetInvoiceTotals")]
+		[return: Parameter(DbType="Int")]
+		public int SetInvoiceTotals([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SetTaxRates")]
+		[return: Parameter(DbType="Int")]
+		public int SetTaxRates([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Setup_NewCompany")]
+		[return: Parameter(DbType="Int")]
+		public int Setup_NewCompany([Parameter(Name="Co", DbType="Int")] System.Nullable<int> co)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), co);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.SimulateDebtorPayment")]
+		public ISingleResult<SimulateDebtorPaymentResult> SimulateDebtorPayment([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Amount", DbType="Money")] System.Nullable<decimal> amount, [Parameter(Name="Period", DbType="TinyInt")] System.Nullable<byte> period)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, amount, period);
+			return ((ISingleResult<SimulateDebtorPaymentResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.sp_TestStoredProcedure")]
+		public ISingleResult<Sp_TestStoredProcedureResult> Sp_TestStoredProcedure()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Sp_TestStoredProcedureResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.sp_upgraddiagrams")]
+		[return: Parameter(DbType="Int")]
+		public int Sp_upgraddiagrams()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.spThirdPartyFinanceGUI_GetAgreementDetails")]
+		public ISingleResult<SpThirdPartyFinanceGUI_GetAgreementDetailsResult> SpThirdPartyFinanceGUI_GetAgreementDetails([Parameter(Name="SarID", DbType="VarChar(20)")] string sarID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sarID);
+			return ((ISingleResult<SpThirdPartyFinanceGUI_GetAgreementDetailsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.spThirdPartyFinanceGUI_GetAgreementGLCodeTotals")]
+		public ISingleResult<SpThirdPartyFinanceGUI_GetAgreementGLCodeTotalsResult> SpThirdPartyFinanceGUI_GetAgreementGLCodeTotals([Parameter(Name="SarID", DbType="VarChar(20)")] string sarID, [Parameter(Name="InvoiceFromDate", DbType="DateTime")] System.Nullable<System.DateTime> invoiceFromDate, [Parameter(Name="InvoiceToDate", DbType="DateTime")] System.Nullable<System.DateTime> invoiceToDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sarID, invoiceFromDate, invoiceToDate);
+			return ((ISingleResult<SpThirdPartyFinanceGUI_GetAgreementGLCodeTotalsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.spThirdPartyFinanceGUI_GetAgreementTotal")]
+		public ISingleResult<SpThirdPartyFinanceGUI_GetAgreementTotalResult> SpThirdPartyFinanceGUI_GetAgreementTotal([Parameter(Name="SarID", DbType="VarChar(20)")] string sarID, [Parameter(Name="InvoiceFromDate", DbType="DateTime")] System.Nullable<System.DateTime> invoiceFromDate, [Parameter(Name="InvoiceToDate", DbType="DateTime")] System.Nullable<System.DateTime> invoiceToDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sarID, invoiceFromDate, invoiceToDate);
+			return ((ISingleResult<SpThirdPartyFinanceGUI_GetAgreementTotalResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.spThirdPartyFinanceGUI_GetDeviceDetails")]
+		public ISingleResult<SpThirdPartyFinanceGUI_GetDeviceDetailsResult> SpThirdPartyFinanceGUI_GetDeviceDetails([Parameter(Name="SarID", DbType="VarChar(20)")] string sarID, [Parameter(Name="InvoiceFromDate", DbType="DateTime")] System.Nullable<System.DateTime> invoiceFromDate, [Parameter(Name="InvoiceToDate", DbType="DateTime")] System.Nullable<System.DateTime> invoiceToDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sarID, invoiceFromDate, invoiceToDate);
+			return ((ISingleResult<SpThirdPartyFinanceGUI_GetDeviceDetailsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.spThirdPartyFinanceGUI_GetInvoiceDeviceDetails")]
+		public ISingleResult<SpThirdPartyFinanceGUI_GetInvoiceDeviceDetailsResult> SpThirdPartyFinanceGUI_GetInvoiceDeviceDetails([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((ISingleResult<SpThirdPartyFinanceGUI_GetInvoiceDeviceDetailsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.spThirdPartyFinanceGUI_GetInvoiceForDates")]
+		public ISingleResult<SpThirdPartyFinanceGUI_GetInvoiceForDatesResult> SpThirdPartyFinanceGUI_GetInvoiceForDates([Parameter(Name="SarID", DbType="VarChar(20)")] string sarID, [Parameter(Name="InvoiceFromDate", DbType="DateTime")] System.Nullable<System.DateTime> invoiceFromDate, [Parameter(Name="InvoiceToDate", DbType="DateTime")] System.Nullable<System.DateTime> invoiceToDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sarID, invoiceFromDate, invoiceToDate);
+			return ((ISingleResult<SpThirdPartyFinanceGUI_GetInvoiceForDatesResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.spThirdPartyFinanceGUI_GetInvoiceGLCodeTotals")]
+		public ISingleResult<SpThirdPartyFinanceGUI_GetInvoiceGLCodeTotalsResult> SpThirdPartyFinanceGUI_GetInvoiceGLCodeTotals([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((ISingleResult<SpThirdPartyFinanceGUI_GetInvoiceGLCodeTotalsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.spThirdPartyFinanceGUI_GetInvoiceTotal")]
+		public ISingleResult<SpThirdPartyFinanceGUI_GetInvoiceTotalResult> SpThirdPartyFinanceGUI_GetInvoiceTotal([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum);
+			return ((ISingleResult<SpThirdPartyFinanceGUI_GetInvoiceTotalResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.spThirdPartyFinanceGUI_Insert3PInvoice")]
+		[return: Parameter(DbType="Int")]
+		public int SpThirdPartyFinanceGUI_Insert3PInvoice([Parameter(Name="SarID", DbType="VarChar(20)")] string sarID, [Parameter(Name="InvoiceNum", DbType="VarChar(20)")] string invoiceNum, [Parameter(Name="InvoiceFromDate", DbType="DateTime")] System.Nullable<System.DateTime> invoiceFromDate, [Parameter(Name="InvoiceToDate", DbType="DateTime")] System.Nullable<System.DateTime> invoiceToDate)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), sarID, invoiceNum, invoiceFromDate, invoiceToDate);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.spWindowsGeocoderService_SetAccountIdLatLong")]
+		[return: Parameter(DbType="Int")]
+		public int SpWindowsGeocoderService_SetAccountIdLatLong([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="Latitude", DbType="Decimal(10,7)")] System.Nullable<decimal> latitude, [Parameter(Name="Longitude", DbType="Decimal(10,7)")] System.Nullable<decimal> longitude)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, latitude, longitude);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.STOCK_AddRecRetBadLocs")]
+		[return: Parameter(DbType="Int")]
+		public int STOCK_AddRecRetBadLocs([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="LocationID", DbType="Int")] System.Nullable<int> locationID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, locationID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.STOCK_GetLastChangedBy")]
+		public ISingleResult<STOCK_GetLastChangedByResult> STOCK_GetLastChangedBy([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode);
+			return ((ISingleResult<STOCK_GetLastChangedByResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Stock_GetLocQOH")]
+		public ISingleResult<Stock_GetLocQOHResult> Stock_GetLocQOH([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="LocID", DbType="Int")] System.Nullable<int> locID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, locID);
+			return ((ISingleResult<Stock_GetLocQOHResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.STOCK_GetPartsType")]
+		[return: Parameter(DbType="Int")]
+		public int STOCK_GetPartsType([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="PartsType", DbType="Int")] ref System.Nullable<int> partsType)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, partsType);
+			partsType = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.STOCK_HasCrossAlias")]
+		[return: Parameter(DbType="Int")]
+		public int STOCK_HasCrossAlias([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="Alias", DbType="VarChar(35)")] string alias, [Parameter(Name="HasCrossAlias", DbType="Bit")] ref System.Nullable<bool> hasCrossAlias)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, alias, hasCrossAlias);
+			hasCrossAlias = ((System.Nullable<bool>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.STOCK_HasGLRevCatCode")]
+		[return: Parameter(DbType="Int")]
+		public int STOCK_HasGLRevCatCode([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="HasGLRevCatCode", DbType="Bit")] ref System.Nullable<bool> hasGLRevCatCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, hasGLRevCatCode);
+			hasGLRevCatCode = ((System.Nullable<bool>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.STOCK_LocationCompany")]
+		[return: Parameter(DbType="Int")]
+		public int STOCK_LocationCompany([Parameter(Name="LocationID", DbType="Int")] System.Nullable<int> locationID, [Parameter(Name="COmpanyNum_OUT", DbType="Int")] ref System.Nullable<int> cOmpanyNum_OUT)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), locationID, cOmpanyNum_OUT);
+			cOmpanyNum_OUT = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.STOCK_RECEIVED_TMP_APPLY")]
+		[return: Parameter(DbType="Int")]
+		public int STOCK_RECEIVED_TMP_APPLY([Parameter(Name="GUID", DbType="UniqueIdentifier")] System.Nullable<System.Guid> gUID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), gUID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.STOCK_RECEIVED_TMP_DISCARD")]
+		[return: Parameter(DbType="Int")]
+		public int STOCK_RECEIVED_TMP_DISCARD([Parameter(Name="GUID", DbType="UniqueIdentifier")] System.Nullable<System.Guid> gUID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), gUID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.STOCK_REPORT")]
+		public ISingleResult<STOCK_REPORTResult> STOCK_REPORT([Parameter(Name="StartItem", DbType="Char(5)")] string startItem, [Parameter(Name="EndItem", DbType="Char(5)")] string endItem)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), startItem, endItem);
+			return ((ISingleResult<STOCK_REPORTResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.STOCK_SHELF_HISTORY")]
+		public ISingleResult<STOCK_SHELF_HISTORYResult> STOCK_SHELF_HISTORY([Parameter(Name="PRODCODE", DbType="VarChar(35)")] string pRODCODE)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), pRODCODE);
+			return ((ISingleResult<STOCK_SHELF_HISTORYResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.StockGroupName")]
+		public ISingleResult<StockGroupNameResult> StockGroupName([Parameter(Name="Group", DbType="VarChar(10)")] string group)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), group);
+			return ((ISingleResult<StockGroupNameResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.StockInsertReplication")]
+		[return: Parameter(DbType="Int")]
+		public int StockInsertReplication([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="NewCode", DbType="VarChar(35)")] string newCode, [Parameter(Name="XRefCode", DbType="VarChar(30)")] string xRefCode, [Parameter(Name="NewDescrip", DbType="VarChar(50)")] string newDescrip)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, newCode, xRefCode, newDescrip);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.StockItemInfo")]
+		[ResultType(typeof(StockItemInfoResult))]
+		public IMultipleResults StockItemInfo([Parameter(Name="SearchCode", DbType="VarChar(35)")] string searchCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), searchCode);
+			return ((IMultipleResults)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UnAuditedTransactions")]
+		public ISingleResult<UnAuditedTransactionsResult> UnAuditedTransactions()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<UnAuditedTransactionsResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.Update_Debtors_CRM")]
+		[return: Parameter(DbType="Int")]
+		public int Update_Debtors_CRM([Parameter(Name="AccountID", DbType="Int")] System.Nullable<int> accountID, [Parameter(Name="NextCall", DbType="DateTime")] System.Nullable<System.DateTime> nextCall, [Parameter(Name="ID", DbType="VarChar(25)")] string iD)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accountID, nextCall, iD);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdateAuditAmounts")]
+		[return: Parameter(DbType="Int")]
+		public int UpdateAuditAmounts()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdateChequeNumber")]
+		[return: Parameter(DbType="Int")]
+		public int UpdateChequeNumber([Parameter(Name="ChqNum", DbType="VarChar(12)")] string chqNum, [Parameter(Name="Audit", DbType="Int")] System.Nullable<int> audit)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), chqNum, audit);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdateCurrentReceived")]
+		[return: Parameter(DbType="Int")]
+		public int UpdateCurrentReceived([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="InvNum", DbType="VarChar(16)")] string invNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, invNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdateCustOrd")]
+		[return: Parameter(DbType="Int")]
+		public int UpdateCustOrd([Parameter(Name="OrdNum", DbType="Int")] System.Nullable<int> ordNum, [Parameter(Name="CustOrdNum", DbType="VarChar(16)")] string custOrdNum)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ordNum, custOrdNum);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdateSnapShotBalances")]
+		[return: Parameter(DbType="Int")]
+		public int UpdateSnapShotBalances([Parameter(Name="Year", DbType="SmallInt")] System.Nullable<short> year, [Parameter(Name="Month", DbType="TinyInt")] System.Nullable<byte> month)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), year, month);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdDebtor_Balances")]
+		[return: Parameter(DbType="Int")]
+		public int UpdDebtor_Balances([Parameter(Name="AccID", DbType="VarChar(12)")] string accID, [Parameter(Name="Amount", DbType="Money")] System.Nullable<decimal> amount, [Parameter(Name="Period", DbType="Int")] System.Nullable<int> period, [Parameter(DbType="TinyInt")] System.Nullable<byte> isPayment)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accID, amount, period, isPayment);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdDebtorJnl")]
+		[return: Parameter(DbType="Int")]
+		public int UpdDebtorJnl([Parameter(Name="AccID", DbType="VarChar(12)")] string accID, [Parameter(Name="JnlCurrent", DbType="Money")] System.Nullable<decimal> jnlCurrent, [Parameter(Name="Jnl30Days", DbType="Money")] System.Nullable<decimal> jnl30Days, [Parameter(Name="Jnl60Days", DbType="Money")] System.Nullable<decimal> jnl60Days, [Parameter(Name="Jnl90Days", DbType="Money")] System.Nullable<decimal> jnl90Days)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), accID, jnlCurrent, jnl30Days, jnl60Days, jnl90Days);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdDebtorsLastPick")]
+		[return: Parameter(DbType="Int")]
+		public int UpdDebtorsLastPick([Parameter(Name="CustomerCode", DbType="VarChar(12)")] string customerCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), customerCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdInvParent")]
+		[return: Parameter(DbType="Int")]
+		public int UpdInvParent()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.UpdReceiptsParent")]
+		[return: Parameter(DbType="Int")]
+		public int UpdReceiptsParent()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.usp_ContractExpiry_Select")]
+		public ISingleResult<Usp_ContractExpiry_SelectResult> Usp_ContractExpiry_Select()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Usp_ContractExpiry_SelectResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.ValidateDeviceCode")]
+		[return: Parameter(DbType="Int")]
+		public int ValidateDeviceCode([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="DeviceCode", DbType="VarChar(35)")] string deviceCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, deviceCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.ValidateNewDeviceCode")]
+		[return: Parameter(DbType="Int")]
+		public int ValidateNewDeviceCode([Parameter(Name="ProdCode", DbType="VarChar(35)")] string prodCode, [Parameter(Name="DeviceCode", DbType="VarChar(35)")] string deviceCode)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, deviceCode);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.ValidateProdCode")]
+		[return: Parameter(DbType="Int")]
+		public int ValidateProdCode([Parameter(Name="ProdCode", DbType="VarChar(35)")] ref string prodCode, [Parameter(Name="OrdNum", DbType="Int")] ref System.Nullable<int> ordNum, [Parameter(Name="Qty", DbType="Decimal(9,2)")] ref System.Nullable<decimal> qty)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prodCode, ordNum, qty);
+			prodCode = ((string)(result.GetParameterValue(0)));
+			ordNum = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			qty = ((System.Nullable<decimal>)(result.GetParameterValue(2)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.YearRollover")]
+		[return: Parameter(DbType="Int")]
+		public int YearRollover([Parameter(Name="AreYouSure", DbType="Char(1)")] string areYouSure)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), areYouSure);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="source.CompanyMerge_CreateContract_EXTRA")]
+		[return: Parameter(DbType="Int")]
+		public int Source_CompanyMerge_CreateContract_EXTRA([Parameter(Name="OldAccountID", DbType="Int")] System.Nullable<int> oldAccountID, [Parameter(Name="NewAccountID", DbType="Int")] System.Nullable<int> newAccountID, [Parameter(Name="NewCompanyNum", DbType="TinyInt")] System.Nullable<byte> newCompanyNum, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), oldAccountID, newAccountID, newCompanyNum, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="source.CompanyMerge_CreateContract_EXTRA_FORNULLS")]
+		[return: Parameter(DbType="Int")]
+		public int Source_CompanyMerge_CreateContract_EXTRA_FORNULLS([Parameter(Name="OldAccountID", DbType="Int")] System.Nullable<int> oldAccountID, [Parameter(Name="NewAccountID", DbType="Int")] System.Nullable<int> newAccountID, [Parameter(Name="NewCompanyNum", DbType="TinyInt")] System.Nullable<byte> newCompanyNum, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), oldAccountID, newAccountID, newCompanyNum, employeeID);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[Function(Name="source.CompanyMerge_CreateDebtor_EXTRA")]
+		[return: Parameter(DbType="Int")]
+		public int Source_CompanyMerge_CreateDebtor_EXTRA([Parameter(Name="OldParentAccountID", DbType="Int")] System.Nullable<int> oldParentAccountID, [Parameter(Name="NewCompanyNum", DbType="TinyInt")] System.Nullable<byte> newCompanyNum, [Parameter(Name="EmployeeID", DbType="VarChar(25)")] string employeeID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), oldParentAccountID, newCompanyNum, employeeID);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[Table(Name="dbo.ACTIVITY_LOG")]
@@ -102485,6 +106319,22194 @@ namespace SourceDb
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	public partial class AuditDebtorBalResult1
+	{
+		
+		private System.Nullable<decimal> _TotalInv;
+		
+		public AuditDebtorBalResult1()
+		{
+		}
+		
+		[Column(Storage="_TotalInv", DbType="Money")]
+		public System.Nullable<decimal> TotalInv
+		{
+			get
+			{
+				return this._TotalInv;
+			}
+			set
+			{
+				if ((this._TotalInv != value))
+				{
+					this._TotalInv = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditDebtorBalResult2
+	{
+		
+		private System.Nullable<decimal> _TotalReceipt;
+		
+		private System.Nullable<decimal> _TotalDiscount;
+		
+		public AuditDebtorBalResult2()
+		{
+		}
+		
+		[Column(Storage="_TotalReceipt", DbType="Money")]
+		public System.Nullable<decimal> TotalReceipt
+		{
+			get
+			{
+				return this._TotalReceipt;
+			}
+			set
+			{
+				if ((this._TotalReceipt != value))
+				{
+					this._TotalReceipt = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TotalDiscount", DbType="Money")]
+		public System.Nullable<decimal> TotalDiscount
+		{
+			get
+			{
+				return this._TotalDiscount;
+			}
+			set
+			{
+				if ((this._TotalDiscount != value))
+				{
+					this._TotalDiscount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditDebtorBalResult3
+	{
+		
+		private System.Nullable<decimal> _TotalJnl;
+		
+		public AuditDebtorBalResult3()
+		{
+		}
+		
+		[Column(Storage="_TotalJnl", DbType="Money")]
+		public System.Nullable<decimal> TotalJnl
+		{
+			get
+			{
+				return this._TotalJnl;
+			}
+			set
+			{
+				if ((this._TotalJnl != value))
+				{
+					this._TotalJnl = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditDebtorBFResult
+	{
+		
+		private System.Nullable<int> _ToAudit;
+		
+		private System.Nullable<decimal> _ClosingBal;
+		
+		public AuditDebtorBFResult()
+		{
+		}
+		
+		[Column(Storage="_ToAudit", DbType="Int")]
+		public System.Nullable<int> ToAudit
+		{
+			get
+			{
+				return this._ToAudit;
+			}
+			set
+			{
+				if ((this._ToAudit != value))
+				{
+					this._ToAudit = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ClosingBal", DbType="Money")]
+		public System.Nullable<decimal> ClosingBal
+		{
+			get
+			{
+				return this._ClosingBal;
+			}
+			set
+			{
+				if ((this._ClosingBal != value))
+				{
+					this._ClosingBal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditFirstFiscalResult
+	{
+		
+		private System.Nullable<decimal> _OpenBal;
+		
+		private System.Nullable<int> _FromAudit;
+		
+		public AuditFirstFiscalResult()
+		{
+		}
+		
+		[Column(Storage="_OpenBal", DbType="Money")]
+		public System.Nullable<decimal> OpenBal
+		{
+			get
+			{
+				return this._OpenBal;
+			}
+			set
+			{
+				if ((this._OpenBal != value))
+				{
+					this._OpenBal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FromAudit", DbType="Int")]
+		public System.Nullable<int> FromAudit
+		{
+			get
+			{
+				return this._FromAudit;
+			}
+			set
+			{
+				if ((this._FromAudit != value))
+				{
+					this._FromAudit = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditFirstFiscalJULTOJUNResult
+	{
+		
+		private System.Nullable<decimal> _OpenBal;
+		
+		private System.Nullable<int> _FromAudit;
+		
+		public AuditFirstFiscalJULTOJUNResult()
+		{
+		}
+		
+		[Column(Storage="_OpenBal", DbType="Money")]
+		public System.Nullable<decimal> OpenBal
+		{
+			get
+			{
+				return this._OpenBal;
+			}
+			set
+			{
+				if ((this._OpenBal != value))
+				{
+					this._OpenBal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FromAudit", DbType="Int")]
+		public System.Nullable<int> FromAudit
+		{
+			get
+			{
+				return this._FromAudit;
+			}
+			set
+			{
+				if ((this._FromAudit != value))
+				{
+					this._FromAudit = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditFirstRecResult
+	{
+		
+		private System.Nullable<decimal> _OpenBal;
+		
+		private System.Nullable<int> _FromAudit;
+		
+		public AuditFirstRecResult()
+		{
+		}
+		
+		[Column(Storage="_OpenBal", DbType="Money")]
+		public System.Nullable<decimal> OpenBal
+		{
+			get
+			{
+				return this._OpenBal;
+			}
+			set
+			{
+				if ((this._OpenBal != value))
+				{
+					this._OpenBal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FromAudit", DbType="Int")]
+		public System.Nullable<int> FromAudit
+		{
+			get
+			{
+				return this._FromAudit;
+			}
+			set
+			{
+				if ((this._FromAudit != value))
+				{
+					this._FromAudit = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditInvTotalsResult1
+	{
+		
+		private System.Nullable<decimal> _Deb;
+		
+		public AuditInvTotalsResult1()
+		{
+		}
+		
+		[Column(Storage="_Deb", DbType="Money")]
+		public System.Nullable<decimal> Deb
+		{
+			get
+			{
+				return this._Deb;
+			}
+			set
+			{
+				if ((this._Deb != value))
+				{
+					this._Deb = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditInvTotalsResult2
+	{
+		
+		private System.Nullable<decimal> _Cred;
+		
+		public AuditInvTotalsResult2()
+		{
+		}
+		
+		[Column(Storage="_Cred", DbType="Money")]
+		public System.Nullable<decimal> Cred
+		{
+			get
+			{
+				return this._Cred;
+			}
+			set
+			{
+				if ((this._Cred != value))
+				{
+					this._Cred = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditInvTotalsExportResult1
+	{
+		
+		private System.Nullable<decimal> _Deb;
+		
+		public AuditInvTotalsExportResult1()
+		{
+		}
+		
+		[Column(Storage="_Deb", DbType="Money")]
+		public System.Nullable<decimal> Deb
+		{
+			get
+			{
+				return this._Deb;
+			}
+			set
+			{
+				if ((this._Deb != value))
+				{
+					this._Deb = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditInvTotalsExportResult2
+	{
+		
+		private System.Nullable<decimal> _Cred;
+		
+		public AuditInvTotalsExportResult2()
+		{
+		}
+		
+		[Column(Storage="_Cred", DbType="Money")]
+		public System.Nullable<decimal> Cred
+		{
+			get
+			{
+				return this._Cred;
+			}
+			set
+			{
+				if ((this._Cred != value))
+				{
+					this._Cred = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditLastDebtorResult
+	{
+		
+		private System.Nullable<int> _LastAudit;
+		
+		public AuditLastDebtorResult()
+		{
+		}
+		
+		[Column(Storage="_LastAudit", DbType="Int")]
+		public System.Nullable<int> LastAudit
+		{
+			get
+			{
+				return this._LastAudit;
+			}
+			set
+			{
+				if ((this._LastAudit != value))
+				{
+					this._LastAudit = value;
+				}
+			}
+		}
+	}
+	
+	public partial class AuditLastRecResult
+	{
+		
+		private System.Nullable<int> _LastAudit;
+		
+		public AuditLastRecResult()
+		{
+		}
+		
+		[Column(Storage="_LastAudit", DbType="Int")]
+		public System.Nullable<int> LastAudit
+		{
+			get
+			{
+				return this._LastAudit;
+			}
+			set
+			{
+				if ((this._LastAudit != value))
+				{
+					this._LastAudit = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Bank_Count_ChequesResult
+	{
+		
+		private System.Nullable<int> _NumOfCheques;
+		
+		public Bank_Count_ChequesResult()
+		{
+		}
+		
+		[Column(Storage="_NumOfCheques", DbType="Int")]
+		public System.Nullable<int> NumOfCheques
+		{
+			get
+			{
+				return this._NumOfCheques;
+			}
+			set
+			{
+				if ((this._NumOfCheques != value))
+				{
+					this._NumOfCheques = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Bank_Count_Cheques2Result
+	{
+		
+		private System.Nullable<int> _NumOfCheques2;
+		
+		public Bank_Count_Cheques2Result()
+		{
+		}
+		
+		[Column(Storage="_NumOfCheques2", DbType="Int")]
+		public System.Nullable<int> NumOfCheques2
+		{
+			get
+			{
+				return this._NumOfCheques2;
+			}
+			set
+			{
+				if ((this._NumOfCheques2 != value))
+				{
+					this._NumOfCheques2 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BANK_DebtorDepositCardsResult
+	{
+		
+		private System.Nullable<decimal> _TotalCards;
+		
+		public BANK_DebtorDepositCardsResult()
+		{
+		}
+		
+		[Column(Storage="_TotalCards", DbType="Money")]
+		public System.Nullable<decimal> TotalCards
+		{
+			get
+			{
+				return this._TotalCards;
+			}
+			set
+			{
+				if ((this._TotalCards != value))
+				{
+					this._TotalCards = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BANK_DebtorDepositCashResult
+	{
+		
+		private System.Nullable<decimal> _TotalCash;
+		
+		public BANK_DebtorDepositCashResult()
+		{
+		}
+		
+		[Column(Storage="_TotalCash", DbType="Money")]
+		public System.Nullable<decimal> TotalCash
+		{
+			get
+			{
+				return this._TotalCash;
+			}
+			set
+			{
+				if ((this._TotalCash != value))
+				{
+					this._TotalCash = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BANK_DebtorDepositChequesResult
+	{
+		
+		private System.Nullable<decimal> _TotalCheques;
+		
+		public BANK_DebtorDepositChequesResult()
+		{
+		}
+		
+		[Column(Storage="_TotalCheques", DbType="Money")]
+		public System.Nullable<decimal> TotalCheques
+		{
+			get
+			{
+				return this._TotalCheques;
+			}
+			set
+			{
+				if ((this._TotalCheques != value))
+				{
+					this._TotalCheques = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Calc_Gl_AccountTotalResult
+	{
+		
+		private System.Nullable<decimal> _TotalAccount;
+		
+		public Calc_Gl_AccountTotalResult()
+		{
+		}
+		
+		[Column(Storage="_TotalAccount", DbType="Money")]
+		public System.Nullable<decimal> TotalAccount
+		{
+			get
+			{
+				return this._TotalAccount;
+			}
+			set
+			{
+				if ((this._TotalAccount != value))
+				{
+					this._TotalAccount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class ChequeAmtWriterResult
+	{
+		
+		private string _Words;
+		
+		public ChequeAmtWriterResult()
+		{
+		}
+		
+		[Column(Storage="_Words", DbType="VarChar(128)")]
+		public string Words
+		{
+			get
+			{
+				return this._Words;
+			}
+			set
+			{
+				if ((this._Words != value))
+				{
+					this._Words = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CompanyMerge_GetOldContractStartDateResult
+	{
+		
+		private System.Nullable<System.DateTime> _StartDate;
+		
+		public CompanyMerge_GetOldContractStartDateResult()
+		{
+		}
+		
+		[Column(Storage="_StartDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this._StartDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CompanyRepPrepResult
+	{
+		
+		private string _RepPrep;
+		
+		public CompanyRepPrepResult()
+		{
+		}
+		
+		[Column(Storage="_RepPrep", DbType="VarChar(50)")]
+		public string RepPrep
+		{
+			get
+			{
+				return this._RepPrep;
+			}
+			set
+			{
+				if ((this._RepPrep != value))
+				{
+					this._RepPrep = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditor_AuditLastResult
+	{
+		
+		private System.Nullable<int> _LastAudit;
+		
+		public Creditor_AuditLastResult()
+		{
+		}
+		
+		[Column(Storage="_LastAudit", DbType="Int")]
+		public System.Nullable<int> LastAudit
+		{
+			get
+			{
+				return this._LastAudit;
+			}
+			set
+			{
+				if ((this._LastAudit != value))
+				{
+					this._LastAudit = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CreditorContactFromIDResult
+	{
+		
+		private string _Name;
+		
+		private string _Email;
+		
+		private string _Phone;
+		
+		public CreditorContactFromIDResult()
+		{
+		}
+		
+		[Column(Storage="_Name", DbType="VarChar(41)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Phone", DbType="VarChar(15)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CreditorContactsResult
+	{
+		
+		private string _Name;
+		
+		private string _JobTitle;
+		
+		private string _Phone;
+		
+		private string _AfterHours;
+		
+		private string _Mobile;
+		
+		private string _Email;
+		
+		private System.Nullable<int> _ContactID;
+		
+		public CreditorContactsResult()
+		{
+		}
+		
+		[Column(Storage="_Name", DbType="VarChar(41)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_JobTitle", DbType="VarChar(30)")]
+		public string JobTitle
+		{
+			get
+			{
+				return this._JobTitle;
+			}
+			set
+			{
+				if ((this._JobTitle != value))
+				{
+					this._JobTitle = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Phone", DbType="VarChar(15)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AfterHours", DbType="VarChar(15)")]
+		public string AfterHours
+		{
+			get
+			{
+				return this._AfterHours;
+			}
+			set
+			{
+				if ((this._AfterHours != value))
+				{
+					this._AfterHours = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Mobile", DbType="VarChar(15)")]
+		public string Mobile
+		{
+			get
+			{
+				return this._Mobile;
+			}
+			set
+			{
+				if ((this._Mobile != value))
+				{
+					this._Mobile = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ContactID", DbType="Int")]
+		public System.Nullable<int> ContactID
+		{
+			get
+			{
+				return this._ContactID;
+			}
+			set
+			{
+				if ((this._ContactID != value))
+				{
+					this._ContactID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CreditorInfoResult
+	{
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _Company;
+		
+		private System.Nullable<byte> _CompanyNum;
+		
+		private System.Nullable<byte> _AreaCode;
+		
+		private string _Phone;
+		
+		private string _Fax;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _City;
+		
+		private string _State;
+		
+		private System.Nullable<decimal> _Current;
+		
+		private System.Nullable<decimal> @__30days;
+		
+		private System.Nullable<decimal> @__60Days;
+		
+		private System.Nullable<decimal> @__90Days;
+		
+		private System.Nullable<byte> _NumDaysCredit;
+		
+		private string _TermsMethod;
+		
+		private System.Nullable<byte> _PaymentMethod;
+		
+		private string _GST_Type;
+		
+		private string _PurchCtrlAccGL;
+		
+		private string _Currency;
+		
+		public CreditorInfoResult()
+		{
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(55)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyNum", DbType="TinyInt")]
+		public System.Nullable<byte> CompanyNum
+		{
+			get
+			{
+				return this._CompanyNum;
+			}
+			set
+			{
+				if ((this._CompanyNum != value))
+				{
+					this._CompanyNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AreaCode", DbType="TinyInt")]
+		public System.Nullable<byte> AreaCode
+		{
+			get
+			{
+				return this._AreaCode;
+			}
+			set
+			{
+				if ((this._AreaCode != value))
+				{
+					this._AreaCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Phone", DbType="VarChar(30)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Fax", DbType="VarChar(25)")]
+		public string Fax
+		{
+			get
+			{
+				return this._Fax;
+			}
+			set
+			{
+				if ((this._Fax != value))
+				{
+					this._Fax = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address1", DbType="VarChar(50)")]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address2", DbType="VarChar(50)")]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_City", DbType="VarChar(25)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_State", DbType="VarChar(3)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Current", DbType="Decimal(19,4)")]
+		public System.Nullable<decimal> Current
+		{
+			get
+			{
+				return this._Current;
+			}
+			set
+			{
+				if ((this._Current != value))
+				{
+					this._Current = value;
+				}
+			}
+		}
+		
+		[Column(Name="30days", Storage="__30days", DbType="Decimal(19,4)")]
+		public System.Nullable<decimal> _30days
+		{
+			get
+			{
+				return this.@__30days;
+			}
+			set
+			{
+				if ((this.@__30days != value))
+				{
+					this.@__30days = value;
+				}
+			}
+		}
+		
+		[Column(Name="60Days", Storage="__60Days", DbType="Decimal(19,4)")]
+		public System.Nullable<decimal> _60Days
+		{
+			get
+			{
+				return this.@__60Days;
+			}
+			set
+			{
+				if ((this.@__60Days != value))
+				{
+					this.@__60Days = value;
+				}
+			}
+		}
+		
+		[Column(Name="90Days", Storage="__90Days", DbType="Decimal(19,4)")]
+		public System.Nullable<decimal> _90Days
+		{
+			get
+			{
+				return this.@__90Days;
+			}
+			set
+			{
+				if ((this.@__90Days != value))
+				{
+					this.@__90Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NumDaysCredit", DbType="TinyInt")]
+		public System.Nullable<byte> NumDaysCredit
+		{
+			get
+			{
+				return this._NumDaysCredit;
+			}
+			set
+			{
+				if ((this._NumDaysCredit != value))
+				{
+					this._NumDaysCredit = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TermsMethod", DbType="Char(1)")]
+		public string TermsMethod
+		{
+			get
+			{
+				return this._TermsMethod;
+			}
+			set
+			{
+				if ((this._TermsMethod != value))
+				{
+					this._TermsMethod = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PaymentMethod", DbType="TinyInt")]
+		public System.Nullable<byte> PaymentMethod
+		{
+			get
+			{
+				return this._PaymentMethod;
+			}
+			set
+			{
+				if ((this._PaymentMethod != value))
+				{
+					this._PaymentMethod = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_GST_Type", DbType="Char(1)")]
+		public string GST_Type
+		{
+			get
+			{
+				return this._GST_Type;
+			}
+			set
+			{
+				if ((this._GST_Type != value))
+				{
+					this._GST_Type = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PurchCtrlAccGL", DbType="VarChar(16)")]
+		public string PurchCtrlAccGL
+		{
+			get
+			{
+				return this._PurchCtrlAccGL;
+			}
+			set
+			{
+				if ((this._PurchCtrlAccGL != value))
+				{
+					this._PurchCtrlAccGL = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Currency", DbType="VarChar(5)")]
+		public string Currency
+		{
+			get
+			{
+				return this._Currency;
+			}
+			set
+			{
+				if ((this._Currency != value))
+				{
+					this._Currency = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CreditorJournalResult
+	{
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private System.Nullable<int> _Audit;
+		
+		private string _Type;
+		
+		private string _Ref;
+		
+		private string _Particulars;
+		
+		private System.Nullable<byte> _Age;
+		
+		private string _DR;
+		
+		private string _CR;
+		
+		public CreditorJournalResult()
+		{
+		}
+		
+		[Column(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Audit", DbType="Int")]
+		public System.Nullable<int> Audit
+		{
+			get
+			{
+				return this._Audit;
+			}
+			set
+			{
+				if ((this._Audit != value))
+				{
+					this._Audit = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Type", DbType="VarChar(3)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Ref", DbType="VarChar(20)")]
+		public string Ref
+		{
+			get
+			{
+				return this._Ref;
+			}
+			set
+			{
+				if ((this._Ref != value))
+				{
+					this._Ref = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Particulars", DbType="VarChar(32)")]
+		public string Particulars
+		{
+			get
+			{
+				return this._Particulars;
+			}
+			set
+			{
+				if ((this._Particulars != value))
+				{
+					this._Particulars = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Age", DbType="TinyInt")]
+		public System.Nullable<byte> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this._Age = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DR", DbType="VarChar(10)")]
+		public string DR
+		{
+			get
+			{
+				return this._DR;
+			}
+			set
+			{
+				if ((this._DR != value))
+				{
+					this._DR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CR", DbType="VarChar(10)")]
+		public string CR
+		{
+			get
+			{
+				return this._CR;
+			}
+			set
+			{
+				if ((this._CR != value))
+				{
+					this._CR = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CreditorJournal_DUMMYResult
+	{
+		
+		private System.Nullable<int> _Date;
+		
+		private System.Nullable<int> _Audit;
+		
+		private System.Nullable<int> _Type;
+		
+		private System.Nullable<int> _Age;
+		
+		private System.Nullable<int> _DR;
+		
+		private System.Nullable<int> _CR;
+		
+		public CreditorJournal_DUMMYResult()
+		{
+		}
+		
+		[Column(Storage="_Date", DbType="Int")]
+		public System.Nullable<int> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Audit", DbType="Int")]
+		public System.Nullable<int> Audit
+		{
+			get
+			{
+				return this._Audit;
+			}
+			set
+			{
+				if ((this._Audit != value))
+				{
+					this._Audit = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Type", DbType="Int")]
+		public System.Nullable<int> Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Age", DbType="Int")]
+		public System.Nullable<int> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this._Age = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DR", DbType="Int")]
+		public System.Nullable<int> DR
+		{
+			get
+			{
+				return this._DR;
+			}
+			set
+			{
+				if ((this._DR != value))
+				{
+					this._DR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CR", DbType="Int")]
+		public System.Nullable<int> CR
+		{
+			get
+			{
+				return this._CR;
+			}
+			set
+			{
+				if ((this._CR != value))
+				{
+					this._CR = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CreditorPurchasesResult
+	{
+		
+		private string _Date;
+		
+		private System.Nullable<int> _OrdNum;
+		
+		private string _InvNum;
+		
+		private System.Nullable<System.DateTime> _DateReceived;
+		
+		private string _Amount;
+		
+		private string _Completed;
+		
+		public CreditorPurchasesResult()
+		{
+		}
+		
+		[Column(Storage="_Date", DbType="VarChar(15)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OrdNum", DbType="Int")]
+		public System.Nullable<int> OrdNum
+		{
+			get
+			{
+				return this._OrdNum;
+			}
+			set
+			{
+				if ((this._OrdNum != value))
+				{
+					this._OrdNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvNum", DbType="VarChar(16)")]
+		public string InvNum
+		{
+			get
+			{
+				return this._InvNum;
+			}
+			set
+			{
+				if ((this._InvNum != value))
+				{
+					this._InvNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DateReceived", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateReceived
+		{
+			get
+			{
+				return this._DateReceived;
+			}
+			set
+			{
+				if ((this._DateReceived != value))
+				{
+					this._DateReceived = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Amount", DbType="VarChar(10)")]
+		public string Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Completed", DbType="VarChar(3)")]
+		public string Completed
+		{
+			get
+			{
+				return this._Completed;
+			}
+			set
+			{
+				if ((this._Completed != value))
+				{
+					this._Completed = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditors_BalancesResult
+	{
+		
+		private System.Nullable<decimal> _OpenBal;
+		
+		private System.Nullable<decimal> _CloseBal;
+		
+		private System.Nullable<decimal> _Current;
+		
+		private System.Nullable<decimal> _ThirtyDays;
+		
+		private System.Nullable<decimal> _SixtyDays;
+		
+		private System.Nullable<decimal> _NinetyDays;
+		
+		private System.Nullable<decimal> _SumDr;
+		
+		private System.Nullable<decimal> _SumCr;
+		
+		public Creditors_BalancesResult()
+		{
+		}
+		
+		[Column(Storage="_OpenBal", DbType="Money")]
+		public System.Nullable<decimal> OpenBal
+		{
+			get
+			{
+				return this._OpenBal;
+			}
+			set
+			{
+				if ((this._OpenBal != value))
+				{
+					this._OpenBal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CloseBal", DbType="Money")]
+		public System.Nullable<decimal> CloseBal
+		{
+			get
+			{
+				return this._CloseBal;
+			}
+			set
+			{
+				if ((this._CloseBal != value))
+				{
+					this._CloseBal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Current", DbType="Money")]
+		public System.Nullable<decimal> Current
+		{
+			get
+			{
+				return this._Current;
+			}
+			set
+			{
+				if ((this._Current != value))
+				{
+					this._Current = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ThirtyDays", DbType="Money")]
+		public System.Nullable<decimal> ThirtyDays
+		{
+			get
+			{
+				return this._ThirtyDays;
+			}
+			set
+			{
+				if ((this._ThirtyDays != value))
+				{
+					this._ThirtyDays = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SixtyDays", DbType="Money")]
+		public System.Nullable<decimal> SixtyDays
+		{
+			get
+			{
+				return this._SixtyDays;
+			}
+			set
+			{
+				if ((this._SixtyDays != value))
+				{
+					this._SixtyDays = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NinetyDays", DbType="Money")]
+		public System.Nullable<decimal> NinetyDays
+		{
+			get
+			{
+				return this._NinetyDays;
+			}
+			set
+			{
+				if ((this._NinetyDays != value))
+				{
+					this._NinetyDays = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SumDr", DbType="Money")]
+		public System.Nullable<decimal> SumDr
+		{
+			get
+			{
+				return this._SumDr;
+			}
+			set
+			{
+				if ((this._SumDr != value))
+				{
+					this._SumDr = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SumCr", DbType="Money")]
+		public System.Nullable<decimal> SumCr
+		{
+			get
+			{
+				return this._SumCr;
+			}
+			set
+			{
+				if ((this._SumCr != value))
+				{
+					this._SumCr = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditors_ContactFromIDResult
+	{
+		
+		private string _Name;
+		
+		private string _Email;
+		
+		public Creditors_ContactFromIDResult()
+		{
+		}
+		
+		[Column(Storage="_Name", DbType="VarChar(41)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditors_CurrentPeriodResult
+	{
+		
+		private System.Nullable<short> _Year;
+		
+		private System.Nullable<byte> _Month;
+		
+		private string _Heading;
+		
+		private System.Nullable<byte> _CompanyNum;
+		
+		public Creditors_CurrentPeriodResult()
+		{
+		}
+		
+		[Column(Storage="_Year", DbType="SmallInt")]
+		public System.Nullable<short> Year
+		{
+			get
+			{
+				return this._Year;
+			}
+			set
+			{
+				if ((this._Year != value))
+				{
+					this._Year = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Month", DbType="TinyInt")]
+		public System.Nullable<byte> Month
+		{
+			get
+			{
+				return this._Month;
+			}
+			set
+			{
+				if ((this._Month != value))
+				{
+					this._Month = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Heading", DbType="VarChar(16)")]
+		public string Heading
+		{
+			get
+			{
+				return this._Heading;
+			}
+			set
+			{
+				if ((this._Heading != value))
+				{
+					this._Heading = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyNum", DbType="TinyInt")]
+		public System.Nullable<byte> CompanyNum
+		{
+			get
+			{
+				return this._CompanyNum;
+			}
+			set
+			{
+				if ((this._CompanyNum != value))
+				{
+					this._CompanyNum = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditors_GetBankDetailsResult
+	{
+		
+		private string _BankBSB;
+		
+		private string _BankAcctNum;
+		
+		public Creditors_GetBankDetailsResult()
+		{
+		}
+		
+		[Column(Storage="_BankBSB", DbType="VarChar(10)")]
+		public string BankBSB
+		{
+			get
+			{
+				return this._BankBSB;
+			}
+			set
+			{
+				if ((this._BankBSB != value))
+				{
+					this._BankBSB = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankAcctNum", DbType="VarChar(9)")]
+		public string BankAcctNum
+		{
+			get
+			{
+				return this._BankAcctNum;
+			}
+			set
+			{
+				if ((this._BankAcctNum != value))
+				{
+					this._BankAcctNum = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditors_GetLastAuditResult
+	{
+		
+		private System.Nullable<int> _JnlKey;
+		
+		public Creditors_GetLastAuditResult()
+		{
+		}
+		
+		[Column(Storage="_JnlKey", DbType="Int")]
+		public System.Nullable<int> JnlKey
+		{
+			get
+			{
+				return this._JnlKey;
+			}
+			set
+			{
+				if ((this._JnlKey != value))
+				{
+					this._JnlKey = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditors_GetLastCreditorResult
+	{
+		
+		private System.Nullable<int> _AccountID;
+		
+		public Creditors_GetLastCreditorResult()
+		{
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditors_GetStatsResult
+	{
+		
+		private System.Nullable<int> _Num;
+		
+		private System.Nullable<decimal> _Sum;
+		
+		public Creditors_GetStatsResult()
+		{
+		}
+		
+		[Column(Storage="_Num", DbType="Int")]
+		public System.Nullable<int> Num
+		{
+			get
+			{
+				return this._Num;
+			}
+			set
+			{
+				if ((this._Num != value))
+				{
+					this._Num = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Sum", DbType="Decimal(11,2)")]
+		public System.Nullable<decimal> Sum
+		{
+			get
+			{
+				return this._Sum;
+			}
+			set
+			{
+				if ((this._Sum != value))
+				{
+					this._Sum = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditors_PostEftPaymentsDetailResult
+	{
+		
+		private string _RecType;
+		
+		private string _CreditBSB;
+		
+		private string _CreditActNum;
+		
+		private string _INDICATOR;
+		
+		private string _TransCode;
+		
+		private string _Amount;
+		
+		private string _CreditActName;
+		
+		private string _LodgementRef;
+		
+		private string _DebitBSB;
+		
+		private string _DebitActNum;
+		
+		private string _UserName;
+		
+		private string _WithholdTax;
+		
+		private string _TotalCount;
+		
+		public Creditors_PostEftPaymentsDetailResult()
+		{
+		}
+		
+		[Column(Storage="_RecType", DbType="VarChar(1)")]
+		public string RecType
+		{
+			get
+			{
+				return this._RecType;
+			}
+			set
+			{
+				if ((this._RecType != value))
+				{
+					this._RecType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditBSB", DbType="Char(7)")]
+		public string CreditBSB
+		{
+			get
+			{
+				return this._CreditBSB;
+			}
+			set
+			{
+				if ((this._CreditBSB != value))
+				{
+					this._CreditBSB = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditActNum", DbType="Char(9)")]
+		public string CreditActNum
+		{
+			get
+			{
+				return this._CreditActNum;
+			}
+			set
+			{
+				if ((this._CreditActNum != value))
+				{
+					this._CreditActNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_INDICATOR", DbType="Char(1)")]
+		public string INDICATOR
+		{
+			get
+			{
+				return this._INDICATOR;
+			}
+			set
+			{
+				if ((this._INDICATOR != value))
+				{
+					this._INDICATOR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TransCode", DbType="Char(2)")]
+		public string TransCode
+		{
+			get
+			{
+				return this._TransCode;
+			}
+			set
+			{
+				if ((this._TransCode != value))
+				{
+					this._TransCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Amount", DbType="Char(10)")]
+		public string Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditActName", DbType="Char(32)")]
+		public string CreditActName
+		{
+			get
+			{
+				return this._CreditActName;
+			}
+			set
+			{
+				if ((this._CreditActName != value))
+				{
+					this._CreditActName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LodgementRef", DbType="Char(18)")]
+		public string LodgementRef
+		{
+			get
+			{
+				return this._LodgementRef;
+			}
+			set
+			{
+				if ((this._LodgementRef != value))
+				{
+					this._LodgementRef = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DebitBSB", DbType="Char(7)")]
+		public string DebitBSB
+		{
+			get
+			{
+				return this._DebitBSB;
+			}
+			set
+			{
+				if ((this._DebitBSB != value))
+				{
+					this._DebitBSB = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DebitActNum", DbType="Char(9)")]
+		public string DebitActNum
+		{
+			get
+			{
+				return this._DebitActNum;
+			}
+			set
+			{
+				if ((this._DebitActNum != value))
+				{
+					this._DebitActNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UserName", DbType="Char(16)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_WithholdTax", DbType="Char(8)")]
+		public string WithholdTax
+		{
+			get
+			{
+				return this._WithholdTax;
+			}
+			set
+			{
+				if ((this._WithholdTax != value))
+				{
+					this._WithholdTax = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TotalCount", DbType="Char(6)")]
+		public string TotalCount
+		{
+			get
+			{
+				return this._TotalCount;
+			}
+			set
+			{
+				if ((this._TotalCount != value))
+				{
+					this._TotalCount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditors_PostEftPaymentsDetailFooterResult
+	{
+		
+		private string _RecType;
+		
+		private string _CreditBSB;
+		
+		private string _CreditActNum;
+		
+		private string _INDICATOR;
+		
+		private string _TransCode;
+		
+		private string _Amount;
+		
+		private string _CreditActName;
+		
+		private string _LodgementRef;
+		
+		private string _DebitBSB;
+		
+		private string _DebitActNum;
+		
+		private string _UserName;
+		
+		private string _WithholdTax;
+		
+		public Creditors_PostEftPaymentsDetailFooterResult()
+		{
+		}
+		
+		[Column(Storage="_RecType", DbType="VarChar(1)")]
+		public string RecType
+		{
+			get
+			{
+				return this._RecType;
+			}
+			set
+			{
+				if ((this._RecType != value))
+				{
+					this._RecType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditBSB", DbType="Char(7)")]
+		public string CreditBSB
+		{
+			get
+			{
+				return this._CreditBSB;
+			}
+			set
+			{
+				if ((this._CreditBSB != value))
+				{
+					this._CreditBSB = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditActNum", DbType="Char(9)")]
+		public string CreditActNum
+		{
+			get
+			{
+				return this._CreditActNum;
+			}
+			set
+			{
+				if ((this._CreditActNum != value))
+				{
+					this._CreditActNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_INDICATOR", DbType="Char(1)")]
+		public string INDICATOR
+		{
+			get
+			{
+				return this._INDICATOR;
+			}
+			set
+			{
+				if ((this._INDICATOR != value))
+				{
+					this._INDICATOR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TransCode", DbType="Char(2)")]
+		public string TransCode
+		{
+			get
+			{
+				return this._TransCode;
+			}
+			set
+			{
+				if ((this._TransCode != value))
+				{
+					this._TransCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Amount", DbType="Char(10)")]
+		public string Amount
+		{
+			get
+			{
+				return this._Amount;
+			}
+			set
+			{
+				if ((this._Amount != value))
+				{
+					this._Amount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditActName", DbType="Char(32)")]
+		public string CreditActName
+		{
+			get
+			{
+				return this._CreditActName;
+			}
+			set
+			{
+				if ((this._CreditActName != value))
+				{
+					this._CreditActName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LodgementRef", DbType="Char(18)")]
+		public string LodgementRef
+		{
+			get
+			{
+				return this._LodgementRef;
+			}
+			set
+			{
+				if ((this._LodgementRef != value))
+				{
+					this._LodgementRef = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DebitBSB", DbType="Char(7)")]
+		public string DebitBSB
+		{
+			get
+			{
+				return this._DebitBSB;
+			}
+			set
+			{
+				if ((this._DebitBSB != value))
+				{
+					this._DebitBSB = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DebitActNum", DbType="Char(9)")]
+		public string DebitActNum
+		{
+			get
+			{
+				return this._DebitActNum;
+			}
+			set
+			{
+				if ((this._DebitActNum != value))
+				{
+					this._DebitActNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UserName", DbType="Char(16)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_WithholdTax", DbType="Char(8)")]
+		public string WithholdTax
+		{
+			get
+			{
+				return this._WithholdTax;
+			}
+			set
+			{
+				if ((this._WithholdTax != value))
+				{
+					this._WithholdTax = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditors_PostEftPaymentsFooterResult
+	{
+		
+		private string _RecType;
+		
+		private string _BSB;
+		
+		private string _Unused4;
+		
+		private string _NetAmount;
+		
+		private string _CreditAmount;
+		
+		private string _DebitAmount;
+		
+		private string _Unused5;
+		
+		private string _Unused6;
+		
+		public Creditors_PostEftPaymentsFooterResult()
+		{
+		}
+		
+		[Column(Storage="_RecType", DbType="Char(1)")]
+		public string RecType
+		{
+			get
+			{
+				return this._RecType;
+			}
+			set
+			{
+				if ((this._RecType != value))
+				{
+					this._RecType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BSB", DbType="Char(7)")]
+		public string BSB
+		{
+			get
+			{
+				return this._BSB;
+			}
+			set
+			{
+				if ((this._BSB != value))
+				{
+					this._BSB = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Unused4", DbType="Char(12)")]
+		public string Unused4
+		{
+			get
+			{
+				return this._Unused4;
+			}
+			set
+			{
+				if ((this._Unused4 != value))
+				{
+					this._Unused4 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NetAmount", DbType="Char(10)")]
+		public string NetAmount
+		{
+			get
+			{
+				return this._NetAmount;
+			}
+			set
+			{
+				if ((this._NetAmount != value))
+				{
+					this._NetAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditAmount", DbType="Char(10)")]
+		public string CreditAmount
+		{
+			get
+			{
+				return this._CreditAmount;
+			}
+			set
+			{
+				if ((this._CreditAmount != value))
+				{
+					this._CreditAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DebitAmount", DbType="Char(10)")]
+		public string DebitAmount
+		{
+			get
+			{
+				return this._DebitAmount;
+			}
+			set
+			{
+				if ((this._DebitAmount != value))
+				{
+					this._DebitAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Unused5", DbType="Char(24)")]
+		public string Unused5
+		{
+			get
+			{
+				return this._Unused5;
+			}
+			set
+			{
+				if ((this._Unused5 != value))
+				{
+					this._Unused5 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Unused6", DbType="Char(40)")]
+		public string Unused6
+		{
+			get
+			{
+				return this._Unused6;
+			}
+			set
+			{
+				if ((this._Unused6 != value))
+				{
+					this._Unused6 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Creditors_PostEftPaymentsHeaderResult
+	{
+		
+		private string _RecType;
+		
+		private string _Unused1;
+		
+		private string _ReelSeqNumber;
+		
+		private string _UserBank;
+		
+		private string _Unused2;
+		
+		private string _UserName;
+		
+		private string _UserNumber;
+		
+		private string _DESCRIPTION;
+		
+		private string _ProcessingDate;
+		
+		private string _UNUSED3;
+		
+		public Creditors_PostEftPaymentsHeaderResult()
+		{
+		}
+		
+		[Column(Storage="_RecType", DbType="VarChar(1)")]
+		public string RecType
+		{
+			get
+			{
+				return this._RecType;
+			}
+			set
+			{
+				if ((this._RecType != value))
+				{
+					this._RecType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Unused1", DbType="Char(17)")]
+		public string Unused1
+		{
+			get
+			{
+				return this._Unused1;
+			}
+			set
+			{
+				if ((this._Unused1 != value))
+				{
+					this._Unused1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ReelSeqNumber", DbType="VarChar(2)")]
+		public string ReelSeqNumber
+		{
+			get
+			{
+				return this._ReelSeqNumber;
+			}
+			set
+			{
+				if ((this._ReelSeqNumber != value))
+				{
+					this._ReelSeqNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UserBank", DbType="VarChar(3)")]
+		public string UserBank
+		{
+			get
+			{
+				return this._UserBank;
+			}
+			set
+			{
+				if ((this._UserBank != value))
+				{
+					this._UserBank = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Unused2", DbType="Char(7)")]
+		public string Unused2
+		{
+			get
+			{
+				return this._Unused2;
+			}
+			set
+			{
+				if ((this._Unused2 != value))
+				{
+					this._Unused2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UserName", DbType="Char(26)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UserNumber", DbType="Char(6)")]
+		public string UserNumber
+		{
+			get
+			{
+				return this._UserNumber;
+			}
+			set
+			{
+				if ((this._UserNumber != value))
+				{
+					this._UserNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DESCRIPTION", DbType="Char(12)")]
+		public string DESCRIPTION
+		{
+			get
+			{
+				return this._DESCRIPTION;
+			}
+			set
+			{
+				if ((this._DESCRIPTION != value))
+				{
+					this._DESCRIPTION = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProcessingDate", DbType="Char(6)")]
+		public string ProcessingDate
+		{
+			get
+			{
+				return this._ProcessingDate;
+			}
+			set
+			{
+				if ((this._ProcessingDate != value))
+				{
+					this._ProcessingDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UNUSED3", DbType="Char(40)")]
+		public string UNUSED3
+		{
+			get
+			{
+				return this._UNUSED3;
+			}
+			set
+			{
+				if ((this._UNUSED3 != value))
+				{
+					this._UNUSED3 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CreditorsTransBalResult
+	{
+		
+		private System.Nullable<decimal> _Column1;
+		
+		public CreditorsTransBalResult()
+		{
+		}
+		
+		[Column(Name="", Storage="_Column1", DbType="Money")]
+		public System.Nullable<decimal> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class CTRAC_CheckBSGDeliveryStatusResult
+	{
+		
+		private System.Nullable<int> _ContractItemID;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		public CTRAC_CheckBSGDeliveryStatusResult()
+		{
+		}
+		
+		[Column(Storage="_ContractItemID", DbType="Int")]
+		public System.Nullable<int> ContractItemID
+		{
+			get
+			{
+				return this._ContractItemID;
+			}
+			set
+			{
+				if ((this._ContractItemID != value))
+				{
+					this._ContractItemID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_EndDate", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this._EndDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DateNumbersResult
+	{
+		
+		private System.Nullable<short> _Year;
+		
+		private System.Nullable<byte> _Month;
+		
+		public DateNumbersResult()
+		{
+		}
+		
+		[Column(Storage="_Year", DbType="SmallInt")]
+		public System.Nullable<short> Year
+		{
+			get
+			{
+				return this._Year;
+			}
+			set
+			{
+				if ((this._Year != value))
+				{
+					this._Year = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Month", DbType="TinyInt")]
+		public System.Nullable<byte> Month
+		{
+			get
+			{
+				return this._Month;
+			}
+			set
+			{
+				if ((this._Month != value))
+				{
+					this._Month = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DB_AuditFirstRecResult
+	{
+		
+		private System.Nullable<decimal> _OpenBal;
+		
+		private System.Nullable<int> _FromAudit;
+		
+		public DB_AuditFirstRecResult()
+		{
+		}
+		
+		[Column(Storage="_OpenBal", DbType="Money")]
+		public System.Nullable<decimal> OpenBal
+		{
+			get
+			{
+				return this._OpenBal;
+			}
+			set
+			{
+				if ((this._OpenBal != value))
+				{
+					this._OpenBal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FromAudit", DbType="Int")]
+		public System.Nullable<int> FromAudit
+		{
+			get
+			{
+				return this._FromAudit;
+			}
+			set
+			{
+				if ((this._FromAudit != value))
+				{
+					this._FromAudit = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DB_AuditLastRecResult
+	{
+		
+		private System.Nullable<int> _LastAudit;
+		
+		public DB_AuditLastRecResult()
+		{
+		}
+		
+		[Column(Storage="_LastAudit", DbType="Int")]
+		public System.Nullable<int> LastAudit
+		{
+			get
+			{
+				return this._LastAudit;
+			}
+			set
+			{
+				if ((this._LastAudit != value))
+				{
+					this._LastAudit = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DB_EOM_GetTrialBalanceTotalsResult
+	{
+		
+		private System.Nullable<decimal> _SumTotal;
+		
+		private System.Nullable<decimal> _SumCurrent;
+		
+		private System.Nullable<decimal> _Sum30Days;
+		
+		private System.Nullable<decimal> _Sum60Days;
+		
+		private System.Nullable<decimal> _Sum90Days;
+		
+		private System.Nullable<decimal> _PercentCurrent;
+		
+		private System.Nullable<decimal> _Percent30Days;
+		
+		private System.Nullable<decimal> _Percent60Days;
+		
+		private System.Nullable<decimal> _Percent90Days;
+		
+		private System.Nullable<int> _CountAll;
+		
+		private System.Nullable<int> _CountCurrent;
+		
+		private System.Nullable<int> _Count30Days;
+		
+		private System.Nullable<int> _Count60Days;
+		
+		private System.Nullable<int> _Count90Days;
+		
+		public DB_EOM_GetTrialBalanceTotalsResult()
+		{
+		}
+		
+		[Column(Storage="_SumTotal", DbType="Money")]
+		public System.Nullable<decimal> SumTotal
+		{
+			get
+			{
+				return this._SumTotal;
+			}
+			set
+			{
+				if ((this._SumTotal != value))
+				{
+					this._SumTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SumCurrent", DbType="Money")]
+		public System.Nullable<decimal> SumCurrent
+		{
+			get
+			{
+				return this._SumCurrent;
+			}
+			set
+			{
+				if ((this._SumCurrent != value))
+				{
+					this._SumCurrent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Sum30Days", DbType="Money")]
+		public System.Nullable<decimal> Sum30Days
+		{
+			get
+			{
+				return this._Sum30Days;
+			}
+			set
+			{
+				if ((this._Sum30Days != value))
+				{
+					this._Sum30Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Sum60Days", DbType="Money")]
+		public System.Nullable<decimal> Sum60Days
+		{
+			get
+			{
+				return this._Sum60Days;
+			}
+			set
+			{
+				if ((this._Sum60Days != value))
+				{
+					this._Sum60Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Sum90Days", DbType="Money")]
+		public System.Nullable<decimal> Sum90Days
+		{
+			get
+			{
+				return this._Sum90Days;
+			}
+			set
+			{
+				if ((this._Sum90Days != value))
+				{
+					this._Sum90Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PercentCurrent", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> PercentCurrent
+		{
+			get
+			{
+				return this._PercentCurrent;
+			}
+			set
+			{
+				if ((this._PercentCurrent != value))
+				{
+					this._PercentCurrent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Percent30Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Percent30Days
+		{
+			get
+			{
+				return this._Percent30Days;
+			}
+			set
+			{
+				if ((this._Percent30Days != value))
+				{
+					this._Percent30Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Percent60Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Percent60Days
+		{
+			get
+			{
+				return this._Percent60Days;
+			}
+			set
+			{
+				if ((this._Percent60Days != value))
+				{
+					this._Percent60Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Percent90Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Percent90Days
+		{
+			get
+			{
+				return this._Percent90Days;
+			}
+			set
+			{
+				if ((this._Percent90Days != value))
+				{
+					this._Percent90Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CountAll", DbType="Int")]
+		public System.Nullable<int> CountAll
+		{
+			get
+			{
+				return this._CountAll;
+			}
+			set
+			{
+				if ((this._CountAll != value))
+				{
+					this._CountAll = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CountCurrent", DbType="Int")]
+		public System.Nullable<int> CountCurrent
+		{
+			get
+			{
+				return this._CountCurrent;
+			}
+			set
+			{
+				if ((this._CountCurrent != value))
+				{
+					this._CountCurrent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Count30Days", DbType="Int")]
+		public System.Nullable<int> Count30Days
+		{
+			get
+			{
+				return this._Count30Days;
+			}
+			set
+			{
+				if ((this._Count30Days != value))
+				{
+					this._Count30Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Count60Days", DbType="Int")]
+		public System.Nullable<int> Count60Days
+		{
+			get
+			{
+				return this._Count60Days;
+			}
+			set
+			{
+				if ((this._Count60Days != value))
+				{
+					this._Count60Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Count90Days", DbType="Int")]
+		public System.Nullable<int> Count90Days
+		{
+			get
+			{
+				return this._Count90Days;
+			}
+			set
+			{
+				if ((this._Count90Days != value))
+				{
+					this._Count90Days = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DB_GetNextInvoiceResult
+	{
+		
+		private System.Nullable<int> _OrdNum;
+		
+		public DB_GetNextInvoiceResult()
+		{
+		}
+		
+		[Column(Storage="_OrdNum", DbType="Int")]
+		public System.Nullable<int> OrdNum
+		{
+			get
+			{
+				return this._OrdNum;
+			}
+			set
+			{
+				if ((this._OrdNum != value))
+				{
+					this._OrdNum = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Debtor_ContactsResult
+	{
+		
+		private string _Name;
+		
+		private string _JobTitle;
+		
+		private string _Phone;
+		
+		private string _Fax;
+		
+		private string _AfterHours;
+		
+		private string _Mobile;
+		
+		private string _Email;
+		
+		private System.Nullable<int> _ContactID;
+		
+		public Debtor_ContactsResult()
+		{
+		}
+		
+		[Column(Storage="_Name", DbType="VarChar(41)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_JobTitle", DbType="VarChar(30)")]
+		public string JobTitle
+		{
+			get
+			{
+				return this._JobTitle;
+			}
+			set
+			{
+				if ((this._JobTitle != value))
+				{
+					this._JobTitle = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Phone", DbType="VarChar(15)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Fax", DbType="VarChar(15)")]
+		public string Fax
+		{
+			get
+			{
+				return this._Fax;
+			}
+			set
+			{
+				if ((this._Fax != value))
+				{
+					this._Fax = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AfterHours", DbType="VarChar(15)")]
+		public string AfterHours
+		{
+			get
+			{
+				return this._AfterHours;
+			}
+			set
+			{
+				if ((this._AfterHours != value))
+				{
+					this._AfterHours = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Mobile", DbType="VarChar(15)")]
+		public string Mobile
+		{
+			get
+			{
+				return this._Mobile;
+			}
+			set
+			{
+				if ((this._Mobile != value))
+				{
+					this._Mobile = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Email", DbType="VarChar(100)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ContactID", DbType="Int")]
+		public System.Nullable<int> ContactID
+		{
+			get
+			{
+				return this._ContactID;
+			}
+			set
+			{
+				if ((this._ContactID != value))
+				{
+					this._ContactID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTOR_InfoResult
+	{
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _OldAccount;
+		
+		private System.Nullable<int> _Parent;
+		
+		private string _Child;
+		
+		private string _Company;
+		
+		private System.Nullable<int> _PrimaryContact;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _Type;
+		
+		private string _AccountStatus;
+		
+		private System.Nullable<bool> _COD;
+		
+		private System.Nullable<bool> _Industrial;
+		
+		private System.Nullable<bool> _BO;
+		
+		private System.Nullable<bool> _FO;
+		
+		private string _Group;
+		
+		private System.Nullable<bool> _ByDepartment;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _Address3;
+		
+		private string _Address4;
+		
+		private string _City;
+		
+		private string _State;
+		
+		private string _PostCode;
+		
+		private string _Phone;
+		
+		private string _PhoneAfterHrs;
+		
+		private string _Fax;
+		
+		private string _WebSite;
+		
+		private string _Email;
+		
+		private System.Nullable<int> _Courier;
+		
+		private System.Nullable<short> _RepArea1;
+		
+		private System.Nullable<short> _RepArea2;
+		
+		private string _BankAcctName;
+		
+		private string _BankName;
+		
+		private string _BankSuburb;
+		
+		private string _BankBSB;
+		
+		private string _BankAcct;
+		
+		private string _CreditCardName;
+		
+		private string _CreditCardType;
+		
+		private string _CreditCardNo;
+		
+		private System.Nullable<System.DateTime> _CreditCardExpire;
+		
+		private System.Nullable<byte> _SpecialPrice;
+		
+		private System.Nullable<byte> _SpecialDelivery;
+		
+		private System.Nullable<byte> _Urgent;
+		
+		private System.Nullable<byte> _Local;
+		
+		private System.Nullable<short> _Discount1;
+		
+		private System.Nullable<short> _Discount2;
+		
+		private System.Nullable<byte> _PriceLevel;
+		
+		private string _AccountClass;
+		
+		private System.Nullable<decimal> _OpenBal;
+		
+		private System.Nullable<decimal> _Current;
+		
+		private System.Nullable<decimal> @__30Days;
+		
+		private System.Nullable<decimal> @__60Days;
+		
+		private System.Nullable<decimal> @__90Days;
+		
+		private string _Terms;
+		
+		private System.Nullable<byte> _NumDaysCredit;
+		
+		private System.Nullable<decimal> _CreditLimit;
+		
+		private System.Nullable<int> _LastInvNum;
+		
+		private System.Nullable<System.DateTime> _LastInvDate;
+		
+		private System.Nullable<decimal> _LastInvAmt;
+		
+		private System.Nullable<System.DateTime> _LastPayDate;
+		
+		private System.Nullable<decimal> _LastPayAmt;
+		
+		private System.Nullable<System.DateTime> _LastPick;
+		
+		private string _StaxNum;
+		
+		private string _WebLogin;
+		
+		private string _WebPassword;
+		
+		private System.Nullable<decimal> _MTD;
+		
+		private System.Nullable<decimal> _YTD;
+		
+		private System.Nullable<decimal> _LY;
+		
+		private System.Nullable<decimal> _JAN;
+		
+		private System.Nullable<decimal> _FEB;
+		
+		private System.Nullable<decimal> _MAR;
+		
+		private System.Nullable<decimal> _APR;
+		
+		private System.Nullable<decimal> _MAY;
+		
+		private System.Nullable<decimal> _JUN;
+		
+		private System.Nullable<decimal> _JUL;
+		
+		private System.Nullable<decimal> _AUG;
+		
+		private System.Nullable<decimal> _SEP;
+		
+		private System.Nullable<decimal> _OCT;
+		
+		private System.Nullable<decimal> _NOV;
+		
+		private System.Nullable<decimal> _DEC;
+		
+		private string _AbbrevName;
+		
+		private System.Nullable<bool> _PrintInvoice;
+		
+		private System.Nullable<int> _InvoiceQty;
+		
+		private System.Nullable<bool> _PrintPackSlip;
+		
+		private System.Nullable<int> _PackSlipQty;
+		
+		private System.Nullable<byte> _RRPType;
+		
+		private System.Nullable<int> _RRPQty;
+		
+		private System.Nullable<decimal> _RRPMarkup1;
+		
+		private System.Nullable<decimal> _RRPMarkup2;
+		
+		private System.Nullable<bool> _International;
+		
+		private string _Country;
+		
+		private string _CurrencyType;
+		
+		private System.Nullable<bool> _CIF;
+		
+		private System.Nullable<bool> _FIS;
+		
+		private System.Nullable<bool> _FOB;
+		
+		private System.Nullable<byte> _CompanyNum;
+		
+		private string _SpecialReq;
+		
+		private string _InvMsg;
+		
+		private string _SalesNotes;
+		
+		private string _Remarks;
+		
+		private System.Nullable<decimal> _FwdVal;
+		
+		private System.Nullable<bool> _SDI;
+		
+		private System.Nullable<bool> _OpenItem;
+		
+		private System.Nullable<decimal> _CurrentInv;
+		
+		private System.Nullable<decimal> _CurrentRec;
+		
+		private System.Nullable<decimal> _CurrentDisc;
+		
+		private System.Nullable<decimal> _CurrentJnl;
+		
+		private string _FlagMsg;
+		
+		private string _SalesRep;
+		
+		private string _SalesRep2;
+		
+		private string _StatementNotes;
+		
+		private string _ABN;
+		
+		private System.Nullable<int> _OrdNumOK;
+		
+		private string _ShipBy;
+		
+		private System.Nullable<bool> _PrintLabel;
+		
+		private System.Nullable<bool> _GotCalls;
+		
+		private System.Nullable<System.DateTime> _NextCall;
+		
+		private System.Nullable<System.DateTime> _DateAdded;
+		
+		private System.Nullable<bool> _InActive;
+		
+		private System.Nullable<bool> _CreditHold;
+		
+		private string _Selector;
+		
+		private System.Nullable<decimal> _FwdDateAmount;
+		
+		private System.Nullable<decimal> _Rebate;
+		
+		private System.Nullable<decimal> _LY2;
+		
+		private System.Nullable<byte> _PmFrequency;
+		
+		private System.Nullable<byte> _PmPeriod;
+		
+		private System.Nullable<System.DateTime> _PmLastVisit;
+		
+		private System.Nullable<System.DateTime> _PMNextVisit;
+		
+		private string _OldParent;
+		
+		private System.Nullable<byte> _DefaultInvStyle;
+		
+		private System.Nullable<byte> _InvoiceFreq;
+		
+		private string _SalesCtrlAccGL;
+		
+		private string _SalesAccGL;
+		
+		private System.Nullable<decimal> _LJAN;
+		
+		private System.Nullable<decimal> _LFEB;
+		
+		private System.Nullable<decimal> _LMAR;
+		
+		private System.Nullable<decimal> _LAPR;
+		
+		private System.Nullable<decimal> _LMAY;
+		
+		private System.Nullable<decimal> _LJUN;
+		
+		private System.Nullable<decimal> _LJUL;
+		
+		private System.Nullable<decimal> _LAUG;
+		
+		private System.Nullable<decimal> _LSEP;
+		
+		private System.Nullable<decimal> _LOCT;
+		
+		private System.Nullable<decimal> _LNOV;
+		
+		private System.Nullable<decimal> _LDEC;
+		
+		private System.Nullable<bool> _NoCreditLimit;
+		
+		private System.Nullable<int> _StockLocation;
+		
+		private string _SiteEngineer;
+		
+		private string _LastCallBy;
+		
+		private string _TMInvAccGL;
+		
+		private System.Nullable<decimal> _OverpayBucket;
+		
+		private System.Nullable<bool> _InterCompany;
+		
+		private System.Nullable<bool> _Merged;
+		
+		private System.Nullable<bool> _PreMerged;
+		
+		private string _ContractLocation;
+		
+		private string _IMRep;
+		
+		private string _IPRep;
+		
+		private string _RM1;
+		
+		private string _RM2;
+		
+		private System.Nullable<int> _SeparateBatchPrint;
+		
+		private System.Nullable<bool> _SoftInvoice;
+		
+		private string _SoftInvoicePath;
+		
+		private System.Nullable<int> _ReportingGroupID;
+		
+		private System.Nullable<bool> _MixedInternational;
+		
+		private System.Nullable<bool> _PDFInvoice;
+		
+		private string _PDFInvoiceEmail;
+		
+		private string _BSGTechnicalOwner;
+		
+		private string _SalesRepBSG;
+		
+		private System.Nullable<int> _BillingMethod;
+		
+		private System.Nullable<bool> _BillToLocation;
+		
+		private System.Nullable<bool> _PrintAlways;
+		
+		private System.Nullable<System.DateTime> _OriginalAccountDate;
+		
+		private System.Nullable<bool> _PDFInvoiceToContacts;
+		
+		private System.Nullable<int> _PrimaryFinanceContact;
+		
+		private string _FinancePhone;
+		
+		private string _FinanceFax;
+		
+		private string _FinancePhoneAfterHrs;
+		
+		private System.Nullable<decimal> _Latitude;
+		
+		private System.Nullable<decimal> _Longitude;
+		
+		private System.Nullable<bool> _Issue;
+		
+		private System.Nullable<System.DateTime> _IssueDate;
+		
+		private string _EngineerNotes;
+		
+		private string _TechnicalAccountManager;
+		
+		private System.Nullable<int> _GLState;
+		
+		private System.Nullable<bool> _ExcludeFromCarbonTax;
+		
+		public DEBTOR_InfoResult()
+		{
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OldAccount", DbType="VarChar(12)")]
+		public string OldAccount
+		{
+			get
+			{
+				return this._OldAccount;
+			}
+			set
+			{
+				if ((this._OldAccount != value))
+				{
+					this._OldAccount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Parent", DbType="Int")]
+		public System.Nullable<int> Parent
+		{
+			get
+			{
+				return this._Parent;
+			}
+			set
+			{
+				if ((this._Parent != value))
+				{
+					this._Parent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Child", DbType="VarChar(4)")]
+		public string Child
+		{
+			get
+			{
+				return this._Child;
+			}
+			set
+			{
+				if ((this._Child != value))
+				{
+					this._Child = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(80)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PrimaryContact", DbType="Int")]
+		public System.Nullable<int> PrimaryContact
+		{
+			get
+			{
+				return this._PrimaryContact;
+			}
+			set
+			{
+				if ((this._PrimaryContact != value))
+				{
+					this._PrimaryContact = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Type", DbType="VarChar(7)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountStatus", DbType="VarChar(7)")]
+		public string AccountStatus
+		{
+			get
+			{
+				return this._AccountStatus;
+			}
+			set
+			{
+				if ((this._AccountStatus != value))
+				{
+					this._AccountStatus = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_COD", DbType="Bit")]
+		public System.Nullable<bool> COD
+		{
+			get
+			{
+				return this._COD;
+			}
+			set
+			{
+				if ((this._COD != value))
+				{
+					this._COD = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Industrial", DbType="Bit")]
+		public System.Nullable<bool> Industrial
+		{
+			get
+			{
+				return this._Industrial;
+			}
+			set
+			{
+				if ((this._Industrial != value))
+				{
+					this._Industrial = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BO", DbType="Bit")]
+		public System.Nullable<bool> BO
+		{
+			get
+			{
+				return this._BO;
+			}
+			set
+			{
+				if ((this._BO != value))
+				{
+					this._BO = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FO", DbType="Bit")]
+		public System.Nullable<bool> FO
+		{
+			get
+			{
+				return this._FO;
+			}
+			set
+			{
+				if ((this._FO != value))
+				{
+					this._FO = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Group", DbType="VarChar(12)")]
+		public string Group
+		{
+			get
+			{
+				return this._Group;
+			}
+			set
+			{
+				if ((this._Group != value))
+				{
+					this._Group = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ByDepartment", DbType="Bit")]
+		public System.Nullable<bool> ByDepartment
+		{
+			get
+			{
+				return this._ByDepartment;
+			}
+			set
+			{
+				if ((this._ByDepartment != value))
+				{
+					this._ByDepartment = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address1", DbType="VarChar(50)")]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address2", DbType="VarChar(50)")]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address3", DbType="VarChar(50)")]
+		public string Address3
+		{
+			get
+			{
+				return this._Address3;
+			}
+			set
+			{
+				if ((this._Address3 != value))
+				{
+					this._Address3 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address4", DbType="VarChar(50)")]
+		public string Address4
+		{
+			get
+			{
+				return this._Address4;
+			}
+			set
+			{
+				if ((this._Address4 != value))
+				{
+					this._Address4 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_City", DbType="VarChar(25)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_State", DbType="VarChar(5)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PostCode", DbType="VarChar(6)")]
+		public string PostCode
+		{
+			get
+			{
+				return this._PostCode;
+			}
+			set
+			{
+				if ((this._PostCode != value))
+				{
+					this._PostCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Phone", DbType="VarChar(20)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PhoneAfterHrs", DbType="VarChar(20)")]
+		public string PhoneAfterHrs
+		{
+			get
+			{
+				return this._PhoneAfterHrs;
+			}
+			set
+			{
+				if ((this._PhoneAfterHrs != value))
+				{
+					this._PhoneAfterHrs = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Fax", DbType="VarChar(20)")]
+		public string Fax
+		{
+			get
+			{
+				return this._Fax;
+			}
+			set
+			{
+				if ((this._Fax != value))
+				{
+					this._Fax = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_WebSite", DbType="VarChar(40)")]
+		public string WebSite
+		{
+			get
+			{
+				return this._WebSite;
+			}
+			set
+			{
+				if ((this._WebSite != value))
+				{
+					this._WebSite = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Email", DbType="VarChar(70)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Courier", DbType="Int")]
+		public System.Nullable<int> Courier
+		{
+			get
+			{
+				return this._Courier;
+			}
+			set
+			{
+				if ((this._Courier != value))
+				{
+					this._Courier = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RepArea1", DbType="SmallInt")]
+		public System.Nullable<short> RepArea1
+		{
+			get
+			{
+				return this._RepArea1;
+			}
+			set
+			{
+				if ((this._RepArea1 != value))
+				{
+					this._RepArea1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RepArea2", DbType="SmallInt")]
+		public System.Nullable<short> RepArea2
+		{
+			get
+			{
+				return this._RepArea2;
+			}
+			set
+			{
+				if ((this._RepArea2 != value))
+				{
+					this._RepArea2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankAcctName", DbType="VarChar(50)")]
+		public string BankAcctName
+		{
+			get
+			{
+				return this._BankAcctName;
+			}
+			set
+			{
+				if ((this._BankAcctName != value))
+				{
+					this._BankAcctName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankName", DbType="VarChar(50)")]
+		public string BankName
+		{
+			get
+			{
+				return this._BankName;
+			}
+			set
+			{
+				if ((this._BankName != value))
+				{
+					this._BankName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankSuburb", DbType="VarChar(25)")]
+		public string BankSuburb
+		{
+			get
+			{
+				return this._BankSuburb;
+			}
+			set
+			{
+				if ((this._BankSuburb != value))
+				{
+					this._BankSuburb = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankBSB", DbType="VarChar(10)")]
+		public string BankBSB
+		{
+			get
+			{
+				return this._BankBSB;
+			}
+			set
+			{
+				if ((this._BankBSB != value))
+				{
+					this._BankBSB = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankAcct", DbType="VarChar(12)")]
+		public string BankAcct
+		{
+			get
+			{
+				return this._BankAcct;
+			}
+			set
+			{
+				if ((this._BankAcct != value))
+				{
+					this._BankAcct = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditCardName", DbType="VarChar(30)")]
+		public string CreditCardName
+		{
+			get
+			{
+				return this._CreditCardName;
+			}
+			set
+			{
+				if ((this._CreditCardName != value))
+				{
+					this._CreditCardName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditCardType", DbType="VarChar(20)")]
+		public string CreditCardType
+		{
+			get
+			{
+				return this._CreditCardType;
+			}
+			set
+			{
+				if ((this._CreditCardType != value))
+				{
+					this._CreditCardType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditCardNo", DbType="VarChar(30)")]
+		public string CreditCardNo
+		{
+			get
+			{
+				return this._CreditCardNo;
+			}
+			set
+			{
+				if ((this._CreditCardNo != value))
+				{
+					this._CreditCardNo = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditCardExpire", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreditCardExpire
+		{
+			get
+			{
+				return this._CreditCardExpire;
+			}
+			set
+			{
+				if ((this._CreditCardExpire != value))
+				{
+					this._CreditCardExpire = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SpecialPrice", DbType="TinyInt")]
+		public System.Nullable<byte> SpecialPrice
+		{
+			get
+			{
+				return this._SpecialPrice;
+			}
+			set
+			{
+				if ((this._SpecialPrice != value))
+				{
+					this._SpecialPrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SpecialDelivery", DbType="TinyInt")]
+		public System.Nullable<byte> SpecialDelivery
+		{
+			get
+			{
+				return this._SpecialDelivery;
+			}
+			set
+			{
+				if ((this._SpecialDelivery != value))
+				{
+					this._SpecialDelivery = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Urgent", DbType="TinyInt")]
+		public System.Nullable<byte> Urgent
+		{
+			get
+			{
+				return this._Urgent;
+			}
+			set
+			{
+				if ((this._Urgent != value))
+				{
+					this._Urgent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Local", DbType="TinyInt")]
+		public System.Nullable<byte> Local
+		{
+			get
+			{
+				return this._Local;
+			}
+			set
+			{
+				if ((this._Local != value))
+				{
+					this._Local = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Discount1", DbType="SmallInt")]
+		public System.Nullable<short> Discount1
+		{
+			get
+			{
+				return this._Discount1;
+			}
+			set
+			{
+				if ((this._Discount1 != value))
+				{
+					this._Discount1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Discount2", DbType="SmallInt")]
+		public System.Nullable<short> Discount2
+		{
+			get
+			{
+				return this._Discount2;
+			}
+			set
+			{
+				if ((this._Discount2 != value))
+				{
+					this._Discount2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PriceLevel", DbType="TinyInt")]
+		public System.Nullable<byte> PriceLevel
+		{
+			get
+			{
+				return this._PriceLevel;
+			}
+			set
+			{
+				if ((this._PriceLevel != value))
+				{
+					this._PriceLevel = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountClass", DbType="VarChar(50)")]
+		public string AccountClass
+		{
+			get
+			{
+				return this._AccountClass;
+			}
+			set
+			{
+				if ((this._AccountClass != value))
+				{
+					this._AccountClass = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OpenBal", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> OpenBal
+		{
+			get
+			{
+				return this._OpenBal;
+			}
+			set
+			{
+				if ((this._OpenBal != value))
+				{
+					this._OpenBal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Current", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Current
+		{
+			get
+			{
+				return this._Current;
+			}
+			set
+			{
+				if ((this._Current != value))
+				{
+					this._Current = value;
+				}
+			}
+		}
+		
+		[Column(Name="30Days", Storage="__30Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> _30Days
+		{
+			get
+			{
+				return this.@__30Days;
+			}
+			set
+			{
+				if ((this.@__30Days != value))
+				{
+					this.@__30Days = value;
+				}
+			}
+		}
+		
+		[Column(Name="60Days", Storage="__60Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> _60Days
+		{
+			get
+			{
+				return this.@__60Days;
+			}
+			set
+			{
+				if ((this.@__60Days != value))
+				{
+					this.@__60Days = value;
+				}
+			}
+		}
+		
+		[Column(Name="90Days", Storage="__90Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> _90Days
+		{
+			get
+			{
+				return this.@__90Days;
+			}
+			set
+			{
+				if ((this.@__90Days != value))
+				{
+					this.@__90Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Terms", DbType="VarChar(196)")]
+		public string Terms
+		{
+			get
+			{
+				return this._Terms;
+			}
+			set
+			{
+				if ((this._Terms != value))
+				{
+					this._Terms = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NumDaysCredit", DbType="TinyInt")]
+		public System.Nullable<byte> NumDaysCredit
+		{
+			get
+			{
+				return this._NumDaysCredit;
+			}
+			set
+			{
+				if ((this._NumDaysCredit != value))
+				{
+					this._NumDaysCredit = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditLimit", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> CreditLimit
+		{
+			get
+			{
+				return this._CreditLimit;
+			}
+			set
+			{
+				if ((this._CreditLimit != value))
+				{
+					this._CreditLimit = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LastInvNum", DbType="Int")]
+		public System.Nullable<int> LastInvNum
+		{
+			get
+			{
+				return this._LastInvNum;
+			}
+			set
+			{
+				if ((this._LastInvNum != value))
+				{
+					this._LastInvNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LastInvDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastInvDate
+		{
+			get
+			{
+				return this._LastInvDate;
+			}
+			set
+			{
+				if ((this._LastInvDate != value))
+				{
+					this._LastInvDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LastInvAmt", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LastInvAmt
+		{
+			get
+			{
+				return this._LastInvAmt;
+			}
+			set
+			{
+				if ((this._LastInvAmt != value))
+				{
+					this._LastInvAmt = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LastPayDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastPayDate
+		{
+			get
+			{
+				return this._LastPayDate;
+			}
+			set
+			{
+				if ((this._LastPayDate != value))
+				{
+					this._LastPayDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LastPayAmt", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LastPayAmt
+		{
+			get
+			{
+				return this._LastPayAmt;
+			}
+			set
+			{
+				if ((this._LastPayAmt != value))
+				{
+					this._LastPayAmt = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LastPick", DbType="DateTime")]
+		public System.Nullable<System.DateTime> LastPick
+		{
+			get
+			{
+				return this._LastPick;
+			}
+			set
+			{
+				if ((this._LastPick != value))
+				{
+					this._LastPick = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_StaxNum", DbType="VarChar(10)")]
+		public string StaxNum
+		{
+			get
+			{
+				return this._StaxNum;
+			}
+			set
+			{
+				if ((this._StaxNum != value))
+				{
+					this._StaxNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_WebLogin", DbType="VarChar(20)")]
+		public string WebLogin
+		{
+			get
+			{
+				return this._WebLogin;
+			}
+			set
+			{
+				if ((this._WebLogin != value))
+				{
+					this._WebLogin = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_WebPassword", DbType="VarChar(15)")]
+		public string WebPassword
+		{
+			get
+			{
+				return this._WebPassword;
+			}
+			set
+			{
+				if ((this._WebPassword != value))
+				{
+					this._WebPassword = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MTD", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> MTD
+		{
+			get
+			{
+				return this._MTD;
+			}
+			set
+			{
+				if ((this._MTD != value))
+				{
+					this._MTD = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_YTD", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> YTD
+		{
+			get
+			{
+				return this._YTD;
+			}
+			set
+			{
+				if ((this._YTD != value))
+				{
+					this._YTD = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LY", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LY
+		{
+			get
+			{
+				return this._LY;
+			}
+			set
+			{
+				if ((this._LY != value))
+				{
+					this._LY = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_JAN", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> JAN
+		{
+			get
+			{
+				return this._JAN;
+			}
+			set
+			{
+				if ((this._JAN != value))
+				{
+					this._JAN = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FEB", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> FEB
+		{
+			get
+			{
+				return this._FEB;
+			}
+			set
+			{
+				if ((this._FEB != value))
+				{
+					this._FEB = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MAR", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> MAR
+		{
+			get
+			{
+				return this._MAR;
+			}
+			set
+			{
+				if ((this._MAR != value))
+				{
+					this._MAR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_APR", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> APR
+		{
+			get
+			{
+				return this._APR;
+			}
+			set
+			{
+				if ((this._APR != value))
+				{
+					this._APR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MAY", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> MAY
+		{
+			get
+			{
+				return this._MAY;
+			}
+			set
+			{
+				if ((this._MAY != value))
+				{
+					this._MAY = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_JUN", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> JUN
+		{
+			get
+			{
+				return this._JUN;
+			}
+			set
+			{
+				if ((this._JUN != value))
+				{
+					this._JUN = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_JUL", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> JUL
+		{
+			get
+			{
+				return this._JUL;
+			}
+			set
+			{
+				if ((this._JUL != value))
+				{
+					this._JUL = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AUG", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> AUG
+		{
+			get
+			{
+				return this._AUG;
+			}
+			set
+			{
+				if ((this._AUG != value))
+				{
+					this._AUG = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SEP", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> SEP
+		{
+			get
+			{
+				return this._SEP;
+			}
+			set
+			{
+				if ((this._SEP != value))
+				{
+					this._SEP = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OCT", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> OCT
+		{
+			get
+			{
+				return this._OCT;
+			}
+			set
+			{
+				if ((this._OCT != value))
+				{
+					this._OCT = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NOV", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> NOV
+		{
+			get
+			{
+				return this._NOV;
+			}
+			set
+			{
+				if ((this._NOV != value))
+				{
+					this._NOV = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DEC", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> DEC
+		{
+			get
+			{
+				return this._DEC;
+			}
+			set
+			{
+				if ((this._DEC != value))
+				{
+					this._DEC = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AbbrevName", DbType="VarChar(20)")]
+		public string AbbrevName
+		{
+			get
+			{
+				return this._AbbrevName;
+			}
+			set
+			{
+				if ((this._AbbrevName != value))
+				{
+					this._AbbrevName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PrintInvoice", DbType="Bit")]
+		public System.Nullable<bool> PrintInvoice
+		{
+			get
+			{
+				return this._PrintInvoice;
+			}
+			set
+			{
+				if ((this._PrintInvoice != value))
+				{
+					this._PrintInvoice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceQty", DbType="Int")]
+		public System.Nullable<int> InvoiceQty
+		{
+			get
+			{
+				return this._InvoiceQty;
+			}
+			set
+			{
+				if ((this._InvoiceQty != value))
+				{
+					this._InvoiceQty = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PrintPackSlip", DbType="Bit")]
+		public System.Nullable<bool> PrintPackSlip
+		{
+			get
+			{
+				return this._PrintPackSlip;
+			}
+			set
+			{
+				if ((this._PrintPackSlip != value))
+				{
+					this._PrintPackSlip = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PackSlipQty", DbType="Int")]
+		public System.Nullable<int> PackSlipQty
+		{
+			get
+			{
+				return this._PackSlipQty;
+			}
+			set
+			{
+				if ((this._PackSlipQty != value))
+				{
+					this._PackSlipQty = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RRPType", DbType="TinyInt")]
+		public System.Nullable<byte> RRPType
+		{
+			get
+			{
+				return this._RRPType;
+			}
+			set
+			{
+				if ((this._RRPType != value))
+				{
+					this._RRPType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RRPQty", DbType="Int")]
+		public System.Nullable<int> RRPQty
+		{
+			get
+			{
+				return this._RRPQty;
+			}
+			set
+			{
+				if ((this._RRPQty != value))
+				{
+					this._RRPQty = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RRPMarkup1", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> RRPMarkup1
+		{
+			get
+			{
+				return this._RRPMarkup1;
+			}
+			set
+			{
+				if ((this._RRPMarkup1 != value))
+				{
+					this._RRPMarkup1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RRPMarkup2", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> RRPMarkup2
+		{
+			get
+			{
+				return this._RRPMarkup2;
+			}
+			set
+			{
+				if ((this._RRPMarkup2 != value))
+				{
+					this._RRPMarkup2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_International", DbType="Bit")]
+		public System.Nullable<bool> International
+		{
+			get
+			{
+				return this._International;
+			}
+			set
+			{
+				if ((this._International != value))
+				{
+					this._International = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Country", DbType="VarChar(25)")]
+		public string Country
+		{
+			get
+			{
+				return this._Country;
+			}
+			set
+			{
+				if ((this._Country != value))
+				{
+					this._Country = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrencyType", DbType="VarChar(5)")]
+		public string CurrencyType
+		{
+			get
+			{
+				return this._CurrencyType;
+			}
+			set
+			{
+				if ((this._CurrencyType != value))
+				{
+					this._CurrencyType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CIF", DbType="Bit")]
+		public System.Nullable<bool> CIF
+		{
+			get
+			{
+				return this._CIF;
+			}
+			set
+			{
+				if ((this._CIF != value))
+				{
+					this._CIF = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FIS", DbType="Bit")]
+		public System.Nullable<bool> FIS
+		{
+			get
+			{
+				return this._FIS;
+			}
+			set
+			{
+				if ((this._FIS != value))
+				{
+					this._FIS = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FOB", DbType="Bit")]
+		public System.Nullable<bool> FOB
+		{
+			get
+			{
+				return this._FOB;
+			}
+			set
+			{
+				if ((this._FOB != value))
+				{
+					this._FOB = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyNum", DbType="TinyInt")]
+		public System.Nullable<byte> CompanyNum
+		{
+			get
+			{
+				return this._CompanyNum;
+			}
+			set
+			{
+				if ((this._CompanyNum != value))
+				{
+					this._CompanyNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SpecialReq", DbType="Text")]
+		public string SpecialReq
+		{
+			get
+			{
+				return this._SpecialReq;
+			}
+			set
+			{
+				if ((this._SpecialReq != value))
+				{
+					this._SpecialReq = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvMsg", DbType="VarChar(120)")]
+		public string InvMsg
+		{
+			get
+			{
+				return this._InvMsg;
+			}
+			set
+			{
+				if ((this._InvMsg != value))
+				{
+					this._InvMsg = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SalesNotes", DbType="Text")]
+		public string SalesNotes
+		{
+			get
+			{
+				return this._SalesNotes;
+			}
+			set
+			{
+				if ((this._SalesNotes != value))
+				{
+					this._SalesNotes = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Remarks", DbType="Text")]
+		public string Remarks
+		{
+			get
+			{
+				return this._Remarks;
+			}
+			set
+			{
+				if ((this._Remarks != value))
+				{
+					this._Remarks = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FwdVal", DbType="Money")]
+		public System.Nullable<decimal> FwdVal
+		{
+			get
+			{
+				return this._FwdVal;
+			}
+			set
+			{
+				if ((this._FwdVal != value))
+				{
+					this._FwdVal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SDI", DbType="Bit")]
+		public System.Nullable<bool> SDI
+		{
+			get
+			{
+				return this._SDI;
+			}
+			set
+			{
+				if ((this._SDI != value))
+				{
+					this._SDI = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OpenItem", DbType="Bit")]
+		public System.Nullable<bool> OpenItem
+		{
+			get
+			{
+				return this._OpenItem;
+			}
+			set
+			{
+				if ((this._OpenItem != value))
+				{
+					this._OpenItem = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrentInv", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> CurrentInv
+		{
+			get
+			{
+				return this._CurrentInv;
+			}
+			set
+			{
+				if ((this._CurrentInv != value))
+				{
+					this._CurrentInv = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrentRec", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> CurrentRec
+		{
+			get
+			{
+				return this._CurrentRec;
+			}
+			set
+			{
+				if ((this._CurrentRec != value))
+				{
+					this._CurrentRec = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrentDisc", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> CurrentDisc
+		{
+			get
+			{
+				return this._CurrentDisc;
+			}
+			set
+			{
+				if ((this._CurrentDisc != value))
+				{
+					this._CurrentDisc = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrentJnl", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> CurrentJnl
+		{
+			get
+			{
+				return this._CurrentJnl;
+			}
+			set
+			{
+				if ((this._CurrentJnl != value))
+				{
+					this._CurrentJnl = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FlagMsg", DbType="VarChar(20)")]
+		public string FlagMsg
+		{
+			get
+			{
+				return this._FlagMsg;
+			}
+			set
+			{
+				if ((this._FlagMsg != value))
+				{
+					this._FlagMsg = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SalesRep", DbType="VarChar(25)")]
+		public string SalesRep
+		{
+			get
+			{
+				return this._SalesRep;
+			}
+			set
+			{
+				if ((this._SalesRep != value))
+				{
+					this._SalesRep = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SalesRep2", DbType="VarChar(25)")]
+		public string SalesRep2
+		{
+			get
+			{
+				return this._SalesRep2;
+			}
+			set
+			{
+				if ((this._SalesRep2 != value))
+				{
+					this._SalesRep2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_StatementNotes", DbType="Text")]
+		public string StatementNotes
+		{
+			get
+			{
+				return this._StatementNotes;
+			}
+			set
+			{
+				if ((this._StatementNotes != value))
+				{
+					this._StatementNotes = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ABN", DbType="VarChar(15)")]
+		public string ABN
+		{
+			get
+			{
+				return this._ABN;
+			}
+			set
+			{
+				if ((this._ABN != value))
+				{
+					this._ABN = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OrdNumOK", DbType="Int")]
+		public System.Nullable<int> OrdNumOK
+		{
+			get
+			{
+				return this._OrdNumOK;
+			}
+			set
+			{
+				if ((this._OrdNumOK != value))
+				{
+					this._OrdNumOK = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipBy", DbType="VarChar(40)")]
+		public string ShipBy
+		{
+			get
+			{
+				return this._ShipBy;
+			}
+			set
+			{
+				if ((this._ShipBy != value))
+				{
+					this._ShipBy = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PrintLabel", DbType="Bit")]
+		public System.Nullable<bool> PrintLabel
+		{
+			get
+			{
+				return this._PrintLabel;
+			}
+			set
+			{
+				if ((this._PrintLabel != value))
+				{
+					this._PrintLabel = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_GotCalls", DbType="Bit")]
+		public System.Nullable<bool> GotCalls
+		{
+			get
+			{
+				return this._GotCalls;
+			}
+			set
+			{
+				if ((this._GotCalls != value))
+				{
+					this._GotCalls = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NextCall", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NextCall
+		{
+			get
+			{
+				return this._NextCall;
+			}
+			set
+			{
+				if ((this._NextCall != value))
+				{
+					this._NextCall = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DateAdded", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateAdded
+		{
+			get
+			{
+				return this._DateAdded;
+			}
+			set
+			{
+				if ((this._DateAdded != value))
+				{
+					this._DateAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InActive", DbType="Bit")]
+		public System.Nullable<bool> InActive
+		{
+			get
+			{
+				return this._InActive;
+			}
+			set
+			{
+				if ((this._InActive != value))
+				{
+					this._InActive = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditHold", DbType="Bit")]
+		public System.Nullable<bool> CreditHold
+		{
+			get
+			{
+				return this._CreditHold;
+			}
+			set
+			{
+				if ((this._CreditHold != value))
+				{
+					this._CreditHold = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Selector", DbType="VarChar(5)")]
+		public string Selector
+		{
+			get
+			{
+				return this._Selector;
+			}
+			set
+			{
+				if ((this._Selector != value))
+				{
+					this._Selector = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FwdDateAmount", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> FwdDateAmount
+		{
+			get
+			{
+				return this._FwdDateAmount;
+			}
+			set
+			{
+				if ((this._FwdDateAmount != value))
+				{
+					this._FwdDateAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Rebate", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Rebate
+		{
+			get
+			{
+				return this._Rebate;
+			}
+			set
+			{
+				if ((this._Rebate != value))
+				{
+					this._Rebate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LY2", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LY2
+		{
+			get
+			{
+				return this._LY2;
+			}
+			set
+			{
+				if ((this._LY2 != value))
+				{
+					this._LY2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PmFrequency", DbType="TinyInt")]
+		public System.Nullable<byte> PmFrequency
+		{
+			get
+			{
+				return this._PmFrequency;
+			}
+			set
+			{
+				if ((this._PmFrequency != value))
+				{
+					this._PmFrequency = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PmPeriod", DbType="TinyInt")]
+		public System.Nullable<byte> PmPeriod
+		{
+			get
+			{
+				return this._PmPeriod;
+			}
+			set
+			{
+				if ((this._PmPeriod != value))
+				{
+					this._PmPeriod = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PmLastVisit", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> PmLastVisit
+		{
+			get
+			{
+				return this._PmLastVisit;
+			}
+			set
+			{
+				if ((this._PmLastVisit != value))
+				{
+					this._PmLastVisit = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PMNextVisit", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> PMNextVisit
+		{
+			get
+			{
+				return this._PMNextVisit;
+			}
+			set
+			{
+				if ((this._PMNextVisit != value))
+				{
+					this._PMNextVisit = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OldParent", DbType="VarChar(12)")]
+		public string OldParent
+		{
+			get
+			{
+				return this._OldParent;
+			}
+			set
+			{
+				if ((this._OldParent != value))
+				{
+					this._OldParent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DefaultInvStyle", DbType="TinyInt")]
+		public System.Nullable<byte> DefaultInvStyle
+		{
+			get
+			{
+				return this._DefaultInvStyle;
+			}
+			set
+			{
+				if ((this._DefaultInvStyle != value))
+				{
+					this._DefaultInvStyle = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceFreq", DbType="TinyInt")]
+		public System.Nullable<byte> InvoiceFreq
+		{
+			get
+			{
+				return this._InvoiceFreq;
+			}
+			set
+			{
+				if ((this._InvoiceFreq != value))
+				{
+					this._InvoiceFreq = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SalesCtrlAccGL", DbType="VarChar(16)")]
+		public string SalesCtrlAccGL
+		{
+			get
+			{
+				return this._SalesCtrlAccGL;
+			}
+			set
+			{
+				if ((this._SalesCtrlAccGL != value))
+				{
+					this._SalesCtrlAccGL = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SalesAccGL", DbType="VarChar(16)")]
+		public string SalesAccGL
+		{
+			get
+			{
+				return this._SalesAccGL;
+			}
+			set
+			{
+				if ((this._SalesAccGL != value))
+				{
+					this._SalesAccGL = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LJAN", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LJAN
+		{
+			get
+			{
+				return this._LJAN;
+			}
+			set
+			{
+				if ((this._LJAN != value))
+				{
+					this._LJAN = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LFEB", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LFEB
+		{
+			get
+			{
+				return this._LFEB;
+			}
+			set
+			{
+				if ((this._LFEB != value))
+				{
+					this._LFEB = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LMAR", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LMAR
+		{
+			get
+			{
+				return this._LMAR;
+			}
+			set
+			{
+				if ((this._LMAR != value))
+				{
+					this._LMAR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LAPR", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LAPR
+		{
+			get
+			{
+				return this._LAPR;
+			}
+			set
+			{
+				if ((this._LAPR != value))
+				{
+					this._LAPR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LMAY", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LMAY
+		{
+			get
+			{
+				return this._LMAY;
+			}
+			set
+			{
+				if ((this._LMAY != value))
+				{
+					this._LMAY = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LJUN", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LJUN
+		{
+			get
+			{
+				return this._LJUN;
+			}
+			set
+			{
+				if ((this._LJUN != value))
+				{
+					this._LJUN = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LJUL", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LJUL
+		{
+			get
+			{
+				return this._LJUL;
+			}
+			set
+			{
+				if ((this._LJUL != value))
+				{
+					this._LJUL = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LAUG", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LAUG
+		{
+			get
+			{
+				return this._LAUG;
+			}
+			set
+			{
+				if ((this._LAUG != value))
+				{
+					this._LAUG = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LSEP", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LSEP
+		{
+			get
+			{
+				return this._LSEP;
+			}
+			set
+			{
+				if ((this._LSEP != value))
+				{
+					this._LSEP = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LOCT", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LOCT
+		{
+			get
+			{
+				return this._LOCT;
+			}
+			set
+			{
+				if ((this._LOCT != value))
+				{
+					this._LOCT = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LNOV", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LNOV
+		{
+			get
+			{
+				return this._LNOV;
+			}
+			set
+			{
+				if ((this._LNOV != value))
+				{
+					this._LNOV = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LDEC", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LDEC
+		{
+			get
+			{
+				return this._LDEC;
+			}
+			set
+			{
+				if ((this._LDEC != value))
+				{
+					this._LDEC = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NoCreditLimit", DbType="Bit")]
+		public System.Nullable<bool> NoCreditLimit
+		{
+			get
+			{
+				return this._NoCreditLimit;
+			}
+			set
+			{
+				if ((this._NoCreditLimit != value))
+				{
+					this._NoCreditLimit = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_StockLocation", DbType="Int")]
+		public System.Nullable<int> StockLocation
+		{
+			get
+			{
+				return this._StockLocation;
+			}
+			set
+			{
+				if ((this._StockLocation != value))
+				{
+					this._StockLocation = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SiteEngineer", DbType="Char(25)")]
+		public string SiteEngineer
+		{
+			get
+			{
+				return this._SiteEngineer;
+			}
+			set
+			{
+				if ((this._SiteEngineer != value))
+				{
+					this._SiteEngineer = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LastCallBy", DbType="VarChar(25)")]
+		public string LastCallBy
+		{
+			get
+			{
+				return this._LastCallBy;
+			}
+			set
+			{
+				if ((this._LastCallBy != value))
+				{
+					this._LastCallBy = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TMInvAccGL", DbType="VarChar(16)")]
+		public string TMInvAccGL
+		{
+			get
+			{
+				return this._TMInvAccGL;
+			}
+			set
+			{
+				if ((this._TMInvAccGL != value))
+				{
+					this._TMInvAccGL = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OverpayBucket", DbType="Money")]
+		public System.Nullable<decimal> OverpayBucket
+		{
+			get
+			{
+				return this._OverpayBucket;
+			}
+			set
+			{
+				if ((this._OverpayBucket != value))
+				{
+					this._OverpayBucket = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InterCompany", DbType="Bit")]
+		public System.Nullable<bool> InterCompany
+		{
+			get
+			{
+				return this._InterCompany;
+			}
+			set
+			{
+				if ((this._InterCompany != value))
+				{
+					this._InterCompany = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Merged", DbType="Bit")]
+		public System.Nullable<bool> Merged
+		{
+			get
+			{
+				return this._Merged;
+			}
+			set
+			{
+				if ((this._Merged != value))
+				{
+					this._Merged = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PreMerged", DbType="Bit")]
+		public System.Nullable<bool> PreMerged
+		{
+			get
+			{
+				return this._PreMerged;
+			}
+			set
+			{
+				if ((this._PreMerged != value))
+				{
+					this._PreMerged = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ContractLocation", DbType="VarChar(5)")]
+		public string ContractLocation
+		{
+			get
+			{
+				return this._ContractLocation;
+			}
+			set
+			{
+				if ((this._ContractLocation != value))
+				{
+					this._ContractLocation = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_IMRep", DbType="VarChar(25)")]
+		public string IMRep
+		{
+			get
+			{
+				return this._IMRep;
+			}
+			set
+			{
+				if ((this._IMRep != value))
+				{
+					this._IMRep = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_IPRep", DbType="VarChar(25)")]
+		public string IPRep
+		{
+			get
+			{
+				return this._IPRep;
+			}
+			set
+			{
+				if ((this._IPRep != value))
+				{
+					this._IPRep = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RM1", DbType="VarChar(25)")]
+		public string RM1
+		{
+			get
+			{
+				return this._RM1;
+			}
+			set
+			{
+				if ((this._RM1 != value))
+				{
+					this._RM1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RM2", DbType="VarChar(25)")]
+		public string RM2
+		{
+			get
+			{
+				return this._RM2;
+			}
+			set
+			{
+				if ((this._RM2 != value))
+				{
+					this._RM2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SeparateBatchPrint", DbType="Int")]
+		public System.Nullable<int> SeparateBatchPrint
+		{
+			get
+			{
+				return this._SeparateBatchPrint;
+			}
+			set
+			{
+				if ((this._SeparateBatchPrint != value))
+				{
+					this._SeparateBatchPrint = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SoftInvoice", DbType="Bit")]
+		public System.Nullable<bool> SoftInvoice
+		{
+			get
+			{
+				return this._SoftInvoice;
+			}
+			set
+			{
+				if ((this._SoftInvoice != value))
+				{
+					this._SoftInvoice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SoftInvoicePath", DbType="VarChar(100)")]
+		public string SoftInvoicePath
+		{
+			get
+			{
+				return this._SoftInvoicePath;
+			}
+			set
+			{
+				if ((this._SoftInvoicePath != value))
+				{
+					this._SoftInvoicePath = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ReportingGroupID", DbType="Int")]
+		public System.Nullable<int> ReportingGroupID
+		{
+			get
+			{
+				return this._ReportingGroupID;
+			}
+			set
+			{
+				if ((this._ReportingGroupID != value))
+				{
+					this._ReportingGroupID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MixedInternational", DbType="Bit")]
+		public System.Nullable<bool> MixedInternational
+		{
+			get
+			{
+				return this._MixedInternational;
+			}
+			set
+			{
+				if ((this._MixedInternational != value))
+				{
+					this._MixedInternational = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PDFInvoice", DbType="Bit")]
+		public System.Nullable<bool> PDFInvoice
+		{
+			get
+			{
+				return this._PDFInvoice;
+			}
+			set
+			{
+				if ((this._PDFInvoice != value))
+				{
+					this._PDFInvoice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PDFInvoiceEmail", DbType="VarChar(100)")]
+		public string PDFInvoiceEmail
+		{
+			get
+			{
+				return this._PDFInvoiceEmail;
+			}
+			set
+			{
+				if ((this._PDFInvoiceEmail != value))
+				{
+					this._PDFInvoiceEmail = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BSGTechnicalOwner", DbType="VarChar(25)")]
+		public string BSGTechnicalOwner
+		{
+			get
+			{
+				return this._BSGTechnicalOwner;
+			}
+			set
+			{
+				if ((this._BSGTechnicalOwner != value))
+				{
+					this._BSGTechnicalOwner = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SalesRepBSG", DbType="VarChar(25)")]
+		public string SalesRepBSG
+		{
+			get
+			{
+				return this._SalesRepBSG;
+			}
+			set
+			{
+				if ((this._SalesRepBSG != value))
+				{
+					this._SalesRepBSG = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BillingMethod", DbType="Int")]
+		public System.Nullable<int> BillingMethod
+		{
+			get
+			{
+				return this._BillingMethod;
+			}
+			set
+			{
+				if ((this._BillingMethod != value))
+				{
+					this._BillingMethod = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BillToLocation", DbType="Bit")]
+		public System.Nullable<bool> BillToLocation
+		{
+			get
+			{
+				return this._BillToLocation;
+			}
+			set
+			{
+				if ((this._BillToLocation != value))
+				{
+					this._BillToLocation = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PrintAlways", DbType="Bit")]
+		public System.Nullable<bool> PrintAlways
+		{
+			get
+			{
+				return this._PrintAlways;
+			}
+			set
+			{
+				if ((this._PrintAlways != value))
+				{
+					this._PrintAlways = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OriginalAccountDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> OriginalAccountDate
+		{
+			get
+			{
+				return this._OriginalAccountDate;
+			}
+			set
+			{
+				if ((this._OriginalAccountDate != value))
+				{
+					this._OriginalAccountDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PDFInvoiceToContacts", DbType="Bit")]
+		public System.Nullable<bool> PDFInvoiceToContacts
+		{
+			get
+			{
+				return this._PDFInvoiceToContacts;
+			}
+			set
+			{
+				if ((this._PDFInvoiceToContacts != value))
+				{
+					this._PDFInvoiceToContacts = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PrimaryFinanceContact", DbType="Int")]
+		public System.Nullable<int> PrimaryFinanceContact
+		{
+			get
+			{
+				return this._PrimaryFinanceContact;
+			}
+			set
+			{
+				if ((this._PrimaryFinanceContact != value))
+				{
+					this._PrimaryFinanceContact = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FinancePhone", DbType="VarChar(20)")]
+		public string FinancePhone
+		{
+			get
+			{
+				return this._FinancePhone;
+			}
+			set
+			{
+				if ((this._FinancePhone != value))
+				{
+					this._FinancePhone = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FinanceFax", DbType="VarChar(20)")]
+		public string FinanceFax
+		{
+			get
+			{
+				return this._FinanceFax;
+			}
+			set
+			{
+				if ((this._FinanceFax != value))
+				{
+					this._FinanceFax = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FinancePhoneAfterHrs", DbType="VarChar(20)")]
+		public string FinancePhoneAfterHrs
+		{
+			get
+			{
+				return this._FinancePhoneAfterHrs;
+			}
+			set
+			{
+				if ((this._FinancePhoneAfterHrs != value))
+				{
+					this._FinancePhoneAfterHrs = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Latitude", DbType="Decimal(10,7)")]
+		public System.Nullable<decimal> Latitude
+		{
+			get
+			{
+				return this._Latitude;
+			}
+			set
+			{
+				if ((this._Latitude != value))
+				{
+					this._Latitude = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Longitude", DbType="Decimal(10,7)")]
+		public System.Nullable<decimal> Longitude
+		{
+			get
+			{
+				return this._Longitude;
+			}
+			set
+			{
+				if ((this._Longitude != value))
+				{
+					this._Longitude = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Issue", DbType="Bit")]
+		public System.Nullable<bool> Issue
+		{
+			get
+			{
+				return this._Issue;
+			}
+			set
+			{
+				if ((this._Issue != value))
+				{
+					this._Issue = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_IssueDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> IssueDate
+		{
+			get
+			{
+				return this._IssueDate;
+			}
+			set
+			{
+				if ((this._IssueDate != value))
+				{
+					this._IssueDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_EngineerNotes", DbType="Text")]
+		public string EngineerNotes
+		{
+			get
+			{
+				return this._EngineerNotes;
+			}
+			set
+			{
+				if ((this._EngineerNotes != value))
+				{
+					this._EngineerNotes = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TechnicalAccountManager", DbType="VarChar(25)")]
+		public string TechnicalAccountManager
+		{
+			get
+			{
+				return this._TechnicalAccountManager;
+			}
+			set
+			{
+				if ((this._TechnicalAccountManager != value))
+				{
+					this._TechnicalAccountManager = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_GLState", DbType="Int")]
+		public System.Nullable<int> GLState
+		{
+			get
+			{
+				return this._GLState;
+			}
+			set
+			{
+				if ((this._GLState != value))
+				{
+					this._GLState = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ExcludeFromCarbonTax", DbType="Bit")]
+		public System.Nullable<bool> ExcludeFromCarbonTax
+		{
+			get
+			{
+				return this._ExcludeFromCarbonTax;
+			}
+			set
+			{
+				if ((this._ExcludeFromCarbonTax != value))
+				{
+					this._ExcludeFromCarbonTax = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DebtorBalancesResult
+	{
+		
+		private System.Nullable<decimal> _OpenBal;
+		
+		private System.Nullable<decimal> _CloseBal;
+		
+		private System.Nullable<decimal> _Current;
+		
+		private System.Nullable<decimal> _ThirtyDays;
+		
+		private System.Nullable<decimal> _SixtyDays;
+		
+		private System.Nullable<decimal> _NinetyDays;
+		
+		private System.Nullable<decimal> _SumDr;
+		
+		private System.Nullable<decimal> _SumCr;
+		
+		public DebtorBalancesResult()
+		{
+		}
+		
+		[Column(Storage="_OpenBal", DbType="Money")]
+		public System.Nullable<decimal> OpenBal
+		{
+			get
+			{
+				return this._OpenBal;
+			}
+			set
+			{
+				if ((this._OpenBal != value))
+				{
+					this._OpenBal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CloseBal", DbType="Money")]
+		public System.Nullable<decimal> CloseBal
+		{
+			get
+			{
+				return this._CloseBal;
+			}
+			set
+			{
+				if ((this._CloseBal != value))
+				{
+					this._CloseBal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Current", DbType="Money")]
+		public System.Nullable<decimal> Current
+		{
+			get
+			{
+				return this._Current;
+			}
+			set
+			{
+				if ((this._Current != value))
+				{
+					this._Current = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ThirtyDays", DbType="Money")]
+		public System.Nullable<decimal> ThirtyDays
+		{
+			get
+			{
+				return this._ThirtyDays;
+			}
+			set
+			{
+				if ((this._ThirtyDays != value))
+				{
+					this._ThirtyDays = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SixtyDays", DbType="Money")]
+		public System.Nullable<decimal> SixtyDays
+		{
+			get
+			{
+				return this._SixtyDays;
+			}
+			set
+			{
+				if ((this._SixtyDays != value))
+				{
+					this._SixtyDays = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NinetyDays", DbType="Money")]
+		public System.Nullable<decimal> NinetyDays
+		{
+			get
+			{
+				return this._NinetyDays;
+			}
+			set
+			{
+				if ((this._NinetyDays != value))
+				{
+					this._NinetyDays = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SumDr", DbType="Money")]
+		public System.Nullable<decimal> SumDr
+		{
+			get
+			{
+				return this._SumDr;
+			}
+			set
+			{
+				if ((this._SumDr != value))
+				{
+					this._SumDr = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SumCr", DbType="Money")]
+		public System.Nullable<decimal> SumCr
+		{
+			get
+			{
+				return this._SumCr;
+			}
+			set
+			{
+				if ((this._SumCr != value))
+				{
+					this._SumCr = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_3P_AGREEMENTS_CheckForDuplicateSarIDsResult1
+	{
+		
+		private System.Nullable<int> _AccountId;
+		
+		public DEBTORS_3P_AGREEMENTS_CheckForDuplicateSarIDsResult1()
+		{
+		}
+		
+		[Column(Storage="_AccountId", DbType="Int")]
+		public System.Nullable<int> AccountId
+		{
+			get
+			{
+				return this._AccountId;
+			}
+			set
+			{
+				if ((this._AccountId != value))
+				{
+					this._AccountId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_3P_AGREEMENTS_CheckForDuplicateSarIDsResult2
+	{
+		
+		private System.Nullable<int> _AccountID;
+		
+		public DEBTORS_3P_AGREEMENTS_CheckForDuplicateSarIDsResult2()
+		{
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Debtors_CurrentPeriodResult
+	{
+		
+		private System.Nullable<short> _Year;
+		
+		private System.Nullable<byte> _Month;
+		
+		private string _Heading;
+		
+		public Debtors_CurrentPeriodResult()
+		{
+		}
+		
+		[Column(Storage="_Year", DbType="SmallInt")]
+		public System.Nullable<short> Year
+		{
+			get
+			{
+				return this._Year;
+			}
+			set
+			{
+				if ((this._Year != value))
+				{
+					this._Year = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Month", DbType="TinyInt")]
+		public System.Nullable<byte> Month
+		{
+			get
+			{
+				return this._Month;
+			}
+			set
+			{
+				if ((this._Month != value))
+				{
+					this._Month = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Heading", DbType="VarChar(16)")]
+		public string Heading
+		{
+			get
+			{
+				return this._Heading;
+			}
+			set
+			{
+				if ((this._Heading != value))
+				{
+					this._Heading = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Debtors_GetNewResult
+	{
+		
+		private System.Nullable<int> _AccountID;
+		
+		public Debtors_GetNewResult()
+		{
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueCreditsResult
+	{
+		
+		private System.Nullable<int> _OrderNumber;
+		
+		private System.Nullable<System.DateTime> _InvoicePrinted;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _CompanyName;
+		
+		private string _InvoiceType;
+		
+		private System.Nullable<decimal> _InvoiceTotal;
+		
+		private System.Nullable<decimal> _Tax;
+		
+		private System.Nullable<decimal> _Net;
+		
+		private System.Nullable<int> _InvoiceNumber;
+		
+		private string _CreditedInvoiceType;
+		
+		private string _RevenueCategory;
+		
+		private System.Nullable<decimal> _PastNet;
+		
+		private System.Nullable<decimal> _CurrentNet;
+		
+		private System.Nullable<decimal> _FutureNet;
+		
+		private System.Nullable<decimal> _Total;
+		
+		public DEBTORS_StatRevenueCreditsResult()
+		{
+		}
+		
+		[Column(Name="Order Number", Storage="_OrderNumber", DbType="Int")]
+		public System.Nullable<int> OrderNumber
+		{
+			get
+			{
+				return this._OrderNumber;
+			}
+			set
+			{
+				if ((this._OrderNumber != value))
+				{
+					this._OrderNumber = value;
+				}
+			}
+		}
+		
+		[Column(Name="invoice Printed", Storage="_InvoicePrinted", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> InvoicePrinted
+		{
+			get
+			{
+				return this._InvoicePrinted;
+			}
+			set
+			{
+				if ((this._InvoicePrinted != value))
+				{
+					this._InvoicePrinted = value;
+				}
+			}
+		}
+		
+		[Column(Name="Account ID", Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Name="Company Name", Storage="_CompanyName", DbType="VarChar(80)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Type", Storage="_InvoiceType", DbType="VarChar(11)")]
+		public string InvoiceType
+		{
+			get
+			{
+				return this._InvoiceType;
+			}
+			set
+			{
+				if ((this._InvoiceType != value))
+				{
+					this._InvoiceType = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Total", Storage="_InvoiceTotal", DbType="Money")]
+		public System.Nullable<decimal> InvoiceTotal
+		{
+			get
+			{
+				return this._InvoiceTotal;
+			}
+			set
+			{
+				if ((this._InvoiceTotal != value))
+				{
+					this._InvoiceTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Tax", DbType="Money")]
+		public System.Nullable<decimal> Tax
+		{
+			get
+			{
+				return this._Tax;
+			}
+			set
+			{
+				if ((this._Tax != value))
+				{
+					this._Tax = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Net", DbType="Money")]
+		public System.Nullable<decimal> Net
+		{
+			get
+			{
+				return this._Net;
+			}
+			set
+			{
+				if ((this._Net != value))
+				{
+					this._Net = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Number", Storage="_InvoiceNumber", DbType="Int")]
+		public System.Nullable<int> InvoiceNumber
+		{
+			get
+			{
+				return this._InvoiceNumber;
+			}
+			set
+			{
+				if ((this._InvoiceNumber != value))
+				{
+					this._InvoiceNumber = value;
+				}
+			}
+		}
+		
+		[Column(Name="Credited Invoice Type", Storage="_CreditedInvoiceType", DbType="VarChar(11)")]
+		public string CreditedInvoiceType
+		{
+			get
+			{
+				return this._CreditedInvoiceType;
+			}
+			set
+			{
+				if ((this._CreditedInvoiceType != value))
+				{
+					this._CreditedInvoiceType = value;
+				}
+			}
+		}
+		
+		[Column(Name="Revenue Category", Storage="_RevenueCategory", DbType="VarChar(32)")]
+		public string RevenueCategory
+		{
+			get
+			{
+				return this._RevenueCategory;
+			}
+			set
+			{
+				if ((this._RevenueCategory != value))
+				{
+					this._RevenueCategory = value;
+				}
+			}
+		}
+		
+		[Column(Name="Past Net", Storage="_PastNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> PastNet
+		{
+			get
+			{
+				return this._PastNet;
+			}
+			set
+			{
+				if ((this._PastNet != value))
+				{
+					this._PastNet = value;
+				}
+			}
+		}
+		
+		[Column(Name="Current Net", Storage="_CurrentNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> CurrentNet
+		{
+			get
+			{
+				return this._CurrentNet;
+			}
+			set
+			{
+				if ((this._CurrentNet != value))
+				{
+					this._CurrentNet = value;
+				}
+			}
+		}
+		
+		[Column(Name="Future Net", Storage="_FutureNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> FutureNet
+		{
+			get
+			{
+				return this._FutureNet;
+			}
+			set
+			{
+				if ((this._FutureNet != value))
+				{
+					this._FutureNet = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Total", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueCredits_InvoiceLevelResult
+	{
+		
+		private System.Nullable<int> _InvoiceNumber;
+		
+		private System.Nullable<System.DateTime> _InvoicePrinted;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _CompanyName;
+		
+		private string _InvoiceType;
+		
+		private System.Nullable<decimal> _PastNet;
+		
+		private System.Nullable<decimal> _CurrentNet;
+		
+		private System.Nullable<decimal> _FutureNet;
+		
+		private System.Nullable<decimal> _Total;
+		
+		private System.Nullable<int> _CreditNoteNumber;
+		
+		private System.Nullable<decimal> _CRPastNet;
+		
+		private System.Nullable<decimal> _CRCurrentNet;
+		
+		private System.Nullable<decimal> _CRFutureNet;
+		
+		private System.Nullable<decimal> _CRTotal;
+		
+		public DEBTORS_StatRevenueCredits_InvoiceLevelResult()
+		{
+		}
+		
+		[Column(Name="Invoice Number", Storage="_InvoiceNumber", DbType="Int")]
+		public System.Nullable<int> InvoiceNumber
+		{
+			get
+			{
+				return this._InvoiceNumber;
+			}
+			set
+			{
+				if ((this._InvoiceNumber != value))
+				{
+					this._InvoiceNumber = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Printed", Storage="_InvoicePrinted", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> InvoicePrinted
+		{
+			get
+			{
+				return this._InvoicePrinted;
+			}
+			set
+			{
+				if ((this._InvoicePrinted != value))
+				{
+					this._InvoicePrinted = value;
+				}
+			}
+		}
+		
+		[Column(Name="Account ID", Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Name="Company Name", Storage="_CompanyName", DbType="VarChar(80)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Type", Storage="_InvoiceType", DbType="VarChar(11)")]
+		public string InvoiceType
+		{
+			get
+			{
+				return this._InvoiceType;
+			}
+			set
+			{
+				if ((this._InvoiceType != value))
+				{
+					this._InvoiceType = value;
+				}
+			}
+		}
+		
+		[Column(Name="Past Net", Storage="_PastNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> PastNet
+		{
+			get
+			{
+				return this._PastNet;
+			}
+			set
+			{
+				if ((this._PastNet != value))
+				{
+					this._PastNet = value;
+				}
+			}
+		}
+		
+		[Column(Name="Current Net", Storage="_CurrentNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> CurrentNet
+		{
+			get
+			{
+				return this._CurrentNet;
+			}
+			set
+			{
+				if ((this._CurrentNet != value))
+				{
+					this._CurrentNet = value;
+				}
+			}
+		}
+		
+		[Column(Name="Future Net", Storage="_FutureNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> FutureNet
+		{
+			get
+			{
+				return this._FutureNet;
+			}
+			set
+			{
+				if ((this._FutureNet != value))
+				{
+					this._FutureNet = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Total", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+		
+		[Column(Name="Credit Note Number", Storage="_CreditNoteNumber", DbType="Int")]
+		public System.Nullable<int> CreditNoteNumber
+		{
+			get
+			{
+				return this._CreditNoteNumber;
+			}
+			set
+			{
+				if ((this._CreditNoteNumber != value))
+				{
+					this._CreditNoteNumber = value;
+				}
+			}
+		}
+		
+		[Column(Name="CR Past Net", Storage="_CRPastNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> CRPastNet
+		{
+			get
+			{
+				return this._CRPastNet;
+			}
+			set
+			{
+				if ((this._CRPastNet != value))
+				{
+					this._CRPastNet = value;
+				}
+			}
+		}
+		
+		[Column(Name="CR Current Net", Storage="_CRCurrentNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> CRCurrentNet
+		{
+			get
+			{
+				return this._CRCurrentNet;
+			}
+			set
+			{
+				if ((this._CRCurrentNet != value))
+				{
+					this._CRCurrentNet = value;
+				}
+			}
+		}
+		
+		[Column(Name="CR Future Net", Storage="_CRFutureNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> CRFutureNet
+		{
+			get
+			{
+				return this._CRFutureNet;
+			}
+			set
+			{
+				if ((this._CRFutureNet != value))
+				{
+					this._CRFutureNet = value;
+				}
+			}
+		}
+		
+		[Column(Name="CR Total", Storage="_CRTotal", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> CRTotal
+		{
+			get
+			{
+				return this._CRTotal;
+			}
+			set
+			{
+				if ((this._CRTotal != value))
+				{
+					this._CRTotal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueCreditsManualResult
+	{
+		
+		private System.Nullable<int> _OrderNumber;
+		
+		private System.Nullable<System.DateTime> _InvPrinted;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _CompanyName;
+		
+		private string _InvoiceType;
+		
+		private System.Nullable<decimal> _InvoiceTotal;
+		
+		private System.Nullable<decimal> _Tax;
+		
+		private System.Nullable<decimal> _Net;
+		
+		private System.Nullable<int> _CreditedInvoiceNumber;
+		
+		private string _CreditedInvoiceType;
+		
+		private System.Nullable<int> _ItemNumber;
+		
+		private string _Column12;
+		
+		private System.Nullable<decimal> _ItemAmount;
+		
+		public DEBTORS_StatRevenueCreditsManualResult()
+		{
+		}
+		
+		[Column(Name="Order Number", Storage="_OrderNumber", DbType="Int")]
+		public System.Nullable<int> OrderNumber
+		{
+			get
+			{
+				return this._OrderNumber;
+			}
+			set
+			{
+				if ((this._OrderNumber != value))
+				{
+					this._OrderNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvPrinted", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> InvPrinted
+		{
+			get
+			{
+				return this._InvPrinted;
+			}
+			set
+			{
+				if ((this._InvPrinted != value))
+				{
+					this._InvPrinted = value;
+				}
+			}
+		}
+		
+		[Column(Name="Account ID", Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Name="Company Name", Storage="_CompanyName", DbType="VarChar(80)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Type", Storage="_InvoiceType", DbType="VarChar(11)")]
+		public string InvoiceType
+		{
+			get
+			{
+				return this._InvoiceType;
+			}
+			set
+			{
+				if ((this._InvoiceType != value))
+				{
+					this._InvoiceType = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Total", Storage="_InvoiceTotal", DbType="Money")]
+		public System.Nullable<decimal> InvoiceTotal
+		{
+			get
+			{
+				return this._InvoiceTotal;
+			}
+			set
+			{
+				if ((this._InvoiceTotal != value))
+				{
+					this._InvoiceTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Tax", DbType="Money")]
+		public System.Nullable<decimal> Tax
+		{
+			get
+			{
+				return this._Tax;
+			}
+			set
+			{
+				if ((this._Tax != value))
+				{
+					this._Tax = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Net", DbType="Money")]
+		public System.Nullable<decimal> Net
+		{
+			get
+			{
+				return this._Net;
+			}
+			set
+			{
+				if ((this._Net != value))
+				{
+					this._Net = value;
+				}
+			}
+		}
+		
+		[Column(Name="Credited Invoice Number", Storage="_CreditedInvoiceNumber", DbType="Int")]
+		public System.Nullable<int> CreditedInvoiceNumber
+		{
+			get
+			{
+				return this._CreditedInvoiceNumber;
+			}
+			set
+			{
+				if ((this._CreditedInvoiceNumber != value))
+				{
+					this._CreditedInvoiceNumber = value;
+				}
+			}
+		}
+		
+		[Column(Name="Credited Invoice Type", Storage="_CreditedInvoiceType", DbType="VarChar(11)")]
+		public string CreditedInvoiceType
+		{
+			get
+			{
+				return this._CreditedInvoiceType;
+			}
+			set
+			{
+				if ((this._CreditedInvoiceType != value))
+				{
+					this._CreditedInvoiceType = value;
+				}
+			}
+		}
+		
+		[Column(Name="Item Number", Storage="_ItemNumber", DbType="Int")]
+		public System.Nullable<int> ItemNumber
+		{
+			get
+			{
+				return this._ItemNumber;
+			}
+			set
+			{
+				if ((this._ItemNumber != value))
+				{
+					this._ItemNumber = value;
+				}
+			}
+		}
+		
+		[Column(Name="", Storage="_Column12", DbType="VarChar(8000)")]
+		public string Column12
+		{
+			get
+			{
+				return this._Column12;
+			}
+			set
+			{
+				if ((this._Column12 != value))
+				{
+					this._Column12 = value;
+				}
+			}
+		}
+		
+		[Column(Name="Item Amount", Storage="_ItemAmount", DbType="Decimal(29,6)")]
+		public System.Nullable<decimal> ItemAmount
+		{
+			get
+			{
+				return this._ItemAmount;
+			}
+			set
+			{
+				if ((this._ItemAmount != value))
+				{
+					this._ItemAmount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueInvoicesResult
+	{
+		
+		private System.Nullable<int> _InvoiceNumber;
+		
+		private System.Nullable<System.DateTime> _InvoicePrinted;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _CompanyName;
+		
+		private string _InvoiceType;
+		
+		private System.Nullable<decimal> _InvoiceTotal;
+		
+		private System.Nullable<decimal> _Tax;
+		
+		private System.Nullable<decimal> _Net;
+		
+		private string _RevenueCategory;
+		
+		private System.Nullable<decimal> _PastNet;
+		
+		private System.Nullable<decimal> _CurrentNet;
+		
+		private System.Nullable<decimal> _FutureNet;
+		
+		private System.Nullable<decimal> _Total;
+		
+		public DEBTORS_StatRevenueInvoicesResult()
+		{
+		}
+		
+		[Column(Name="Invoice Number", Storage="_InvoiceNumber", DbType="Int")]
+		public System.Nullable<int> InvoiceNumber
+		{
+			get
+			{
+				return this._InvoiceNumber;
+			}
+			set
+			{
+				if ((this._InvoiceNumber != value))
+				{
+					this._InvoiceNumber = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Printed", Storage="_InvoicePrinted", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> InvoicePrinted
+		{
+			get
+			{
+				return this._InvoicePrinted;
+			}
+			set
+			{
+				if ((this._InvoicePrinted != value))
+				{
+					this._InvoicePrinted = value;
+				}
+			}
+		}
+		
+		[Column(Name="Account ID", Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Name="Company Name", Storage="_CompanyName", DbType="VarChar(80)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Type", Storage="_InvoiceType", DbType="VarChar(11)")]
+		public string InvoiceType
+		{
+			get
+			{
+				return this._InvoiceType;
+			}
+			set
+			{
+				if ((this._InvoiceType != value))
+				{
+					this._InvoiceType = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Total", Storage="_InvoiceTotal", DbType="Money")]
+		public System.Nullable<decimal> InvoiceTotal
+		{
+			get
+			{
+				return this._InvoiceTotal;
+			}
+			set
+			{
+				if ((this._InvoiceTotal != value))
+				{
+					this._InvoiceTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Tax", DbType="Money")]
+		public System.Nullable<decimal> Tax
+		{
+			get
+			{
+				return this._Tax;
+			}
+			set
+			{
+				if ((this._Tax != value))
+				{
+					this._Tax = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Net", DbType="Money")]
+		public System.Nullable<decimal> Net
+		{
+			get
+			{
+				return this._Net;
+			}
+			set
+			{
+				if ((this._Net != value))
+				{
+					this._Net = value;
+				}
+			}
+		}
+		
+		[Column(Name="Revenue Category", Storage="_RevenueCategory", DbType="VarChar(32)")]
+		public string RevenueCategory
+		{
+			get
+			{
+				return this._RevenueCategory;
+			}
+			set
+			{
+				if ((this._RevenueCategory != value))
+				{
+					this._RevenueCategory = value;
+				}
+			}
+		}
+		
+		[Column(Name="Past Net", Storage="_PastNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> PastNet
+		{
+			get
+			{
+				return this._PastNet;
+			}
+			set
+			{
+				if ((this._PastNet != value))
+				{
+					this._PastNet = value;
+				}
+			}
+		}
+		
+		[Column(Name="Current Net", Storage="_CurrentNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> CurrentNet
+		{
+			get
+			{
+				return this._CurrentNet;
+			}
+			set
+			{
+				if ((this._CurrentNet != value))
+				{
+					this._CurrentNet = value;
+				}
+			}
+		}
+		
+		[Column(Name="Future Net", Storage="_FutureNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> FutureNet
+		{
+			get
+			{
+				return this._FutureNet;
+			}
+			set
+			{
+				if ((this._FutureNet != value))
+				{
+					this._FutureNet = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Total", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueInvoices_InvoiceLevelResult
+	{
+		
+		private System.Nullable<int> _InvoiceNumber;
+		
+		private System.Nullable<System.DateTime> _InvoicePrinted;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _CompanyName;
+		
+		private string _InvoiceType;
+		
+		private System.Nullable<decimal> _PastNet;
+		
+		private System.Nullable<decimal> _CurrentNet;
+		
+		private System.Nullable<decimal> _FutureNet;
+		
+		private System.Nullable<decimal> _Total;
+		
+		public DEBTORS_StatRevenueInvoices_InvoiceLevelResult()
+		{
+		}
+		
+		[Column(Name="Invoice Number", Storage="_InvoiceNumber", DbType="Int")]
+		public System.Nullable<int> InvoiceNumber
+		{
+			get
+			{
+				return this._InvoiceNumber;
+			}
+			set
+			{
+				if ((this._InvoiceNumber != value))
+				{
+					this._InvoiceNumber = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Printed", Storage="_InvoicePrinted", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> InvoicePrinted
+		{
+			get
+			{
+				return this._InvoicePrinted;
+			}
+			set
+			{
+				if ((this._InvoicePrinted != value))
+				{
+					this._InvoicePrinted = value;
+				}
+			}
+		}
+		
+		[Column(Name="Account ID", Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Name="Company Name", Storage="_CompanyName", DbType="VarChar(80)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Type", Storage="_InvoiceType", DbType="VarChar(11)")]
+		public string InvoiceType
+		{
+			get
+			{
+				return this._InvoiceType;
+			}
+			set
+			{
+				if ((this._InvoiceType != value))
+				{
+					this._InvoiceType = value;
+				}
+			}
+		}
+		
+		[Column(Name="Past Net", Storage="_PastNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> PastNet
+		{
+			get
+			{
+				return this._PastNet;
+			}
+			set
+			{
+				if ((this._PastNet != value))
+				{
+					this._PastNet = value;
+				}
+			}
+		}
+		
+		[Column(Name="Current Net", Storage="_CurrentNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> CurrentNet
+		{
+			get
+			{
+				return this._CurrentNet;
+			}
+			set
+			{
+				if ((this._CurrentNet != value))
+				{
+					this._CurrentNet = value;
+				}
+			}
+		}
+		
+		[Column(Name="Future Net", Storage="_FutureNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> FutureNet
+		{
+			get
+			{
+				return this._FutureNet;
+			}
+			set
+			{
+				if ((this._FutureNet != value))
+				{
+					this._FutureNet = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Total", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueInvoicesManualResult
+	{
+		
+		private System.Nullable<int> _OrderNumber;
+		
+		private System.Nullable<System.DateTime> _InvoicePrinted;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _CompanyName;
+		
+		private string _InvoiceType;
+		
+		private System.Nullable<decimal> _InvoiceTotal;
+		
+		private System.Nullable<decimal> _Tax;
+		
+		private System.Nullable<decimal> _Net;
+		
+		private System.Nullable<int> _ItemNumber;
+		
+		private string _Column10;
+		
+		private System.Nullable<decimal> _ItemAmount;
+		
+		public DEBTORS_StatRevenueInvoicesManualResult()
+		{
+		}
+		
+		[Column(Name="Order Number", Storage="_OrderNumber", DbType="Int")]
+		public System.Nullable<int> OrderNumber
+		{
+			get
+			{
+				return this._OrderNumber;
+			}
+			set
+			{
+				if ((this._OrderNumber != value))
+				{
+					this._OrderNumber = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Printed", Storage="_InvoicePrinted", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> InvoicePrinted
+		{
+			get
+			{
+				return this._InvoicePrinted;
+			}
+			set
+			{
+				if ((this._InvoicePrinted != value))
+				{
+					this._InvoicePrinted = value;
+				}
+			}
+		}
+		
+		[Column(Name="Account ID", Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Name="Company Name", Storage="_CompanyName", DbType="VarChar(80)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Type", Storage="_InvoiceType", DbType="VarChar(11)")]
+		public string InvoiceType
+		{
+			get
+			{
+				return this._InvoiceType;
+			}
+			set
+			{
+				if ((this._InvoiceType != value))
+				{
+					this._InvoiceType = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Total", Storage="_InvoiceTotal", DbType="Money")]
+		public System.Nullable<decimal> InvoiceTotal
+		{
+			get
+			{
+				return this._InvoiceTotal;
+			}
+			set
+			{
+				if ((this._InvoiceTotal != value))
+				{
+					this._InvoiceTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Tax", DbType="Money")]
+		public System.Nullable<decimal> Tax
+		{
+			get
+			{
+				return this._Tax;
+			}
+			set
+			{
+				if ((this._Tax != value))
+				{
+					this._Tax = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Net", DbType="Money")]
+		public System.Nullable<decimal> Net
+		{
+			get
+			{
+				return this._Net;
+			}
+			set
+			{
+				if ((this._Net != value))
+				{
+					this._Net = value;
+				}
+			}
+		}
+		
+		[Column(Name="Item Number", Storage="_ItemNumber", DbType="Int")]
+		public System.Nullable<int> ItemNumber
+		{
+			get
+			{
+				return this._ItemNumber;
+			}
+			set
+			{
+				if ((this._ItemNumber != value))
+				{
+					this._ItemNumber = value;
+				}
+			}
+		}
+		
+		[Column(Name="", Storage="_Column10", DbType="VarChar(8000)")]
+		public string Column10
+		{
+			get
+			{
+				return this._Column10;
+			}
+			set
+			{
+				if ((this._Column10 != value))
+				{
+					this._Column10 = value;
+				}
+			}
+		}
+		
+		[Column(Name="Item Amount", Storage="_ItemAmount", DbType="Decimal(29,6)")]
+		public System.Nullable<decimal> ItemAmount
+		{
+			get
+			{
+				return this._ItemAmount;
+			}
+			set
+			{
+				if ((this._ItemAmount != value))
+				{
+					this._ItemAmount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueInvoicesManual_InvoiceLevelResult
+	{
+		
+		private System.Nullable<int> _InvoiceNumber;
+		
+		private System.Nullable<System.DateTime> _InvoicePrinted;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _CompanyName;
+		
+		private string _InvoiceType;
+		
+		private System.Nullable<decimal> _CurrentNet;
+		
+		private System.Nullable<decimal> _Total;
+		
+		public DEBTORS_StatRevenueInvoicesManual_InvoiceLevelResult()
+		{
+		}
+		
+		[Column(Name="Invoice Number", Storage="_InvoiceNumber", DbType="Int")]
+		public System.Nullable<int> InvoiceNumber
+		{
+			get
+			{
+				return this._InvoiceNumber;
+			}
+			set
+			{
+				if ((this._InvoiceNumber != value))
+				{
+					this._InvoiceNumber = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Printed", Storage="_InvoicePrinted", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> InvoicePrinted
+		{
+			get
+			{
+				return this._InvoicePrinted;
+			}
+			set
+			{
+				if ((this._InvoicePrinted != value))
+				{
+					this._InvoicePrinted = value;
+				}
+			}
+		}
+		
+		[Column(Name="Account ID", Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Name="Company Name", Storage="_CompanyName", DbType="VarChar(80)")]
+		public string CompanyName
+		{
+			get
+			{
+				return this._CompanyName;
+			}
+			set
+			{
+				if ((this._CompanyName != value))
+				{
+					this._CompanyName = value;
+				}
+			}
+		}
+		
+		[Column(Name="Invoice Type", Storage="_InvoiceType", DbType="VarChar(11)")]
+		public string InvoiceType
+		{
+			get
+			{
+				return this._InvoiceType;
+			}
+			set
+			{
+				if ((this._InvoiceType != value))
+				{
+					this._InvoiceType = value;
+				}
+			}
+		}
+		
+		[Column(Name="Current Net", Storage="_CurrentNet", DbType="Money")]
+		public System.Nullable<decimal> CurrentNet
+		{
+			get
+			{
+				return this._CurrentNet;
+			}
+			set
+			{
+				if ((this._CurrentNet != value))
+				{
+					this._CurrentNet = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Total", DbType="Money")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueSummaryAdvanceResult
+	{
+		
+		private System.Nullable<decimal> _TotalNet;
+		
+		private System.Nullable<int> _PastNet;
+		
+		public DEBTORS_StatRevenueSummaryAdvanceResult()
+		{
+		}
+		
+		[Column(Storage="_TotalNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> TotalNet
+		{
+			get
+			{
+				return this._TotalNet;
+			}
+			set
+			{
+				if ((this._TotalNet != value))
+				{
+					this._TotalNet = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PastNet", DbType="Int")]
+		public System.Nullable<int> PastNet
+		{
+			get
+			{
+				return this._PastNet;
+			}
+			set
+			{
+				if ((this._PastNet != value))
+				{
+					this._PastNet = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueSummaryAdvanceCreditsResult
+	{
+		
+		private System.Nullable<decimal> _TotalNet;
+		
+		private System.Nullable<int> _PastNet;
+		
+		public DEBTORS_StatRevenueSummaryAdvanceCreditsResult()
+		{
+		}
+		
+		[Column(Storage="_TotalNet", DbType="Decimal(38,10)")]
+		public System.Nullable<decimal> TotalNet
+		{
+			get
+			{
+				return this._TotalNet;
+			}
+			set
+			{
+				if ((this._TotalNet != value))
+				{
+					this._TotalNet = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PastNet", DbType="Int")]
+		public System.Nullable<int> PastNet
+		{
+			get
+			{
+				return this._PastNet;
+			}
+			set
+			{
+				if ((this._PastNet != value))
+				{
+					this._PastNet = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueSummaryCreditsManualResult
+	{
+		
+		private System.Nullable<decimal> _TotalNet;
+		
+		public DEBTORS_StatRevenueSummaryCreditsManualResult()
+		{
+		}
+		
+		[Column(Storage="_TotalNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> TotalNet
+		{
+			get
+			{
+				return this._TotalNet;
+			}
+			set
+			{
+				if ((this._TotalNet != value))
+				{
+					this._TotalNet = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueSummaryCurrentResult
+	{
+		
+		private System.Nullable<decimal> _TotalNet;
+		
+		public DEBTORS_StatRevenueSummaryCurrentResult()
+		{
+		}
+		
+		[Column(Storage="_TotalNet", DbType="Money")]
+		public System.Nullable<decimal> TotalNet
+		{
+			get
+			{
+				return this._TotalNet;
+			}
+			set
+			{
+				if ((this._TotalNet != value))
+				{
+					this._TotalNet = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueSummaryCurrentCreditsResult
+	{
+		
+		private System.Nullable<decimal> _TotalNet;
+		
+		public DEBTORS_StatRevenueSummaryCurrentCreditsResult()
+		{
+		}
+		
+		[Column(Storage="_TotalNet", DbType="Money")]
+		public System.Nullable<decimal> TotalNet
+		{
+			get
+			{
+				return this._TotalNet;
+			}
+			set
+			{
+				if ((this._TotalNet != value))
+				{
+					this._TotalNet = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DEBTORS_StatRevenueSummaryInvoicesManualResult
+	{
+		
+		private System.Nullable<decimal> _TotalNet;
+		
+		public DEBTORS_StatRevenueSummaryInvoicesManualResult()
+		{
+		}
+		
+		[Column(Storage="_TotalNet", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> TotalNet
+		{
+			get
+			{
+				return this._TotalNet;
+			}
+			set
+			{
+				if ((this._TotalNet != value))
+				{
+					this._TotalNet = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DebtorsSnapshotPeriodsResult
+	{
+		
+		private string _Date;
+		
+		private string _Period;
+		
+		public DebtorsSnapshotPeriodsResult()
+		{
+		}
+		
+		[Column(Storage="_Date", DbType="VarChar(7)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Period", DbType="VarChar(14)")]
+		public string Period
+		{
+			get
+			{
+				return this._Period;
+			}
+			set
+			{
+				if ((this._Period != value))
+				{
+					this._Period = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DebtorStatementResult1
+	{
+		
+		private System.Nullable<decimal> _TotalInv;
+		
+		public DebtorStatementResult1()
+		{
+		}
+		
+		[Column(Storage="_TotalInv", DbType="Money")]
+		public System.Nullable<decimal> TotalInv
+		{
+			get
+			{
+				return this._TotalInv;
+			}
+			set
+			{
+				if ((this._TotalInv != value))
+				{
+					this._TotalInv = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DebtorStatementResult2
+	{
+		
+		private System.Nullable<decimal> _TotalReceipt;
+		
+		private System.Nullable<decimal> _TotalDiscount;
+		
+		public DebtorStatementResult2()
+		{
+		}
+		
+		[Column(Storage="_TotalReceipt", DbType="Money")]
+		public System.Nullable<decimal> TotalReceipt
+		{
+			get
+			{
+				return this._TotalReceipt;
+			}
+			set
+			{
+				if ((this._TotalReceipt != value))
+				{
+					this._TotalReceipt = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TotalDiscount", DbType="Money")]
+		public System.Nullable<decimal> TotalDiscount
+		{
+			get
+			{
+				return this._TotalDiscount;
+			}
+			set
+			{
+				if ((this._TotalDiscount != value))
+				{
+					this._TotalDiscount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DebtorStatsResult
+	{
+		
+		private string _AccountID;
+		
+		private System.Nullable<int> _DN;
+		
+		private string _MonthEnding;
+		
+		private string _Company;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _Address3;
+		
+		private string _Address4;
+		
+		private string _City;
+		
+		private string _State;
+		
+		private string _PostCode;
+		
+		private System.Nullable<byte> _TransType;
+		
+		private System.Nullable<int> _TransID;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private string _Particulars;
+		
+		private System.Nullable<decimal> _DR;
+		
+		private System.Nullable<decimal> _CR;
+		
+		private System.Nullable<decimal> _OpenBal;
+		
+		private System.Nullable<decimal> _CloseBal;
+		
+		private System.Nullable<decimal> _OpenCurrent;
+		
+		private System.Nullable<decimal> _Open30Days;
+		
+		private System.Nullable<decimal> _Open60Days;
+		
+		private System.Nullable<decimal> _Open90Days;
+		
+		public DebtorStatsResult()
+		{
+		}
+		
+		[Column(Storage="_AccountID", DbType="VarChar(5)")]
+		public string AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DN", DbType="Int")]
+		public System.Nullable<int> DN
+		{
+			get
+			{
+				return this._DN;
+			}
+			set
+			{
+				if ((this._DN != value))
+				{
+					this._DN = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MonthEnding", DbType="VarChar(24)")]
+		public string MonthEnding
+		{
+			get
+			{
+				return this._MonthEnding;
+			}
+			set
+			{
+				if ((this._MonthEnding != value))
+				{
+					this._MonthEnding = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(80)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address1", DbType="VarChar(50)")]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address2", DbType="VarChar(50)")]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address3", DbType="VarChar(50)")]
+		public string Address3
+		{
+			get
+			{
+				return this._Address3;
+			}
+			set
+			{
+				if ((this._Address3 != value))
+				{
+					this._Address3 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address4", DbType="VarChar(50)")]
+		public string Address4
+		{
+			get
+			{
+				return this._Address4;
+			}
+			set
+			{
+				if ((this._Address4 != value))
+				{
+					this._Address4 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_City", DbType="VarChar(25)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_State", DbType="VarChar(5)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PostCode", DbType="VarChar(6)")]
+		public string PostCode
+		{
+			get
+			{
+				return this._PostCode;
+			}
+			set
+			{
+				if ((this._PostCode != value))
+				{
+					this._PostCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TransType", DbType="TinyInt")]
+		public System.Nullable<byte> TransType
+		{
+			get
+			{
+				return this._TransType;
+			}
+			set
+			{
+				if ((this._TransType != value))
+				{
+					this._TransType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TransID", DbType="Int")]
+		public System.Nullable<int> TransID
+		{
+			get
+			{
+				return this._TransID;
+			}
+			set
+			{
+				if ((this._TransID != value))
+				{
+					this._TransID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Particulars", DbType="VarChar(32)")]
+		public string Particulars
+		{
+			get
+			{
+				return this._Particulars;
+			}
+			set
+			{
+				if ((this._Particulars != value))
+				{
+					this._Particulars = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DR", DbType="Money")]
+		public System.Nullable<decimal> DR
+		{
+			get
+			{
+				return this._DR;
+			}
+			set
+			{
+				if ((this._DR != value))
+				{
+					this._DR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CR", DbType="Money")]
+		public System.Nullable<decimal> CR
+		{
+			get
+			{
+				return this._CR;
+			}
+			set
+			{
+				if ((this._CR != value))
+				{
+					this._CR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OpenBal", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> OpenBal
+		{
+			get
+			{
+				return this._OpenBal;
+			}
+			set
+			{
+				if ((this._OpenBal != value))
+				{
+					this._OpenBal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CloseBal", DbType="Money")]
+		public System.Nullable<decimal> CloseBal
+		{
+			get
+			{
+				return this._CloseBal;
+			}
+			set
+			{
+				if ((this._CloseBal != value))
+				{
+					this._CloseBal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OpenCurrent", DbType="Money")]
+		public System.Nullable<decimal> OpenCurrent
+		{
+			get
+			{
+				return this._OpenCurrent;
+			}
+			set
+			{
+				if ((this._OpenCurrent != value))
+				{
+					this._OpenCurrent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Open30Days", DbType="Money")]
+		public System.Nullable<decimal> Open30Days
+		{
+			get
+			{
+				return this._Open30Days;
+			}
+			set
+			{
+				if ((this._Open30Days != value))
+				{
+					this._Open30Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Open60Days", DbType="Money")]
+		public System.Nullable<decimal> Open60Days
+		{
+			get
+			{
+				return this._Open60Days;
+			}
+			set
+			{
+				if ((this._Open60Days != value))
+				{
+					this._Open60Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Open90Days", DbType="Money")]
+		public System.Nullable<decimal> Open90Days
+		{
+			get
+			{
+				return this._Open90Days;
+			}
+			set
+			{
+				if ((this._Open90Days != value))
+				{
+					this._Open90Days = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DebtorTaxCodeResult
+	{
+		
+		private string _STaxNum;
+		
+		public DebtorTaxCodeResult()
+		{
+		}
+		
+		[Column(Storage="_STaxNum", DbType="VarChar(10)")]
+		public string STaxNum
+		{
+			get
+			{
+				return this._STaxNum;
+			}
+			set
+			{
+				if ((this._STaxNum != value))
+				{
+					this._STaxNum = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DebtorTransactionsResult
+	{
+		
+		private string _Date;
+		
+		private string _TransID;
+		
+		private string _Particulars;
+		
+		private string _DN;
+		
+		private System.Nullable<byte> _Age;
+		
+		private string _DR;
+		
+		private string _CR;
+		
+		private string _InvType;
+		
+		public DebtorTransactionsResult()
+		{
+		}
+		
+		[Column(Storage="_Date", DbType="VarChar(15)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TransID", DbType="VarChar(30)")]
+		public string TransID
+		{
+			get
+			{
+				return this._TransID;
+			}
+			set
+			{
+				if ((this._TransID != value))
+				{
+					this._TransID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Particulars", DbType="VarChar(42)")]
+		public string Particulars
+		{
+			get
+			{
+				return this._Particulars;
+			}
+			set
+			{
+				if ((this._Particulars != value))
+				{
+					this._Particulars = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DN", DbType="VarChar(12)")]
+		public string DN
+		{
+			get
+			{
+				return this._DN;
+			}
+			set
+			{
+				if ((this._DN != value))
+				{
+					this._DN = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Age", DbType="TinyInt")]
+		public System.Nullable<byte> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this._Age = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DR", DbType="VarChar(10)")]
+		public string DR
+		{
+			get
+			{
+				return this._DR;
+			}
+			set
+			{
+				if ((this._DR != value))
+				{
+					this._DR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CR", DbType="VarChar(10)")]
+		public string CR
+		{
+			get
+			{
+				return this._CR;
+			}
+			set
+			{
+				if ((this._CR != value))
+				{
+					this._CR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvType", DbType="VarChar(1)")]
+		public string InvType
+		{
+			get
+			{
+				return this._InvType;
+			}
+			set
+			{
+				if ((this._InvType != value))
+				{
+					this._InvType = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DebtorTransactions_TEMPResult
+	{
+		
+		private string _Date;
+		
+		private string _TransID;
+		
+		private string _Particulars;
+		
+		private string _DN;
+		
+		private System.Nullable<byte> _Age;
+		
+		private string _DR;
+		
+		private string _CR;
+		
+		private string _InvType;
+		
+		public DebtorTransactions_TEMPResult()
+		{
+		}
+		
+		[Column(Storage="_Date", DbType="VarChar(15)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TransID", DbType="VarChar(30)")]
+		public string TransID
+		{
+			get
+			{
+				return this._TransID;
+			}
+			set
+			{
+				if ((this._TransID != value))
+				{
+					this._TransID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Particulars", DbType="VarChar(42)")]
+		public string Particulars
+		{
+			get
+			{
+				return this._Particulars;
+			}
+			set
+			{
+				if ((this._Particulars != value))
+				{
+					this._Particulars = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DN", DbType="VarChar(12)")]
+		public string DN
+		{
+			get
+			{
+				return this._DN;
+			}
+			set
+			{
+				if ((this._DN != value))
+				{
+					this._DN = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Age", DbType="TinyInt")]
+		public System.Nullable<byte> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this._Age = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DR", DbType="VarChar(10)")]
+		public string DR
+		{
+			get
+			{
+				return this._DR;
+			}
+			set
+			{
+				if ((this._DR != value))
+				{
+					this._DR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CR", DbType="VarChar(10)")]
+		public string CR
+		{
+			get
+			{
+				return this._CR;
+			}
+			set
+			{
+				if ((this._CR != value))
+				{
+					this._CR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvType", DbType="VarChar(1)")]
+		public string InvType
+		{
+			get
+			{
+				return this._InvType;
+			}
+			set
+			{
+				if ((this._InvType != value))
+				{
+					this._InvType = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DebtorTransactionsDummyResult
+	{
+		
+		private System.Nullable<int> _Date;
+		
+		private System.Nullable<int> _TransID;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private System.Nullable<int> _Age;
+		
+		private System.Nullable<int> _DR;
+		
+		private System.Nullable<int> _CR;
+		
+		private System.Nullable<int> _InvType;
+		
+		private System.Nullable<int> _DN;
+		
+		public DebtorTransactionsDummyResult()
+		{
+		}
+		
+		[Column(Storage="_Date", DbType="Int")]
+		public System.Nullable<int> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TransID", DbType="Int")]
+		public System.Nullable<int> TransID
+		{
+			get
+			{
+				return this._TransID;
+			}
+			set
+			{
+				if ((this._TransID != value))
+				{
+					this._TransID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Age", DbType="Int")]
+		public System.Nullable<int> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this._Age = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DR", DbType="Int")]
+		public System.Nullable<int> DR
+		{
+			get
+			{
+				return this._DR;
+			}
+			set
+			{
+				if ((this._DR != value))
+				{
+					this._DR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CR", DbType="Int")]
+		public System.Nullable<int> CR
+		{
+			get
+			{
+				return this._CR;
+			}
+			set
+			{
+				if ((this._CR != value))
+				{
+					this._CR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvType", DbType="Int")]
+		public System.Nullable<int> InvType
+		{
+			get
+			{
+				return this._InvType;
+			}
+			set
+			{
+				if ((this._InvType != value))
+				{
+					this._InvType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DN", DbType="Int")]
+		public System.Nullable<int> DN
+		{
+			get
+			{
+				return this._DN;
+			}
+			set
+			{
+				if ((this._DN != value))
+				{
+					this._DN = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DebtorTrialBalanceTotalsResult
+	{
+		
+		private System.Nullable<decimal> _SumTotal;
+		
+		private System.Nullable<decimal> _SumCurrent;
+		
+		private System.Nullable<decimal> _Sum30Days;
+		
+		private System.Nullable<decimal> _Sum60Days;
+		
+		private System.Nullable<decimal> _Sum90Days;
+		
+		private System.Nullable<decimal> _PercentCurrent;
+		
+		private System.Nullable<decimal> _Percent30Days;
+		
+		private System.Nullable<decimal> _Percent60Days;
+		
+		private System.Nullable<decimal> _Percent90Days;
+		
+		private System.Nullable<int> _CountAll;
+		
+		private System.Nullable<int> _CountCurrent;
+		
+		private System.Nullable<int> _Count30Days;
+		
+		private System.Nullable<int> _Count60Days;
+		
+		private System.Nullable<int> _Count90Days;
+		
+		public DebtorTrialBalanceTotalsResult()
+		{
+		}
+		
+		[Column(Storage="_SumTotal", DbType="Money")]
+		public System.Nullable<decimal> SumTotal
+		{
+			get
+			{
+				return this._SumTotal;
+			}
+			set
+			{
+				if ((this._SumTotal != value))
+				{
+					this._SumTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SumCurrent", DbType="Money")]
+		public System.Nullable<decimal> SumCurrent
+		{
+			get
+			{
+				return this._SumCurrent;
+			}
+			set
+			{
+				if ((this._SumCurrent != value))
+				{
+					this._SumCurrent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Sum30Days", DbType="Money")]
+		public System.Nullable<decimal> Sum30Days
+		{
+			get
+			{
+				return this._Sum30Days;
+			}
+			set
+			{
+				if ((this._Sum30Days != value))
+				{
+					this._Sum30Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Sum60Days", DbType="Money")]
+		public System.Nullable<decimal> Sum60Days
+		{
+			get
+			{
+				return this._Sum60Days;
+			}
+			set
+			{
+				if ((this._Sum60Days != value))
+				{
+					this._Sum60Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Sum90Days", DbType="Money")]
+		public System.Nullable<decimal> Sum90Days
+		{
+			get
+			{
+				return this._Sum90Days;
+			}
+			set
+			{
+				if ((this._Sum90Days != value))
+				{
+					this._Sum90Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PercentCurrent", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> PercentCurrent
+		{
+			get
+			{
+				return this._PercentCurrent;
+			}
+			set
+			{
+				if ((this._PercentCurrent != value))
+				{
+					this._PercentCurrent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Percent30Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Percent30Days
+		{
+			get
+			{
+				return this._Percent30Days;
+			}
+			set
+			{
+				if ((this._Percent30Days != value))
+				{
+					this._Percent30Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Percent60Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Percent60Days
+		{
+			get
+			{
+				return this._Percent60Days;
+			}
+			set
+			{
+				if ((this._Percent60Days != value))
+				{
+					this._Percent60Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Percent90Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Percent90Days
+		{
+			get
+			{
+				return this._Percent90Days;
+			}
+			set
+			{
+				if ((this._Percent90Days != value))
+				{
+					this._Percent90Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CountAll", DbType="Int")]
+		public System.Nullable<int> CountAll
+		{
+			get
+			{
+				return this._CountAll;
+			}
+			set
+			{
+				if ((this._CountAll != value))
+				{
+					this._CountAll = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CountCurrent", DbType="Int")]
+		public System.Nullable<int> CountCurrent
+		{
+			get
+			{
+				return this._CountCurrent;
+			}
+			set
+			{
+				if ((this._CountCurrent != value))
+				{
+					this._CountCurrent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Count30Days", DbType="Int")]
+		public System.Nullable<int> Count30Days
+		{
+			get
+			{
+				return this._Count30Days;
+			}
+			set
+			{
+				if ((this._Count30Days != value))
+				{
+					this._Count30Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Count60Days", DbType="Int")]
+		public System.Nullable<int> Count60Days
+		{
+			get
+			{
+				return this._Count60Days;
+			}
+			set
+			{
+				if ((this._Count60Days != value))
+				{
+					this._Count60Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Count90Days", DbType="Int")]
+		public System.Nullable<int> Count90Days
+		{
+			get
+			{
+				return this._Count90Days;
+			}
+			set
+			{
+				if ((this._Count90Days != value))
+				{
+					this._Count90Days = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DebtorTrialBalanceTotals_DATEResult
+	{
+		
+		private System.Nullable<decimal> _SumTotal;
+		
+		private System.Nullable<decimal> _SumCurrent;
+		
+		private System.Nullable<decimal> _Sum30Days;
+		
+		private System.Nullable<decimal> _Sum60Days;
+		
+		private System.Nullable<decimal> _Sum90Days;
+		
+		private System.Nullable<decimal> _PercentCurrent;
+		
+		private System.Nullable<decimal> _Percent30Days;
+		
+		private System.Nullable<decimal> _Percent60Days;
+		
+		private System.Nullable<decimal> _Percent90Days;
+		
+		private System.Nullable<int> _CountAll;
+		
+		private System.Nullable<int> _CountCurrent;
+		
+		private System.Nullable<int> _Count30Days;
+		
+		private System.Nullable<int> _Count60Days;
+		
+		private System.Nullable<int> _Count90Days;
+		
+		public DebtorTrialBalanceTotals_DATEResult()
+		{
+		}
+		
+		[Column(Storage="_SumTotal", DbType="Money")]
+		public System.Nullable<decimal> SumTotal
+		{
+			get
+			{
+				return this._SumTotal;
+			}
+			set
+			{
+				if ((this._SumTotal != value))
+				{
+					this._SumTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SumCurrent", DbType="Money")]
+		public System.Nullable<decimal> SumCurrent
+		{
+			get
+			{
+				return this._SumCurrent;
+			}
+			set
+			{
+				if ((this._SumCurrent != value))
+				{
+					this._SumCurrent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Sum30Days", DbType="Money")]
+		public System.Nullable<decimal> Sum30Days
+		{
+			get
+			{
+				return this._Sum30Days;
+			}
+			set
+			{
+				if ((this._Sum30Days != value))
+				{
+					this._Sum30Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Sum60Days", DbType="Money")]
+		public System.Nullable<decimal> Sum60Days
+		{
+			get
+			{
+				return this._Sum60Days;
+			}
+			set
+			{
+				if ((this._Sum60Days != value))
+				{
+					this._Sum60Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Sum90Days", DbType="Money")]
+		public System.Nullable<decimal> Sum90Days
+		{
+			get
+			{
+				return this._Sum90Days;
+			}
+			set
+			{
+				if ((this._Sum90Days != value))
+				{
+					this._Sum90Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PercentCurrent", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> PercentCurrent
+		{
+			get
+			{
+				return this._PercentCurrent;
+			}
+			set
+			{
+				if ((this._PercentCurrent != value))
+				{
+					this._PercentCurrent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Percent30Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Percent30Days
+		{
+			get
+			{
+				return this._Percent30Days;
+			}
+			set
+			{
+				if ((this._Percent30Days != value))
+				{
+					this._Percent30Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Percent60Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Percent60Days
+		{
+			get
+			{
+				return this._Percent60Days;
+			}
+			set
+			{
+				if ((this._Percent60Days != value))
+				{
+					this._Percent60Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Percent90Days", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Percent90Days
+		{
+			get
+			{
+				return this._Percent90Days;
+			}
+			set
+			{
+				if ((this._Percent90Days != value))
+				{
+					this._Percent90Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CountAll", DbType="Int")]
+		public System.Nullable<int> CountAll
+		{
+			get
+			{
+				return this._CountAll;
+			}
+			set
+			{
+				if ((this._CountAll != value))
+				{
+					this._CountAll = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CountCurrent", DbType="Int")]
+		public System.Nullable<int> CountCurrent
+		{
+			get
+			{
+				return this._CountCurrent;
+			}
+			set
+			{
+				if ((this._CountCurrent != value))
+				{
+					this._CountCurrent = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Count30Days", DbType="Int")]
+		public System.Nullable<int> Count30Days
+		{
+			get
+			{
+				return this._Count30Days;
+			}
+			set
+			{
+				if ((this._Count30Days != value))
+				{
+					this._Count30Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Count60Days", DbType="Int")]
+		public System.Nullable<int> Count60Days
+		{
+			get
+			{
+				return this._Count60Days;
+			}
+			set
+			{
+				if ((this._Count60Days != value))
+				{
+					this._Count60Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Count90Days", DbType="Int")]
+		public System.Nullable<int> Count90Days
+		{
+			get
+			{
+				return this._Count90Days;
+			}
+			set
+			{
+				if ((this._Count90Days != value))
+				{
+					this._Count90Days = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetAuditPeriodsResult
+	{
+		
+		private string _Date;
+		
+		private string _Period;
+		
+		public GetAuditPeriodsResult()
+		{
+		}
+		
+		[Column(Storage="_Date", DbType="VarChar(7)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Period", DbType="VarChar(14)")]
+		public string Period
+		{
+			get
+			{
+				return this._Period;
+			}
+			set
+			{
+				if ((this._Period != value))
+				{
+					this._Period = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetContactFromIDResult
+	{
+		
+		private string _Name;
+		
+		private string _Email;
+		
+		public GetContactFromIDResult()
+		{
+		}
+		
+		[Column(Storage="_Name", DbType="VarChar(41)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[Column(Name="email", Storage="_Email", DbType="VarChar(100)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Gl_AccountTotalResult
+	{
+		
+		private System.Nullable<decimal> _TotalAccount;
+		
+		public Gl_AccountTotalResult()
+		{
+		}
+		
+		[Column(Storage="_TotalAccount", DbType="Money")]
+		public System.Nullable<decimal> TotalAccount
+		{
+			get
+			{
+				return this._TotalAccount;
+			}
+			set
+			{
+				if ((this._TotalAccount != value))
+				{
+					this._TotalAccount = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GL_GetAccountDetailsResult
+	{
+		
+		private string _AccountName;
+		
+		public GL_GetAccountDetailsResult()
+		{
+		}
+		
+		[Column(Storage="_AccountName", DbType="VarChar(50)")]
+		public string AccountName
+		{
+			get
+			{
+				return this._AccountName;
+			}
+			set
+			{
+				if ((this._AccountName != value))
+				{
+					this._AccountName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GL_GetExchangeRateResult
+	{
+		
+		private System.Nullable<decimal> _ExchangeRate;
+		
+		public GL_GetExchangeRateResult()
+		{
+		}
+		
+		[Column(Storage="_ExchangeRate", DbType="Decimal(9,4)")]
+		public System.Nullable<decimal> ExchangeRate
+		{
+			get
+			{
+				return this._ExchangeRate;
+			}
+			set
+			{
+				if ((this._ExchangeRate != value))
+				{
+					this._ExchangeRate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GL_MiscToolsResult
+	{
+		
+		private string _JournalCode;
+		
+		private System.Nullable<int> _Audit;
+		
+		private System.Nullable<System.DateTime> _Date;
+		
+		private System.Nullable<byte> _Month;
+		
+		public GL_MiscToolsResult()
+		{
+		}
+		
+		[Column(Storage="_JournalCode", DbType="VarChar(16)")]
+		public string JournalCode
+		{
+			get
+			{
+				return this._JournalCode;
+			}
+			set
+			{
+				if ((this._JournalCode != value))
+				{
+					this._JournalCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Audit", DbType="Int")]
+		public System.Nullable<int> Audit
+		{
+			get
+			{
+				return this._Audit;
+			}
+			set
+			{
+				if ((this._Audit != value))
+				{
+					this._Audit = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Date", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Month", DbType="TinyInt")]
+		public System.Nullable<byte> Month
+		{
+			get
+			{
+				return this._Month;
+			}
+			set
+			{
+				if ((this._Month != value))
+				{
+					this._Month = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GL1Result1
+	{
+		
+		private System.Nullable<byte> _CompanyNum;
+		
+		private string _COmpanyID;
+		
+		public GL1Result1()
+		{
+		}
+		
+		[Column(Storage="_CompanyNum", DbType="TinyInt")]
+		public System.Nullable<byte> CompanyNum
+		{
+			get
+			{
+				return this._CompanyNum;
+			}
+			set
+			{
+				if ((this._CompanyNum != value))
+				{
+					this._CompanyNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_COmpanyID", DbType="VarChar(5)")]
+		public string COmpanyID
+		{
+			get
+			{
+				return this._COmpanyID;
+			}
+			set
+			{
+				if ((this._COmpanyID != value))
+				{
+					this._COmpanyID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GL1Result2
+	{
+		
+		private string _CompanyID;
+		
+		public GL1Result2()
+		{
+		}
+		
+		[Column(Storage="_CompanyID", DbType="VarChar(5)")]
+		public string CompanyID
+		{
+			get
+			{
+				return this._CompanyID;
+			}
+			set
+			{
+				if ((this._CompanyID != value))
+				{
+					this._CompanyID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GL1Result3
+	{
+		
+		private System.Nullable<byte> _CompanyNum;
+		
+		public GL1Result3()
+		{
+		}
+		
+		[Column(Storage="_CompanyNum", DbType="TinyInt")]
+		public System.Nullable<byte> CompanyNum
+		{
+			get
+			{
+				return this._CompanyNum;
+			}
+			set
+			{
+				if ((this._CompanyNum != value))
+				{
+					this._CompanyNum = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GL1Result4
+	{
+		
+		private System.Nullable<int> _Column1;
+		
+		public GL1Result4()
+		{
+		}
+		
+		[Column(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_BUSINESSUNIT_SnapshotComparisonReportResult
+	{
+		
+		private string _ContractLocation;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _Company;
+		
+		private System.Nullable<int> _ItemCount;
+		
+		private System.Nullable<decimal> _LineTotal;
+		
+		private System.Nullable<decimal> _LineTotalDiff;
+		
+		private System.Nullable<decimal> _ItemsAdded;
+		
+		private System.Nullable<decimal> _LineTotalAdded;
+		
+		private System.Nullable<System.DateTime> _CurrentDate;
+		
+		private System.Nullable<decimal> _ItemCount2;
+		
+		private System.Nullable<decimal> _LineTotal2;
+		
+		private System.Nullable<decimal> _ItemsDeleted;
+		
+		private System.Nullable<decimal> _LineTotalDeleted;
+		
+		private System.Nullable<System.DateTime> _SnapShotDate;
+		
+		public INT_BUSINESSUNIT_SnapshotComparisonReportResult()
+		{
+		}
+		
+		[Column(Storage="_ContractLocation", DbType="VarChar(5)")]
+		public string ContractLocation
+		{
+			get
+			{
+				return this._ContractLocation;
+			}
+			set
+			{
+				if ((this._ContractLocation != value))
+				{
+					this._ContractLocation = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(80)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount", DbType="Int")]
+		public System.Nullable<int> ItemCount
+		{
+			get
+			{
+				return this._ItemCount;
+			}
+			set
+			{
+				if ((this._ItemCount != value))
+				{
+					this._ItemCount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal", DbType="Money")]
+		public System.Nullable<decimal> LineTotal
+		{
+			get
+			{
+				return this._LineTotal;
+			}
+			set
+			{
+				if ((this._LineTotal != value))
+				{
+					this._LineTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDiff", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDiff
+		{
+			get
+			{
+				return this._LineTotalDiff;
+			}
+			set
+			{
+				if ((this._LineTotalDiff != value))
+				{
+					this._LineTotalDiff = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsAdded", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsAdded
+		{
+			get
+			{
+				return this._ItemsAdded;
+			}
+			set
+			{
+				if ((this._ItemsAdded != value))
+				{
+					this._ItemsAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalAdded", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalAdded
+		{
+			get
+			{
+				return this._LineTotalAdded;
+			}
+			set
+			{
+				if ((this._LineTotalAdded != value))
+				{
+					this._LineTotalAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrentDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CurrentDate
+		{
+			get
+			{
+				return this._CurrentDate;
+			}
+			set
+			{
+				if ((this._CurrentDate != value))
+				{
+					this._CurrentDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount2", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemCount2
+		{
+			get
+			{
+				return this._ItemCount2;
+			}
+			set
+			{
+				if ((this._ItemCount2 != value))
+				{
+					this._ItemCount2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal2", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotal2
+		{
+			get
+			{
+				return this._LineTotal2;
+			}
+			set
+			{
+				if ((this._LineTotal2 != value))
+				{
+					this._LineTotal2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsDeleted", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsDeleted
+		{
+			get
+			{
+				return this._ItemsDeleted;
+			}
+			set
+			{
+				if ((this._ItemsDeleted != value))
+				{
+					this._ItemsDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDeleted", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDeleted
+		{
+			get
+			{
+				return this._LineTotalDeleted;
+			}
+			set
+			{
+				if ((this._LineTotalDeleted != value))
+				{
+					this._LineTotalDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SnapShotDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SnapShotDate
+		{
+			get
+			{
+				return this._SnapShotDate;
+			}
+			set
+			{
+				if ((this._SnapShotDate != value))
+				{
+					this._SnapShotDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUPResult
+	{
+		
+		private string _ContractLocation;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _Company;
+		
+		private string _Message;
+		
+		private System.Nullable<int> _ItemCount;
+		
+		private System.Nullable<decimal> _LineTotal;
+		
+		private System.Nullable<decimal> _LineTotalDiff;
+		
+		private System.Nullable<decimal> _ItemsAdded;
+		
+		private System.Nullable<decimal> _LineTotalAdded;
+		
+		private System.Nullable<System.DateTime> _CurrentDate;
+		
+		private System.Nullable<decimal> _ItemCount2;
+		
+		private System.Nullable<decimal> _LineTotal2;
+		
+		private System.Nullable<decimal> _ItemsDeleted;
+		
+		private System.Nullable<decimal> _LineTotalDeleted;
+		
+		private System.Nullable<System.DateTime> _SnapShotDate;
+		
+		public INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUPResult()
+		{
+		}
+		
+		[Column(Storage="_ContractLocation", DbType="VarChar(50)")]
+		public string ContractLocation
+		{
+			get
+			{
+				return this._ContractLocation;
+			}
+			set
+			{
+				if ((this._ContractLocation != value))
+				{
+					this._ContractLocation = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(80)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Message", DbType="VarChar(9)")]
+		public string Message
+		{
+			get
+			{
+				return this._Message;
+			}
+			set
+			{
+				if ((this._Message != value))
+				{
+					this._Message = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount", DbType="Int")]
+		public System.Nullable<int> ItemCount
+		{
+			get
+			{
+				return this._ItemCount;
+			}
+			set
+			{
+				if ((this._ItemCount != value))
+				{
+					this._ItemCount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal", DbType="Money")]
+		public System.Nullable<decimal> LineTotal
+		{
+			get
+			{
+				return this._LineTotal;
+			}
+			set
+			{
+				if ((this._LineTotal != value))
+				{
+					this._LineTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDiff", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDiff
+		{
+			get
+			{
+				return this._LineTotalDiff;
+			}
+			set
+			{
+				if ((this._LineTotalDiff != value))
+				{
+					this._LineTotalDiff = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsAdded", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsAdded
+		{
+			get
+			{
+				return this._ItemsAdded;
+			}
+			set
+			{
+				if ((this._ItemsAdded != value))
+				{
+					this._ItemsAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalAdded", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalAdded
+		{
+			get
+			{
+				return this._LineTotalAdded;
+			}
+			set
+			{
+				if ((this._LineTotalAdded != value))
+				{
+					this._LineTotalAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrentDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CurrentDate
+		{
+			get
+			{
+				return this._CurrentDate;
+			}
+			set
+			{
+				if ((this._CurrentDate != value))
+				{
+					this._CurrentDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount2", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemCount2
+		{
+			get
+			{
+				return this._ItemCount2;
+			}
+			set
+			{
+				if ((this._ItemCount2 != value))
+				{
+					this._ItemCount2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal2", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotal2
+		{
+			get
+			{
+				return this._LineTotal2;
+			}
+			set
+			{
+				if ((this._LineTotal2 != value))
+				{
+					this._LineTotal2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsDeleted", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsDeleted
+		{
+			get
+			{
+				return this._ItemsDeleted;
+			}
+			set
+			{
+				if ((this._ItemsDeleted != value))
+				{
+					this._ItemsDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDeleted", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDeleted
+		{
+			get
+			{
+				return this._LineTotalDeleted;
+			}
+			set
+			{
+				if ((this._LineTotalDeleted != value))
+				{
+					this._LineTotalDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SnapShotDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SnapShotDate
+		{
+			get
+			{
+				return this._SnapShotDate;
+			}
+			set
+			{
+				if ((this._SnapShotDate != value))
+				{
+					this._SnapShotDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUP_OLDResult
+	{
+		
+		private string _BusinessUnitGroup;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _Company;
+		
+		private string _Message;
+		
+		private System.Nullable<int> _ItemCount;
+		
+		private System.Nullable<decimal> _LineTotal;
+		
+		private System.Nullable<decimal> _LineTotalDiff;
+		
+		private System.Nullable<decimal> _ItemsAdded;
+		
+		private System.Nullable<decimal> _LineTotalAdded;
+		
+		private System.Nullable<System.DateTime> _CurrentDate;
+		
+		private System.Nullable<decimal> _ItemCount2;
+		
+		private System.Nullable<decimal> _LineTotal2;
+		
+		private System.Nullable<decimal> _ItemsDeleted;
+		
+		private System.Nullable<decimal> _LineTotalDeleted;
+		
+		private System.Nullable<System.DateTime> _SnapShotDate;
+		
+		public INT_BUSINESSUNIT_SnapshotComparisonReport_BACKUP_OLDResult()
+		{
+		}
+		
+		[Column(Storage="_BusinessUnitGroup", DbType="VarChar(5)")]
+		public string BusinessUnitGroup
+		{
+			get
+			{
+				return this._BusinessUnitGroup;
+			}
+			set
+			{
+				if ((this._BusinessUnitGroup != value))
+				{
+					this._BusinessUnitGroup = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(80)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Message", DbType="VarChar(9)")]
+		public string Message
+		{
+			get
+			{
+				return this._Message;
+			}
+			set
+			{
+				if ((this._Message != value))
+				{
+					this._Message = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount", DbType="Int")]
+		public System.Nullable<int> ItemCount
+		{
+			get
+			{
+				return this._ItemCount;
+			}
+			set
+			{
+				if ((this._ItemCount != value))
+				{
+					this._ItemCount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal", DbType="Money")]
+		public System.Nullable<decimal> LineTotal
+		{
+			get
+			{
+				return this._LineTotal;
+			}
+			set
+			{
+				if ((this._LineTotal != value))
+				{
+					this._LineTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDiff", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDiff
+		{
+			get
+			{
+				return this._LineTotalDiff;
+			}
+			set
+			{
+				if ((this._LineTotalDiff != value))
+				{
+					this._LineTotalDiff = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsAdded", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsAdded
+		{
+			get
+			{
+				return this._ItemsAdded;
+			}
+			set
+			{
+				if ((this._ItemsAdded != value))
+				{
+					this._ItemsAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalAdded", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalAdded
+		{
+			get
+			{
+				return this._LineTotalAdded;
+			}
+			set
+			{
+				if ((this._LineTotalAdded != value))
+				{
+					this._LineTotalAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrentDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CurrentDate
+		{
+			get
+			{
+				return this._CurrentDate;
+			}
+			set
+			{
+				if ((this._CurrentDate != value))
+				{
+					this._CurrentDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount2", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemCount2
+		{
+			get
+			{
+				return this._ItemCount2;
+			}
+			set
+			{
+				if ((this._ItemCount2 != value))
+				{
+					this._ItemCount2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal2", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotal2
+		{
+			get
+			{
+				return this._LineTotal2;
+			}
+			set
+			{
+				if ((this._LineTotal2 != value))
+				{
+					this._LineTotal2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsDeleted", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsDeleted
+		{
+			get
+			{
+				return this._ItemsDeleted;
+			}
+			set
+			{
+				if ((this._ItemsDeleted != value))
+				{
+					this._ItemsDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDeleted", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDeleted
+		{
+			get
+			{
+				return this._LineTotalDeleted;
+			}
+			set
+			{
+				if ((this._LineTotalDeleted != value))
+				{
+					this._LineTotalDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SnapShotDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SnapShotDate
+		{
+			get
+			{
+				return this._SnapShotDate;
+			}
+			set
+			{
+				if ((this._SnapShotDate != value))
+				{
+					this._SnapShotDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_BUSINESSUNIT_SnapshotComparisonReport_ByDeviceLocationResult
+	{
+		
+		private string _DeviceLocation;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _Company;
+		
+		private System.Nullable<int> _ItemCount;
+		
+		private System.Nullable<decimal> _LineTotal;
+		
+		private System.Nullable<decimal> _LineTotalDiff;
+		
+		private System.Nullable<decimal> _ItemsAdded;
+		
+		private System.Nullable<decimal> _LineTotalAdded;
+		
+		private System.Nullable<System.DateTime> _CurrentDate;
+		
+		private System.Nullable<decimal> _ItemCount2;
+		
+		private System.Nullable<decimal> _LineTotal2;
+		
+		private System.Nullable<decimal> _ItemsDeleted;
+		
+		private System.Nullable<decimal> _LineTotalDeleted;
+		
+		private System.Nullable<System.DateTime> _SnapShotDate;
+		
+		public INT_BUSINESSUNIT_SnapshotComparisonReport_ByDeviceLocationResult()
+		{
+		}
+		
+		[Column(Storage="_DeviceLocation", DbType="VarChar(5)")]
+		public string DeviceLocation
+		{
+			get
+			{
+				return this._DeviceLocation;
+			}
+			set
+			{
+				if ((this._DeviceLocation != value))
+				{
+					this._DeviceLocation = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(80)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount", DbType="Int")]
+		public System.Nullable<int> ItemCount
+		{
+			get
+			{
+				return this._ItemCount;
+			}
+			set
+			{
+				if ((this._ItemCount != value))
+				{
+					this._ItemCount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal", DbType="Money")]
+		public System.Nullable<decimal> LineTotal
+		{
+			get
+			{
+				return this._LineTotal;
+			}
+			set
+			{
+				if ((this._LineTotal != value))
+				{
+					this._LineTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDiff", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDiff
+		{
+			get
+			{
+				return this._LineTotalDiff;
+			}
+			set
+			{
+				if ((this._LineTotalDiff != value))
+				{
+					this._LineTotalDiff = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsAdded", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsAdded
+		{
+			get
+			{
+				return this._ItemsAdded;
+			}
+			set
+			{
+				if ((this._ItemsAdded != value))
+				{
+					this._ItemsAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalAdded", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalAdded
+		{
+			get
+			{
+				return this._LineTotalAdded;
+			}
+			set
+			{
+				if ((this._LineTotalAdded != value))
+				{
+					this._LineTotalAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrentDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CurrentDate
+		{
+			get
+			{
+				return this._CurrentDate;
+			}
+			set
+			{
+				if ((this._CurrentDate != value))
+				{
+					this._CurrentDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount2", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemCount2
+		{
+			get
+			{
+				return this._ItemCount2;
+			}
+			set
+			{
+				if ((this._ItemCount2 != value))
+				{
+					this._ItemCount2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal2", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotal2
+		{
+			get
+			{
+				return this._LineTotal2;
+			}
+			set
+			{
+				if ((this._LineTotal2 != value))
+				{
+					this._LineTotal2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsDeleted", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsDeleted
+		{
+			get
+			{
+				return this._ItemsDeleted;
+			}
+			set
+			{
+				if ((this._ItemsDeleted != value))
+				{
+					this._ItemsDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDeleted", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDeleted
+		{
+			get
+			{
+				return this._LineTotalDeleted;
+			}
+			set
+			{
+				if ((this._LineTotalDeleted != value))
+				{
+					this._LineTotalDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SnapShotDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SnapShotDate
+		{
+			get
+			{
+				return this._SnapShotDate;
+			}
+			set
+			{
+				if ((this._SnapShotDate != value))
+				{
+					this._SnapShotDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_BUSINESSUNIT_SnapshotComparisonReport_ByRptGrpResult
+	{
+		
+		private string _ContractLocation;
+		
+		private System.Nullable<int> _ReportingGroupID;
+		
+		private string _ReportingGroupName;
+		
+		private System.Nullable<int> _ItemCount;
+		
+		private System.Nullable<decimal> _LineTotal;
+		
+		private System.Nullable<decimal> _LineTotalDiff;
+		
+		private System.Nullable<decimal> _ItemsAdded;
+		
+		private System.Nullable<decimal> _LineTotalAdded;
+		
+		private System.Nullable<System.DateTime> _CurrentDate;
+		
+		private System.Nullable<decimal> _ItemCount2;
+		
+		private System.Nullable<decimal> _LineTotal2;
+		
+		private System.Nullable<decimal> _ItemsDeleted;
+		
+		private System.Nullable<decimal> _LineTotalDeleted;
+		
+		private System.Nullable<System.DateTime> _SnapShotDate;
+		
+		public INT_BUSINESSUNIT_SnapshotComparisonReport_ByRptGrpResult()
+		{
+		}
+		
+		[Column(Storage="_ContractLocation", DbType="VarChar(5)")]
+		public string ContractLocation
+		{
+			get
+			{
+				return this._ContractLocation;
+			}
+			set
+			{
+				if ((this._ContractLocation != value))
+				{
+					this._ContractLocation = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ReportingGroupID", DbType="Int")]
+		public System.Nullable<int> ReportingGroupID
+		{
+			get
+			{
+				return this._ReportingGroupID;
+			}
+			set
+			{
+				if ((this._ReportingGroupID != value))
+				{
+					this._ReportingGroupID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ReportingGroupName", DbType="VarChar(80)")]
+		public string ReportingGroupName
+		{
+			get
+			{
+				return this._ReportingGroupName;
+			}
+			set
+			{
+				if ((this._ReportingGroupName != value))
+				{
+					this._ReportingGroupName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount", DbType="Int")]
+		public System.Nullable<int> ItemCount
+		{
+			get
+			{
+				return this._ItemCount;
+			}
+			set
+			{
+				if ((this._ItemCount != value))
+				{
+					this._ItemCount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal", DbType="Money")]
+		public System.Nullable<decimal> LineTotal
+		{
+			get
+			{
+				return this._LineTotal;
+			}
+			set
+			{
+				if ((this._LineTotal != value))
+				{
+					this._LineTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDiff", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDiff
+		{
+			get
+			{
+				return this._LineTotalDiff;
+			}
+			set
+			{
+				if ((this._LineTotalDiff != value))
+				{
+					this._LineTotalDiff = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsAdded", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsAdded
+		{
+			get
+			{
+				return this._ItemsAdded;
+			}
+			set
+			{
+				if ((this._ItemsAdded != value))
+				{
+					this._ItemsAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalAdded", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalAdded
+		{
+			get
+			{
+				return this._LineTotalAdded;
+			}
+			set
+			{
+				if ((this._LineTotalAdded != value))
+				{
+					this._LineTotalAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrentDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CurrentDate
+		{
+			get
+			{
+				return this._CurrentDate;
+			}
+			set
+			{
+				if ((this._CurrentDate != value))
+				{
+					this._CurrentDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount2", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemCount2
+		{
+			get
+			{
+				return this._ItemCount2;
+			}
+			set
+			{
+				if ((this._ItemCount2 != value))
+				{
+					this._ItemCount2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal2", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotal2
+		{
+			get
+			{
+				return this._LineTotal2;
+			}
+			set
+			{
+				if ((this._LineTotal2 != value))
+				{
+					this._LineTotal2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsDeleted", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsDeleted
+		{
+			get
+			{
+				return this._ItemsDeleted;
+			}
+			set
+			{
+				if ((this._ItemsDeleted != value))
+				{
+					this._ItemsDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDeleted", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDeleted
+		{
+			get
+			{
+				return this._LineTotalDeleted;
+			}
+			set
+			{
+				if ((this._LineTotalDeleted != value))
+				{
+					this._LineTotalDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SnapShotDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SnapShotDate
+		{
+			get
+			{
+				return this._SnapShotDate;
+			}
+			set
+			{
+				if ((this._SnapShotDate != value))
+				{
+					this._SnapShotDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_CE_COMMISSION_REVCATResult
+	{
+		
+		private string _InvoiceMonth;
+		
+		private System.Nullable<short> _InvYear;
+		
+		private System.Nullable<byte> _InvMonth;
+		
+		private string _Engineer;
+		
+		private System.Nullable<byte> _CompanyNum;
+		
+		private string _Company;
+		
+		private string _EmployeeName;
+		
+		private string _ReportingState;
+		
+		private string _EngineerGroup;
+		
+		private System.Nullable<decimal> _RevCatHPIntel;
+		
+		private System.Nullable<decimal> _RevCatIBMIntel;
+		
+		private System.Nullable<decimal> _RevCatDellIntel;
+		
+		private System.Nullable<decimal> _RevCatIntelOther;
+		
+		private System.Nullable<decimal> _RevCatToshibaIntel;
+		
+		private System.Nullable<decimal> _RevCatIBMiSeries;
+		
+		private System.Nullable<decimal> _RevCatIBMpSeries;
+		
+		private System.Nullable<decimal> _RevCatIBMzSeries;
+		
+		private System.Nullable<decimal> _RevCatSUN;
+		
+		private System.Nullable<decimal> _RevCatNetApp;
+		
+		private System.Nullable<decimal> _RevCatCisco;
+		
+		private System.Nullable<decimal> _RevCatProfessionalServices;
+		
+		private System.Nullable<decimal> _RevCatSoftwareSupport;
+		
+		private System.Nullable<decimal> _RevCatBRS;
+		
+		private System.Nullable<decimal> _RevCatTape;
+		
+		private System.Nullable<decimal> _RevCatStorage;
+		
+		private System.Nullable<decimal> _RevCatPrinter;
+		
+		private System.Nullable<decimal> _RevCatUPS;
+		
+		private System.Nullable<decimal> _RevCatOther;
+		
+		private System.Nullable<decimal> @__5PercComm;
+		
+		public INT_CE_COMMISSION_REVCATResult()
+		{
+		}
+		
+		[Column(Name="Invoice Month", Storage="_InvoiceMonth", DbType="NVarChar(35)")]
+		public string InvoiceMonth
+		{
+			get
+			{
+				return this._InvoiceMonth;
+			}
+			set
+			{
+				if ((this._InvoiceMonth != value))
+				{
+					this._InvoiceMonth = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvYear", DbType="SmallInt")]
+		public System.Nullable<short> InvYear
+		{
+			get
+			{
+				return this._InvYear;
+			}
+			set
+			{
+				if ((this._InvYear != value))
+				{
+					this._InvYear = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvMonth", DbType="TinyInt")]
+		public System.Nullable<byte> InvMonth
+		{
+			get
+			{
+				return this._InvMonth;
+			}
+			set
+			{
+				if ((this._InvMonth != value))
+				{
+					this._InvMonth = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Engineer", DbType="VarChar(25)")]
+		public string Engineer
+		{
+			get
+			{
+				return this._Engineer;
+			}
+			set
+			{
+				if ((this._Engineer != value))
+				{
+					this._Engineer = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyNum", DbType="TinyInt")]
+		public System.Nullable<byte> CompanyNum
+		{
+			get
+			{
+				return this._CompanyNum;
+			}
+			set
+			{
+				if ((this._CompanyNum != value))
+				{
+					this._CompanyNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(5)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_EmployeeName", DbType="VarChar(51)")]
+		public string EmployeeName
+		{
+			get
+			{
+				return this._EmployeeName;
+			}
+			set
+			{
+				if ((this._EmployeeName != value))
+				{
+					this._EmployeeName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ReportingState", DbType="VarChar(5)")]
+		public string ReportingState
+		{
+			get
+			{
+				return this._ReportingState;
+			}
+			set
+			{
+				if ((this._ReportingState != value))
+				{
+					this._ReportingState = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_EngineerGroup", DbType="VarChar(15)")]
+		public string EngineerGroup
+		{
+			get
+			{
+				return this._EngineerGroup;
+			}
+			set
+			{
+				if ((this._EngineerGroup != value))
+				{
+					this._EngineerGroup = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatHPIntel", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatHPIntel
+		{
+			get
+			{
+				return this._RevCatHPIntel;
+			}
+			set
+			{
+				if ((this._RevCatHPIntel != value))
+				{
+					this._RevCatHPIntel = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatIBMIntel", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatIBMIntel
+		{
+			get
+			{
+				return this._RevCatIBMIntel;
+			}
+			set
+			{
+				if ((this._RevCatIBMIntel != value))
+				{
+					this._RevCatIBMIntel = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatDellIntel", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatDellIntel
+		{
+			get
+			{
+				return this._RevCatDellIntel;
+			}
+			set
+			{
+				if ((this._RevCatDellIntel != value))
+				{
+					this._RevCatDellIntel = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatIntelOther", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatIntelOther
+		{
+			get
+			{
+				return this._RevCatIntelOther;
+			}
+			set
+			{
+				if ((this._RevCatIntelOther != value))
+				{
+					this._RevCatIntelOther = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatToshibaIntel", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatToshibaIntel
+		{
+			get
+			{
+				return this._RevCatToshibaIntel;
+			}
+			set
+			{
+				if ((this._RevCatToshibaIntel != value))
+				{
+					this._RevCatToshibaIntel = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatIBMiSeries", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatIBMiSeries
+		{
+			get
+			{
+				return this._RevCatIBMiSeries;
+			}
+			set
+			{
+				if ((this._RevCatIBMiSeries != value))
+				{
+					this._RevCatIBMiSeries = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatIBMpSeries", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatIBMpSeries
+		{
+			get
+			{
+				return this._RevCatIBMpSeries;
+			}
+			set
+			{
+				if ((this._RevCatIBMpSeries != value))
+				{
+					this._RevCatIBMpSeries = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatIBMzSeries", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatIBMzSeries
+		{
+			get
+			{
+				return this._RevCatIBMzSeries;
+			}
+			set
+			{
+				if ((this._RevCatIBMzSeries != value))
+				{
+					this._RevCatIBMzSeries = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatSUN", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatSUN
+		{
+			get
+			{
+				return this._RevCatSUN;
+			}
+			set
+			{
+				if ((this._RevCatSUN != value))
+				{
+					this._RevCatSUN = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatNetApp", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatNetApp
+		{
+			get
+			{
+				return this._RevCatNetApp;
+			}
+			set
+			{
+				if ((this._RevCatNetApp != value))
+				{
+					this._RevCatNetApp = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatCisco", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatCisco
+		{
+			get
+			{
+				return this._RevCatCisco;
+			}
+			set
+			{
+				if ((this._RevCatCisco != value))
+				{
+					this._RevCatCisco = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatProfessionalServices", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatProfessionalServices
+		{
+			get
+			{
+				return this._RevCatProfessionalServices;
+			}
+			set
+			{
+				if ((this._RevCatProfessionalServices != value))
+				{
+					this._RevCatProfessionalServices = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatSoftwareSupport", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatSoftwareSupport
+		{
+			get
+			{
+				return this._RevCatSoftwareSupport;
+			}
+			set
+			{
+				if ((this._RevCatSoftwareSupport != value))
+				{
+					this._RevCatSoftwareSupport = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatBRS", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatBRS
+		{
+			get
+			{
+				return this._RevCatBRS;
+			}
+			set
+			{
+				if ((this._RevCatBRS != value))
+				{
+					this._RevCatBRS = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatTape", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatTape
+		{
+			get
+			{
+				return this._RevCatTape;
+			}
+			set
+			{
+				if ((this._RevCatTape != value))
+				{
+					this._RevCatTape = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatStorage", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatStorage
+		{
+			get
+			{
+				return this._RevCatStorage;
+			}
+			set
+			{
+				if ((this._RevCatStorage != value))
+				{
+					this._RevCatStorage = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatPrinter", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatPrinter
+		{
+			get
+			{
+				return this._RevCatPrinter;
+			}
+			set
+			{
+				if ((this._RevCatPrinter != value))
+				{
+					this._RevCatPrinter = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatUPS", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatUPS
+		{
+			get
+			{
+				return this._RevCatUPS;
+			}
+			set
+			{
+				if ((this._RevCatUPS != value))
+				{
+					this._RevCatUPS = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevCatOther", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> RevCatOther
+		{
+			get
+			{
+				return this._RevCatOther;
+			}
+			set
+			{
+				if ((this._RevCatOther != value))
+				{
+					this._RevCatOther = value;
+				}
+			}
+		}
+		
+		[Column(Name="5PercComm", Storage="__5PercComm", DbType="Decimal(18,9)")]
+		public System.Nullable<decimal> _5PercComm
+		{
+			get
+			{
+				return this.@__5PercComm;
+			}
+			set
+			{
+				if ((this.@__5PercComm != value))
+				{
+					this.@__5PercComm = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_CheckCtracForDuplicatesResult1
+	{
+		
+		private System.Nullable<int> _AccountId;
+		
+		public INT_CheckCtracForDuplicatesResult1()
+		{
+		}
+		
+		[Column(Storage="_AccountId", DbType="Int")]
+		public System.Nullable<int> AccountId
+		{
+			get
+			{
+				return this._AccountId;
+			}
+			set
+			{
+				if ((this._AccountId != value))
+				{
+					this._AccountId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_CheckCtracForDuplicatesResult2
+	{
+		
+		private System.Nullable<int> _AccountID;
+		
+		public INT_CheckCtracForDuplicatesResult2()
+		{
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_CheckCtracForDuplicates_BACKUPResult1
+	{
+		
+		private System.Nullable<int> _AccountId;
+		
+		public INT_CheckCtracForDuplicates_BACKUPResult1()
+		{
+		}
+		
+		[Column(Storage="_AccountId", DbType="Int")]
+		public System.Nullable<int> AccountId
+		{
+			get
+			{
+				return this._AccountId;
+			}
+			set
+			{
+				if ((this._AccountId != value))
+				{
+					this._AccountId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_CheckCtracForDuplicates_BACKUPResult2
+	{
+		
+		private System.Nullable<int> _AccountID;
+		
+		public INT_CheckCtracForDuplicates_BACKUPResult2()
+		{
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_DebtorTransactions_DUMMYResult
+	{
+		
+		private System.Nullable<int> _Date;
+		
+		private System.Nullable<int> _TransID;
+		
+		private System.Nullable<int> _Particulars;
+		
+		private System.Nullable<int> _Age;
+		
+		private System.Nullable<int> _DR;
+		
+		private System.Nullable<int> _CR;
+		
+		private System.Nullable<int> _INT_TM_Invoice;
+		
+		public INT_DebtorTransactions_DUMMYResult()
+		{
+		}
+		
+		[Column(Name="date", Storage="_Date", DbType="Int")]
+		public System.Nullable<int> Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TransID", DbType="Int")]
+		public System.Nullable<int> TransID
+		{
+			get
+			{
+				return this._TransID;
+			}
+			set
+			{
+				if ((this._TransID != value))
+				{
+					this._TransID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Particulars", DbType="Int")]
+		public System.Nullable<int> Particulars
+		{
+			get
+			{
+				return this._Particulars;
+			}
+			set
+			{
+				if ((this._Particulars != value))
+				{
+					this._Particulars = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Age", DbType="Int")]
+		public System.Nullable<int> Age
+		{
+			get
+			{
+				return this._Age;
+			}
+			set
+			{
+				if ((this._Age != value))
+				{
+					this._Age = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DR", DbType="Int")]
+		public System.Nullable<int> DR
+		{
+			get
+			{
+				return this._DR;
+			}
+			set
+			{
+				if ((this._DR != value))
+				{
+					this._DR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CR", DbType="Int")]
+		public System.Nullable<int> CR
+		{
+			get
+			{
+				return this._CR;
+			}
+			set
+			{
+				if ((this._CR != value))
+				{
+					this._CR = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_INT_TM_Invoice", DbType="Int")]
+		public System.Nullable<int> INT_TM_Invoice
+		{
+			get
+			{
+				return this._INT_TM_Invoice;
+			}
+			set
+			{
+				if ((this._INT_TM_Invoice != value))
+				{
+					this._INT_TM_Invoice = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_GetLocationNamesResult
+	{
+		
+		private string _FromLoc;
+		
+		private string _FromState;
+		
+		private string _ToLoc;
+		
+		private string _ToState;
+		
+		public INT_GetLocationNamesResult()
+		{
+		}
+		
+		[Column(Storage="_FromLoc", DbType="VarChar(50)")]
+		public string FromLoc
+		{
+			get
+			{
+				return this._FromLoc;
+			}
+			set
+			{
+				if ((this._FromLoc != value))
+				{
+					this._FromLoc = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FromState", DbType="VarChar(5)")]
+		public string FromState
+		{
+			get
+			{
+				return this._FromState;
+			}
+			set
+			{
+				if ((this._FromState != value))
+				{
+					this._FromState = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ToLoc", DbType="VarChar(50)")]
+		public string ToLoc
+		{
+			get
+			{
+				return this._ToLoc;
+			}
+			set
+			{
+				if ((this._ToLoc != value))
+				{
+					this._ToLoc = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ToState", DbType="VarChar(5)")]
+		public string ToState
+		{
+			get
+			{
+				return this._ToState;
+			}
+			set
+			{
+				if ((this._ToState != value))
+				{
+					this._ToState = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_GetShelfLocationNamesResult
+	{
+		
+		private string _FromLoc;
+		
+		private string _FromShelf;
+		
+		private string _ToLoc;
+		
+		private string _ToShelf;
+		
+		public INT_GetShelfLocationNamesResult()
+		{
+		}
+		
+		[Column(Storage="_FromLoc", DbType="VarChar(50)")]
+		public string FromLoc
+		{
+			get
+			{
+				return this._FromLoc;
+			}
+			set
+			{
+				if ((this._FromLoc != value))
+				{
+					this._FromLoc = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FromShelf", DbType="VarChar(99)")]
+		public string FromShelf
+		{
+			get
+			{
+				return this._FromShelf;
+			}
+			set
+			{
+				if ((this._FromShelf != value))
+				{
+					this._FromShelf = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ToLoc", DbType="VarChar(50)")]
+		public string ToLoc
+		{
+			get
+			{
+				return this._ToLoc;
+			}
+			set
+			{
+				if ((this._ToLoc != value))
+				{
+					this._ToLoc = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ToShelf", DbType="VarChar(99)")]
+		public string ToShelf
+		{
+			get
+			{
+				return this._ToShelf;
+			}
+			set
+			{
+				if ((this._ToShelf != value))
+				{
+					this._ToShelf = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_MonthlyFiguresResult
+	{
+		
+		private System.Nullable<int> _CustID;
+		
+		private string _CUst;
+		
+		private System.Nullable<int> _LocID;
+		
+		private string _Loc;
+		
+		private string _LocSuburb;
+		
+		private string _PartNo;
+		
+		private string _SerialNo;
+		
+		private System.Nullable<short> _Quantity;
+		
+		private System.Nullable<System.DateTime> _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		private System.Nullable<decimal> _ItemPrice;
+		
+		private System.Nullable<decimal> _ItemCost;
+		
+		private System.Nullable<byte> _CompanyNum;
+		
+		private string _CompanyID;
+		
+		private string _ContractType;
+		
+		private string _LocationName;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _Address3;
+		
+		private string _City;
+		
+		private string _State;
+		
+		private string _Postcode;
+		
+		private string _ServiceTypeID;
+		
+		private string _AccMgr;
+		
+		private string _Rep;
+		
+		private string _CE;
+		
+		private string _ContractID;
+		
+		private System.Nullable<System.DateTime> _InvFrom;
+		
+		private System.Nullable<System.DateTime> _InvTo;
+		
+		private System.Nullable<decimal> _Billed;
+		
+		private System.Nullable<decimal> _CostToInt;
+		
+		private string _VariationText;
+		
+		private System.Nullable<int> _ContractItemID;
+		
+		private string _Phone;
+		
+		private System.Nullable<bool> _Merged;
+		
+		private System.Nullable<byte> _FromCompanyNum;
+		
+		private System.Nullable<int> _RevenueCategory;
+		
+		private System.Nullable<int> _OldContractID;
+		
+		private System.Nullable<System.DateTime> _OriginalStartDate;
+		
+		private string _ContractLocation;
+		
+		private string _ServiceLevelDescription;
+		
+		private System.Nullable<byte> _ResponseTime;
+		
+		private string _CoverageLimits;
+		
+		public INT_MonthlyFiguresResult()
+		{
+		}
+		
+		[Column(Storage="_CustID", DbType="Int")]
+		public System.Nullable<int> CustID
+		{
+			get
+			{
+				return this._CustID;
+			}
+			set
+			{
+				if ((this._CustID != value))
+				{
+					this._CustID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CUst", DbType="VarChar(80)")]
+		public string CUst
+		{
+			get
+			{
+				return this._CUst;
+			}
+			set
+			{
+				if ((this._CUst != value))
+				{
+					this._CUst = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LocID", DbType="Int")]
+		public System.Nullable<int> LocID
+		{
+			get
+			{
+				return this._LocID;
+			}
+			set
+			{
+				if ((this._LocID != value))
+				{
+					this._LocID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Loc", DbType="VarChar(80)")]
+		public string Loc
+		{
+			get
+			{
+				return this._Loc;
+			}
+			set
+			{
+				if ((this._Loc != value))
+				{
+					this._Loc = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LocSuburb", DbType="VarChar(25)")]
+		public string LocSuburb
+		{
+			get
+			{
+				return this._LocSuburb;
+			}
+			set
+			{
+				if ((this._LocSuburb != value))
+				{
+					this._LocSuburb = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PartNo", DbType="VarChar(35)")]
+		public string PartNo
+		{
+			get
+			{
+				return this._PartNo;
+			}
+			set
+			{
+				if ((this._PartNo != value))
+				{
+					this._PartNo = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SerialNo", DbType="VarChar(64)")]
+		public string SerialNo
+		{
+			get
+			{
+				return this._SerialNo;
+			}
+			set
+			{
+				if ((this._SerialNo != value))
+				{
+					this._SerialNo = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Quantity", DbType="SmallInt")]
+		public System.Nullable<short> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_StartDate", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this._StartDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_EndDate", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this._EndDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemPrice", DbType="Money")]
+		public System.Nullable<decimal> ItemPrice
+		{
+			get
+			{
+				return this._ItemPrice;
+			}
+			set
+			{
+				if ((this._ItemPrice != value))
+				{
+					this._ItemPrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCost", DbType="Money")]
+		public System.Nullable<decimal> ItemCost
+		{
+			get
+			{
+				return this._ItemCost;
+			}
+			set
+			{
+				if ((this._ItemCost != value))
+				{
+					this._ItemCost = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyNum", DbType="TinyInt")]
+		public System.Nullable<byte> CompanyNum
+		{
+			get
+			{
+				return this._CompanyNum;
+			}
+			set
+			{
+				if ((this._CompanyNum != value))
+				{
+					this._CompanyNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyID", DbType="VarChar(5)")]
+		public string CompanyID
+		{
+			get
+			{
+				return this._CompanyID;
+			}
+			set
+			{
+				if ((this._CompanyID != value))
+				{
+					this._CompanyID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ContractType", DbType="VarChar(32)")]
+		public string ContractType
+		{
+			get
+			{
+				return this._ContractType;
+			}
+			set
+			{
+				if ((this._ContractType != value))
+				{
+					this._ContractType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LocationName", DbType="VarChar(80)")]
+		public string LocationName
+		{
+			get
+			{
+				return this._LocationName;
+			}
+			set
+			{
+				if ((this._LocationName != value))
+				{
+					this._LocationName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address1", DbType="VarChar(50)")]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address2", DbType="VarChar(50)")]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address3", DbType="VarChar(50)")]
+		public string Address3
+		{
+			get
+			{
+				return this._Address3;
+			}
+			set
+			{
+				if ((this._Address3 != value))
+				{
+					this._Address3 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_City", DbType="VarChar(25)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_State", DbType="VarChar(5)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Postcode", DbType="VarChar(6)")]
+		public string Postcode
+		{
+			get
+			{
+				return this._Postcode;
+			}
+			set
+			{
+				if ((this._Postcode != value))
+				{
+					this._Postcode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ServiceTypeID", DbType="VarChar(32)")]
+		public string ServiceTypeID
+		{
+			get
+			{
+				return this._ServiceTypeID;
+			}
+			set
+			{
+				if ((this._ServiceTypeID != value))
+				{
+					this._ServiceTypeID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccMgr", DbType="VarChar(25)")]
+		public string AccMgr
+		{
+			get
+			{
+				return this._AccMgr;
+			}
+			set
+			{
+				if ((this._AccMgr != value))
+				{
+					this._AccMgr = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Rep", DbType="VarChar(25)")]
+		public string Rep
+		{
+			get
+			{
+				return this._Rep;
+			}
+			set
+			{
+				if ((this._Rep != value))
+				{
+					this._Rep = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CE", DbType="Char(25)")]
+		public string CE
+		{
+			get
+			{
+				return this._CE;
+			}
+			set
+			{
+				if ((this._CE != value))
+				{
+					this._CE = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ContractID", DbType="VarChar(255)")]
+		public string ContractID
+		{
+			get
+			{
+				return this._ContractID;
+			}
+			set
+			{
+				if ((this._ContractID != value))
+				{
+					this._ContractID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvFrom", DbType="DateTime")]
+		public System.Nullable<System.DateTime> InvFrom
+		{
+			get
+			{
+				return this._InvFrom;
+			}
+			set
+			{
+				if ((this._InvFrom != value))
+				{
+					this._InvFrom = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvTo", DbType="DateTime")]
+		public System.Nullable<System.DateTime> InvTo
+		{
+			get
+			{
+				return this._InvTo;
+			}
+			set
+			{
+				if ((this._InvTo != value))
+				{
+					this._InvTo = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Billed", DbType="Money")]
+		public System.Nullable<decimal> Billed
+		{
+			get
+			{
+				return this._Billed;
+			}
+			set
+			{
+				if ((this._Billed != value))
+				{
+					this._Billed = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CostToInt", DbType="Money")]
+		public System.Nullable<decimal> CostToInt
+		{
+			get
+			{
+				return this._CostToInt;
+			}
+			set
+			{
+				if ((this._CostToInt != value))
+				{
+					this._CostToInt = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_VariationText", DbType="VarChar(256)")]
+		public string VariationText
+		{
+			get
+			{
+				return this._VariationText;
+			}
+			set
+			{
+				if ((this._VariationText != value))
+				{
+					this._VariationText = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ContractItemID", DbType="Int")]
+		public System.Nullable<int> ContractItemID
+		{
+			get
+			{
+				return this._ContractItemID;
+			}
+			set
+			{
+				if ((this._ContractItemID != value))
+				{
+					this._ContractItemID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Phone", DbType="VarChar(20)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Merged", DbType="Bit")]
+		public System.Nullable<bool> Merged
+		{
+			get
+			{
+				return this._Merged;
+			}
+			set
+			{
+				if ((this._Merged != value))
+				{
+					this._Merged = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FromCompanyNum", DbType="TinyInt")]
+		public System.Nullable<byte> FromCompanyNum
+		{
+			get
+			{
+				return this._FromCompanyNum;
+			}
+			set
+			{
+				if ((this._FromCompanyNum != value))
+				{
+					this._FromCompanyNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevenueCategory", DbType="Int")]
+		public System.Nullable<int> RevenueCategory
+		{
+			get
+			{
+				return this._RevenueCategory;
+			}
+			set
+			{
+				if ((this._RevenueCategory != value))
+				{
+					this._RevenueCategory = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OldContractID", DbType="Int")]
+		public System.Nullable<int> OldContractID
+		{
+			get
+			{
+				return this._OldContractID;
+			}
+			set
+			{
+				if ((this._OldContractID != value))
+				{
+					this._OldContractID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OriginalStartDate", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> OriginalStartDate
+		{
+			get
+			{
+				return this._OriginalStartDate;
+			}
+			set
+			{
+				if ((this._OriginalStartDate != value))
+				{
+					this._OriginalStartDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ContractLocation", DbType="VarChar(5)")]
+		public string ContractLocation
+		{
+			get
+			{
+				return this._ContractLocation;
+			}
+			set
+			{
+				if ((this._ContractLocation != value))
+				{
+					this._ContractLocation = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ServiceLevelDescription", DbType="VarChar(12)")]
+		public string ServiceLevelDescription
+		{
+			get
+			{
+				return this._ServiceLevelDescription;
+			}
+			set
+			{
+				if ((this._ServiceLevelDescription != value))
+				{
+					this._ServiceLevelDescription = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ResponseTime", DbType="TinyInt")]
+		public System.Nullable<byte> ResponseTime
+		{
+			get
+			{
+				return this._ResponseTime;
+			}
+			set
+			{
+				if ((this._ResponseTime != value))
+				{
+					this._ResponseTime = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CoverageLimits", DbType="VarChar(32)")]
+		public string CoverageLimits
+		{
+			get
+			{
+				return this._CoverageLimits;
+			}
+			set
+			{
+				if ((this._CoverageLimits != value))
+				{
+					this._CoverageLimits = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_MonthlyFigures_CUSTResult
+	{
+		
+		private System.Nullable<int> _CustID;
+		
+		private string _CUst;
+		
+		private System.Nullable<int> _LocID;
+		
+		private string _Loc;
+		
+		private string _LocSuburb;
+		
+		private string _PartNo;
+		
+		private string _SerialNo;
+		
+		private System.Nullable<short> _Quantity;
+		
+		private System.Nullable<System.DateTime> _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		private System.Nullable<decimal> _ItemPrice;
+		
+		private System.Nullable<decimal> _ItemCost;
+		
+		private System.Nullable<byte> _CompanyNum;
+		
+		private string _CompanyID;
+		
+		private string _ContractType;
+		
+		private string _LocationName;
+		
+		private string _Address1;
+		
+		private string _Address2;
+		
+		private string _Address3;
+		
+		private string _City;
+		
+		private string _State;
+		
+		private string _Postcode;
+		
+		private string _ServiceTypeID;
+		
+		private string _AccMgr;
+		
+		private string _Rep;
+		
+		private string _CE;
+		
+		private string _ContractID;
+		
+		private System.Nullable<System.DateTime> _InvFrom;
+		
+		private System.Nullable<System.DateTime> _InvTo;
+		
+		private System.Nullable<decimal> _Billed;
+		
+		private System.Nullable<decimal> _CostToInt;
+		
+		private string _VariationText;
+		
+		private System.Nullable<int> _ContractItemID;
+		
+		private string _Phone;
+		
+		public INT_MonthlyFigures_CUSTResult()
+		{
+		}
+		
+		[Column(Storage="_CustID", DbType="Int")]
+		public System.Nullable<int> CustID
+		{
+			get
+			{
+				return this._CustID;
+			}
+			set
+			{
+				if ((this._CustID != value))
+				{
+					this._CustID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CUst", DbType="VarChar(80)")]
+		public string CUst
+		{
+			get
+			{
+				return this._CUst;
+			}
+			set
+			{
+				if ((this._CUst != value))
+				{
+					this._CUst = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LocID", DbType="Int")]
+		public System.Nullable<int> LocID
+		{
+			get
+			{
+				return this._LocID;
+			}
+			set
+			{
+				if ((this._LocID != value))
+				{
+					this._LocID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Loc", DbType="VarChar(80)")]
+		public string Loc
+		{
+			get
+			{
+				return this._Loc;
+			}
+			set
+			{
+				if ((this._Loc != value))
+				{
+					this._Loc = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LocSuburb", DbType="VarChar(25)")]
+		public string LocSuburb
+		{
+			get
+			{
+				return this._LocSuburb;
+			}
+			set
+			{
+				if ((this._LocSuburb != value))
+				{
+					this._LocSuburb = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PartNo", DbType="VarChar(35)")]
+		public string PartNo
+		{
+			get
+			{
+				return this._PartNo;
+			}
+			set
+			{
+				if ((this._PartNo != value))
+				{
+					this._PartNo = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SerialNo", DbType="VarChar(64)")]
+		public string SerialNo
+		{
+			get
+			{
+				return this._SerialNo;
+			}
+			set
+			{
+				if ((this._SerialNo != value))
+				{
+					this._SerialNo = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Quantity", DbType="SmallInt")]
+		public System.Nullable<short> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_StartDate", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this._StartDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_EndDate", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this._EndDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemPrice", DbType="Money")]
+		public System.Nullable<decimal> ItemPrice
+		{
+			get
+			{
+				return this._ItemPrice;
+			}
+			set
+			{
+				if ((this._ItemPrice != value))
+				{
+					this._ItemPrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCost", DbType="Money")]
+		public System.Nullable<decimal> ItemCost
+		{
+			get
+			{
+				return this._ItemCost;
+			}
+			set
+			{
+				if ((this._ItemCost != value))
+				{
+					this._ItemCost = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyNum", DbType="TinyInt")]
+		public System.Nullable<byte> CompanyNum
+		{
+			get
+			{
+				return this._CompanyNum;
+			}
+			set
+			{
+				if ((this._CompanyNum != value))
+				{
+					this._CompanyNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyID", DbType="VarChar(5)")]
+		public string CompanyID
+		{
+			get
+			{
+				return this._CompanyID;
+			}
+			set
+			{
+				if ((this._CompanyID != value))
+				{
+					this._CompanyID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ContractType", DbType="VarChar(32)")]
+		public string ContractType
+		{
+			get
+			{
+				return this._ContractType;
+			}
+			set
+			{
+				if ((this._ContractType != value))
+				{
+					this._ContractType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LocationName", DbType="VarChar(80)")]
+		public string LocationName
+		{
+			get
+			{
+				return this._LocationName;
+			}
+			set
+			{
+				if ((this._LocationName != value))
+				{
+					this._LocationName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address1", DbType="VarChar(50)")]
+		public string Address1
+		{
+			get
+			{
+				return this._Address1;
+			}
+			set
+			{
+				if ((this._Address1 != value))
+				{
+					this._Address1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address2", DbType="VarChar(50)")]
+		public string Address2
+		{
+			get
+			{
+				return this._Address2;
+			}
+			set
+			{
+				if ((this._Address2 != value))
+				{
+					this._Address2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Address3", DbType="VarChar(50)")]
+		public string Address3
+		{
+			get
+			{
+				return this._Address3;
+			}
+			set
+			{
+				if ((this._Address3 != value))
+				{
+					this._Address3 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_City", DbType="VarChar(25)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_State", DbType="VarChar(5)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Postcode", DbType="VarChar(6)")]
+		public string Postcode
+		{
+			get
+			{
+				return this._Postcode;
+			}
+			set
+			{
+				if ((this._Postcode != value))
+				{
+					this._Postcode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ServiceTypeID", DbType="VarChar(32)")]
+		public string ServiceTypeID
+		{
+			get
+			{
+				return this._ServiceTypeID;
+			}
+			set
+			{
+				if ((this._ServiceTypeID != value))
+				{
+					this._ServiceTypeID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccMgr", DbType="VarChar(25)")]
+		public string AccMgr
+		{
+			get
+			{
+				return this._AccMgr;
+			}
+			set
+			{
+				if ((this._AccMgr != value))
+				{
+					this._AccMgr = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Rep", DbType="VarChar(25)")]
+		public string Rep
+		{
+			get
+			{
+				return this._Rep;
+			}
+			set
+			{
+				if ((this._Rep != value))
+				{
+					this._Rep = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CE", DbType="Char(25)")]
+		public string CE
+		{
+			get
+			{
+				return this._CE;
+			}
+			set
+			{
+				if ((this._CE != value))
+				{
+					this._CE = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ContractID", DbType="VarChar(255)")]
+		public string ContractID
+		{
+			get
+			{
+				return this._ContractID;
+			}
+			set
+			{
+				if ((this._ContractID != value))
+				{
+					this._ContractID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvFrom", DbType="DateTime")]
+		public System.Nullable<System.DateTime> InvFrom
+		{
+			get
+			{
+				return this._InvFrom;
+			}
+			set
+			{
+				if ((this._InvFrom != value))
+				{
+					this._InvFrom = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvTo", DbType="DateTime")]
+		public System.Nullable<System.DateTime> InvTo
+		{
+			get
+			{
+				return this._InvTo;
+			}
+			set
+			{
+				if ((this._InvTo != value))
+				{
+					this._InvTo = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Billed", DbType="Money")]
+		public System.Nullable<decimal> Billed
+		{
+			get
+			{
+				return this._Billed;
+			}
+			set
+			{
+				if ((this._Billed != value))
+				{
+					this._Billed = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CostToInt", DbType="Money")]
+		public System.Nullable<decimal> CostToInt
+		{
+			get
+			{
+				return this._CostToInt;
+			}
+			set
+			{
+				if ((this._CostToInt != value))
+				{
+					this._CostToInt = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_VariationText", DbType="VarChar(256)")]
+		public string VariationText
+		{
+			get
+			{
+				return this._VariationText;
+			}
+			set
+			{
+				if ((this._VariationText != value))
+				{
+					this._VariationText = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ContractItemID", DbType="Int")]
+		public System.Nullable<int> ContractItemID
+		{
+			get
+			{
+				return this._ContractItemID;
+			}
+			set
+			{
+				if ((this._ContractItemID != value))
+				{
+					this._ContractItemID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Phone", DbType="VarChar(20)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_PDFInvoicesResult
+	{
+		
+		private System.Nullable<int> _OrdNum;
+		
+		private System.Nullable<byte> _DefaultInvStyle;
+		
+		private System.Nullable<int> _HasProRata;
+		
+		private string _PDFInvoiceEmail;
+		
+		private string _PDFInvoicePath;
+		
+		private string _InvoiceDate;
+		
+		private string _RM;
+		
+		private string _EmailAddress;
+		
+		private string _OfficePhone;
+		
+		private string _RemittanceEmail;
+		
+		private string _NationalCreditManager;
+		
+		private string _CreditPhone;
+		
+		public INT_PDFInvoicesResult()
+		{
+		}
+		
+		[Column(Storage="_OrdNum", DbType="Int")]
+		public System.Nullable<int> OrdNum
+		{
+			get
+			{
+				return this._OrdNum;
+			}
+			set
+			{
+				if ((this._OrdNum != value))
+				{
+					this._OrdNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DefaultInvStyle", DbType="TinyInt")]
+		public System.Nullable<byte> DefaultInvStyle
+		{
+			get
+			{
+				return this._DefaultInvStyle;
+			}
+			set
+			{
+				if ((this._DefaultInvStyle != value))
+				{
+					this._DefaultInvStyle = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_HasProRata", DbType="Int")]
+		public System.Nullable<int> HasProRata
+		{
+			get
+			{
+				return this._HasProRata;
+			}
+			set
+			{
+				if ((this._HasProRata != value))
+				{
+					this._HasProRata = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PDFInvoiceEmail", DbType="VarChar(1000)")]
+		public string PDFInvoiceEmail
+		{
+			get
+			{
+				return this._PDFInvoiceEmail;
+			}
+			set
+			{
+				if ((this._PDFInvoiceEmail != value))
+				{
+					this._PDFInvoiceEmail = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PDFInvoicePath", DbType="VarChar(114)")]
+		public string PDFInvoicePath
+		{
+			get
+			{
+				return this._PDFInvoicePath;
+			}
+			set
+			{
+				if ((this._PDFInvoicePath != value))
+				{
+					this._PDFInvoicePath = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceDate", DbType="VarChar(10)")]
+		public string InvoiceDate
+		{
+			get
+			{
+				return this._InvoiceDate;
+			}
+			set
+			{
+				if ((this._InvoiceDate != value))
+				{
+					this._InvoiceDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RM", DbType="VarChar(51)")]
+		public string RM
+		{
+			get
+			{
+				return this._RM;
+			}
+			set
+			{
+				if ((this._RM != value))
+				{
+					this._RM = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_EmailAddress", DbType="VarChar(100)")]
+		public string EmailAddress
+		{
+			get
+			{
+				return this._EmailAddress;
+			}
+			set
+			{
+				if ((this._EmailAddress != value))
+				{
+					this._EmailAddress = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OfficePhone", DbType="VarChar(24)")]
+		public string OfficePhone
+		{
+			get
+			{
+				return this._OfficePhone;
+			}
+			set
+			{
+				if ((this._OfficePhone != value))
+				{
+					this._OfficePhone = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittanceEmail", DbType="VarChar(100)")]
+		public string RemittanceEmail
+		{
+			get
+			{
+				return this._RemittanceEmail;
+			}
+			set
+			{
+				if ((this._RemittanceEmail != value))
+				{
+					this._RemittanceEmail = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NationalCreditManager", DbType="VarChar(51)")]
+		public string NationalCreditManager
+		{
+			get
+			{
+				return this._NationalCreditManager;
+			}
+			set
+			{
+				if ((this._NationalCreditManager != value))
+				{
+					this._NationalCreditManager = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditPhone", DbType="VarChar(50)")]
+		public string CreditPhone
+		{
+			get
+			{
+				return this._CreditPhone;
+			}
+			set
+			{
+				if ((this._CreditPhone != value))
+				{
+					this._CreditPhone = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_PDFSingleInvoiceResult1
+	{
+		
+		private System.Nullable<bool> _INT_TM_Invoice;
+		
+		private string _PDFInvoiceEmail;
+		
+		private string _PDFInvoicePath;
+		
+		private string _InvoiceDate;
+		
+		private string _RM;
+		
+		private string _EmailAddress;
+		
+		private string _OfficePhone;
+		
+		private string _RemittanceEmail;
+		
+		private System.Nullable<decimal> _InvTotal;
+		
+		private string _NationalCreditManager;
+		
+		private string _CreditPhone;
+		
+		public INT_PDFSingleInvoiceResult1()
+		{
+		}
+		
+		[Column(Storage="_INT_TM_Invoice", DbType="Bit")]
+		public System.Nullable<bool> INT_TM_Invoice
+		{
+			get
+			{
+				return this._INT_TM_Invoice;
+			}
+			set
+			{
+				if ((this._INT_TM_Invoice != value))
+				{
+					this._INT_TM_Invoice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PDFInvoiceEmail", DbType="VarChar(1000)")]
+		public string PDFInvoiceEmail
+		{
+			get
+			{
+				return this._PDFInvoiceEmail;
+			}
+			set
+			{
+				if ((this._PDFInvoiceEmail != value))
+				{
+					this._PDFInvoiceEmail = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PDFInvoicePath", DbType="VarChar(114)")]
+		public string PDFInvoicePath
+		{
+			get
+			{
+				return this._PDFInvoicePath;
+			}
+			set
+			{
+				if ((this._PDFInvoicePath != value))
+				{
+					this._PDFInvoicePath = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceDate", DbType="VarChar(10)")]
+		public string InvoiceDate
+		{
+			get
+			{
+				return this._InvoiceDate;
+			}
+			set
+			{
+				if ((this._InvoiceDate != value))
+				{
+					this._InvoiceDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RM", DbType="VarChar(51)")]
+		public string RM
+		{
+			get
+			{
+				return this._RM;
+			}
+			set
+			{
+				if ((this._RM != value))
+				{
+					this._RM = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_EmailAddress", DbType="VarChar(100)")]
+		public string EmailAddress
+		{
+			get
+			{
+				return this._EmailAddress;
+			}
+			set
+			{
+				if ((this._EmailAddress != value))
+				{
+					this._EmailAddress = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OfficePhone", DbType="VarChar(24)")]
+		public string OfficePhone
+		{
+			get
+			{
+				return this._OfficePhone;
+			}
+			set
+			{
+				if ((this._OfficePhone != value))
+				{
+					this._OfficePhone = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittanceEmail", DbType="VarChar(100)")]
+		public string RemittanceEmail
+		{
+			get
+			{
+				return this._RemittanceEmail;
+			}
+			set
+			{
+				if ((this._RemittanceEmail != value))
+				{
+					this._RemittanceEmail = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvTotal", DbType="Money")]
+		public System.Nullable<decimal> InvTotal
+		{
+			get
+			{
+				return this._InvTotal;
+			}
+			set
+			{
+				if ((this._InvTotal != value))
+				{
+					this._InvTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NationalCreditManager", DbType="VarChar(51)")]
+		public string NationalCreditManager
+		{
+			get
+			{
+				return this._NationalCreditManager;
+			}
+			set
+			{
+				if ((this._NationalCreditManager != value))
+				{
+					this._NationalCreditManager = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditPhone", DbType="VarChar(50)")]
+		public string CreditPhone
+		{
+			get
+			{
+				return this._CreditPhone;
+			}
+			set
+			{
+				if ((this._CreditPhone != value))
+				{
+					this._CreditPhone = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_PDFSingleInvoiceResult2
+	{
+		
+		private System.Nullable<bool> _INT_TM_Invoice;
+		
+		private string _PDFInvoiceEmail;
+		
+		private string _PDFInvoicePath;
+		
+		private string _RM;
+		
+		private string _EmailAddress;
+		
+		private string _OfficePhone;
+		
+		private string _RemittanceEmail;
+		
+		private System.Nullable<decimal> _InvTotal;
+		
+		private string _NationalCreditManager;
+		
+		private string _CreditPhone;
+		
+		public INT_PDFSingleInvoiceResult2()
+		{
+		}
+		
+		[Column(Storage="_INT_TM_Invoice", DbType="Bit")]
+		public System.Nullable<bool> INT_TM_Invoice
+		{
+			get
+			{
+				return this._INT_TM_Invoice;
+			}
+			set
+			{
+				if ((this._INT_TM_Invoice != value))
+				{
+					this._INT_TM_Invoice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PDFInvoiceEmail", DbType="VarChar(1000)")]
+		public string PDFInvoiceEmail
+		{
+			get
+			{
+				return this._PDFInvoiceEmail;
+			}
+			set
+			{
+				if ((this._PDFInvoiceEmail != value))
+				{
+					this._PDFInvoiceEmail = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PDFInvoicePath", DbType="VarChar(114)")]
+		public string PDFInvoicePath
+		{
+			get
+			{
+				return this._PDFInvoicePath;
+			}
+			set
+			{
+				if ((this._PDFInvoicePath != value))
+				{
+					this._PDFInvoicePath = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RM", DbType="VarChar(51)")]
+		public string RM
+		{
+			get
+			{
+				return this._RM;
+			}
+			set
+			{
+				if ((this._RM != value))
+				{
+					this._RM = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_EmailAddress", DbType="VarChar(100)")]
+		public string EmailAddress
+		{
+			get
+			{
+				return this._EmailAddress;
+			}
+			set
+			{
+				if ((this._EmailAddress != value))
+				{
+					this._EmailAddress = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OfficePhone", DbType="VarChar(24)")]
+		public string OfficePhone
+		{
+			get
+			{
+				return this._OfficePhone;
+			}
+			set
+			{
+				if ((this._OfficePhone != value))
+				{
+					this._OfficePhone = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittanceEmail", DbType="VarChar(100)")]
+		public string RemittanceEmail
+		{
+			get
+			{
+				return this._RemittanceEmail;
+			}
+			set
+			{
+				if ((this._RemittanceEmail != value))
+				{
+					this._RemittanceEmail = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvTotal", DbType="Money")]
+		public System.Nullable<decimal> InvTotal
+		{
+			get
+			{
+				return this._InvTotal;
+			}
+			set
+			{
+				if ((this._InvTotal != value))
+				{
+					this._InvTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NationalCreditManager", DbType="VarChar(51)")]
+		public string NationalCreditManager
+		{
+			get
+			{
+				return this._NationalCreditManager;
+			}
+			set
+			{
+				if ((this._NationalCreditManager != value))
+				{
+					this._NationalCreditManager = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreditPhone", DbType="VarChar(50)")]
+		public string CreditPhone
+		{
+			get
+			{
+				return this._CreditPhone;
+			}
+			set
+			{
+				if ((this._CreditPhone != value))
+				{
+					this._CreditPhone = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_Snapshot_RevenueGrowthReportUsingSnapshotResult
+	{
+		
+		private System.Nullable<int> _SnapshotID;
+		
+		private System.Nullable<System.DateTime> _SnapShotDate;
+		
+		private System.Nullable<byte> _CompanyNum;
+		
+		private string _Company;
+		
+		private string _State;
+		
+		private System.Nullable<int> _SalesTeam;
+		
+		private string _SalesTeamName;
+		
+		private System.Nullable<decimal> _MonthlyTarget;
+		
+		private System.Nullable<decimal> _QuarterlyTarget;
+		
+		private System.Nullable<decimal> _YTDTarget;
+		
+		private string _SalesRep;
+		
+		private string _SalesRepName;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _CustomerName;
+		
+		private string _RM;
+		
+		private string _RMName;
+		
+		private System.Nullable<decimal> _LastSnapshotTotal;
+		
+		private System.Nullable<decimal> _StateLastSnapshotTotal;
+		
+		private System.Nullable<decimal> _CompanyLastSnapshotTotal;
+		
+		private System.Nullable<decimal> _QuarterFirstSnapshotTotal;
+		
+		private System.Nullable<decimal> _StateQuarterFirstSnapshotTotal;
+		
+		private System.Nullable<decimal> _CompanyQuarterFirstSnapshotTotal;
+		
+		private System.Nullable<decimal> _YTDFirstSnapshotTotal;
+		
+		private System.Nullable<decimal> _StateYTDFirstSnapshotTotal;
+		
+		private System.Nullable<decimal> _CompanyYTDFirstSnapshotTotal;
+		
+		private System.Nullable<decimal> _MonthlyNonEndDateGrowth;
+		
+		private System.Nullable<decimal> _MonthlyEndDateGrowth;
+		
+		private System.Nullable<decimal> _QuarterlyNonEndDateGrowth;
+		
+		private System.Nullable<decimal> _QuarterlyEndDateGrowth;
+		
+		private System.Nullable<decimal> _YTDNonEndDateGrowth;
+		
+		private System.Nullable<decimal> _YTDEndDateGrowth;
+		
+		public INT_Snapshot_RevenueGrowthReportUsingSnapshotResult()
+		{
+		}
+		
+		[Column(Storage="_SnapshotID", DbType="Int")]
+		public System.Nullable<int> SnapshotID
+		{
+			get
+			{
+				return this._SnapshotID;
+			}
+			set
+			{
+				if ((this._SnapshotID != value))
+				{
+					this._SnapshotID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SnapShotDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SnapShotDate
+		{
+			get
+			{
+				return this._SnapShotDate;
+			}
+			set
+			{
+				if ((this._SnapShotDate != value))
+				{
+					this._SnapShotDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyNum", DbType="TinyInt")]
+		public System.Nullable<byte> CompanyNum
+		{
+			get
+			{
+				return this._CompanyNum;
+			}
+			set
+			{
+				if ((this._CompanyNum != value))
+				{
+					this._CompanyNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(55)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_State", DbType="VarChar(5)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SalesTeam", DbType="Int")]
+		public System.Nullable<int> SalesTeam
+		{
+			get
+			{
+				return this._SalesTeam;
+			}
+			set
+			{
+				if ((this._SalesTeam != value))
+				{
+					this._SalesTeam = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SalesTeamName", DbType="VarChar(50)")]
+		public string SalesTeamName
+		{
+			get
+			{
+				return this._SalesTeamName;
+			}
+			set
+			{
+				if ((this._SalesTeamName != value))
+				{
+					this._SalesTeamName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MonthlyTarget", DbType="Money")]
+		public System.Nullable<decimal> MonthlyTarget
+		{
+			get
+			{
+				return this._MonthlyTarget;
+			}
+			set
+			{
+				if ((this._MonthlyTarget != value))
+				{
+					this._MonthlyTarget = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_QuarterlyTarget", DbType="Money")]
+		public System.Nullable<decimal> QuarterlyTarget
+		{
+			get
+			{
+				return this._QuarterlyTarget;
+			}
+			set
+			{
+				if ((this._QuarterlyTarget != value))
+				{
+					this._QuarterlyTarget = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_YTDTarget", DbType="Money")]
+		public System.Nullable<decimal> YTDTarget
+		{
+			get
+			{
+				return this._YTDTarget;
+			}
+			set
+			{
+				if ((this._YTDTarget != value))
+				{
+					this._YTDTarget = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SalesRep", DbType="VarChar(25)")]
+		public string SalesRep
+		{
+			get
+			{
+				return this._SalesRep;
+			}
+			set
+			{
+				if ((this._SalesRep != value))
+				{
+					this._SalesRep = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SalesRepName", DbType="VarChar(51)")]
+		public string SalesRepName
+		{
+			get
+			{
+				return this._SalesRepName;
+			}
+			set
+			{
+				if ((this._SalesRepName != value))
+				{
+					this._SalesRepName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CustomerName", DbType="VarChar(80)")]
+		public string CustomerName
+		{
+			get
+			{
+				return this._CustomerName;
+			}
+			set
+			{
+				if ((this._CustomerName != value))
+				{
+					this._CustomerName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RM", DbType="VarChar(25)")]
+		public string RM
+		{
+			get
+			{
+				return this._RM;
+			}
+			set
+			{
+				if ((this._RM != value))
+				{
+					this._RM = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RMName", DbType="VarChar(51)")]
+		public string RMName
+		{
+			get
+			{
+				return this._RMName;
+			}
+			set
+			{
+				if ((this._RMName != value))
+				{
+					this._RMName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LastSnapshotTotal", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LastSnapshotTotal
+		{
+			get
+			{
+				return this._LastSnapshotTotal;
+			}
+			set
+			{
+				if ((this._LastSnapshotTotal != value))
+				{
+					this._LastSnapshotTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_StateLastSnapshotTotal", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> StateLastSnapshotTotal
+		{
+			get
+			{
+				return this._StateLastSnapshotTotal;
+			}
+			set
+			{
+				if ((this._StateLastSnapshotTotal != value))
+				{
+					this._StateLastSnapshotTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyLastSnapshotTotal", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> CompanyLastSnapshotTotal
+		{
+			get
+			{
+				return this._CompanyLastSnapshotTotal;
+			}
+			set
+			{
+				if ((this._CompanyLastSnapshotTotal != value))
+				{
+					this._CompanyLastSnapshotTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_QuarterFirstSnapshotTotal", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> QuarterFirstSnapshotTotal
+		{
+			get
+			{
+				return this._QuarterFirstSnapshotTotal;
+			}
+			set
+			{
+				if ((this._QuarterFirstSnapshotTotal != value))
+				{
+					this._QuarterFirstSnapshotTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_StateQuarterFirstSnapshotTotal", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> StateQuarterFirstSnapshotTotal
+		{
+			get
+			{
+				return this._StateQuarterFirstSnapshotTotal;
+			}
+			set
+			{
+				if ((this._StateQuarterFirstSnapshotTotal != value))
+				{
+					this._StateQuarterFirstSnapshotTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyQuarterFirstSnapshotTotal", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> CompanyQuarterFirstSnapshotTotal
+		{
+			get
+			{
+				return this._CompanyQuarterFirstSnapshotTotal;
+			}
+			set
+			{
+				if ((this._CompanyQuarterFirstSnapshotTotal != value))
+				{
+					this._CompanyQuarterFirstSnapshotTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_YTDFirstSnapshotTotal", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> YTDFirstSnapshotTotal
+		{
+			get
+			{
+				return this._YTDFirstSnapshotTotal;
+			}
+			set
+			{
+				if ((this._YTDFirstSnapshotTotal != value))
+				{
+					this._YTDFirstSnapshotTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_StateYTDFirstSnapshotTotal", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> StateYTDFirstSnapshotTotal
+		{
+			get
+			{
+				return this._StateYTDFirstSnapshotTotal;
+			}
+			set
+			{
+				if ((this._StateYTDFirstSnapshotTotal != value))
+				{
+					this._StateYTDFirstSnapshotTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyYTDFirstSnapshotTotal", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> CompanyYTDFirstSnapshotTotal
+		{
+			get
+			{
+				return this._CompanyYTDFirstSnapshotTotal;
+			}
+			set
+			{
+				if ((this._CompanyYTDFirstSnapshotTotal != value))
+				{
+					this._CompanyYTDFirstSnapshotTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MonthlyNonEndDateGrowth", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> MonthlyNonEndDateGrowth
+		{
+			get
+			{
+				return this._MonthlyNonEndDateGrowth;
+			}
+			set
+			{
+				if ((this._MonthlyNonEndDateGrowth != value))
+				{
+					this._MonthlyNonEndDateGrowth = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MonthlyEndDateGrowth", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> MonthlyEndDateGrowth
+		{
+			get
+			{
+				return this._MonthlyEndDateGrowth;
+			}
+			set
+			{
+				if ((this._MonthlyEndDateGrowth != value))
+				{
+					this._MonthlyEndDateGrowth = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_QuarterlyNonEndDateGrowth", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> QuarterlyNonEndDateGrowth
+		{
+			get
+			{
+				return this._QuarterlyNonEndDateGrowth;
+			}
+			set
+			{
+				if ((this._QuarterlyNonEndDateGrowth != value))
+				{
+					this._QuarterlyNonEndDateGrowth = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_QuarterlyEndDateGrowth", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> QuarterlyEndDateGrowth
+		{
+			get
+			{
+				return this._QuarterlyEndDateGrowth;
+			}
+			set
+			{
+				if ((this._QuarterlyEndDateGrowth != value))
+				{
+					this._QuarterlyEndDateGrowth = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_YTDNonEndDateGrowth", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> YTDNonEndDateGrowth
+		{
+			get
+			{
+				return this._YTDNonEndDateGrowth;
+			}
+			set
+			{
+				if ((this._YTDNonEndDateGrowth != value))
+				{
+					this._YTDNonEndDateGrowth = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_YTDEndDateGrowth", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> YTDEndDateGrowth
+		{
+			get
+			{
+				return this._YTDEndDateGrowth;
+			}
+			set
+			{
+				if ((this._YTDEndDateGrowth != value))
+				{
+					this._YTDEndDateGrowth = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_SnapshotComparisonReportResult
+	{
+		
+		private string _CompanyID;
+		
+		private System.Nullable<byte> _CompanyNum;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _Company;
+		
+		private string _Message;
+		
+		private System.Nullable<int> _ItemCount;
+		
+		private System.Nullable<decimal> _LineTotal;
+		
+		private System.Nullable<decimal> _LineTotalDiff;
+		
+		private System.Nullable<decimal> _ItemsAdded;
+		
+		private System.Nullable<decimal> _LineTotalAdded;
+		
+		private System.Nullable<System.DateTime> _CurrentDate;
+		
+		private System.Nullable<decimal> _ItemCount2;
+		
+		private System.Nullable<decimal> _LineTotal2;
+		
+		private System.Nullable<decimal> _ItemsDeleted;
+		
+		private System.Nullable<decimal> _LineTotalDeleted;
+		
+		private System.Nullable<System.DateTime> _SnapShotDate;
+		
+		public INT_SnapshotComparisonReportResult()
+		{
+		}
+		
+		[Column(Storage="_CompanyID", DbType="VarChar(5)")]
+		public string CompanyID
+		{
+			get
+			{
+				return this._CompanyID;
+			}
+			set
+			{
+				if ((this._CompanyID != value))
+				{
+					this._CompanyID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CompanyNum", DbType="TinyInt")]
+		public System.Nullable<byte> CompanyNum
+		{
+			get
+			{
+				return this._CompanyNum;
+			}
+			set
+			{
+				if ((this._CompanyNum != value))
+				{
+					this._CompanyNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(80)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Message", DbType="VarChar(9)")]
+		public string Message
+		{
+			get
+			{
+				return this._Message;
+			}
+			set
+			{
+				if ((this._Message != value))
+				{
+					this._Message = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount", DbType="Int")]
+		public System.Nullable<int> ItemCount
+		{
+			get
+			{
+				return this._ItemCount;
+			}
+			set
+			{
+				if ((this._ItemCount != value))
+				{
+					this._ItemCount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal", DbType="Money")]
+		public System.Nullable<decimal> LineTotal
+		{
+			get
+			{
+				return this._LineTotal;
+			}
+			set
+			{
+				if ((this._LineTotal != value))
+				{
+					this._LineTotal = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDiff", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDiff
+		{
+			get
+			{
+				return this._LineTotalDiff;
+			}
+			set
+			{
+				if ((this._LineTotalDiff != value))
+				{
+					this._LineTotalDiff = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsAdded", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsAdded
+		{
+			get
+			{
+				return this._ItemsAdded;
+			}
+			set
+			{
+				if ((this._ItemsAdded != value))
+				{
+					this._ItemsAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalAdded", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalAdded
+		{
+			get
+			{
+				return this._LineTotalAdded;
+			}
+			set
+			{
+				if ((this._LineTotalAdded != value))
+				{
+					this._LineTotalAdded = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrentDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CurrentDate
+		{
+			get
+			{
+				return this._CurrentDate;
+			}
+			set
+			{
+				if ((this._CurrentDate != value))
+				{
+					this._CurrentDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemCount2", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemCount2
+		{
+			get
+			{
+				return this._ItemCount2;
+			}
+			set
+			{
+				if ((this._ItemCount2 != value))
+				{
+					this._ItemCount2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotal2", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotal2
+		{
+			get
+			{
+				return this._LineTotal2;
+			}
+			set
+			{
+				if ((this._LineTotal2 != value))
+				{
+					this._LineTotal2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemsDeleted", DbType="Decimal(38,2)")]
+		public System.Nullable<decimal> ItemsDeleted
+		{
+			get
+			{
+				return this._ItemsDeleted;
+			}
+			set
+			{
+				if ((this._ItemsDeleted != value))
+				{
+					this._ItemsDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineTotalDeleted", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> LineTotalDeleted
+		{
+			get
+			{
+				return this._LineTotalDeleted;
+			}
+			set
+			{
+				if ((this._LineTotalDeleted != value))
+				{
+					this._LineTotalDeleted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SnapShotDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> SnapShotDate
+		{
+			get
+			{
+				return this._SnapShotDate;
+			}
+			set
+			{
+				if ((this._SnapShotDate != value))
+				{
+					this._SnapShotDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_SoftInvoiceDetailResult
+	{
+		
+		private string _RecordHeader;
+		
+		private System.Nullable<int> _ItemNum;
+		
+		private string _ProductCode;
+		
+		private string _ProductDescription;
+		
+		private string _UnitofMeasure;
+		
+		private string _UnitPrice;
+		
+		private string _Quantity;
+		
+		private System.Nullable<int> _MaterialDocumentNumber;
+		
+		private System.Nullable<int> _AccountingDocumentNumber;
+		
+		private System.Nullable<int> _CustomerPart;
+		
+		private string _PONumber;
+		
+		private System.Nullable<int> _POLineNumber;
+		
+		private System.Nullable<int> _OtherReferenceNumber;
+		
+		private System.Nullable<int> _ShipDate;
+		
+		private System.Nullable<int> _LineitemTax;
+		
+		private string _TotalLineAmount;
+		
+		private System.Nullable<int> _RailTruck_;
+		
+		private System.Nullable<int> _InvoiceLineDetail;
+		
+		private string _InvoiceFrom;
+		
+		private string _InvoiceTo;
+		
+		public INT_SoftInvoiceDetailResult()
+		{
+		}
+		
+		[Column(Storage="_RecordHeader", DbType="VarChar(1)")]
+		public string RecordHeader
+		{
+			get
+			{
+				return this._RecordHeader;
+			}
+			set
+			{
+				if ((this._RecordHeader != value))
+				{
+					this._RecordHeader = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemNum", DbType="Int")]
+		public System.Nullable<int> ItemNum
+		{
+			get
+			{
+				return this._ItemNum;
+			}
+			set
+			{
+				if ((this._ItemNum != value))
+				{
+					this._ItemNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductCode", DbType="VarChar(35)")]
+		public string ProductCode
+		{
+			get
+			{
+				return this._ProductCode;
+			}
+			set
+			{
+				if ((this._ProductCode != value))
+				{
+					this._ProductCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductDescription", DbType="VarChar(2048)")]
+		public string ProductDescription
+		{
+			get
+			{
+				return this._ProductDescription;
+			}
+			set
+			{
+				if ((this._ProductDescription != value))
+				{
+					this._ProductDescription = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UnitofMeasure", DbType="VarChar(2)")]
+		public string UnitofMeasure
+		{
+			get
+			{
+				return this._UnitofMeasure;
+			}
+			set
+			{
+				if ((this._UnitofMeasure != value))
+				{
+					this._UnitofMeasure = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UnitPrice", DbType="VarChar(20)")]
+		public string UnitPrice
+		{
+			get
+			{
+				return this._UnitPrice;
+			}
+			set
+			{
+				if ((this._UnitPrice != value))
+				{
+					this._UnitPrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Quantity", DbType="VarChar(20)")]
+		public string Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MaterialDocumentNumber", DbType="Int")]
+		public System.Nullable<int> MaterialDocumentNumber
+		{
+			get
+			{
+				return this._MaterialDocumentNumber;
+			}
+			set
+			{
+				if ((this._MaterialDocumentNumber != value))
+				{
+					this._MaterialDocumentNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountingDocumentNumber", DbType="Int")]
+		public System.Nullable<int> AccountingDocumentNumber
+		{
+			get
+			{
+				return this._AccountingDocumentNumber;
+			}
+			set
+			{
+				if ((this._AccountingDocumentNumber != value))
+				{
+					this._AccountingDocumentNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CustomerPart", DbType="Int")]
+		public System.Nullable<int> CustomerPart
+		{
+			get
+			{
+				return this._CustomerPart;
+			}
+			set
+			{
+				if ((this._CustomerPart != value))
+				{
+					this._CustomerPart = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PONumber", DbType="VarChar(64)")]
+		public string PONumber
+		{
+			get
+			{
+				return this._PONumber;
+			}
+			set
+			{
+				if ((this._PONumber != value))
+				{
+					this._PONumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_POLineNumber", DbType="Int")]
+		public System.Nullable<int> POLineNumber
+		{
+			get
+			{
+				return this._POLineNumber;
+			}
+			set
+			{
+				if ((this._POLineNumber != value))
+				{
+					this._POLineNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OtherReferenceNumber", DbType="Int")]
+		public System.Nullable<int> OtherReferenceNumber
+		{
+			get
+			{
+				return this._OtherReferenceNumber;
+			}
+			set
+			{
+				if ((this._OtherReferenceNumber != value))
+				{
+					this._OtherReferenceNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipDate", DbType="Int")]
+		public System.Nullable<int> ShipDate
+		{
+			get
+			{
+				return this._ShipDate;
+			}
+			set
+			{
+				if ((this._ShipDate != value))
+				{
+					this._ShipDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineitemTax", DbType="Int")]
+		public System.Nullable<int> LineitemTax
+		{
+			get
+			{
+				return this._LineitemTax;
+			}
+			set
+			{
+				if ((this._LineitemTax != value))
+				{
+					this._LineitemTax = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TotalLineAmount", DbType="VarChar(20)")]
+		public string TotalLineAmount
+		{
+			get
+			{
+				return this._TotalLineAmount;
+			}
+			set
+			{
+				if ((this._TotalLineAmount != value))
+				{
+					this._TotalLineAmount = value;
+				}
+			}
+		}
+		
+		[Column(Name="RailTruck#", Storage="_RailTruck_", DbType="Int")]
+		public System.Nullable<int> RailTruck_
+		{
+			get
+			{
+				return this._RailTruck_;
+			}
+			set
+			{
+				if ((this._RailTruck_ != value))
+				{
+					this._RailTruck_ = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceLineDetail", DbType="Int")]
+		public System.Nullable<int> InvoiceLineDetail
+		{
+			get
+			{
+				return this._InvoiceLineDetail;
+			}
+			set
+			{
+				if ((this._InvoiceLineDetail != value))
+				{
+					this._InvoiceLineDetail = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceFrom", DbType="VarChar(10)")]
+		public string InvoiceFrom
+		{
+			get
+			{
+				return this._InvoiceFrom;
+			}
+			set
+			{
+				if ((this._InvoiceFrom != value))
+				{
+					this._InvoiceFrom = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceTo", DbType="VarChar(10)")]
+		public string InvoiceTo
+		{
+			get
+			{
+				return this._InvoiceTo;
+			}
+			set
+			{
+				if ((this._InvoiceTo != value))
+				{
+					this._InvoiceTo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_SoftInvoiceFooterResult
+	{
+		
+		private string _RecordHeader;
+		
+		private System.Nullable<int> _OrdNum;
+		
+		private System.Nullable<int> _FuelAmount;
+		
+		private System.Nullable<int> _Freight;
+		
+		private System.Nullable<int> _MiscAmount;
+		
+		private System.Nullable<int> _DiscountPercentage;
+		
+		private System.Nullable<int> _DiscountAmount;
+		
+		private System.Nullable<int> _DiscountDate;
+		
+		private System.Nullable<decimal> _TaxRate;
+		
+		private string _TotalAmount;
+		
+		private string _TotalTaxAmount;
+		
+		private string _GrossTotal;
+		
+		public INT_SoftInvoiceFooterResult()
+		{
+		}
+		
+		[Column(Storage="_RecordHeader", DbType="VarChar(1)")]
+		public string RecordHeader
+		{
+			get
+			{
+				return this._RecordHeader;
+			}
+			set
+			{
+				if ((this._RecordHeader != value))
+				{
+					this._RecordHeader = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OrdNum", DbType="Int")]
+		public System.Nullable<int> OrdNum
+		{
+			get
+			{
+				return this._OrdNum;
+			}
+			set
+			{
+				if ((this._OrdNum != value))
+				{
+					this._OrdNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FuelAmount", DbType="Int")]
+		public System.Nullable<int> FuelAmount
+		{
+			get
+			{
+				return this._FuelAmount;
+			}
+			set
+			{
+				if ((this._FuelAmount != value))
+				{
+					this._FuelAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Freight", DbType="Int")]
+		public System.Nullable<int> Freight
+		{
+			get
+			{
+				return this._Freight;
+			}
+			set
+			{
+				if ((this._Freight != value))
+				{
+					this._Freight = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MiscAmount", DbType="Int")]
+		public System.Nullable<int> MiscAmount
+		{
+			get
+			{
+				return this._MiscAmount;
+			}
+			set
+			{
+				if ((this._MiscAmount != value))
+				{
+					this._MiscAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DiscountPercentage", DbType="Int")]
+		public System.Nullable<int> DiscountPercentage
+		{
+			get
+			{
+				return this._DiscountPercentage;
+			}
+			set
+			{
+				if ((this._DiscountPercentage != value))
+				{
+					this._DiscountPercentage = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DiscountAmount", DbType="Int")]
+		public System.Nullable<int> DiscountAmount
+		{
+			get
+			{
+				return this._DiscountAmount;
+			}
+			set
+			{
+				if ((this._DiscountAmount != value))
+				{
+					this._DiscountAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DiscountDate", DbType="Int")]
+		public System.Nullable<int> DiscountDate
+		{
+			get
+			{
+				return this._DiscountDate;
+			}
+			set
+			{
+				if ((this._DiscountDate != value))
+				{
+					this._DiscountDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TaxRate", DbType="Decimal(15,6)")]
+		public System.Nullable<decimal> TaxRate
+		{
+			get
+			{
+				return this._TaxRate;
+			}
+			set
+			{
+				if ((this._TaxRate != value))
+				{
+					this._TaxRate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TotalAmount", DbType="VarChar(20)")]
+		public string TotalAmount
+		{
+			get
+			{
+				return this._TotalAmount;
+			}
+			set
+			{
+				if ((this._TotalAmount != value))
+				{
+					this._TotalAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TotalTaxAmount", DbType="VarChar(20)")]
+		public string TotalTaxAmount
+		{
+			get
+			{
+				return this._TotalTaxAmount;
+			}
+			set
+			{
+				if ((this._TotalTaxAmount != value))
+				{
+					this._TotalTaxAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_GrossTotal", DbType="VarChar(20)")]
+		public string GrossTotal
+		{
+			get
+			{
+				return this._GrossTotal;
+			}
+			set
+			{
+				if ((this._GrossTotal != value))
+				{
+					this._GrossTotal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_SoftInvoiceHeaderResult
+	{
+		
+		private string _SoftInvoicePath;
+		
+		private string _RecordHeader;
+		
+		private string _InvoiceCreditNote;
+		
+		private System.Nullable<int> _InvoiceNumber;
+		
+		private string _InvoiceDate;
+		
+		private System.Nullable<int> _ShipDate;
+		
+		private System.Nullable<int> _InvoiceDueDate;
+		
+		private System.Nullable<int> _PurchaseOrderNumber;
+		
+		private System.Nullable<int> _SupplierOrderNumber;
+		
+		private string _CustomerOB10Number;
+		
+		private string _BillToCustomerNumber;
+		
+		private string _BillToCustomerName;
+		
+		private string _BillToAddress1;
+		
+		private string _BillToAddress2;
+		
+		private string _BilltoCity;
+		
+		private string _BilltoState;
+		
+		private string _BilltoZipCode;
+		
+		private System.Nullable<int> _ShiptoAccountNumber;
+		
+		private string _ShiptoName;
+		
+		private string _ShiptoAddress1;
+		
+		private string _ShiptoAddress2;
+		
+		private string _ShiptoCity;
+		
+		private string _ShiptoState;
+		
+		private string _ShiptoZipCode;
+		
+		private string _CurrencyCode;
+		
+		private System.Nullable<int> _ProofofDelivery;
+		
+		private System.Nullable<int> _ShipFromName;
+		
+		private System.Nullable<int> _ShipFromAddress1;
+		
+		private System.Nullable<int> _ShipFromAddress2;
+		
+		private System.Nullable<int> _ShipFromCity;
+		
+		private System.Nullable<int> _ShipFromState;
+		
+		private System.Nullable<int> _ShipFromZipCode;
+		
+		private string _RemittoName;
+		
+		private string _RemittoAddress1;
+		
+		private string _RemittoAddress2;
+		
+		private string _RemittoCity;
+		
+		private string _RemittoState;
+		
+		private string _RemittoZipCode;
+		
+		private string _BankName;
+		
+		private string _BankAccountNumber;
+		
+		private string _BankRoutingNumber;
+		
+		private System.Nullable<int> _InvoiceDetail;
+		
+		public INT_SoftInvoiceHeaderResult()
+		{
+		}
+		
+		[Column(Storage="_SoftInvoicePath", DbType="VarChar(125)")]
+		public string SoftInvoicePath
+		{
+			get
+			{
+				return this._SoftInvoicePath;
+			}
+			set
+			{
+				if ((this._SoftInvoicePath != value))
+				{
+					this._SoftInvoicePath = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RecordHeader", DbType="VarChar(1)")]
+		public string RecordHeader
+		{
+			get
+			{
+				return this._RecordHeader;
+			}
+			set
+			{
+				if ((this._RecordHeader != value))
+				{
+					this._RecordHeader = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceCreditNote", DbType="VarChar(11)")]
+		public string InvoiceCreditNote
+		{
+			get
+			{
+				return this._InvoiceCreditNote;
+			}
+			set
+			{
+				if ((this._InvoiceCreditNote != value))
+				{
+					this._InvoiceCreditNote = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceNumber", DbType="Int")]
+		public System.Nullable<int> InvoiceNumber
+		{
+			get
+			{
+				return this._InvoiceNumber;
+			}
+			set
+			{
+				if ((this._InvoiceNumber != value))
+				{
+					this._InvoiceNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceDate", DbType="VarChar(10)")]
+		public string InvoiceDate
+		{
+			get
+			{
+				return this._InvoiceDate;
+			}
+			set
+			{
+				if ((this._InvoiceDate != value))
+				{
+					this._InvoiceDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipDate", DbType="Int")]
+		public System.Nullable<int> ShipDate
+		{
+			get
+			{
+				return this._ShipDate;
+			}
+			set
+			{
+				if ((this._ShipDate != value))
+				{
+					this._ShipDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceDueDate", DbType="Int")]
+		public System.Nullable<int> InvoiceDueDate
+		{
+			get
+			{
+				return this._InvoiceDueDate;
+			}
+			set
+			{
+				if ((this._InvoiceDueDate != value))
+				{
+					this._InvoiceDueDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PurchaseOrderNumber", DbType="Int")]
+		public System.Nullable<int> PurchaseOrderNumber
+		{
+			get
+			{
+				return this._PurchaseOrderNumber;
+			}
+			set
+			{
+				if ((this._PurchaseOrderNumber != value))
+				{
+					this._PurchaseOrderNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SupplierOrderNumber", DbType="Int")]
+		public System.Nullable<int> SupplierOrderNumber
+		{
+			get
+			{
+				return this._SupplierOrderNumber;
+			}
+			set
+			{
+				if ((this._SupplierOrderNumber != value))
+				{
+					this._SupplierOrderNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CustomerOB10Number", DbType="VarChar(12)")]
+		public string CustomerOB10Number
+		{
+			get
+			{
+				return this._CustomerOB10Number;
+			}
+			set
+			{
+				if ((this._CustomerOB10Number != value))
+				{
+					this._CustomerOB10Number = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BillToCustomerNumber", DbType="VarChar(12)")]
+		public string BillToCustomerNumber
+		{
+			get
+			{
+				return this._BillToCustomerNumber;
+			}
+			set
+			{
+				if ((this._BillToCustomerNumber != value))
+				{
+					this._BillToCustomerNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BillToCustomerName", DbType="VarChar(29)")]
+		public string BillToCustomerName
+		{
+			get
+			{
+				return this._BillToCustomerName;
+			}
+			set
+			{
+				if ((this._BillToCustomerName != value))
+				{
+					this._BillToCustomerName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BillToAddress1", DbType="VarChar(16)")]
+		public string BillToAddress1
+		{
+			get
+			{
+				return this._BillToAddress1;
+			}
+			set
+			{
+				if ((this._BillToAddress1 != value))
+				{
+					this._BillToAddress1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BillToAddress2", DbType="VarChar(10)")]
+		public string BillToAddress2
+		{
+			get
+			{
+				return this._BillToAddress2;
+			}
+			set
+			{
+				if ((this._BillToAddress2 != value))
+				{
+					this._BillToAddress2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BilltoCity", DbType="VarChar(9)")]
+		public string BilltoCity
+		{
+			get
+			{
+				return this._BilltoCity;
+			}
+			set
+			{
+				if ((this._BilltoCity != value))
+				{
+					this._BilltoCity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BilltoState", DbType="VarChar(3)")]
+		public string BilltoState
+		{
+			get
+			{
+				return this._BilltoState;
+			}
+			set
+			{
+				if ((this._BilltoState != value))
+				{
+					this._BilltoState = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BilltoZipCode", DbType="VarChar(4)")]
+		public string BilltoZipCode
+		{
+			get
+			{
+				return this._BilltoZipCode;
+			}
+			set
+			{
+				if ((this._BilltoZipCode != value))
+				{
+					this._BilltoZipCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoAccountNumber", DbType="Int")]
+		public System.Nullable<int> ShiptoAccountNumber
+		{
+			get
+			{
+				return this._ShiptoAccountNumber;
+			}
+			set
+			{
+				if ((this._ShiptoAccountNumber != value))
+				{
+					this._ShiptoAccountNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoName", DbType="VarChar(80)")]
+		public string ShiptoName
+		{
+			get
+			{
+				return this._ShiptoName;
+			}
+			set
+			{
+				if ((this._ShiptoName != value))
+				{
+					this._ShiptoName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoAddress1", DbType="VarChar(8000)")]
+		public string ShiptoAddress1
+		{
+			get
+			{
+				return this._ShiptoAddress1;
+			}
+			set
+			{
+				if ((this._ShiptoAddress1 != value))
+				{
+					this._ShiptoAddress1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoAddress2", DbType="VarChar(8000)")]
+		public string ShiptoAddress2
+		{
+			get
+			{
+				return this._ShiptoAddress2;
+			}
+			set
+			{
+				if ((this._ShiptoAddress2 != value))
+				{
+					this._ShiptoAddress2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoCity", DbType="VarChar(25)")]
+		public string ShiptoCity
+		{
+			get
+			{
+				return this._ShiptoCity;
+			}
+			set
+			{
+				if ((this._ShiptoCity != value))
+				{
+					this._ShiptoCity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoState", DbType="VarChar(5)")]
+		public string ShiptoState
+		{
+			get
+			{
+				return this._ShiptoState;
+			}
+			set
+			{
+				if ((this._ShiptoState != value))
+				{
+					this._ShiptoState = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoZipCode", DbType="VarChar(6)")]
+		public string ShiptoZipCode
+		{
+			get
+			{
+				return this._ShiptoZipCode;
+			}
+			set
+			{
+				if ((this._ShiptoZipCode != value))
+				{
+					this._ShiptoZipCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrencyCode", DbType="VarChar(3)")]
+		public string CurrencyCode
+		{
+			get
+			{
+				return this._CurrencyCode;
+			}
+			set
+			{
+				if ((this._CurrencyCode != value))
+				{
+					this._CurrencyCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProofofDelivery", DbType="Int")]
+		public System.Nullable<int> ProofofDelivery
+		{
+			get
+			{
+				return this._ProofofDelivery;
+			}
+			set
+			{
+				if ((this._ProofofDelivery != value))
+				{
+					this._ProofofDelivery = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromName", DbType="Int")]
+		public System.Nullable<int> ShipFromName
+		{
+			get
+			{
+				return this._ShipFromName;
+			}
+			set
+			{
+				if ((this._ShipFromName != value))
+				{
+					this._ShipFromName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromAddress1", DbType="Int")]
+		public System.Nullable<int> ShipFromAddress1
+		{
+			get
+			{
+				return this._ShipFromAddress1;
+			}
+			set
+			{
+				if ((this._ShipFromAddress1 != value))
+				{
+					this._ShipFromAddress1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromAddress2", DbType="Int")]
+		public System.Nullable<int> ShipFromAddress2
+		{
+			get
+			{
+				return this._ShipFromAddress2;
+			}
+			set
+			{
+				if ((this._ShipFromAddress2 != value))
+				{
+					this._ShipFromAddress2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromCity", DbType="Int")]
+		public System.Nullable<int> ShipFromCity
+		{
+			get
+			{
+				return this._ShipFromCity;
+			}
+			set
+			{
+				if ((this._ShipFromCity != value))
+				{
+					this._ShipFromCity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromState", DbType="Int")]
+		public System.Nullable<int> ShipFromState
+		{
+			get
+			{
+				return this._ShipFromState;
+			}
+			set
+			{
+				if ((this._ShipFromState != value))
+				{
+					this._ShipFromState = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromZipCode", DbType="Int")]
+		public System.Nullable<int> ShipFromZipCode
+		{
+			get
+			{
+				return this._ShipFromZipCode;
+			}
+			set
+			{
+				if ((this._ShipFromZipCode != value))
+				{
+					this._ShipFromZipCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoName", DbType="VarChar(19)")]
+		public string RemittoName
+		{
+			get
+			{
+				return this._RemittoName;
+			}
+			set
+			{
+				if ((this._RemittoName != value))
+				{
+					this._RemittoName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoAddress1", DbType="VarChar(26)")]
+		public string RemittoAddress1
+		{
+			get
+			{
+				return this._RemittoAddress1;
+			}
+			set
+			{
+				if ((this._RemittoAddress1 != value))
+				{
+					this._RemittoAddress1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoAddress2", DbType="VarChar(11)")]
+		public string RemittoAddress2
+		{
+			get
+			{
+				return this._RemittoAddress2;
+			}
+			set
+			{
+				if ((this._RemittoAddress2 != value))
+				{
+					this._RemittoAddress2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoCity", DbType="VarChar(6)")]
+		public string RemittoCity
+		{
+			get
+			{
+				return this._RemittoCity;
+			}
+			set
+			{
+				if ((this._RemittoCity != value))
+				{
+					this._RemittoCity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoState", DbType="VarChar(3)")]
+		public string RemittoState
+		{
+			get
+			{
+				return this._RemittoState;
+			}
+			set
+			{
+				if ((this._RemittoState != value))
+				{
+					this._RemittoState = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoZipCode", DbType="VarChar(4)")]
+		public string RemittoZipCode
+		{
+			get
+			{
+				return this._RemittoZipCode;
+			}
+			set
+			{
+				if ((this._RemittoZipCode != value))
+				{
+					this._RemittoZipCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankName", DbType="VarChar(50)")]
+		public string BankName
+		{
+			get
+			{
+				return this._BankName;
+			}
+			set
+			{
+				if ((this._BankName != value))
+				{
+					this._BankName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankAccountNumber", DbType="VarChar(15)")]
+		public string BankAccountNumber
+		{
+			get
+			{
+				return this._BankAccountNumber;
+			}
+			set
+			{
+				if ((this._BankAccountNumber != value))
+				{
+					this._BankAccountNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankRoutingNumber", DbType="VarChar(15)")]
+		public string BankRoutingNumber
+		{
+			get
+			{
+				return this._BankRoutingNumber;
+			}
+			set
+			{
+				if ((this._BankRoutingNumber != value))
+				{
+					this._BankRoutingNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceDetail", DbType="Int")]
+		public System.Nullable<int> InvoiceDetail
+		{
+			get
+			{
+				return this._InvoiceDetail;
+			}
+			set
+			{
+				if ((this._InvoiceDetail != value))
+				{
+					this._InvoiceDetail = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_SoftTMInvoiceDetailResult
+	{
+		
+		private string _RecordHeader;
+		
+		private System.Nullable<int> _ItemNum;
+		
+		private string _ProductCode;
+		
+		private string _ProductDescription;
+		
+		private string _UnitofMeasure;
+		
+		private string _UnitPrice;
+		
+		private string _Quantity;
+		
+		private System.Nullable<int> _MaterialDocumentNumber;
+		
+		private System.Nullable<int> _AccountingDocumentNumber;
+		
+		private System.Nullable<int> _CustomerPart;
+		
+		private System.Nullable<int> _PONumber;
+		
+		private System.Nullable<int> _POLineNumber;
+		
+		private System.Nullable<int> _OtherReferenceNumber;
+		
+		private System.Nullable<int> _ShipDate;
+		
+		private System.Nullable<int> _LineitemTax;
+		
+		private string _TotalLineAmount;
+		
+		private System.Nullable<int> _RailTruck_;
+		
+		private System.Nullable<int> _InvoiceLineDetail;
+		
+		private System.Nullable<int> _InvoiceFrom;
+		
+		private System.Nullable<int> _InvoiceTo;
+		
+		public INT_SoftTMInvoiceDetailResult()
+		{
+		}
+		
+		[Column(Storage="_RecordHeader", DbType="VarChar(1)")]
+		public string RecordHeader
+		{
+			get
+			{
+				return this._RecordHeader;
+			}
+			set
+			{
+				if ((this._RecordHeader != value))
+				{
+					this._RecordHeader = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ItemNum", DbType="Int")]
+		public System.Nullable<int> ItemNum
+		{
+			get
+			{
+				return this._ItemNum;
+			}
+			set
+			{
+				if ((this._ItemNum != value))
+				{
+					this._ItemNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductCode", DbType="VarChar(16)")]
+		public string ProductCode
+		{
+			get
+			{
+				return this._ProductCode;
+			}
+			set
+			{
+				if ((this._ProductCode != value))
+				{
+					this._ProductCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductDescription", DbType="VarChar(16)")]
+		public string ProductDescription
+		{
+			get
+			{
+				return this._ProductDescription;
+			}
+			set
+			{
+				if ((this._ProductDescription != value))
+				{
+					this._ProductDescription = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UnitofMeasure", DbType="VarChar(2)")]
+		public string UnitofMeasure
+		{
+			get
+			{
+				return this._UnitofMeasure;
+			}
+			set
+			{
+				if ((this._UnitofMeasure != value))
+				{
+					this._UnitofMeasure = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UnitPrice", DbType="VarChar(20)")]
+		public string UnitPrice
+		{
+			get
+			{
+				return this._UnitPrice;
+			}
+			set
+			{
+				if ((this._UnitPrice != value))
+				{
+					this._UnitPrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Quantity", DbType="VarChar(20)")]
+		public string Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MaterialDocumentNumber", DbType="Int")]
+		public System.Nullable<int> MaterialDocumentNumber
+		{
+			get
+			{
+				return this._MaterialDocumentNumber;
+			}
+			set
+			{
+				if ((this._MaterialDocumentNumber != value))
+				{
+					this._MaterialDocumentNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountingDocumentNumber", DbType="Int")]
+		public System.Nullable<int> AccountingDocumentNumber
+		{
+			get
+			{
+				return this._AccountingDocumentNumber;
+			}
+			set
+			{
+				if ((this._AccountingDocumentNumber != value))
+				{
+					this._AccountingDocumentNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CustomerPart", DbType="Int")]
+		public System.Nullable<int> CustomerPart
+		{
+			get
+			{
+				return this._CustomerPart;
+			}
+			set
+			{
+				if ((this._CustomerPart != value))
+				{
+					this._CustomerPart = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PONumber", DbType="Int")]
+		public System.Nullable<int> PONumber
+		{
+			get
+			{
+				return this._PONumber;
+			}
+			set
+			{
+				if ((this._PONumber != value))
+				{
+					this._PONumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_POLineNumber", DbType="Int")]
+		public System.Nullable<int> POLineNumber
+		{
+			get
+			{
+				return this._POLineNumber;
+			}
+			set
+			{
+				if ((this._POLineNumber != value))
+				{
+					this._POLineNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OtherReferenceNumber", DbType="Int")]
+		public System.Nullable<int> OtherReferenceNumber
+		{
+			get
+			{
+				return this._OtherReferenceNumber;
+			}
+			set
+			{
+				if ((this._OtherReferenceNumber != value))
+				{
+					this._OtherReferenceNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipDate", DbType="Int")]
+		public System.Nullable<int> ShipDate
+		{
+			get
+			{
+				return this._ShipDate;
+			}
+			set
+			{
+				if ((this._ShipDate != value))
+				{
+					this._ShipDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LineitemTax", DbType="Int")]
+		public System.Nullable<int> LineitemTax
+		{
+			get
+			{
+				return this._LineitemTax;
+			}
+			set
+			{
+				if ((this._LineitemTax != value))
+				{
+					this._LineitemTax = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TotalLineAmount", DbType="VarChar(20)")]
+		public string TotalLineAmount
+		{
+			get
+			{
+				return this._TotalLineAmount;
+			}
+			set
+			{
+				if ((this._TotalLineAmount != value))
+				{
+					this._TotalLineAmount = value;
+				}
+			}
+		}
+		
+		[Column(Name="RailTruck#", Storage="_RailTruck_", DbType="Int")]
+		public System.Nullable<int> RailTruck_
+		{
+			get
+			{
+				return this._RailTruck_;
+			}
+			set
+			{
+				if ((this._RailTruck_ != value))
+				{
+					this._RailTruck_ = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceLineDetail", DbType="Int")]
+		public System.Nullable<int> InvoiceLineDetail
+		{
+			get
+			{
+				return this._InvoiceLineDetail;
+			}
+			set
+			{
+				if ((this._InvoiceLineDetail != value))
+				{
+					this._InvoiceLineDetail = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceFrom", DbType="Int")]
+		public System.Nullable<int> InvoiceFrom
+		{
+			get
+			{
+				return this._InvoiceFrom;
+			}
+			set
+			{
+				if ((this._InvoiceFrom != value))
+				{
+					this._InvoiceFrom = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceTo", DbType="Int")]
+		public System.Nullable<int> InvoiceTo
+		{
+			get
+			{
+				return this._InvoiceTo;
+			}
+			set
+			{
+				if ((this._InvoiceTo != value))
+				{
+					this._InvoiceTo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_SoftTMInvoiceFooterResult
+	{
+		
+		private string _RecordHeader;
+		
+		private System.Nullable<int> _OrdNum;
+		
+		private System.Nullable<int> _FuelAmount;
+		
+		private System.Nullable<int> _Freight;
+		
+		private System.Nullable<int> _MiscAmount;
+		
+		private System.Nullable<int> _DiscountPercentage;
+		
+		private System.Nullable<int> _DiscountAmount;
+		
+		private System.Nullable<int> _DiscountDate;
+		
+		private System.Nullable<decimal> _TaxRate;
+		
+		private string _TotalAmount;
+		
+		private string _TotalTaxAmount;
+		
+		private string _GrossTotal;
+		
+		public INT_SoftTMInvoiceFooterResult()
+		{
+		}
+		
+		[Column(Storage="_RecordHeader", DbType="VarChar(1)")]
+		public string RecordHeader
+		{
+			get
+			{
+				return this._RecordHeader;
+			}
+			set
+			{
+				if ((this._RecordHeader != value))
+				{
+					this._RecordHeader = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OrdNum", DbType="Int")]
+		public System.Nullable<int> OrdNum
+		{
+			get
+			{
+				return this._OrdNum;
+			}
+			set
+			{
+				if ((this._OrdNum != value))
+				{
+					this._OrdNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FuelAmount", DbType="Int")]
+		public System.Nullable<int> FuelAmount
+		{
+			get
+			{
+				return this._FuelAmount;
+			}
+			set
+			{
+				if ((this._FuelAmount != value))
+				{
+					this._FuelAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Freight", DbType="Int")]
+		public System.Nullable<int> Freight
+		{
+			get
+			{
+				return this._Freight;
+			}
+			set
+			{
+				if ((this._Freight != value))
+				{
+					this._Freight = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MiscAmount", DbType="Int")]
+		public System.Nullable<int> MiscAmount
+		{
+			get
+			{
+				return this._MiscAmount;
+			}
+			set
+			{
+				if ((this._MiscAmount != value))
+				{
+					this._MiscAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DiscountPercentage", DbType="Int")]
+		public System.Nullable<int> DiscountPercentage
+		{
+			get
+			{
+				return this._DiscountPercentage;
+			}
+			set
+			{
+				if ((this._DiscountPercentage != value))
+				{
+					this._DiscountPercentage = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DiscountAmount", DbType="Int")]
+		public System.Nullable<int> DiscountAmount
+		{
+			get
+			{
+				return this._DiscountAmount;
+			}
+			set
+			{
+				if ((this._DiscountAmount != value))
+				{
+					this._DiscountAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DiscountDate", DbType="Int")]
+		public System.Nullable<int> DiscountDate
+		{
+			get
+			{
+				return this._DiscountDate;
+			}
+			set
+			{
+				if ((this._DiscountDate != value))
+				{
+					this._DiscountDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TaxRate", DbType="Decimal(15,6)")]
+		public System.Nullable<decimal> TaxRate
+		{
+			get
+			{
+				return this._TaxRate;
+			}
+			set
+			{
+				if ((this._TaxRate != value))
+				{
+					this._TaxRate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TotalAmount", DbType="VarChar(20)")]
+		public string TotalAmount
+		{
+			get
+			{
+				return this._TotalAmount;
+			}
+			set
+			{
+				if ((this._TotalAmount != value))
+				{
+					this._TotalAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TotalTaxAmount", DbType="VarChar(20)")]
+		public string TotalTaxAmount
+		{
+			get
+			{
+				return this._TotalTaxAmount;
+			}
+			set
+			{
+				if ((this._TotalTaxAmount != value))
+				{
+					this._TotalTaxAmount = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_GrossTotal", DbType="VarChar(20)")]
+		public string GrossTotal
+		{
+			get
+			{
+				return this._GrossTotal;
+			}
+			set
+			{
+				if ((this._GrossTotal != value))
+				{
+					this._GrossTotal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_SoftTMInvoiceHeaderResult
+	{
+		
+		private string _SoftInvoicePath;
+		
+		private string _RecordHeader;
+		
+		private string _InvoiceCreditNote;
+		
+		private System.Nullable<int> _InvoiceNumber;
+		
+		private string _InvoiceDate;
+		
+		private System.Nullable<int> _ShipDate;
+		
+		private System.Nullable<int> _InvoiceDueDate;
+		
+		private string _PurchaseOrderNumber;
+		
+		private System.Nullable<int> _SupplierOrderNumber;
+		
+		private string _CustomerOB10Number;
+		
+		private string _BillToCustomerNumber;
+		
+		private string _BillToCustomerName;
+		
+		private string _BillToAddress1;
+		
+		private string _BillToAddress2;
+		
+		private string _BilltoCity;
+		
+		private string _BilltoState;
+		
+		private string _BilltoZipCode;
+		
+		private System.Nullable<int> _ShiptoAccountNumber;
+		
+		private string _ShiptoName;
+		
+		private string _ShiptoAddress1;
+		
+		private string _ShiptoAddress2;
+		
+		private string _ShiptoCity;
+		
+		private string _ShiptoState;
+		
+		private string _ShiptoZipCode;
+		
+		private string _CurrencyCode;
+		
+		private System.Nullable<int> _ProofofDelivery;
+		
+		private System.Nullable<int> _ShipFromName;
+		
+		private System.Nullable<int> _ShipFromAddress1;
+		
+		private System.Nullable<int> _ShipFromAddress2;
+		
+		private System.Nullable<int> _ShipFromCity;
+		
+		private System.Nullable<int> _ShipFromState;
+		
+		private System.Nullable<int> _ShipFromZipCode;
+		
+		private string _RemittoName;
+		
+		private string _RemittoAddress1;
+		
+		private string _RemittoAddress2;
+		
+		private string _RemittoCity;
+		
+		private string _RemittoState;
+		
+		private string _RemittoZipCode;
+		
+		private string _BankName;
+		
+		private string _BankAccountNumber;
+		
+		private string _BankRoutingNumber;
+		
+		private System.Nullable<int> _InvoiceDetail;
+		
+		public INT_SoftTMInvoiceHeaderResult()
+		{
+		}
+		
+		[Column(Storage="_SoftInvoicePath", DbType="VarChar(125)")]
+		public string SoftInvoicePath
+		{
+			get
+			{
+				return this._SoftInvoicePath;
+			}
+			set
+			{
+				if ((this._SoftInvoicePath != value))
+				{
+					this._SoftInvoicePath = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RecordHeader", DbType="VarChar(1)")]
+		public string RecordHeader
+		{
+			get
+			{
+				return this._RecordHeader;
+			}
+			set
+			{
+				if ((this._RecordHeader != value))
+				{
+					this._RecordHeader = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceCreditNote", DbType="VarChar(11)")]
+		public string InvoiceCreditNote
+		{
+			get
+			{
+				return this._InvoiceCreditNote;
+			}
+			set
+			{
+				if ((this._InvoiceCreditNote != value))
+				{
+					this._InvoiceCreditNote = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceNumber", DbType="Int")]
+		public System.Nullable<int> InvoiceNumber
+		{
+			get
+			{
+				return this._InvoiceNumber;
+			}
+			set
+			{
+				if ((this._InvoiceNumber != value))
+				{
+					this._InvoiceNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceDate", DbType="VarChar(10)")]
+		public string InvoiceDate
+		{
+			get
+			{
+				return this._InvoiceDate;
+			}
+			set
+			{
+				if ((this._InvoiceDate != value))
+				{
+					this._InvoiceDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipDate", DbType="Int")]
+		public System.Nullable<int> ShipDate
+		{
+			get
+			{
+				return this._ShipDate;
+			}
+			set
+			{
+				if ((this._ShipDate != value))
+				{
+					this._ShipDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceDueDate", DbType="Int")]
+		public System.Nullable<int> InvoiceDueDate
+		{
+			get
+			{
+				return this._InvoiceDueDate;
+			}
+			set
+			{
+				if ((this._InvoiceDueDate != value))
+				{
+					this._InvoiceDueDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PurchaseOrderNumber", DbType="VarChar(57)")]
+		public string PurchaseOrderNumber
+		{
+			get
+			{
+				return this._PurchaseOrderNumber;
+			}
+			set
+			{
+				if ((this._PurchaseOrderNumber != value))
+				{
+					this._PurchaseOrderNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SupplierOrderNumber", DbType="Int")]
+		public System.Nullable<int> SupplierOrderNumber
+		{
+			get
+			{
+				return this._SupplierOrderNumber;
+			}
+			set
+			{
+				if ((this._SupplierOrderNumber != value))
+				{
+					this._SupplierOrderNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CustomerOB10Number", DbType="VarChar(12)")]
+		public string CustomerOB10Number
+		{
+			get
+			{
+				return this._CustomerOB10Number;
+			}
+			set
+			{
+				if ((this._CustomerOB10Number != value))
+				{
+					this._CustomerOB10Number = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BillToCustomerNumber", DbType="VarChar(12)")]
+		public string BillToCustomerNumber
+		{
+			get
+			{
+				return this._BillToCustomerNumber;
+			}
+			set
+			{
+				if ((this._BillToCustomerNumber != value))
+				{
+					this._BillToCustomerNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BillToCustomerName", DbType="VarChar(29)")]
+		public string BillToCustomerName
+		{
+			get
+			{
+				return this._BillToCustomerName;
+			}
+			set
+			{
+				if ((this._BillToCustomerName != value))
+				{
+					this._BillToCustomerName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BillToAddress1", DbType="VarChar(16)")]
+		public string BillToAddress1
+		{
+			get
+			{
+				return this._BillToAddress1;
+			}
+			set
+			{
+				if ((this._BillToAddress1 != value))
+				{
+					this._BillToAddress1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BillToAddress2", DbType="VarChar(10)")]
+		public string BillToAddress2
+		{
+			get
+			{
+				return this._BillToAddress2;
+			}
+			set
+			{
+				if ((this._BillToAddress2 != value))
+				{
+					this._BillToAddress2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BilltoCity", DbType="VarChar(9)")]
+		public string BilltoCity
+		{
+			get
+			{
+				return this._BilltoCity;
+			}
+			set
+			{
+				if ((this._BilltoCity != value))
+				{
+					this._BilltoCity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BilltoState", DbType="VarChar(3)")]
+		public string BilltoState
+		{
+			get
+			{
+				return this._BilltoState;
+			}
+			set
+			{
+				if ((this._BilltoState != value))
+				{
+					this._BilltoState = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BilltoZipCode", DbType="VarChar(4)")]
+		public string BilltoZipCode
+		{
+			get
+			{
+				return this._BilltoZipCode;
+			}
+			set
+			{
+				if ((this._BilltoZipCode != value))
+				{
+					this._BilltoZipCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoAccountNumber", DbType="Int")]
+		public System.Nullable<int> ShiptoAccountNumber
+		{
+			get
+			{
+				return this._ShiptoAccountNumber;
+			}
+			set
+			{
+				if ((this._ShiptoAccountNumber != value))
+				{
+					this._ShiptoAccountNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoName", DbType="VarChar(80)")]
+		public string ShiptoName
+		{
+			get
+			{
+				return this._ShiptoName;
+			}
+			set
+			{
+				if ((this._ShiptoName != value))
+				{
+					this._ShiptoName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoAddress1", DbType="VarChar(8000)")]
+		public string ShiptoAddress1
+		{
+			get
+			{
+				return this._ShiptoAddress1;
+			}
+			set
+			{
+				if ((this._ShiptoAddress1 != value))
+				{
+					this._ShiptoAddress1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoAddress2", DbType="VarChar(8000)")]
+		public string ShiptoAddress2
+		{
+			get
+			{
+				return this._ShiptoAddress2;
+			}
+			set
+			{
+				if ((this._ShiptoAddress2 != value))
+				{
+					this._ShiptoAddress2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoCity", DbType="VarChar(25)")]
+		public string ShiptoCity
+		{
+			get
+			{
+				return this._ShiptoCity;
+			}
+			set
+			{
+				if ((this._ShiptoCity != value))
+				{
+					this._ShiptoCity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoState", DbType="VarChar(5)")]
+		public string ShiptoState
+		{
+			get
+			{
+				return this._ShiptoState;
+			}
+			set
+			{
+				if ((this._ShiptoState != value))
+				{
+					this._ShiptoState = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShiptoZipCode", DbType="VarChar(6)")]
+		public string ShiptoZipCode
+		{
+			get
+			{
+				return this._ShiptoZipCode;
+			}
+			set
+			{
+				if ((this._ShiptoZipCode != value))
+				{
+					this._ShiptoZipCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CurrencyCode", DbType="VarChar(3)")]
+		public string CurrencyCode
+		{
+			get
+			{
+				return this._CurrencyCode;
+			}
+			set
+			{
+				if ((this._CurrencyCode != value))
+				{
+					this._CurrencyCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProofofDelivery", DbType="Int")]
+		public System.Nullable<int> ProofofDelivery
+		{
+			get
+			{
+				return this._ProofofDelivery;
+			}
+			set
+			{
+				if ((this._ProofofDelivery != value))
+				{
+					this._ProofofDelivery = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromName", DbType="Int")]
+		public System.Nullable<int> ShipFromName
+		{
+			get
+			{
+				return this._ShipFromName;
+			}
+			set
+			{
+				if ((this._ShipFromName != value))
+				{
+					this._ShipFromName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromAddress1", DbType="Int")]
+		public System.Nullable<int> ShipFromAddress1
+		{
+			get
+			{
+				return this._ShipFromAddress1;
+			}
+			set
+			{
+				if ((this._ShipFromAddress1 != value))
+				{
+					this._ShipFromAddress1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromAddress2", DbType="Int")]
+		public System.Nullable<int> ShipFromAddress2
+		{
+			get
+			{
+				return this._ShipFromAddress2;
+			}
+			set
+			{
+				if ((this._ShipFromAddress2 != value))
+				{
+					this._ShipFromAddress2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromCity", DbType="Int")]
+		public System.Nullable<int> ShipFromCity
+		{
+			get
+			{
+				return this._ShipFromCity;
+			}
+			set
+			{
+				if ((this._ShipFromCity != value))
+				{
+					this._ShipFromCity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromState", DbType="Int")]
+		public System.Nullable<int> ShipFromState
+		{
+			get
+			{
+				return this._ShipFromState;
+			}
+			set
+			{
+				if ((this._ShipFromState != value))
+				{
+					this._ShipFromState = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShipFromZipCode", DbType="Int")]
+		public System.Nullable<int> ShipFromZipCode
+		{
+			get
+			{
+				return this._ShipFromZipCode;
+			}
+			set
+			{
+				if ((this._ShipFromZipCode != value))
+				{
+					this._ShipFromZipCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoName", DbType="VarChar(19)")]
+		public string RemittoName
+		{
+			get
+			{
+				return this._RemittoName;
+			}
+			set
+			{
+				if ((this._RemittoName != value))
+				{
+					this._RemittoName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoAddress1", DbType="VarChar(26)")]
+		public string RemittoAddress1
+		{
+			get
+			{
+				return this._RemittoAddress1;
+			}
+			set
+			{
+				if ((this._RemittoAddress1 != value))
+				{
+					this._RemittoAddress1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoAddress2", DbType="VarChar(11)")]
+		public string RemittoAddress2
+		{
+			get
+			{
+				return this._RemittoAddress2;
+			}
+			set
+			{
+				if ((this._RemittoAddress2 != value))
+				{
+					this._RemittoAddress2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoCity", DbType="VarChar(6)")]
+		public string RemittoCity
+		{
+			get
+			{
+				return this._RemittoCity;
+			}
+			set
+			{
+				if ((this._RemittoCity != value))
+				{
+					this._RemittoCity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoState", DbType="VarChar(3)")]
+		public string RemittoState
+		{
+			get
+			{
+				return this._RemittoState;
+			}
+			set
+			{
+				if ((this._RemittoState != value))
+				{
+					this._RemittoState = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RemittoZipCode", DbType="VarChar(4)")]
+		public string RemittoZipCode
+		{
+			get
+			{
+				return this._RemittoZipCode;
+			}
+			set
+			{
+				if ((this._RemittoZipCode != value))
+				{
+					this._RemittoZipCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankName", DbType="VarChar(50)")]
+		public string BankName
+		{
+			get
+			{
+				return this._BankName;
+			}
+			set
+			{
+				if ((this._BankName != value))
+				{
+					this._BankName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankAccountNumber", DbType="VarChar(15)")]
+		public string BankAccountNumber
+		{
+			get
+			{
+				return this._BankAccountNumber;
+			}
+			set
+			{
+				if ((this._BankAccountNumber != value))
+				{
+					this._BankAccountNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BankRoutingNumber", DbType="VarChar(15)")]
+		public string BankRoutingNumber
+		{
+			get
+			{
+				return this._BankRoutingNumber;
+			}
+			set
+			{
+				if ((this._BankRoutingNumber != value))
+				{
+					this._BankRoutingNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceDetail", DbType="Int")]
+		public System.Nullable<int> InvoiceDetail
+		{
+			get
+			{
+				return this._InvoiceDetail;
+			}
+			set
+			{
+				if ((this._InvoiceDetail != value))
+				{
+					this._InvoiceDetail = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_STOCK_DUMPResult
+	{
+		
+		private string _PartNumber;
+		
+		private string _Brand;
+		
+		private string _Description;
+		
+		private string _DeviceCode;
+		
+		private string _FeatureCode;
+		
+		private string _Model;
+		
+		private string _Shelf;
+		
+		private string _SerialNo;
+		
+		private System.Nullable<short> _ShelfQTY;
+		
+		private System.Nullable<int> _MaintQTY;
+		
+		private string _Specifications;
+		
+		private string _InternalNotes;
+		
+		private string _WH;
+		
+		public INT_STOCK_DUMPResult()
+		{
+		}
+		
+		[Column(Storage="_PartNumber", DbType="VarChar(35)")]
+		public string PartNumber
+		{
+			get
+			{
+				return this._PartNumber;
+			}
+			set
+			{
+				if ((this._PartNumber != value))
+				{
+					this._PartNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Brand", DbType="VarChar(35)")]
+		public string Brand
+		{
+			get
+			{
+				return this._Brand;
+			}
+			set
+			{
+				if ((this._Brand != value))
+				{
+					this._Brand = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Description", DbType="VarChar(50)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DeviceCode", DbType="VarChar(35)")]
+		public string DeviceCode
+		{
+			get
+			{
+				return this._DeviceCode;
+			}
+			set
+			{
+				if ((this._DeviceCode != value))
+				{
+					this._DeviceCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FeatureCode", DbType="VarChar(35)")]
+		public string FeatureCode
+		{
+			get
+			{
+				return this._FeatureCode;
+			}
+			set
+			{
+				if ((this._FeatureCode != value))
+				{
+					this._FeatureCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Model", DbType="VarChar(35)")]
+		public string Model
+		{
+			get
+			{
+				return this._Model;
+			}
+			set
+			{
+				if ((this._Model != value))
+				{
+					this._Model = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Shelf", DbType="VarChar(40)")]
+		public string Shelf
+		{
+			get
+			{
+				return this._Shelf;
+			}
+			set
+			{
+				if ((this._Shelf != value))
+				{
+					this._Shelf = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SerialNo", DbType="VarChar(28)")]
+		public string SerialNo
+		{
+			get
+			{
+				return this._SerialNo;
+			}
+			set
+			{
+				if ((this._SerialNo != value))
+				{
+					this._SerialNo = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShelfQTY", DbType="SmallInt")]
+		public System.Nullable<short> ShelfQTY
+		{
+			get
+			{
+				return this._ShelfQTY;
+			}
+			set
+			{
+				if ((this._ShelfQTY != value))
+				{
+					this._ShelfQTY = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MaintQTY", DbType="Int")]
+		public System.Nullable<int> MaintQTY
+		{
+			get
+			{
+				return this._MaintQTY;
+			}
+			set
+			{
+				if ((this._MaintQTY != value))
+				{
+					this._MaintQTY = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Specifications", DbType="VarChar(2048)")]
+		public string Specifications
+		{
+			get
+			{
+				return this._Specifications;
+			}
+			set
+			{
+				if ((this._Specifications != value))
+				{
+					this._Specifications = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InternalNotes", DbType="VarChar(2048)")]
+		public string InternalNotes
+		{
+			get
+			{
+				return this._InternalNotes;
+			}
+			set
+			{
+				if ((this._InternalNotes != value))
+				{
+					this._InternalNotes = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_WH", DbType="VarChar(50)")]
+		public string WH
+		{
+			get
+			{
+				return this._WH;
+			}
+			set
+			{
+				if ((this._WH != value))
+				{
+					this._WH = value;
+				}
+			}
+		}
+	}
+	
+	public partial class INT_STOCKTREE_LOCATIONSResult
+	{
+		
+		private System.Nullable<int> _LOCGROUPID;
+		
+		private System.Nullable<int> _LOCATIONID;
+		
+		private string _NAME;
+		
+		private System.Nullable<int> _TOTAL;
+		
+		public INT_STOCKTREE_LOCATIONSResult()
+		{
+		}
+		
+		[Column(Storage="_LOCGROUPID", DbType="Int")]
+		public System.Nullable<int> LOCGROUPID
+		{
+			get
+			{
+				return this._LOCGROUPID;
+			}
+			set
+			{
+				if ((this._LOCGROUPID != value))
+				{
+					this._LOCGROUPID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LOCATIONID", DbType="Int")]
+		public System.Nullable<int> LOCATIONID
+		{
+			get
+			{
+				return this._LOCATIONID;
+			}
+			set
+			{
+				if ((this._LOCATIONID != value))
+				{
+					this._LOCATIONID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NAME", DbType="VarChar(50)")]
+		public string NAME
+		{
+			get
+			{
+				return this._NAME;
+			}
+			set
+			{
+				if ((this._NAME != value))
+				{
+					this._NAME = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TOTAL", DbType="Int")]
+		public System.Nullable<int> TOTAL
+		{
+			get
+			{
+				return this._TOTAL;
+			}
+			set
+			{
+				if ((this._TOTAL != value))
+				{
+					this._TOTAL = value;
+				}
+			}
+		}
+	}
+	
+	public partial class InvoicePrintOptionsResult
+	{
+		
+		private System.Nullable<bool> _PrintInvoice;
+		
+		private System.Nullable<int> _InvoiceQty;
+		
+		private System.Nullable<bool> _PrintPackSlip;
+		
+		private System.Nullable<int> _PackSlipQty;
+		
+		private System.Nullable<byte> _RRPType;
+		
+		private System.Nullable<int> _RRPQty;
+		
+		private System.Nullable<decimal> _RRPMarkup1;
+		
+		private System.Nullable<decimal> _RRPMarkup2;
+		
+		public InvoicePrintOptionsResult()
+		{
+		}
+		
+		[Column(Storage="_PrintInvoice", DbType="Bit")]
+		public System.Nullable<bool> PrintInvoice
+		{
+			get
+			{
+				return this._PrintInvoice;
+			}
+			set
+			{
+				if ((this._PrintInvoice != value))
+				{
+					this._PrintInvoice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceQty", DbType="Int")]
+		public System.Nullable<int> InvoiceQty
+		{
+			get
+			{
+				return this._InvoiceQty;
+			}
+			set
+			{
+				if ((this._InvoiceQty != value))
+				{
+					this._InvoiceQty = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PrintPackSlip", DbType="Bit")]
+		public System.Nullable<bool> PrintPackSlip
+		{
+			get
+			{
+				return this._PrintPackSlip;
+			}
+			set
+			{
+				if ((this._PrintPackSlip != value))
+				{
+					this._PrintPackSlip = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PackSlipQty", DbType="Int")]
+		public System.Nullable<int> PackSlipQty
+		{
+			get
+			{
+				return this._PackSlipQty;
+			}
+			set
+			{
+				if ((this._PackSlipQty != value))
+				{
+					this._PackSlipQty = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RRPType", DbType="TinyInt")]
+		public System.Nullable<byte> RRPType
+		{
+			get
+			{
+				return this._RRPType;
+			}
+			set
+			{
+				if ((this._RRPType != value))
+				{
+					this._RRPType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RRPQty", DbType="Int")]
+		public System.Nullable<int> RRPQty
+		{
+			get
+			{
+				return this._RRPQty;
+			}
+			set
+			{
+				if ((this._RRPQty != value))
+				{
+					this._RRPQty = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RRPMarkup1", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> RRPMarkup1
+		{
+			get
+			{
+				return this._RRPMarkup1;
+			}
+			set
+			{
+				if ((this._RRPMarkup1 != value))
+				{
+					this._RRPMarkup1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RRPMarkup2", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> RRPMarkup2
+		{
+			get
+			{
+				return this._RRPMarkup2;
+			}
+			set
+			{
+				if ((this._RRPMarkup2 != value))
+				{
+					this._RRPMarkup2 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class InvoiceSaleItemsResult
+	{
+		
+		private string _DetailHeader;
+		
+		private string _DisplayContractID;
+		
+		private System.Nullable<int> _AccountID;
+		
+		private string _Company;
+		
+		private string _City;
+		
+		private string _State;
+		
+		private string _PostCode;
+		
+		private string _ProdCode;
+		
+		private string _SerialNo;
+		
+		private string _DeviceName;
+		
+		private System.Nullable<decimal> _Quantity;
+		
+		private System.Nullable<decimal> _UnitPrice;
+		
+		private System.Nullable<System.DateTime> _INT_InvFromDate;
+		
+		private System.Nullable<System.DateTime> _INT_InvToDate;
+		
+		private System.Nullable<decimal> _CoDetailsExtended;
+		
+		public InvoiceSaleItemsResult()
+		{
+		}
+		
+		[Column(Storage="_DetailHeader", DbType="NVarChar(347)")]
+		public string DetailHeader
+		{
+			get
+			{
+				return this._DetailHeader;
+			}
+			set
+			{
+				if ((this._DetailHeader != value))
+				{
+					this._DetailHeader = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DisplayContractID", DbType="VarChar(255)")]
+		public string DisplayContractID
+		{
+			get
+			{
+				return this._DisplayContractID;
+			}
+			set
+			{
+				if ((this._DisplayContractID != value))
+				{
+					this._DisplayContractID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AccountID", DbType="Int")]
+		public System.Nullable<int> AccountID
+		{
+			get
+			{
+				return this._AccountID;
+			}
+			set
+			{
+				if ((this._AccountID != value))
+				{
+					this._AccountID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(80)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_City", DbType="VarChar(25)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_State", DbType="VarChar(5)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PostCode", DbType="VarChar(6)")]
+		public string PostCode
+		{
+			get
+			{
+				return this._PostCode;
+			}
+			set
+			{
+				if ((this._PostCode != value))
+				{
+					this._PostCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProdCode", DbType="VarChar(35)")]
+		public string ProdCode
+		{
+			get
+			{
+				return this._ProdCode;
+			}
+			set
+			{
+				if ((this._ProdCode != value))
+				{
+					this._ProdCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SerialNo", DbType="VarChar(64)")]
+		public string SerialNo
+		{
+			get
+			{
+				return this._SerialNo;
+			}
+			set
+			{
+				if ((this._SerialNo != value))
+				{
+					this._SerialNo = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DeviceName", DbType="VarChar(50)")]
+		public string DeviceName
+		{
+			get
+			{
+				return this._DeviceName;
+			}
+			set
+			{
+				if ((this._DeviceName != value))
+				{
+					this._DeviceName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Quantity", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this._Quantity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UnitPrice", DbType="Money")]
+		public System.Nullable<decimal> UnitPrice
+		{
+			get
+			{
+				return this._UnitPrice;
+			}
+			set
+			{
+				if ((this._UnitPrice != value))
+				{
+					this._UnitPrice = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_INT_InvFromDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> INT_InvFromDate
+		{
+			get
+			{
+				return this._INT_InvFromDate;
+			}
+			set
+			{
+				if ((this._INT_InvFromDate != value))
+				{
+					this._INT_InvFromDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_INT_InvToDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> INT_InvToDate
+		{
+			get
+			{
+				return this._INT_InvToDate;
+			}
+			set
+			{
+				if ((this._INT_InvToDate != value))
+				{
+					this._INT_InvToDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CoDetailsExtended", DbType="Decimal(29,6)")]
+		public System.Nullable<decimal> CoDetailsExtended
+		{
+			get
+			{
+				return this._CoDetailsExtended;
+			}
+			set
+			{
+				if ((this._CoDetailsExtended != value))
+				{
+					this._CoDetailsExtended = value;
+				}
+			}
+		}
+	}
+	
+	public partial class PO_ExportToAccpac_OrderItemsResult
+	{
+		
+		private string _RECTYPE;
+		
+		private string _PORHSEQ;
+		
+		private string _PORLREV;
+		
+		private string _OEONUMBER;
+		
+		private string _ITEMNO;
+		
+		private string _LOCATION;
+		
+		private string _EXPARRIVAL;
+		
+		private string _ITEMDESC;
+		
+		private string _ORDERUNIT;
+		
+		private string _OQORDERED;
+		
+		private string _OQRECEIVED;
+		
+		private string _OQOUTSTAND;
+		
+		private string _UNITCOST;
+		
+		private string _ISCOMPLETE;
+		
+		private string _TAXCLASS1;
+		
+		private string _TAXINCLUD1;
+		
+		private string _GLACEXPENS;
+		
+		public PO_ExportToAccpac_OrderItemsResult()
+		{
+		}
+		
+		[Column(Storage="_RECTYPE", DbType="VarChar(2)")]
+		public string RECTYPE
+		{
+			get
+			{
+				return this._RECTYPE;
+			}
+			set
+			{
+				if ((this._RECTYPE != value))
+				{
+					this._RECTYPE = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PORHSEQ", DbType="VarChar(10)")]
+		public string PORHSEQ
+		{
+			get
+			{
+				return this._PORHSEQ;
+			}
+			set
+			{
+				if ((this._PORHSEQ != value))
+				{
+					this._PORHSEQ = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PORLREV", DbType="VarChar(10)")]
+		public string PORLREV
+		{
+			get
+			{
+				return this._PORLREV;
+			}
+			set
+			{
+				if ((this._PORLREV != value))
+				{
+					this._PORLREV = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OEONUMBER", DbType="VarChar(12)")]
+		public string OEONUMBER
+		{
+			get
+			{
+				return this._OEONUMBER;
+			}
+			set
+			{
+				if ((this._OEONUMBER != value))
+				{
+					this._OEONUMBER = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ITEMNO", DbType="VarChar(MAX)")]
+		public string ITEMNO
+		{
+			get
+			{
+				return this._ITEMNO;
+			}
+			set
+			{
+				if ((this._ITEMNO != value))
+				{
+					this._ITEMNO = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LOCATION", DbType="VarChar(8000)")]
+		public string LOCATION
+		{
+			get
+			{
+				return this._LOCATION;
+			}
+			set
+			{
+				if ((this._LOCATION != value))
+				{
+					this._LOCATION = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_EXPARRIVAL", DbType="VarChar(20)")]
+		public string EXPARRIVAL
+		{
+			get
+			{
+				return this._EXPARRIVAL;
+			}
+			set
+			{
+				if ((this._EXPARRIVAL != value))
+				{
+					this._EXPARRIVAL = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ITEMDESC", DbType="VarChar(8000)")]
+		public string ITEMDESC
+		{
+			get
+			{
+				return this._ITEMDESC;
+			}
+			set
+			{
+				if ((this._ITEMDESC != value))
+				{
+					this._ITEMDESC = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ORDERUNIT", DbType="VarChar(20)")]
+		public string ORDERUNIT
+		{
+			get
+			{
+				return this._ORDERUNIT;
+			}
+			set
+			{
+				if ((this._ORDERUNIT != value))
+				{
+					this._ORDERUNIT = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OQORDERED", DbType="VarChar(20)")]
+		public string OQORDERED
+		{
+			get
+			{
+				return this._OQORDERED;
+			}
+			set
+			{
+				if ((this._OQORDERED != value))
+				{
+					this._OQORDERED = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OQRECEIVED", DbType="VarChar(20)")]
+		public string OQRECEIVED
+		{
+			get
+			{
+				return this._OQRECEIVED;
+			}
+			set
+			{
+				if ((this._OQRECEIVED != value))
+				{
+					this._OQRECEIVED = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OQOUTSTAND", DbType="VarChar(20)")]
+		public string OQOUTSTAND
+		{
+			get
+			{
+				return this._OQOUTSTAND;
+			}
+			set
+			{
+				if ((this._OQOUTSTAND != value))
+				{
+					this._OQOUTSTAND = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UNITCOST", DbType="VarChar(20)")]
+		public string UNITCOST
+		{
+			get
+			{
+				return this._UNITCOST;
+			}
+			set
+			{
+				if ((this._UNITCOST != value))
+				{
+					this._UNITCOST = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ISCOMPLETE", DbType="VarChar(20)")]
+		public string ISCOMPLETE
+		{
+			get
+			{
+				return this._ISCOMPLETE;
+			}
+			set
+			{
+				if ((this._ISCOMPLETE != value))
+				{
+					this._ISCOMPLETE = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TAXCLASS1", DbType="VarChar(20)")]
+		public string TAXCLASS1
+		{
+			get
+			{
+				return this._TAXCLASS1;
+			}
+			set
+			{
+				if ((this._TAXCLASS1 != value))
+				{
+					this._TAXCLASS1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TAXINCLUD1", DbType="VarChar(20)")]
+		public string TAXINCLUD1
+		{
+			get
+			{
+				return this._TAXINCLUD1;
+			}
+			set
+			{
+				if ((this._TAXINCLUD1 != value))
+				{
+					this._TAXINCLUD1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_GLACEXPENS", DbType="VarChar(20)")]
+		public string GLACEXPENS
+		{
+			get
+			{
+				return this._GLACEXPENS;
+			}
+			set
+			{
+				if ((this._GLACEXPENS != value))
+				{
+					this._GLACEXPENS = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Project_GetFieldAccessDetailsResult
+	{
+		
+		private System.Nullable<bool> _Mandatory;
+		
+		private System.Nullable<bool> _ReadOnly;
+		
+		private System.Nullable<bool> _NeedPermission;
+		
+		public Project_GetFieldAccessDetailsResult()
+		{
+		}
+		
+		[Column(Storage="_Mandatory", DbType="Bit")]
+		public System.Nullable<bool> Mandatory
+		{
+			get
+			{
+				return this._Mandatory;
+			}
+			set
+			{
+				if ((this._Mandatory != value))
+				{
+					this._Mandatory = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ReadOnly", DbType="Bit")]
+		public System.Nullable<bool> ReadOnly
+		{
+			get
+			{
+				return this._ReadOnly;
+			}
+			set
+			{
+				if ((this._ReadOnly != value))
+				{
+					this._ReadOnly = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NeedPermission", DbType="Bit")]
+		public System.Nullable<bool> NeedPermission
+		{
+			get
+			{
+				return this._NeedPermission;
+			}
+			set
+			{
+				if ((this._NeedPermission != value))
+				{
+					this._NeedPermission = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Project_GetMandatoryFieldsResult
+	{
+		
+		private string _FieldName;
+		
+		private System.Nullable<int> _FieldOrder;
+		
+		public Project_GetMandatoryFieldsResult()
+		{
+		}
+		
+		[Column(Storage="_FieldName", DbType="VarChar(50)")]
+		public string FieldName
+		{
+			get
+			{
+				return this._FieldName;
+			}
+			set
+			{
+				if ((this._FieldName != value))
+				{
+					this._FieldName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FieldOrder", DbType="Int")]
+		public System.Nullable<int> FieldOrder
+		{
+			get
+			{
+				return this._FieldOrder;
+			}
+			set
+			{
+				if ((this._FieldOrder != value))
+				{
+					this._FieldOrder = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Project_GetProjectTypeResult
+	{
+		
+		private string _Column1;
+		
+		public Project_GetProjectTypeResult()
+		{
+		}
+		
+		[Column(Name="", Storage="_Column1", DbType="VarChar(20)")]
+		public string Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Project_PCR_GetFieldAccessDetailsResult
+	{
+		
+		private System.Nullable<bool> _Mandatory;
+		
+		private System.Nullable<bool> _ReadOnly;
+		
+		private System.Nullable<bool> _NeedPermission;
+		
+		public Project_PCR_GetFieldAccessDetailsResult()
+		{
+		}
+		
+		[Column(Storage="_Mandatory", DbType="Bit")]
+		public System.Nullable<bool> Mandatory
+		{
+			get
+			{
+				return this._Mandatory;
+			}
+			set
+			{
+				if ((this._Mandatory != value))
+				{
+					this._Mandatory = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ReadOnly", DbType="Bit")]
+		public System.Nullable<bool> ReadOnly
+		{
+			get
+			{
+				return this._ReadOnly;
+			}
+			set
+			{
+				if ((this._ReadOnly != value))
+				{
+					this._ReadOnly = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NeedPermission", DbType="Bit")]
+		public System.Nullable<bool> NeedPermission
+		{
+			get
+			{
+				return this._NeedPermission;
+			}
+			set
+			{
+				if ((this._NeedPermission != value))
+				{
+					this._NeedPermission = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Project_PCR_GetMandatoryFieldsResult
+	{
+		
+		private string _FieldName;
+		
+		private System.Nullable<int> _FieldOrder;
+		
+		public Project_PCR_GetMandatoryFieldsResult()
+		{
+		}
+		
+		[Column(Storage="_FieldName", DbType="VarChar(50)")]
+		public string FieldName
+		{
+			get
+			{
+				return this._FieldName;
+			}
+			set
+			{
+				if ((this._FieldName != value))
+				{
+					this._FieldName = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FieldOrder", DbType="Int")]
+		public System.Nullable<int> FieldOrder
+		{
+			get
+			{
+				return this._FieldOrder;
+			}
+			set
+			{
+				if ((this._FieldOrder != value))
+				{
+					this._FieldOrder = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SimulateDebtorPaymentResult
+	{
+		
+		private System.Nullable<decimal> _Current;
+		
+		private System.Nullable<decimal> @__30Days;
+		
+		private System.Nullable<decimal> @__60Days;
+		
+		private System.Nullable<decimal> @__90Days;
+		
+		private System.Nullable<decimal> _Balance;
+		
+		public SimulateDebtorPaymentResult()
+		{
+		}
+		
+		[Column(Storage="_Current", DbType="Money")]
+		public System.Nullable<decimal> Current
+		{
+			get
+			{
+				return this._Current;
+			}
+			set
+			{
+				if ((this._Current != value))
+				{
+					this._Current = value;
+				}
+			}
+		}
+		
+		[Column(Name="30Days", Storage="__30Days", DbType="Money")]
+		public System.Nullable<decimal> _30Days
+		{
+			get
+			{
+				return this.@__30Days;
+			}
+			set
+			{
+				if ((this.@__30Days != value))
+				{
+					this.@__30Days = value;
+				}
+			}
+		}
+		
+		[Column(Name="60Days", Storage="__60Days", DbType="Money")]
+		public System.Nullable<decimal> _60Days
+		{
+			get
+			{
+				return this.@__60Days;
+			}
+			set
+			{
+				if ((this.@__60Days != value))
+				{
+					this.@__60Days = value;
+				}
+			}
+		}
+		
+		[Column(Name="90Days", Storage="__90Days", DbType="Money")]
+		public System.Nullable<decimal> _90Days
+		{
+			get
+			{
+				return this.@__90Days;
+			}
+			set
+			{
+				if ((this.@__90Days != value))
+				{
+					this.@__90Days = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Balance", DbType="Money")]
+		public System.Nullable<decimal> Balance
+		{
+			get
+			{
+				return this._Balance;
+			}
+			set
+			{
+				if ((this._Balance != value))
+				{
+					this._Balance = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Sp_TestStoredProcedureResult
+	{
+		
+		private System.Nullable<int> _Accountid;
+		
+		private string _Company;
+		
+		private string _State;
+		
+		private string _Prodcode;
+		
+		private string _Devicename;
+		
+		private string _Engineer;
+		
+		private string _Brand;
+		
+		private string _Model;
+		
+		private string _Machinetype;
+		
+		private string _Serialno;
+		
+		private System.Nullable<decimal> _Total;
+		
+		public Sp_TestStoredProcedureResult()
+		{
+		}
+		
+		[Column(Name="accountid", Storage="_Accountid", DbType="Int")]
+		public System.Nullable<int> Accountid
+		{
+			get
+			{
+				return this._Accountid;
+			}
+			set
+			{
+				if ((this._Accountid != value))
+				{
+					this._Accountid = value;
+				}
+			}
+		}
+		
+		[Column(Name="company", Storage="_Company", DbType="VarChar(80)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Name="state", Storage="_State", DbType="VarChar(5)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[Column(Name="prodcode", Storage="_Prodcode", DbType="VarChar(35)")]
+		public string Prodcode
+		{
+			get
+			{
+				return this._Prodcode;
+			}
+			set
+			{
+				if ((this._Prodcode != value))
+				{
+					this._Prodcode = value;
+				}
+			}
+		}
+		
+		[Column(Name="devicename", Storage="_Devicename", DbType="VarChar(50)")]
+		public string Devicename
+		{
+			get
+			{
+				return this._Devicename;
+			}
+			set
+			{
+				if ((this._Devicename != value))
+				{
+					this._Devicename = value;
+				}
+			}
+		}
+		
+		[Column(Name="engineer", Storage="_Engineer", DbType="VarChar(25)")]
+		public string Engineer
+		{
+			get
+			{
+				return this._Engineer;
+			}
+			set
+			{
+				if ((this._Engineer != value))
+				{
+					this._Engineer = value;
+				}
+			}
+		}
+		
+		[Column(Name="brand", Storage="_Brand", DbType="VarChar(35)")]
+		public string Brand
+		{
+			get
+			{
+				return this._Brand;
+			}
+			set
+			{
+				if ((this._Brand != value))
+				{
+					this._Brand = value;
+				}
+			}
+		}
+		
+		[Column(Name="model", Storage="_Model", DbType="VarChar(35)")]
+		public string Model
+		{
+			get
+			{
+				return this._Model;
+			}
+			set
+			{
+				if ((this._Model != value))
+				{
+					this._Model = value;
+				}
+			}
+		}
+		
+		[Column(Name="machinetype", Storage="_Machinetype", DbType="VarChar(50)")]
+		public string Machinetype
+		{
+			get
+			{
+				return this._Machinetype;
+			}
+			set
+			{
+				if ((this._Machinetype != value))
+				{
+					this._Machinetype = value;
+				}
+			}
+		}
+		
+		[Column(Name="serialno", Storage="_Serialno", DbType="VarChar(64)")]
+		public string Serialno
+		{
+			get
+			{
+				return this._Serialno;
+			}
+			set
+			{
+				if ((this._Serialno != value))
+				{
+					this._Serialno = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Total", DbType="Money")]
+		public System.Nullable<decimal> Total
+		{
+			get
+			{
+				return this._Total;
+			}
+			set
+			{
+				if ((this._Total != value))
+				{
+					this._Total = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SpThirdPartyFinanceGUI_GetAgreementDetailsResult
+	{
+		
+		private string _Company;
+		
+		private string _BillingFrequencyDescription;
+		
+		private System.Nullable<System.DateTime> _InvoiceStartDate;
+		
+		private System.Nullable<System.DateTime> _InvoiceEndDate;
+		
+		public SpThirdPartyFinanceGUI_GetAgreementDetailsResult()
+		{
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(55)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_BillingFrequencyDescription", DbType="VarChar(9)")]
+		public string BillingFrequencyDescription
+		{
+			get
+			{
+				return this._BillingFrequencyDescription;
+			}
+			set
+			{
+				if ((this._BillingFrequencyDescription != value))
+				{
+					this._BillingFrequencyDescription = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceStartDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> InvoiceStartDate
+		{
+			get
+			{
+				return this._InvoiceStartDate;
+			}
+			set
+			{
+				if ((this._InvoiceStartDate != value))
+				{
+					this._InvoiceStartDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceEndDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> InvoiceEndDate
+		{
+			get
+			{
+				return this._InvoiceEndDate;
+			}
+			set
+			{
+				if ((this._InvoiceEndDate != value))
+				{
+					this._InvoiceEndDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SpThirdPartyFinanceGUI_GetAgreementGLCodeTotalsResult
+	{
+		
+		private string _GLCode;
+		
+		private System.Nullable<decimal> _AgreementGLCodeTotal;
+		
+		public SpThirdPartyFinanceGUI_GetAgreementGLCodeTotalsResult()
+		{
+		}
+		
+		[Column(Storage="_GLCode", DbType="VarChar(16)")]
+		public string GLCode
+		{
+			get
+			{
+				return this._GLCode;
+			}
+			set
+			{
+				if ((this._GLCode != value))
+				{
+					this._GLCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AgreementGLCodeTotal", DbType="Money")]
+		public System.Nullable<decimal> AgreementGLCodeTotal
+		{
+			get
+			{
+				return this._AgreementGLCodeTotal;
+			}
+			set
+			{
+				if ((this._AgreementGLCodeTotal != value))
+				{
+					this._AgreementGLCodeTotal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SpThirdPartyFinanceGUI_GetAgreementTotalResult
+	{
+		
+		private System.Nullable<decimal> _AgreementTotal;
+		
+		public SpThirdPartyFinanceGUI_GetAgreementTotalResult()
+		{
+		}
+		
+		[Column(Storage="_AgreementTotal", DbType="Money")]
+		public System.Nullable<decimal> AgreementTotal
+		{
+			get
+			{
+				return this._AgreementTotal;
+			}
+			set
+			{
+				if ((this._AgreementTotal != value))
+				{
+					this._AgreementTotal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SpThirdPartyFinanceGUI_GetDeviceDetailsResult
+	{
+		
+		private string _ProdCode;
+		
+		private string _State;
+		
+		private string _RevenueCategoryDescription;
+		
+		private string _GLCode;
+		
+		private System.Nullable<decimal> _DeviceTotal;
+		
+		public SpThirdPartyFinanceGUI_GetDeviceDetailsResult()
+		{
+		}
+		
+		[Column(Storage="_ProdCode", DbType="VarChar(35)")]
+		public string ProdCode
+		{
+			get
+			{
+				return this._ProdCode;
+			}
+			set
+			{
+				if ((this._ProdCode != value))
+				{
+					this._ProdCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_State", DbType="VarChar(5)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevenueCategoryDescription", DbType="VarChar(32)")]
+		public string RevenueCategoryDescription
+		{
+			get
+			{
+				return this._RevenueCategoryDescription;
+			}
+			set
+			{
+				if ((this._RevenueCategoryDescription != value))
+				{
+					this._RevenueCategoryDescription = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_GLCode", DbType="VarChar(16)")]
+		public string GLCode
+		{
+			get
+			{
+				return this._GLCode;
+			}
+			set
+			{
+				if ((this._GLCode != value))
+				{
+					this._GLCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DeviceTotal", DbType="Money")]
+		public System.Nullable<decimal> DeviceTotal
+		{
+			get
+			{
+				return this._DeviceTotal;
+			}
+			set
+			{
+				if ((this._DeviceTotal != value))
+				{
+					this._DeviceTotal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SpThirdPartyFinanceGUI_GetInvoiceDeviceDetailsResult
+	{
+		
+		private string _ProdCode;
+		
+		private string _State;
+		
+		private string _RevenueCategoryDescription;
+		
+		private string _GLCode;
+		
+		private System.Nullable<decimal> _DeviceTotal;
+		
+		public SpThirdPartyFinanceGUI_GetInvoiceDeviceDetailsResult()
+		{
+		}
+		
+		[Column(Storage="_ProdCode", DbType="VarChar(35)")]
+		public string ProdCode
+		{
+			get
+			{
+				return this._ProdCode;
+			}
+			set
+			{
+				if ((this._ProdCode != value))
+				{
+					this._ProdCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_State", DbType="VarChar(5)")]
+		public string State
+		{
+			get
+			{
+				return this._State;
+			}
+			set
+			{
+				if ((this._State != value))
+				{
+					this._State = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevenueCategoryDescription", DbType="VarChar(32)")]
+		public string RevenueCategoryDescription
+		{
+			get
+			{
+				return this._RevenueCategoryDescription;
+			}
+			set
+			{
+				if ((this._RevenueCategoryDescription != value))
+				{
+					this._RevenueCategoryDescription = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_GLCode", DbType="VarChar(16)")]
+		public string GLCode
+		{
+			get
+			{
+				return this._GLCode;
+			}
+			set
+			{
+				if ((this._GLCode != value))
+				{
+					this._GLCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DeviceTotal", DbType="Money")]
+		public System.Nullable<decimal> DeviceTotal
+		{
+			get
+			{
+				return this._DeviceTotal;
+			}
+			set
+			{
+				if ((this._DeviceTotal != value))
+				{
+					this._DeviceTotal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SpThirdPartyFinanceGUI_GetInvoiceForDatesResult
+	{
+		
+		private System.Nullable<int> _OrdNum;
+		
+		private string _InvoiceNum;
+		
+		private System.Nullable<System.DateTime> _InvoiceFromDate;
+		
+		private System.Nullable<System.DateTime> _InvoiceToDate;
+		
+		public SpThirdPartyFinanceGUI_GetInvoiceForDatesResult()
+		{
+		}
+		
+		[Column(Storage="_OrdNum", DbType="Int")]
+		public System.Nullable<int> OrdNum
+		{
+			get
+			{
+				return this._OrdNum;
+			}
+			set
+			{
+				if ((this._OrdNum != value))
+				{
+					this._OrdNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceNum", DbType="VarChar(20)")]
+		public string InvoiceNum
+		{
+			get
+			{
+				return this._InvoiceNum;
+			}
+			set
+			{
+				if ((this._InvoiceNum != value))
+				{
+					this._InvoiceNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceFromDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> InvoiceFromDate
+		{
+			get
+			{
+				return this._InvoiceFromDate;
+			}
+			set
+			{
+				if ((this._InvoiceFromDate != value))
+				{
+					this._InvoiceFromDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InvoiceToDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> InvoiceToDate
+		{
+			get
+			{
+				return this._InvoiceToDate;
+			}
+			set
+			{
+				if ((this._InvoiceToDate != value))
+				{
+					this._InvoiceToDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SpThirdPartyFinanceGUI_GetInvoiceGLCodeTotalsResult
+	{
+		
+		private string _GLCode;
+		
+		private System.Nullable<decimal> _AgreementGLCodeTotal;
+		
+		public SpThirdPartyFinanceGUI_GetInvoiceGLCodeTotalsResult()
+		{
+		}
+		
+		[Column(Storage="_GLCode", DbType="VarChar(16)")]
+		public string GLCode
+		{
+			get
+			{
+				return this._GLCode;
+			}
+			set
+			{
+				if ((this._GLCode != value))
+				{
+					this._GLCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AgreementGLCodeTotal", DbType="Money")]
+		public System.Nullable<decimal> AgreementGLCodeTotal
+		{
+			get
+			{
+				return this._AgreementGLCodeTotal;
+			}
+			set
+			{
+				if ((this._AgreementGLCodeTotal != value))
+				{
+					this._AgreementGLCodeTotal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SpThirdPartyFinanceGUI_GetInvoiceTotalResult
+	{
+		
+		private System.Nullable<decimal> _InvoiceTotal;
+		
+		public SpThirdPartyFinanceGUI_GetInvoiceTotalResult()
+		{
+		}
+		
+		[Column(Storage="_InvoiceTotal", DbType="Money")]
+		public System.Nullable<decimal> InvoiceTotal
+		{
+			get
+			{
+				return this._InvoiceTotal;
+			}
+			set
+			{
+				if ((this._InvoiceTotal != value))
+				{
+					this._InvoiceTotal = value;
+				}
+			}
+		}
+	}
+	
+	public partial class STOCK_GetLastChangedByResult
+	{
+		
+		private System.Nullable<System.DateTime> _UpdDate;
+		
+		private string _Username;
+		
+		private string _Type;
+		
+		public STOCK_GetLastChangedByResult()
+		{
+		}
+		
+		[Column(Storage="_UpdDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> UpdDate
+		{
+			get
+			{
+				return this._UpdDate;
+			}
+			set
+			{
+				if ((this._UpdDate != value))
+				{
+					this._UpdDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Username", DbType="VarChar(52)")]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this._Username = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Type", DbType="VarChar(7)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Stock_GetLocQOHResult
+	{
+		
+		private System.Nullable<int> _QOH;
+		
+		public Stock_GetLocQOHResult()
+		{
+		}
+		
+		[Column(Storage="_QOH", DbType="Int")]
+		public System.Nullable<int> QOH
+		{
+			get
+			{
+				return this._QOH;
+			}
+			set
+			{
+				if ((this._QOH != value))
+				{
+					this._QOH = value;
+				}
+			}
+		}
+	}
+	
+	public partial class STOCK_REPORTResult
+	{
+		
+		private string _ProdCode;
+		
+		private string _XRefCode;
+		
+		private string _DistribCode;
+		
+		private string _SupProdCode;
+		
+		private string _Type;
+		
+		private System.Nullable<bool> _Available;
+		
+		private string _Description;
+		
+		private string _CardNum;
+		
+		private string _PriceUnit;
+		
+		private System.Nullable<decimal> _SupplierCost;
+		
+		private System.Nullable<System.DateTime> _DateUpdated;
+		
+		private System.Nullable<decimal> _AvgCost;
+		
+		private System.Nullable<int> _Minimum;
+		
+		private System.Nullable<int> _Maximum;
+		
+		private System.Nullable<decimal> _PrevStock;
+		
+		private string _UPC;
+		
+		private string _Rep;
+		
+		private string _SupplierCode;
+		
+		private string _SupplierCode1;
+		
+		private string _SupplierCode2;
+		
+		private string _SupplierCode3;
+		
+		private System.Nullable<decimal> _MTD_UNITS;
+		
+		private System.Nullable<decimal> _MTD_COST;
+		
+		private System.Nullable<decimal> _YTD_UNITS;
+		
+		private System.Nullable<decimal> _YTD_COST;
+		
+		private System.Nullable<decimal> _LY_UNITS;
+		
+		private System.Nullable<decimal> _LY_COST;
+		
+		private System.Nullable<decimal> _TodayUnits;
+		
+		private System.Nullable<int> _AvgLast15;
+		
+		private System.Nullable<int> _AvgLast6;
+		
+		private System.Nullable<int> _AvgLast3;
+		
+		private System.Nullable<int> _SuggOrd;
+		
+		private System.Nullable<bool> _Accepted;
+		
+		private System.Nullable<int> _SuggOrdAv;
+		
+		private System.Nullable<bool> _AcceptedAv;
+		
+		private string _Specifications;
+		
+		private string _InternalNotes;
+		
+		private System.Nullable<decimal> _ReStockMin;
+		
+		private System.Nullable<bool> _Discontinued;
+		
+		private System.Nullable<System.DateTime> _DateDiscontinued;
+		
+		private System.Nullable<decimal> _TaxRate;
+		
+		private string _Group;
+		
+		private string _Brand;
+		
+		private string _MachineType;
+		
+		private string _DeviceCode;
+		
+		private System.Nullable<decimal> _PRICE;
+		
+		private string _Model;
+		
+		private System.Nullable<int> _RevenueCategory;
+		
+		private string _INT_SerialNo;
+		
+		private System.Nullable<int> _PartsType;
+		
+		private System.Nullable<bool> _ExcludeFromSnapshot;
+		
+		private System.Nullable<bool> _CarbonTaxEligible;
+		
+		private System.Nullable<decimal> _Price24x7x2;
+		
+		private System.Nullable<decimal> _Price9x5x4;
+		
+		private System.Nullable<decimal> _Price24x7x4;
+		
+		private System.Nullable<decimal> _Price9x5x2;
+		
+		private System.Nullable<System.DateTime> _PricesLastUpdated;
+		
+		private string _PricesSource;
+		
+		public STOCK_REPORTResult()
+		{
+		}
+		
+		[Column(Storage="_ProdCode", DbType="VarChar(35)")]
+		public string ProdCode
+		{
+			get
+			{
+				return this._ProdCode;
+			}
+			set
+			{
+				if ((this._ProdCode != value))
+				{
+					this._ProdCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_XRefCode", DbType="VarChar(35)")]
+		public string XRefCode
+		{
+			get
+			{
+				return this._XRefCode;
+			}
+			set
+			{
+				if ((this._XRefCode != value))
+				{
+					this._XRefCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DistribCode", DbType="VarChar(16)")]
+		public string DistribCode
+		{
+			get
+			{
+				return this._DistribCode;
+			}
+			set
+			{
+				if ((this._DistribCode != value))
+				{
+					this._DistribCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SupProdCode", DbType="VarChar(35)")]
+		public string SupProdCode
+		{
+			get
+			{
+				return this._SupProdCode;
+			}
+			set
+			{
+				if ((this._SupProdCode != value))
+				{
+					this._SupProdCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Type", DbType="Char(1)")]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Available", DbType="Bit")]
+		public System.Nullable<bool> Available
+		{
+			get
+			{
+				return this._Available;
+			}
+			set
+			{
+				if ((this._Available != value))
+				{
+					this._Available = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Description", DbType="VarChar(50)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CardNum", DbType="VarChar(10)")]
+		public string CardNum
+		{
+			get
+			{
+				return this._CardNum;
+			}
+			set
+			{
+				if ((this._CardNum != value))
+				{
+					this._CardNum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PriceUnit", DbType="VarChar(9)")]
+		public string PriceUnit
+		{
+			get
+			{
+				return this._PriceUnit;
+			}
+			set
+			{
+				if ((this._PriceUnit != value))
+				{
+					this._PriceUnit = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SupplierCost", DbType="Decimal(18,3)")]
+		public System.Nullable<decimal> SupplierCost
+		{
+			get
+			{
+				return this._SupplierCost;
+			}
+			set
+			{
+				if ((this._SupplierCost != value))
+				{
+					this._SupplierCost = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DateUpdated", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateUpdated
+		{
+			get
+			{
+				return this._DateUpdated;
+			}
+			set
+			{
+				if ((this._DateUpdated != value))
+				{
+					this._DateUpdated = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AvgCost", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> AvgCost
+		{
+			get
+			{
+				return this._AvgCost;
+			}
+			set
+			{
+				if ((this._AvgCost != value))
+				{
+					this._AvgCost = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Minimum", DbType="Int")]
+		public System.Nullable<int> Minimum
+		{
+			get
+			{
+				return this._Minimum;
+			}
+			set
+			{
+				if ((this._Minimum != value))
+				{
+					this._Minimum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Maximum", DbType="Int")]
+		public System.Nullable<int> Maximum
+		{
+			get
+			{
+				return this._Maximum;
+			}
+			set
+			{
+				if ((this._Maximum != value))
+				{
+					this._Maximum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PrevStock", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> PrevStock
+		{
+			get
+			{
+				return this._PrevStock;
+			}
+			set
+			{
+				if ((this._PrevStock != value))
+				{
+					this._PrevStock = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_UPC", DbType="VarChar(16)")]
+		public string UPC
+		{
+			get
+			{
+				return this._UPC;
+			}
+			set
+			{
+				if ((this._UPC != value))
+				{
+					this._UPC = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Rep", DbType="VarChar(5)")]
+		public string Rep
+		{
+			get
+			{
+				return this._Rep;
+			}
+			set
+			{
+				if ((this._Rep != value))
+				{
+					this._Rep = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SupplierCode", DbType="VarChar(16)")]
+		public string SupplierCode
+		{
+			get
+			{
+				return this._SupplierCode;
+			}
+			set
+			{
+				if ((this._SupplierCode != value))
+				{
+					this._SupplierCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SupplierCode1", DbType="VarChar(16)")]
+		public string SupplierCode1
+		{
+			get
+			{
+				return this._SupplierCode1;
+			}
+			set
+			{
+				if ((this._SupplierCode1 != value))
+				{
+					this._SupplierCode1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SupplierCode2", DbType="VarChar(16)")]
+		public string SupplierCode2
+		{
+			get
+			{
+				return this._SupplierCode2;
+			}
+			set
+			{
+				if ((this._SupplierCode2 != value))
+				{
+					this._SupplierCode2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SupplierCode3", DbType="VarChar(16)")]
+		public string SupplierCode3
+		{
+			get
+			{
+				return this._SupplierCode3;
+			}
+			set
+			{
+				if ((this._SupplierCode3 != value))
+				{
+					this._SupplierCode3 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MTD_UNITS", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> MTD_UNITS
+		{
+			get
+			{
+				return this._MTD_UNITS;
+			}
+			set
+			{
+				if ((this._MTD_UNITS != value))
+				{
+					this._MTD_UNITS = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MTD_COST", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> MTD_COST
+		{
+			get
+			{
+				return this._MTD_COST;
+			}
+			set
+			{
+				if ((this._MTD_COST != value))
+				{
+					this._MTD_COST = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_YTD_UNITS", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> YTD_UNITS
+		{
+			get
+			{
+				return this._YTD_UNITS;
+			}
+			set
+			{
+				if ((this._YTD_UNITS != value))
+				{
+					this._YTD_UNITS = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_YTD_COST", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> YTD_COST
+		{
+			get
+			{
+				return this._YTD_COST;
+			}
+			set
+			{
+				if ((this._YTD_COST != value))
+				{
+					this._YTD_COST = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LY_UNITS", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LY_UNITS
+		{
+			get
+			{
+				return this._LY_UNITS;
+			}
+			set
+			{
+				if ((this._LY_UNITS != value))
+				{
+					this._LY_UNITS = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LY_COST", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> LY_COST
+		{
+			get
+			{
+				return this._LY_COST;
+			}
+			set
+			{
+				if ((this._LY_COST != value))
+				{
+					this._LY_COST = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TodayUnits", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> TodayUnits
+		{
+			get
+			{
+				return this._TodayUnits;
+			}
+			set
+			{
+				if ((this._TodayUnits != value))
+				{
+					this._TodayUnits = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AvgLast15", DbType="Int")]
+		public System.Nullable<int> AvgLast15
+		{
+			get
+			{
+				return this._AvgLast15;
+			}
+			set
+			{
+				if ((this._AvgLast15 != value))
+				{
+					this._AvgLast15 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AvgLast6", DbType="Int")]
+		public System.Nullable<int> AvgLast6
+		{
+			get
+			{
+				return this._AvgLast6;
+			}
+			set
+			{
+				if ((this._AvgLast6 != value))
+				{
+					this._AvgLast6 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AvgLast3", DbType="Int")]
+		public System.Nullable<int> AvgLast3
+		{
+			get
+			{
+				return this._AvgLast3;
+			}
+			set
+			{
+				if ((this._AvgLast3 != value))
+				{
+					this._AvgLast3 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SuggOrd", DbType="Int")]
+		public System.Nullable<int> SuggOrd
+		{
+			get
+			{
+				return this._SuggOrd;
+			}
+			set
+			{
+				if ((this._SuggOrd != value))
+				{
+					this._SuggOrd = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Accepted", DbType="Bit")]
+		public System.Nullable<bool> Accepted
+		{
+			get
+			{
+				return this._Accepted;
+			}
+			set
+			{
+				if ((this._Accepted != value))
+				{
+					this._Accepted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SuggOrdAv", DbType="Int")]
+		public System.Nullable<int> SuggOrdAv
+		{
+			get
+			{
+				return this._SuggOrdAv;
+			}
+			set
+			{
+				if ((this._SuggOrdAv != value))
+				{
+					this._SuggOrdAv = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AcceptedAv", DbType="Bit")]
+		public System.Nullable<bool> AcceptedAv
+		{
+			get
+			{
+				return this._AcceptedAv;
+			}
+			set
+			{
+				if ((this._AcceptedAv != value))
+				{
+					this._AcceptedAv = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Specifications", DbType="VarChar(2048)")]
+		public string Specifications
+		{
+			get
+			{
+				return this._Specifications;
+			}
+			set
+			{
+				if ((this._Specifications != value))
+				{
+					this._Specifications = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_InternalNotes", DbType="VarChar(2048)")]
+		public string InternalNotes
+		{
+			get
+			{
+				return this._InternalNotes;
+			}
+			set
+			{
+				if ((this._InternalNotes != value))
+				{
+					this._InternalNotes = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ReStockMin", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> ReStockMin
+		{
+			get
+			{
+				return this._ReStockMin;
+			}
+			set
+			{
+				if ((this._ReStockMin != value))
+				{
+					this._ReStockMin = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Discontinued", DbType="Bit")]
+		public System.Nullable<bool> Discontinued
+		{
+			get
+			{
+				return this._Discontinued;
+			}
+			set
+			{
+				if ((this._Discontinued != value))
+				{
+					this._Discontinued = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DateDiscontinued", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateDiscontinued
+		{
+			get
+			{
+				return this._DateDiscontinued;
+			}
+			set
+			{
+				if ((this._DateDiscontinued != value))
+				{
+					this._DateDiscontinued = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TaxRate", DbType="Decimal(2,0)")]
+		public System.Nullable<decimal> TaxRate
+		{
+			get
+			{
+				return this._TaxRate;
+			}
+			set
+			{
+				if ((this._TaxRate != value))
+				{
+					this._TaxRate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Group", DbType="VarChar(12)")]
+		public string Group
+		{
+			get
+			{
+				return this._Group;
+			}
+			set
+			{
+				if ((this._Group != value))
+				{
+					this._Group = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Brand", DbType="VarChar(35)")]
+		public string Brand
+		{
+			get
+			{
+				return this._Brand;
+			}
+			set
+			{
+				if ((this._Brand != value))
+				{
+					this._Brand = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MachineType", DbType="VarChar(50)")]
+		public string MachineType
+		{
+			get
+			{
+				return this._MachineType;
+			}
+			set
+			{
+				if ((this._MachineType != value))
+				{
+					this._MachineType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DeviceCode", DbType="VarChar(35)")]
+		public string DeviceCode
+		{
+			get
+			{
+				return this._DeviceCode;
+			}
+			set
+			{
+				if ((this._DeviceCode != value))
+				{
+					this._DeviceCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PRICE", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> PRICE
+		{
+			get
+			{
+				return this._PRICE;
+			}
+			set
+			{
+				if ((this._PRICE != value))
+				{
+					this._PRICE = value;
+				}
+			}
+		}
+		
+		[Column(Name="model", Storage="_Model", DbType="VarChar(35)")]
+		public string Model
+		{
+			get
+			{
+				return this._Model;
+			}
+			set
+			{
+				if ((this._Model != value))
+				{
+					this._Model = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_RevenueCategory", DbType="Int")]
+		public System.Nullable<int> RevenueCategory
+		{
+			get
+			{
+				return this._RevenueCategory;
+			}
+			set
+			{
+				if ((this._RevenueCategory != value))
+				{
+					this._RevenueCategory = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_INT_SerialNo", DbType="VarChar(64)")]
+		public string INT_SerialNo
+		{
+			get
+			{
+				return this._INT_SerialNo;
+			}
+			set
+			{
+				if ((this._INT_SerialNo != value))
+				{
+					this._INT_SerialNo = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PartsType", DbType="Int")]
+		public System.Nullable<int> PartsType
+		{
+			get
+			{
+				return this._PartsType;
+			}
+			set
+			{
+				if ((this._PartsType != value))
+				{
+					this._PartsType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ExcludeFromSnapshot", DbType="Bit")]
+		public System.Nullable<bool> ExcludeFromSnapshot
+		{
+			get
+			{
+				return this._ExcludeFromSnapshot;
+			}
+			set
+			{
+				if ((this._ExcludeFromSnapshot != value))
+				{
+					this._ExcludeFromSnapshot = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CarbonTaxEligible", DbType="Bit")]
+		public System.Nullable<bool> CarbonTaxEligible
+		{
+			get
+			{
+				return this._CarbonTaxEligible;
+			}
+			set
+			{
+				if ((this._CarbonTaxEligible != value))
+				{
+					this._CarbonTaxEligible = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Price24x7x2", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Price24x7x2
+		{
+			get
+			{
+				return this._Price24x7x2;
+			}
+			set
+			{
+				if ((this._Price24x7x2 != value))
+				{
+					this._Price24x7x2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Price9x5x4", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Price9x5x4
+		{
+			get
+			{
+				return this._Price9x5x4;
+			}
+			set
+			{
+				if ((this._Price9x5x4 != value))
+				{
+					this._Price9x5x4 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Price24x7x4", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Price24x7x4
+		{
+			get
+			{
+				return this._Price24x7x4;
+			}
+			set
+			{
+				if ((this._Price24x7x4 != value))
+				{
+					this._Price24x7x4 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Price9x5x2", DbType="Decimal(9,2)")]
+		public System.Nullable<decimal> Price9x5x2
+		{
+			get
+			{
+				return this._Price9x5x2;
+			}
+			set
+			{
+				if ((this._Price9x5x2 != value))
+				{
+					this._Price9x5x2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PricesLastUpdated", DbType="DateTime")]
+		public System.Nullable<System.DateTime> PricesLastUpdated
+		{
+			get
+			{
+				return this._PricesLastUpdated;
+			}
+			set
+			{
+				if ((this._PricesLastUpdated != value))
+				{
+					this._PricesLastUpdated = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_PricesSource", DbType="VarChar(100)")]
+		public string PricesSource
+		{
+			get
+			{
+				return this._PricesSource;
+			}
+			set
+			{
+				if ((this._PricesSource != value))
+				{
+					this._PricesSource = value;
+				}
+			}
+		}
+	}
+	
+	public partial class STOCK_SHELF_HISTORYResult
+	{
+		
+		private string _PRODCODE;
+		
+		private System.Nullable<int> _LOCATIONID;
+		
+		private System.Nullable<int> _LASTSHELF;
+		
+		private string _NAME;
+		
+		private string _ShelfDesc;
+		
+		public STOCK_SHELF_HISTORYResult()
+		{
+		}
+		
+		[Column(Storage="_PRODCODE", DbType="VarChar(35)")]
+		public string PRODCODE
+		{
+			get
+			{
+				return this._PRODCODE;
+			}
+			set
+			{
+				if ((this._PRODCODE != value))
+				{
+					this._PRODCODE = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LOCATIONID", DbType="Int")]
+		public System.Nullable<int> LOCATIONID
+		{
+			get
+			{
+				return this._LOCATIONID;
+			}
+			set
+			{
+				if ((this._LOCATIONID != value))
+				{
+					this._LOCATIONID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_LASTSHELF", DbType="Int")]
+		public System.Nullable<int> LASTSHELF
+		{
+			get
+			{
+				return this._LASTSHELF;
+			}
+			set
+			{
+				if ((this._LASTSHELF != value))
+				{
+					this._LASTSHELF = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_NAME", DbType="VarChar(50)")]
+		public string NAME
+		{
+			get
+			{
+				return this._NAME;
+			}
+			set
+			{
+				if ((this._NAME != value))
+				{
+					this._NAME = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ShelfDesc", DbType="VarChar(98)")]
+		public string ShelfDesc
+		{
+			get
+			{
+				return this._ShelfDesc;
+			}
+			set
+			{
+				if ((this._ShelfDesc != value))
+				{
+					this._ShelfDesc = value;
+				}
+			}
+		}
+	}
+	
+	public partial class StockGroupNameResult
+	{
+		
+		private string _Group_Name;
+		
+		public StockGroupNameResult()
+		{
+		}
+		
+		[Column(Storage="_Group_Name", DbType="VarChar(50)")]
+		public string Group_Name
+		{
+			get
+			{
+				return this._Group_Name;
+			}
+			set
+			{
+				if ((this._Group_Name != value))
+				{
+					this._Group_Name = value;
+				}
+			}
+		}
+	}
+	
+	public partial class StockItemInfoResult
+	{
+		
+		private string _ProdCode;
+		
+		private string _XRefCode;
+		
+		private string _Description;
+		
+		private System.Nullable<System.DateTime> _DateUpdated;
+		
+		private System.Nullable<int> _Minimum;
+		
+		private System.Nullable<int> _Maximum;
+		
+		public StockItemInfoResult()
+		{
+		}
+		
+		[Column(Storage="_ProdCode", DbType="VarChar(35)")]
+		public string ProdCode
+		{
+			get
+			{
+				return this._ProdCode;
+			}
+			set
+			{
+				if ((this._ProdCode != value))
+				{
+					this._ProdCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_XRefCode", DbType="VarChar(35)")]
+		public string XRefCode
+		{
+			get
+			{
+				return this._XRefCode;
+			}
+			set
+			{
+				if ((this._XRefCode != value))
+				{
+					this._XRefCode = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Description", DbType="VarChar(50)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this._Description = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DateUpdated", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateUpdated
+		{
+			get
+			{
+				return this._DateUpdated;
+			}
+			set
+			{
+				if ((this._DateUpdated != value))
+				{
+					this._DateUpdated = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Minimum", DbType="Int")]
+		public System.Nullable<int> Minimum
+		{
+			get
+			{
+				return this._Minimum;
+			}
+			set
+			{
+				if ((this._Minimum != value))
+				{
+					this._Minimum = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Maximum", DbType="Int")]
+		public System.Nullable<int> Maximum
+		{
+			get
+			{
+				return this._Maximum;
+			}
+			set
+			{
+				if ((this._Maximum != value))
+				{
+					this._Maximum = value;
+				}
+			}
+		}
+	}
+	
+	public partial class UnAuditedTransactionsResult
+	{
+		
+		private System.Nullable<int> _TransID;
+		
+		private string _TransType;
+		
+		public UnAuditedTransactionsResult()
+		{
+		}
+		
+		[Column(Storage="_TransID", DbType="Int")]
+		public System.Nullable<int> TransID
+		{
+			get
+			{
+				return this._TransID;
+			}
+			set
+			{
+				if ((this._TransID != value))
+				{
+					this._TransID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_TransType", DbType="VarChar(11)")]
+		public string TransType
+		{
+			get
+			{
+				return this._TransType;
+			}
+			set
+			{
+				if ((this._TransType != value))
+				{
+					this._TransType = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Usp_ContractExpiry_SelectResult
+	{
+		
+		private string _Company;
+		
+		private System.Nullable<System.DateTime> _ExpiryDate;
+		
+		private System.Nullable<int> _Months;
+		
+		private string _SalesPerson;
+		
+		public Usp_ContractExpiry_SelectResult()
+		{
+		}
+		
+		[Column(Storage="_Company", DbType="VarChar(80)")]
+		public string Company
+		{
+			get
+			{
+				return this._Company;
+			}
+			set
+			{
+				if ((this._Company != value))
+				{
+					this._Company = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ExpiryDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> ExpiryDate
+		{
+			get
+			{
+				return this._ExpiryDate;
+			}
+			set
+			{
+				if ((this._ExpiryDate != value))
+				{
+					this._ExpiryDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Months", DbType="Int")]
+		public System.Nullable<int> Months
+		{
+			get
+			{
+				return this._Months;
+			}
+			set
+			{
+				if ((this._Months != value))
+				{
+					this._Months = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SalesPerson", DbType="VarChar(41)")]
+		public string SalesPerson
+		{
+			get
+			{
+				return this._SalesPerson;
+			}
+			set
+			{
+				if ((this._SalesPerson != value))
+				{
+					this._SalesPerson = value;
+				}
 			}
 		}
 	}

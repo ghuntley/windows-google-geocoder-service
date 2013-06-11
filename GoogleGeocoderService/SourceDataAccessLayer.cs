@@ -54,29 +54,23 @@ namespace GoogleGeocoderService
         {
             using (var context = new SourceDbDataContext(AppConfig.ConnectionString))
             {
-
                 var latitude = (decimal?) response.results[0].geometry.location.lat;
                 var longitude = (decimal?) response.results[0].geometry.location.lng;
 
-                var record = context.DEBTORS.Single(s => s.AccountID.Equals(job.AccountId));
-                    //(from debtors in context.DEBTORS
-                    //          where debtors.AccountID == job.AccountId
-                    //          select debtors).FirstOrDefault();
+                var accountid = job.AccountId;
 
-                if (record == null)
+                try
+                {
+                    context.SpWindowsGeocoderService_SetAccountIdLatLong(accountid, latitude, longitude);
+                }
+                catch (Exception ex)
                 {
                     Log.Error("Unable to update AccountID: {0} ({1}) with Lat: {2} / Lng: {3}", job.AccountId,
-                              job.CompanyName, latitude, longitude);
-                    return;
+                              job.CompanyName, latitude, longitude); 
+                   
+                    Log.Error("Exception: {0}", ex.Message);
                 }
-
-                //context.DEBTORS.InsertOnSubmit();
-                record.Latitude = latitude;
-                record.Longitude = longitude;
-                context.SubmitChanges();
             }
-
-            //Log.Error("{0} has not been saved.", response.results[0].formatted_address);
         }
     }
 }

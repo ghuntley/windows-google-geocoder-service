@@ -117,6 +117,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="spWindowsGeocoderService_SetAccountIdLatLong.sql">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="..\LICENSE.md">
       <Link>LICENSE.md</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
