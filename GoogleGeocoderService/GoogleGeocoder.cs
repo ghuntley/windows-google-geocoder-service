@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
@@ -50,12 +51,11 @@ namespace GoogleGeocoderService
         /// <summary>
         /// retrieve details as GoogleGeocodeResponse for address via google geocode api. 
         /// </summary>
-        public async Task<GoogleGeocodeResponse> GeocodeAddress(string address)
+        public GoogleGeocodeResponse GeocodeAddress(string address)
         {
             Log.Debug("Address: {0}", address);
 
-            var client = new HttpClient();
-
+            WebClient client = new WebClient();
             //if (UseProxyServer) client.Proxy = ProxyServer;
 
             // Recommended reading -> https://developers.google.com/maps/documentation/business/webservices#digital_signatures
@@ -67,15 +67,14 @@ namespace GoogleGeocoderService
             var signed = SignUrl(unsigned, AppConfig.GoogleApiCryptoKey);
             Log.Debug("HTTP Signed Uri: {0}", signed);
 
-            client.DefaultRequestHeaders.Add("ApplicationName", AppConfig.ApplicationName);
-            client.DefaultRequestHeaders.Add("ApplicationVersion", AppConfig.ApplicationVersion);
+            client.Headers.Add("ApplicationName", AppConfig.ApplicationName);
+            client.Headers.Add("ApplicationVersion", AppConfig.ApplicationVersion);
 
-            var response = await client.GetAsync(signed);
+            var response  = client.OpenRead(signed);
+            var stream = new StreamReader(response);
 
-            // Check that response was successful or throw exception
-            response.EnsureSuccessStatusCode();
+            var results = stream.ReadToEnd();
 
-            var results = await response.Content.ReadAsStringAsync();
             Log.Trace("Response from Google API as Json: {0}", results.ToJson());
 
             var serialized = results.FromJson<GoogleGeocodeResponse>();

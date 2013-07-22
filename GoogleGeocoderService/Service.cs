@@ -153,7 +153,7 @@ namespace GoogleGeocoderService
 
                             try
                             {
-                                response = Geocoder.GeocodeAddress(job.Address).Result;
+                                response = Geocoder.GeocodeAddress(job.Address);
                             }
                             catch (Exception ex)
                             {
